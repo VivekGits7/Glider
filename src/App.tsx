@@ -50,7 +50,7 @@ import { getLanguageDirection, initializeRTL } from "@/common/lib/rtl";
 
 /** The longest the launch screen waits for the speech model. */
 const BOOT_LIMIT_MS = 4000;
-/** "1" while the sidebar is folded down to its icon rail. */
+/** "0" once the user opens the sidebar; it starts folded to its icon rail. */
 const SIDEBAR_COLLAPSED_KEY = "glider.sidebarCollapsed";
 
 // flow is first-run onboarding; the rest are single screens for returning users.
@@ -150,7 +150,7 @@ function App() {
   const hasCompletedPostOnboardingInit = useRef(false);
   const [booted, setBooted] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(
-    () => localStorage.getItem(SIDEBAR_COLLAPSED_KEY) !== "1",
+    () => localStorage.getItem(SIDEBAR_COLLAPSED_KEY) === "0",
   );
   const toggleSidebar = () =>
     setSidebarOpen((open) => {

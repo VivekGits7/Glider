@@ -123,12 +123,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
         type="button"
         aria-current={isActive ? "page" : undefined}
         aria-label={collapsed ? label : undefined}
-        title={collapsed ? label : undefined}
         onClick={() => onSectionChange(section.id)}
-        className={`g-nav ${isActive ? "on" : ""} ${collapsed ? "justify-center px-0" : ""} w-full cursor-pointer text-start focus-visible:outline-2 focus-visible:outline-accent-ink`}
+        className={`g-nav relative ${isActive ? "on" : ""} ${collapsed ? "justify-center px-0" : ""} w-full cursor-pointer text-start focus-visible:outline-2 focus-visible:outline-accent-ink`}
       >
         <i className={`g-ic g-i-${section.icon}`} aria-hidden="true" />
-        {!collapsed && <span className="truncate">{label}</span>}
+        {collapsed ? (
+          <span className="g-navtip" aria-hidden="true">
+            {label}
+          </span>
+        ) : (
+          <span className="truncate">{label}</span>
+        )}
       </button>
     );
   };
@@ -136,7 +141,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <nav
       aria-label={t("sidebar.label")}
-      className={`g-side shrink-0 pt-1 ${collapsed ? "w-[68px] px-2.5" : "w-[212px]"}`}
+      className={`g-side relative z-10 shrink-0 pt-1 ${collapsed ? "w-[68px] px-2.5" : "w-[212px]"}`}
       data-tauri-drag-region
     >
       <div

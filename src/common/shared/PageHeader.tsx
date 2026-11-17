@@ -12,7 +12,7 @@ interface PageHeaderProps {
   back?: { label: string; onClick: () => void };
 }
 
-/** A page's serif title, as every main-window page opens (the canvas's
+/** A page's title, as every main-window page opens (the canvas's
  * .h1 / .titlebar / .lede / .back). */
 export const PageHeader: React.FC<PageHeaderProps> = ({
   title,

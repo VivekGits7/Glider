@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-// shortcut: no video yet, the thumbnail is a placeholder. Put the file in
-// public/ and set this to its path, e.g. "/how-to-use.mp4".
 const HOW_TO_VIDEO_URL: string | null = null;
 
 /** The tutorial video: a thumbnail until it's clicked, then the player. */
@@ -32,7 +30,7 @@ export const TutorialVideo: React.FC = () => {
       <span className="flex size-16 items-center justify-center rounded-full bg-card shadow-[0_8px_24px_-10px_rgba(0,0,0,0.45)] transition-transform group-enabled:group-hover:scale-105">
         <i className="g-ic g-i-play ms-1 size-6 text-text" aria-hidden="true" />
       </span>
-      <span className="font-serif text-[20px] text-text">
+      <span className="font-ui text-[18px] font-normal text-text">
         {t("home.tutorial.title")}
       </span>
       {!HOW_TO_VIDEO_URL && (

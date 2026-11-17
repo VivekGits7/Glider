@@ -120,7 +120,7 @@ export const NextButton: React.FC<{
   );
 };
 
-/** A screen's serif title and the line under it (the canvas's .obt/.obs). */
+/** A screen's title and the line under it (the canvas's .obt/.obs). */
 export const ObHeader: React.FC<{
   title: React.ReactNode;
   sub?: React.ReactNode;

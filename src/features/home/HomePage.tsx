@@ -213,7 +213,7 @@ export const HomePage: React.FC<{
 
   return (
     <div className="flex flex-col gap-8">
-      <h1 className="font-serif text-[40px] leading-[1.05] tracking-[-0.01em] text-text">
+      <h1 className="font-ui text-[36px] font-normal leading-[1.1] tracking-[-0.01em] text-text">
         {name ? t("home.welcomeName", { name }) : t("home.welcome")}
       </h1>
 
@@ -277,7 +277,7 @@ export const HomePage: React.FC<{
 
       <section className="flex flex-col gap-3">
         <div className="flex items-center justify-between px-1">
-          <h2 className="font-serif text-[19px] italic text-text">
+          <h2 className="font-ui text-[18px] font-normal text-text">
             {t("home.today")}
           </h2>
           <div className="flex items-center gap-3">
