@@ -1,0 +1,47 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { Dropdown } from "@/common/ui/Dropdown";
+import { SettingContainer } from "@/common/ui/SettingContainer";
+import { useSettings } from "@/common/settings/useSettings";
+import type { ClipboardHandling } from "@/bindings";
+
+interface ClipboardHandlingProps {
+  grouped?: boolean;
+}
+
+export const ClipboardHandlingSetting: React.FC<ClipboardHandlingProps> =
+  React.memo(({ grouped = false }) => {
+    const { t } = useTranslation();
+    const { getSetting, updateSetting, isUpdating } = useSettings();
+
+    const clipboardHandlingOptions = [
+      {
+        value: "dont_modify",
+        label: t("settings.advanced.clipboardHandling.options.dontModify"),
+      },
+      {
+        value: "copy_to_clipboard",
+        label: t("settings.advanced.clipboardHandling.options.copyToClipboard"),
+      },
+    ];
+
+    const selectedHandling = (getSetting("clipboard_handling") ||
+      "dont_modify") as ClipboardHandling;
+
+    return (
+      <SettingContainer
+        title={t("settings.advanced.clipboardHandling.title")}
+        description={t("settings.advanced.clipboardHandling.description")}
+        grouped={grouped}
+      >
+        <Dropdown
+          options={clipboardHandlingOptions}
+          selectedValue={selectedHandling}
+          onSelect={(value) =>
+            updateSetting("clipboard_handling", value as ClipboardHandling)
+          }
+          disabled={isUpdating("clipboard_handling")}
+        />
+      </SettingContainer>
+    );
+  });

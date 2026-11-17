@@ -1,0 +1,1456 @@
+{
+  "tray": {
+    "settings": "सेटिङहरू...",
+    "checkUpdates": "अपडेटहरू जाँच गर्नुहोस्...",
+    "copyLastTranscript": "पछिल्लो ट्रान्सक्रिप्ट कपी गर्नुहोस्",
+    "unloadModel": "मोडेल अनलोड गर्नुहोस्",
+    "model": "मोडेल",
+    "quit": "बाहिर निस्कनुहोस्",
+    "cancel": "रद्द गर्नुहोस्",
+    "secureInputWarning": "⚠ Secure Input ले सर्टकटहरू रोकेको छ",
+    "language": "भाषा",
+    "autoLanguage": "स्वतः",
+    "otherLanguages": "अन्य भाषाहरू"
+  },
+  "sidebar": {
+    "general": "सामान्य",
+    "models": "मोडेलहरू",
+    "advanced": "उन्नत",
+    "history": "हिस्ट्री",
+    "debug": "डिबग",
+    "about": "बारेमा",
+    "readAloud": "Read Aloud",
+    "home": "Home",
+    "label": "Sections",
+    "version": "Glider v{{version}}",
+    "insights": "Insights",
+    "rewrite": "Rewrite",
+    "dictation": "Dictation"
+  },
+  "onboarding": {
+    "customModelDescription": "आधिकारिक रूपमा समर्थित छैन",
+    "migration": {
+      "title": "तपाईंका मोडेलहरू अपडेट गर्नुपर्छ",
+      "description": "Glider ले अब नयाँ प्रकारको मोडेल प्रयोग गर्छ। ट्रान्सक्राइब गर्न जारी राख्न नयाँ संस्करण डाउनलोड गर्नुहोस्। पुराना संस्करणहरू हटाइनेछन्।",
+      "replaces": "{{name}} को सट्टा",
+      "oldFormat": "पुरानो ढाँचा",
+      "failed": "डाउनलोड असफल भयो",
+      "retry": "फेरि प्रयास गर्नुहोस्",
+      "chooseAnother": "अर्को मोडेल छान्नुहोस्",
+      "download": "मोडेलहरू डाउनलोड गर्नुहोस् ({{size}})",
+      "continue": "जारी राख्नुहोस्"
+    },
+    "models": {
+      "small": {
+        "name": "Whisper Small",
+        "description": "छिटो र राम्रै सटीक।"
+      },
+      "medium": {
+        "name": "Whisper Medium",
+        "description": "राम्रो शुद्धता, मध्यम गति"
+      },
+      "turbo": {
+        "name": "Whisper Turbo",
+        "description": "शुद्धता र गतिको सन्तुलन।"
+      },
+      "large": {
+        "name": "Whisper Large",
+        "description": "राम्रो शुद्धता, तर ढिलो।"
+      },
+      "breeze-asr": {
+        "name": "Breeze ASR",
+        "description": "ताइवानी मन्डारिनका लागि अनुकूलित। कोड-स्विचिङ समर्थन।"
+      }
+    },
+    "errors": {
+      "selectModel": "मोडेल चयन गर्न सकिएन"
+    },
+    "permissions": {
+      "microphone": {
+        "name": "माइक्रोफोन",
+        "why": "ताकि Glider ले तपाईंलाई सुन्न सकोस्। अडियो यही कम्प्युटरमा टेक्स्टमा बदलिन्छ र कहिल्यै अपलोड गरिँदैन।"
+      },
+      "accessibility": {
+        "name": "एक्सेसिबिलिटी",
+        "why": "ताकि तपाईंको सर्टकट हरेक एपमा चलोस्, र Glider ले कर्सर भएको ठाउँमा टेक्स्ट टाइप गर्न सकोस्।"
+      },
+      "errors": {
+        "checkFailed": "अनुमतिहरू जाँच गर्न सकिएन। कृपया फेरि प्रयास गर्नुहोस्।",
+        "requestFailed": "अनुमति अनुरोध गर्न सकिएन। कृपया फेरि प्रयास गर्नुहोस्।"
+      },
+      "titleMac": "दुई अनुमति, अनि सबै तयार",
+      "titleWindows": "एउटा अनुमति, अनि सबै तयार",
+      "subtitleMac": "कुनै पनि एपले सुन्न वा टाइप गर्न पाउनुअघि macOS ले सोध्छ।",
+      "subtitleWindows": "कुनै पनि एपले सुन्न पाउनुअघि Windows ले सोध्छ।",
+      "allow": "अनुमति दिनुहोस्",
+      "openSettings": "सेटिङहरू खोल्नुहोस्",
+      "allowed": "अनुमति दिइयो",
+      "waiting": "प्रतीक्षामा",
+      "turnOnMac": "System Settings मा Glider अन गर्नुहोस्, अनि यहाँ फर्कनुहोस्।",
+      "turnOnWindows": "Windows Settings मा माइक्रोफोन पहुँच अन गर्नुहोस्, अनि यहाँ फर्कनुहोस्।",
+      "hintBoth": "जारी राख्न दुवैलाई अनुमति दिनुहोस्",
+      "hintMicrophone": "जारी राख्न माइक्रोफोनलाई अनुमति दिनुहोस्",
+      "welcomeBack": "फेरि स्वागत छ। जहाँ छोड्नुभएको थियो, त्यहीँबाट सुरु गरौँ।",
+      "relaunch": "यसपछि सर्टकटले काम गरेन? <relaunch>Glider फेरि सुरु गर्नुहोस्</relaunch> र तपाईं ठ्याक्कै यहीँ फर्कनुहुनेछ।",
+      "fnKey": {
+        "name": "Fn key",
+        "why": "You hold Fn to dictate. Turn off what macOS does when you press it alone (emoji picker or input switch). You can change it back in System Settings → Keyboard.",
+        "action": "Turn off"
+      }
+    },
+    "shell": {
+      "back": "पछाडि",
+      "continue": "जारी राख्नुहोस्",
+      "progress": "चरण {{step}} / {{count}}"
+    },
+    "welcome": {
+      "title": "टाइप गर्नुको सट्टा बोल्नुहोस्, जुनसुकै एपमा",
+      "subtitle": "तपाईंले बोल्ने भाषाहरू छान्नुहोस्",
+      "languagesLabel": "भाषाहरू",
+      "noMatch": "“{{query}}” सँग मिल्ने कुनै भाषा छैन। Glider का मोडेलहरूले करिब १०० भाषा समेट्छन्; थप भाषाहरू सेटिङमा छन्।",
+      "appLanguage": "एपको भाषा",
+      "chinese": {
+        "question": "तपाईं {{languages}} बोल्नुहुन्छ। Glider ले कुन अक्षर लेखोस्?",
+        "label": "चिनियाँ अक्षर",
+        "zh-Hans": "सरलीकृत",
+        "zh-Hant": "ताइवान",
+        "zh-HK": "हङकङ"
+      },
+      "hint": {
+        "pickOne": "कम्तीमा एउटा भाषा छान्नुहोस्"
+      },
+      "search": "Search languages",
+      "searchPlaceholder": "Search {{count}} languages"
+    },
+    "download": {
+      "checking": "डाउनलोड जाँच गरिँदैछ…",
+      "ready": "{{name}} तयार छ",
+      "failed": "डाउनलोड रोकियो",
+      "downloading": "{{name}} डाउनलोड गरिँदैछ",
+      "progress": "{{total}} मध्ये {{done}}",
+      "progressLeft": "{{total}} मध्ये {{done}}, {{time}} बाँकी",
+      "checkingName": "{{name}} जाँच गरिँदैछ",
+      "checkingDetail": "डाउनलोड पूरा भएको पक्का गरिँदैछ",
+      "stopped": "{{name}} को डाउनलोड रोकियो",
+      "retryDetail": "फेरि प्रयास गर्दा जहाँ रोकिएको थियो त्यहीँबाट सुरु हुन्छ",
+      "cardProgress": "डाउनलोड गरिँदैछ {{percent}}%, {{total}} मध्ये {{done}}",
+      "timeLeft": "{{time}} बाँकी",
+      "speedLeft": "{{speed}}, {{time}} बाँकी"
+    },
+    "model": {
+      "title": "स्पिच मोडेल छान्नुहोस्",
+      "subtitle": "स्पिच मोडेलले तपाईंको बोली यही कम्प्युटरमा टेक्स्टमा बदल्छ",
+      "label": "स्पिच मोडेल",
+      "lines": {
+        "recommended": "तपाईंका भाषाहरूका लागि गति र शुद्धताको सबैभन्दा राम्रो सन्तुलन",
+        "faster": "छिटो, तर केही बढी गल्ती",
+        "accurate": "सबैभन्दा कम गल्ती, तर ढिलो"
+      },
+      "shorts": {
+        "recommended": "तपाईंका लागि उत्तम सन्तुलन",
+        "faster": "छिटो, केही बढी गल्ती",
+        "accurate": "सबैभन्दा कम गल्ती, तर ढिलो"
+      },
+      "model": "मोडेल",
+      "showAll": "सबै {{count}} मोडेल देखाउनुहोस्",
+      "download": "{{size}} डाउनलोड गर्नुहोस्",
+      "downloadInstead": "बरु {{size}} डाउनलोड गर्नुहोस्",
+      "pauses": "{{name}} {{percent}}% मा रोकिन्छ",
+      "resumeLater": "फेरि छान्नुहोस्, जहाँ रोकिएको थियो त्यहीँबाट सुरु हुन्छ",
+      "hint": "तपाईंले सेटअप सक्दा डाउनलोड हुन्छ",
+      "bestFor": "Best for {{languages}}",
+      "recommended": "Recommended",
+      "languageCount_one": "{{count}} language",
+      "languageCount_other": "{{count}} languages"
+    },
+    "done": {
+      "title": "सबै तयार छ",
+      "atLogin": "लग इन गर्दा Glider सुरु गर्नुहोस्",
+      "finish": "सम्पन्न",
+      "subtitleMac": "Glider is in your menu bar now. It works in every app, even with this window closed.",
+      "subtitle": "Glider is in your system tray now. It works in every app, even with this window closed.",
+      "dictate": "Dictate",
+      "readAloud": "Read Aloud",
+      "languages": "Languages",
+      "speechModel": "Speech model",
+      "holdAndTalk": "Hold and talk",
+      "selectThenPress": "Select, then press",
+      "change": "Change",
+      "later": "You can change these later in Settings"
+    },
+    "downloads": {
+      "background": "Downloads keep going in the background",
+      "label": "Downloads",
+      "underMinute": "less than a minute left",
+      "oneMinute": "1 min left",
+      "minutes_one": "{{count}} min left",
+      "minutes_other": "{{count}} min left",
+      "checking": "Checking…",
+      "ofSize": "{{percent}}% · {{done}} of {{total}} MB",
+      "next": "{{percent}}% · {{name}} next",
+      "about": "about {{left}}",
+      "ready": "Ready: {{names}}",
+      "cancel": "Cancel {{name}}"
+    },
+    "voices": {
+      "title": "Pick your voices",
+      "subtitle": "Pick one for each language you listen in. Add more later in Models.",
+      "label": "Voices",
+      "descriptions": {
+        "kokoro-int8-en-v0_19": "Natural, warm voices. 11 American and British speakers.",
+        "vits-piper-hi_IN-pratham-medium-int8": "A clear Hindi voice. Reads Devanagari text.",
+        "kitten-nano-en-v0_2-fp16": "Tiny and fast. Good for older computers."
+      },
+      "speakers_one": "{{count}} speaker",
+      "speakers_other": "{{count}} speakers",
+      "speed": "Up to 3x speed",
+      "sample": "Sample",
+      "sampleLabel": "Hear {{name}}"
+    },
+    "refine": {
+      "title": "Pick a refine model",
+      "subtitle": "It cleans up and rewrites your text when you ask. You can skip this.",
+      "label": "Refine model",
+      "descriptions": {
+        "qwen3-4b-instruct-2507": "Clear, natural rewrites that keep your tone.",
+        "qwen3-1_7b": "Quicker and lighter, a little less polished."
+      },
+      "quality": "Quality: {{value}}",
+      "speed": "Speed: {{value}}",
+      "memory": "Needs {{n}} GB memory",
+      "levels": {
+        "best": "best",
+        "good": "good",
+        "fair": "fair",
+        "fast": "fast",
+        "moderate": "moderate"
+      },
+      "notNow": "Not now",
+      "notNowHint": "Turn on Rewrite later and pick a model then."
+    },
+    "practice": {
+      "title": "Give it a try",
+      "subtitle": "Both shortcuts work in every app. Try them here first.",
+      "dictate": "1. Click the box, hold <keys/> and talk",
+      "listen": "2. Select that text and press <keys/> to hear it",
+      "boxLabel": "Practice box",
+      "placeholder": "Your words appear here.",
+      "done": "Done",
+      "skip": "You can skip this",
+      "voicesNote": "Read Aloud uses the voices you picked. Downloads finish in the background.",
+      "waiting": "Dictation works once {{model}} finishes downloading."
+    }
+  },
+  "modelTable": {
+    "tags": {
+      "preview": "लाइभ प्रिभ्यू",
+      "previewTitle": "बोल्दै गर्दा तपाईंका शब्दहरू लाइभ ओभरलेमा देखाउँछ, अनि रोकेपछि टाइप गर्छ",
+      "translate": "अनुवाद गर्छ",
+      "translateTitle": "तपाईंले भनेको कुरा अङ्ग्रेजी टेक्स्टमा बदल्न सक्छ। सेटिङमा अन गर्नुहोस्"
+    },
+    "rubric": {
+      "gradeTitle": "{{language}} शुद्धता: {{grade}}",
+      "accuracyTitle": "{{language}} शुद्धता",
+      "overallTitle": "तपाईंका भाषाहरूमा शुद्धता: {{grade}}",
+      "overall": "तपाईंका भाषाहरूमा शुद्धता",
+      "meaning": {
+        "A": "धेरै थोरै गल्ती: तपाईंले भनेजस्तै शब्दहरू प्रायः आउँछन्",
+        "B": "केही गल्ती: यताउता एकाध शब्द सच्याउनुपर्न सक्छ",
+        "C": "बारम्बार गल्ती: केही विवरण छुट्न सक्छ",
+        "D": "धेरै गल्ती: टाइप भएको कुरा जाँचेर सच्याउनुपर्छ",
+        "F": "प्रायः अस्पष्ट: तपाईंले भनेको धेरै कुरा गलत आउन सक्छ"
+      },
+      "unsupported": "यो मोडेलले {{language}} बुझ्दैन, त्यसैले टाइप गर्न सक्दैन",
+      "unrated": "यो मोडेलले {{language}} बुझ्छ, तर कति राम्ररी बुझ्छ भनेर हामीले अहिलेसम्म नापेका छैनौँ",
+      "under": "{{max}}% भन्दा कम",
+      "between": "{{min}} देखि {{max}}%",
+      "over": "{{min}}% वा बढी",
+      "speedTitle": "गति: {{speed}}",
+      "speedName": {
+        "0": "धेरै ढिलो",
+        "1": "ढिलो",
+        "2": "मध्यम",
+        "3": "छिटो",
+        "4": "धेरै छिटो"
+      },
+      "speedMeaning": {
+        "0": "तपाईंका शब्दहरू लामो प्रतीक्षापछि देखिन्छन्",
+        "1": "तपाईंका शब्दहरू प्रतीक्षापछि देखिन्छन्",
+        "2": "तपाईंका शब्दहरू छोटो प्रतीक्षापछि देखिन्छन्",
+        "3": "तपाईंका शब्दहरू लगभग तुरुन्तै देखिन्छन्",
+        "4": "तपाईंका शब्दहरू तुरुन्तै देखिन्छन्"
+      },
+      "speedPreview": "{{meaning}}, बोल्दै गर्दा लाइभ प्रिभ्यूसहित",
+      "untimed": "यो कति छिटो छ भनेर हामीले अहिलेसम्म नापेका छैनौँ",
+      "underSeconds": "{{max}} से. भन्दा कम",
+      "betweenSeconds": "{{min}} देखि {{max}} से.",
+      "overSeconds": "{{min}} से. वा बढी"
+    },
+    "roles": {
+      "recommended": "सिफारिस गरिएको",
+      "faster": "छिटो",
+      "accurate": "बढी सटीक",
+      "fromAll": "सबै मोडेलबाट"
+    },
+    "speed": "गति",
+    "size": "आकार",
+    "accuracy": "शुद्धता",
+    "search": "मोडेलहरू खोज्नुहोस्",
+    "allLabel": "स्पिच मोडेलहरू",
+    "noMatch": "“{{query}}” सँग केही मिलेन। कुनै भाषा, वा Whisper वा Parakeet जस्तो मोडेल परिवार प्रयास गर्नुहोस्",
+    "noFilterMatch": "यी फिल्टरसँग मिल्ने कुनै मोडेल छैन",
+    "speedUntested": "गति अहिलेसम्म नापिएको छैन",
+    "speedWords": {
+      "0": "धेरै ढिलो, शब्दहरू लामो प्रतीक्षापछि देखिन्छन्",
+      "1": "ढिलो, शब्दहरू प्रतीक्षापछि देखिन्छन्",
+      "2": "मध्यम, शब्दहरू छोटो प्रतीक्षापछि देखिन्छन्",
+      "3": "छिटो, शब्दहरू लगभग तुरुन्तै देखिन्छन्",
+      "4": "धेरै छिटो, शब्दहरू तुरुन्तै देखिन्छन्"
+    },
+    "speedWordsPreview": {
+      "0": "धेरै ढिलो, बोल्दै गर्दा लाइभ प्रिभ्यूसहित",
+      "1": "ढिलो, बोल्दै गर्दा लाइभ प्रिभ्यूसहित",
+      "2": "मध्यम, बोल्दै गर्दा लाइभ प्रिभ्यूसहित",
+      "3": "छिटो, बोल्दै गर्दा लाइभ प्रिभ्यूसहित",
+      "4": "धेरै छिटो, बोल्दै गर्दा लाइभ प्रिभ्यूसहित"
+    },
+    "missingLanguage": "भाषा छुटेको छ",
+    "allLanguages": "सबै",
+    "downloadingLine": "{{total}} को {{percent}}% डाउनलोड गरिँदैछ",
+    "customLine": "तपाईंको मोडेल फोल्डरबाट थपिएको। ग्रेड दिइएको छैन।",
+    "legacyLine": "पुरानो डाउनलोड। ग्रेड दिइएको छैन।"
+  },
+  "languagePicker": {
+    "search": "भाषाहरू खोज्नुहोस्"
+  },
+  "modelSelector": {
+    "custom": "कस्टम",
+    "streaming": "स्ट्रिमिङ",
+    "active": "सक्रिय",
+    "noModelsAvailable": "कुनै मोडेल उपलब्ध छैन",
+    "verifying": "{{modelName}} प्रमाणित गरिँदैछ...",
+    "verifyingGeneric": "प्रमाणित गरिँदैछ...",
+    "downloading": "डाउनलोड गरिँदैछ {{percentage}}%",
+    "downloadingMultiple": "{{count}} वटा मोडेल डाउनलोड गरिँदैछ...",
+    "modelReady": "मोडेल तयार छ",
+    "loading": "{{modelName}} लोड गरिँदैछ...",
+    "loadingGeneric": "लोड गरिँदैछ...",
+    "modelError": "मोडेल त्रुटि",
+    "modelUnloaded": "मोडेल अनलोड गरियो",
+    "noModelDownloadRequired": "मोडेल छैन - डाउनलोड आवश्यक",
+    "downloadSpeed": "{{speed}} MB/s",
+    "lockedWhileTranscribing": "हिस्ट्रीमा ट्रान्सक्रिप्सन सकिएपछि तपाईं मोडेल परिवर्तन गर्न सक्नुहुन्छ।"
+  },
+  "settings": {
+    "modelSettings": {
+      "title": "{{model}} सेटिङहरू",
+      "description": "Options for the speech model you use now."
+    },
+    "general": {
+      "shortcut": {
+        "title": "Glider सर्टकटहरू",
+        "description": "स्पिच-टु-टेक्स्ट रेकर्डिङ सुरु गर्न किबोर्ड सर्टकटहरू सेट अप गर्नुहोस्",
+        "loading": "सर्टकटहरू लोड गरिँदैछन्...",
+        "none": "कुनै सर्टकट सेट गरिएको छैन",
+        "notFound": "सर्टकट भेटिएन",
+        "pressKeys": "किहरू थिच्नुहोस्...",
+        "bindings": {
+          "transcribe": {
+            "name": "ट्रान्सक्राइब सर्टकट",
+            "description": "तपाईंको आवाज रेकर्ड गरी ट्रान्सक्राइब गर्ने किबोर्ड सर्टकट।"
+          },
+          "cancel": {
+            "name": "रद्द सर्टकट",
+            "description": "हालको रेकर्डिङ रद्द गर्ने किबोर्ड सर्टकट।"
+          },
+          "transcribe_with_post_process": {
+            "name": "पोस्ट-प्रोसेसिङ हटकी",
+            "description": "वैकल्पिक: तपाईंको ट्रान्सक्रिप्सनमा सधैँ AI पोस्ट-प्रोसेसिङ लागू गर्ने छुट्टै हटकी।"
+          },
+          "speak_selection": {
+            "name": "Read Aloud Shortcut",
+            "description": "जुनसुकै एपमा छानिएको पाठ ठूलो स्वरमा पढ्छ। रोक्न फेरि थिच्नुहोस्।"
+          },
+          "refine_1": {
+            "name": "Refine 1",
+            "description": "छानिएको पाठलाई छेउको प्रम्प्टले फेरि लेखेर त्यहीँ राख्छ।"
+          },
+          "refine_2": {
+            "name": "Refine 2",
+            "description": "छानिएको पाठलाई छेउको प्रम्प्टले फेरि लेखेर त्यहीँ राख्छ।"
+          },
+          "refine_3": {
+            "name": "Refine 3",
+            "description": "छानिएको पाठलाई छेउको प्रम्प्टले फेरि लेखेर त्यहीँ राख्छ।"
+          }
+        },
+        "errors": {
+          "set": "सर्टकट सेट गर्न सकिएन: {{error}}"
+        },
+        "changeLabel": "Change {{name}} ({{keys}})"
+      },
+      "language": {
+        "title": "भाषा",
+        "description": "तपाईंको भाषा। एउटा छान्नु स्वतः भन्दा बढी सटीक हुन्छ।",
+        "searchPlaceholder": "भाषाहरू खोज्नुहोस्...",
+        "noResults": "कुनै भाषा भेटिएन",
+        "auto": "स्वतः",
+        "autoUnavailable": {
+          "oneLanguage": "तपाईंका भाषाहरूमध्ये एउटा मात्र यो मोडेलसँग काम गर्छ",
+          "undetectable": "{{languages}} सँग उपलब्ध छैन",
+          "noMatch": "तपाईंका कुनै पनि भाषा यो मोडेलसँग काम गर्दैनन्"
+        },
+        "detectorMissingTitle": "स्वतःका लागि छुट्टै डाउनलोड चाहिन्छ",
+        "detectorMissing": "यो मोडेलले तपाईं कुन भाषा बोल्दै हुनुहुन्छ भनेर चिन्न सक्दैन। स्वतःलाई त्यो पत्ता लगाउन एउटा सानो भाषा पहिचानकर्ता चाहिन्छ",
+        "stopDetectorDownload": "भाषा पहिचानकर्ताको डाउनलोड रोक्नुहोस्"
+      },
+      "preferredLanguages": {
+        "title": "मनपर्ने भाषाहरू",
+        "description": "तपाईंले बोल्ने भाषाहरू। Glider ले यिनको आधारमा मोडेल सिफारिस गर्छ।",
+        "noMatch": "“{{query}}” सँग मिल्ने कुनै भाषा छैन",
+        "weak": "कुनै मोडेलले अहिलेसम्म {{languages}} राम्ररी चिन्दैन।",
+        "change": "Change",
+        "none": "No languages yet"
+      }
+    },
+    "models": {
+      "sections": {
+        "yours": "यो कम्प्युटरमा",
+        "fits": "तपाईंका भाषाहरूका लागि"
+      },
+      "emptyYours": "अहिलेसम्म कुनै मोडेल छैन। तल एउटा छान्नुहोस्: त्यो डाउनलोड हुन्छ, अनि Glider ले प्रयोग गर्छ।",
+      "showMore": "थप {{count}} देखाउनुहोस्",
+      "showFewer": "कम देखाउनुहोस्",
+      "download": "डाउनलोड गरी प्रयोग गर्नुहोस्",
+      "downloadingThenUse": "{{total}} को {{percent}}%, त्यसपछि बदलिन्छ",
+      "loading": "लोड गरिँदैछ…",
+      "deleteAsk": "{{name}} मेटाउने? {{size}} खाली हुन्छ।",
+      "deleteAskActive": "{{name}} मेटाउने? अर्को मोडेल नछान्दासम्म Glider ले ट्रान्सक्राइब गर्न सक्दैन।",
+      "cancel": "रद्द गर्नुहोस्",
+      "deleteModel": "{{name}} मेटाउनुहोस्",
+      "cancelDownload": "{{name}} को डाउनलोड रोक्नुहोस्",
+      "legend": {
+        "open": "मोडेललाई कसरी ग्रेड दिइन्छ",
+        "accuracyNote": "तपाईंका हरेक भाषाका लागि: हाम्रा परीक्षण रेकर्डिङहरूमा मोडेलले कति शब्द गलत पायो।",
+        "speedNote": {
+          "accelerated": "हाम्रो परीक्षण ल्यापटपको ग्राफिक्स चिपमा ३० सेकेन्डको बोली टाइप हुन कति समय लाग्छ। यो कम्प्युटरमा फरक हुन सक्छ।",
+          "cpu": "हाम्रो परीक्षण ल्यापटपको प्रोसेसरमा ३० सेकेन्डको बोली टाइप हुन कति समय लाग्छ। यो कम्प्युटरमा फरक हुन सक्छ।"
+        },
+        "marks": "? अहिलेसम्म नापिएको छैन। — ले त्यो भाषा सुन्दैन।",
+        "howGraded": "How models are graded"
+      },
+      "retiredNotice": {
+        "title": "पुराना मोडेलहरूले अब Glider सँग काम गर्दैनन्",
+        "description": "तिनीहरूले तपाईंको कम्प्युटरमा {{size}} ठाउँ ओगटेका छन्।",
+        "delete": "मोडेलहरू मेटाउनुहोस्",
+        "deleteFailed": "केही पुराना मोडेलहरू मेटाउन सकिएन। विवरणका लागि लग हेर्नुहोस्।"
+      },
+      "rescan": {
+        "tooltip": "Glider बाहिरबाट मोडेल फोल्डर वा Hugging Face क्यासमा थपिएका मोडेलहरू फेरि स्क्यान गर्नुहोस्"
+      },
+      "tabs": {
+        "label": "Model type",
+        "speech": "Speech to text",
+        "voices": "Read Aloud voices",
+        "llm": "Large language model"
+      },
+      "lede": "Open-source models that run on this computer. Nothing you say is uploaded.",
+      "columns": {
+        "model": "Model",
+        "quality": "Quality",
+        "memory": "Memory",
+        "language": "Language"
+      },
+      "speed": {
+        "veryFast": "Very fast",
+        "fast": "Fast",
+        "moderate": "Moderate",
+        "slow": "Slow",
+        "verySlow": "Very slow"
+      },
+      "inUse": "In use",
+      "livePreview": "Live preview",
+      "checking": "Checking…",
+      "progress": "{{percent}}% of {{size}}",
+      "progressThenSwitch": "{{percent}}% of {{size}}, then switches",
+      "noGrade": "Doesn't hear this language",
+      "downloadAndUse": "Download and use",
+      "use": "Use",
+      "delete": "Delete {{name}}",
+      "fitsHint": "Picked for {{languages}}. Grades come from our test recordings.",
+      "noMatch": "No models match your search.",
+      "search": "Search models",
+      "sample": "Hear a sample",
+      "noVoices": "No voices yet. Download one below.",
+      "moreVoices": "More voices",
+      "moreVoicesHint": "Each voice downloads once, then works offline.",
+      "llm": {
+        "olderComputers": "Older computers",
+        "needsMemory": "Needs more memory",
+        "gb": "{{n}} GB",
+        "none": "No rewriting model yet. Download one below.",
+        "moreTitle": "More large language models",
+        "moreHint": "Picked for how much memory this computer has. Each downloads once, then works offline.",
+        "providerTitle": "Use a provider instead",
+        "useProvider": "Use a provider",
+        "useProviderHint": "Rewrites go to the service you pick, with your own API key. Only the selected text is sent.",
+        "downloadFailed": "Couldn't download the model. Check your connection and try again.",
+        "multilingual": "Many"
+      },
+      "openFolder": "Open models folder",
+      "openFolderFailed": "Couldn't open the models folder",
+      "notLoaded": "Not loaded",
+      "liveMemory": "Memory this model is using right now",
+      "cancelDeletes": "रद्द गर्दा अहिलेसम्म डाउनलोड भएको मेटिन्छ। डाउनलोड फेरि सुरु गर्नुपर्नेछ।"
+    },
+    "languages": {
+      "title": "भाषाहरू"
+    },
+    "sound": {
+      "title": "साउन्ड",
+      "microphone": {
+        "title": "माइक्रोफोन",
+        "description": "आफ्नो मनपर्ने माइक्रोफोन डिभाइस चयन गर्नुहोस्",
+        "placeholder": "माइक्रोफोन चयन गर्नुहोस्...",
+        "loading": "लोड गरिँदैछ..."
+      },
+      "channel": {
+        "title": "इनपुट च्यानल",
+        "description": "धेरै इनपुट भएको अडियो इन्टरफेसमा कुन इनपुटबाट रेकर्ड गर्ने।",
+        "average": "सबै च्यानलको औसत",
+        "channel": "च्यानल {{n}}"
+      },
+      "audioFeedback": {
+        "label": "अडियो फिडब्याक",
+        "description": "रेकर्डिङ सुरु र बन्द हुँदा आवाज बजाउनुहोस्"
+      },
+      "outputDevice": {
+        "title": "आउटपुट डिभाइस",
+        "description": "फिडब्याक आवाजका लागि आफ्नो मनपर्ने अडियो आउटपुट डिभाइस चयन गर्नुहोस्",
+        "placeholder": "आउटपुट डिभाइस चयन गर्नुहोस्...",
+        "loading": "लोड गरिँदैछ..."
+      },
+      "volume": {
+        "title": "भोल्युम",
+        "description": "अडियो फिडब्याक आवाजको भोल्युम मिलाउनुहोस्"
+      }
+    },
+    "advanced": {
+      "groups": {
+        "app": "एप",
+        "output": "आउटपुट",
+        "transcription": "ट्रान्सक्रिप्सन",
+        "history": "हिस्ट्री",
+        "experimental": "प्रयोगात्मक",
+        "outputDescription": "How your words get into the app you are typing in.",
+        "experimentalDescription": "These may change or go away."
+      },
+      "experimentalToggle": {
+        "label": "प्रयोगात्मक सुविधाहरू",
+        "description": "अझै विकासमा रहेका प्रयोगात्मक सुविधाहरू अन गर्नुहोस्।"
+      },
+      "lazyStreamClose": {
+        "label": "ट्रान्सक्रिप्सनहरूबीच माइक खुला राख्नुहोस्",
+        "description": "अर्को डिक्टेसन छिटो सुरु हुन्छ। Bluetooth अडियो बिग्रन सक्छ।"
+      },
+      "airpodsMode": {
+        "label": "AirPods मोड",
+        "description": "AirPods लाई iPhone बाट फिर्ता ल्याउँछ ताकि रेकर्डिङ खाली नहोस्।"
+      },
+      "acceleration": {
+        "transcribe": {
+          "title": "हार्डवेयर एक्सेलेरेसन",
+          "description": "स्वतः ले सकेसम्म GPU, नभए CPU प्रयोग गर्छ।"
+        },
+        "gpuDevice": {
+          "auto": "स्वतः"
+        }
+      },
+      "startHidden": {
+        "label": "लुकेर सुरु गर्नुहोस्",
+        "description": "विन्डो नखोली सिस्टम ट्रेमा सुरु गर्नुहोस्।"
+      },
+      "autostart": {
+        "label": "स्टार्टअपमा सुरु गर्नुहोस्",
+        "description": "कम्प्युटरमा लगइन गर्दा Glider स्वतः सुरु गर्नुहोस्।"
+      },
+      "showTrayIcon": {
+        "label": "ट्रे आइकन देखाउनुहोस्",
+        "description": "सिस्टम ट्रेमा Glider आइकन देखाउनुहोस्।"
+      },
+      "overlay": {
+        "style": {
+          "title": "ओभरले",
+          "description": "लाइभले बोल्दाबोल्दै शब्द देखाउँछ, स्ट्रिमिङ मोडेलमा।",
+          "options": {
+            "none": "कुनै होइन",
+            "minimal": "मिनिमल",
+            "live": "लाइभ"
+          }
+        },
+        "position": {
+          "title": "ओभरले स्थिति",
+          "description": "डिक्टेट गर्दा ओभरले कहाँ देखिन्छ।",
+          "options": {
+            "bottom": "तल",
+            "top": "माथि"
+          }
+        }
+      },
+      "pasteMethod": {
+        "title": "पेस्ट विधि",
+        "description": "क्लिपबोर्डले टाँस्छ, डाइरेक्टले टाइप गर्छ, कुनै होइनले सेभ मात्र गर्छ।",
+        "options": {
+          "clipboard": "क्लिपबोर्ड ({{modifier}}+V)",
+          "clipboardCtrlShiftV": "क्लिपबोर्ड (Ctrl+Shift+V)",
+          "clipboardShiftInsert": "क्लिपबोर्ड (Shift+Insert)",
+          "direct": "डाइरेक्ट",
+          "none": "कुनै होइन",
+          "externalScript": "बाह्य स्क्रिप्ट"
+        },
+        "externalScriptPlaceholder": "/path/to/your/script.sh"
+      },
+      "typingTool": {
+        "title": "टाइपिङ उपकरण",
+        "description": "डाइरेक्ट टाँस्नका लागि Linux उपकरण। स्वतः ले उत्तम छान्छ।",
+        "options": {
+          "auto": "स्वतः (सिफारिस गरिएको)"
+        }
+      },
+      "clipboardHandling": {
+        "title": "क्लिपबोर्ड व्यवस्थापन",
+        "description": "टाँसेपछि डिक्टेसन क्लिपबोर्डमै रहने कि नरहने।",
+        "options": {
+          "dontModify": "क्लिपबोर्ड परिवर्तन नगर्नुहोस्",
+          "copyToClipboard": "क्लिपबोर्डमा कपी गर्नुहोस्"
+        }
+      },
+      "autoSubmit": {
+        "title": "स्वतः सबमिट",
+        "description": "टाँसेपछि सन्देश पठाउन यो कुञ्जी थिच्छ।",
+        "options": {
+          "off": "अफ",
+          "enter": "Enter",
+          "cmdEnter": "Cmd+Enter",
+          "superEnter": "Super+Enter",
+          "ctrlEnter": "Ctrl+Enter"
+        }
+      },
+      "translateToEnglish": {
+        "label": "अङ्ग्रेजीमा अनुवाद गर्नुहोस्",
+        "description": "जुनसुकै भाषा बोले पनि अंग्रेजीमा लेख्छ।"
+      },
+      "modelUnload": {
+        "title": "मोडेल अनलोड",
+        "description": "बोली मोडेल यति समय प्रयोग नभए मेमोरी खाली गर्छ।",
+        "options": {
+          "never": "कहिल्यै होइन",
+          "immediately": "तुरुन्तै",
+          "min2": "2 मिनेटपछि",
+          "min5": "5 मिनेटपछि",
+          "min10": "10 मिनेटपछि",
+          "min15": "15 मिनेटपछि",
+          "hour1": "1 घण्टापछि",
+          "sec15": "15 सेकेन्डपछि (डिबग)"
+        }
+      },
+      "customWords": {
+        "title": "कस्टम शब्दहरू",
+        "description": "नाम र विशेष शब्द सही लेख्न मोडेललाई मद्दत गर्छ।",
+        "placeholder": "शब्द थप्नुहोस्",
+        "add": "थप्नुहोस्",
+        "remove": "{{word}} हटाउनुहोस्",
+        "duplicate": "\"{{word}}\" पहिले नै छ"
+      },
+      "voiceActivityDetection": {
+        "title": "भ्वाइस एक्टिभिटी डिटेक्सन",
+        "description": "रेकर्डिङबाट मौनता हटाउँछ। बन्द हुँदा सबै रेकर्ड हुन्छ।"
+      },
+      "longFormChunking": {
+        "title": "लामो अडियो विभाजन",
+        "description": "लामो रेकर्डिङलाई रोकाइमा टुक्र्याउँछ ताकि राम्रो ट्रान्सक्राइब होस्।"
+      },
+      "languageDetection": {
+        "title": "स्वतःलाई मेरा भाषाहरूमा सीमित गर्नुहोस्",
+        "description": "स्वतः ले तपाईं नबोल्ने भाषा छाने यो खोल्नुहोस्।",
+        "downloadHint": "यो खोल्दा सानो भाषा पहिचानकर्ता डाउनलोड हुन्छ",
+        "downloadingHint": "भाषा पहिचानकर्ता डाउनलोड हुँदैछ। रद्द गर्न यो बन्द गर्नुहोस्"
+      },
+      "vadBackend": {
+        "title": "भ्वाइस एक्टिभिटी ब्याकएन्ड",
+        "description": "Earshot प्रयोगात्मक छ। शब्द काटिए Silero प्रयोग गर्नुहोस्।",
+        "options": {
+          "silero": "Silero",
+          "earshot": "Earshot"
+        }
+      },
+      "fillerWordRemoval": {
+        "title": "फिलर शब्दहरू हटाउनुहोस्",
+        "description": "डिक्टेसनबाट हिचकिचाहटका आवाज र भराइ शब्द हटाउँछ।"
+      },
+      "chineseScript": {
+        "title": "चिनियाँ लिपि",
+        "description": "म्यान्डरिन र क्यान्टोनिज कुन अक्षरमा लेख्ने।",
+        "options": {
+          "asTranscribed": "ट्रान्सक्राइब भए अनुसार",
+          "simplified": "सरलीकृत",
+          "traditionalTw": "परम्परागत (ताइवान)",
+          "traditionalHk": "परम्परागत (हङकङ)"
+        }
+      }
+    },
+    "postProcessing": {
+      "api": {
+        "provider": {
+          "title": "प्रदायक",
+          "description": "OpenAI-अनुकूल वा Anthropic-अनुकूल प्रदायक चयन गर्नुहोस्।"
+        },
+        "apiFormat": {
+          "title": "API ढाँचा",
+          "description": "तपाईंको कस्टम इन्डपोइन्टले अपेक्षा गर्ने अनुरोध ढाँचा।",
+          "options": {
+            "openai": "OpenAI अनुकूल (Chat Completions)",
+            "anthropic": "Anthropic Messages"
+          }
+        },
+        "appleIntelligence": {
+          "unavailable": "यो डिभाइसमा Apple Intelligence उपलब्ध छैन। macOS Tahoe (26.0) वा पछिको संस्करण चलिरहेको र System Settings मा Apple Intelligence सक्षम गरिएको Apple Silicon Mac आवश्यक छ।"
+        },
+        "baseUrl": {
+          "title": "आधार URL",
+          "description": "प्रदायकको API ठेगाना। कस्टमका लागि मात्र सम्पादन गर्न मिल्छ।",
+          "placeholder": "https://api.openai.com/v1",
+          "placeholderAnthropic": "https://api.anthropic.com/v1"
+        },
+        "apiKey": {
+          "title": "API कुञ्जी",
+          "description": "चयन गरिएको प्रदायकका लागि API कुञ्जी।",
+          "placeholder": "sk-..."
+        },
+        "model": {
+          "title": "मोडेल",
+          "descriptionCustom": "तपाईंको कस्टम इन्डपोइन्टले अपेक्षा गर्ने मोडेल पहिचानकर्ता दिनुहोस्।",
+          "descriptionDefault": "चयन गरिएको प्रदायकले उपलब्ध गराएको मोडेल छान्नुहोस्।",
+          "placeholderWithOptions": "मोडेल खोज्नुहोस् वा चयन गर्नुहोस्",
+          "placeholderNoOptions": "मोडेलको नाम टाइप गर्नुहोस्",
+          "refreshModels": "मोडेलहरू रिफ्रेस गर्नुहोस्"
+        }
+      }
+    },
+    "history": {
+      "openFolder": "रेकर्डिङ फोल्डर खोल्नुहोस्",
+      "loading": "हिस्ट्री लोड गरिँदैछ...",
+      "empty": "अहिलेसम्म कुनै ट्रान्सक्रिप्सन छैन। हिस्ट्री बनाउन रेकर्डिङ सुरु गर्नुहोस्!",
+      "copyToClipboard": "ट्रान्सक्रिप्सन क्लिपबोर्डमा कपी गर्नुहोस्",
+      "copyError": "ट्रान्सक्रिप्सन क्लिपबोर्डमा कपी गर्न सकिएन।",
+      "save": "ट्रान्सक्रिप्सन सेभ गर्नुहोस्",
+      "unsave": "सेभ गरिएकाबाट हटाउनुहोस्",
+      "delete": "प्रविष्टि मेटाउनुहोस्",
+      "deleteError": "प्रविष्टि मेटाउन सकिएन। कृपया फेरि प्रयास गर्नुहोस्।",
+      "retranscribe": "फेरि ट्रान्सक्राइब गर्नुहोस्",
+      "cancelTranscription": "ट्रान्सक्रिप्सन रद्द गर्नुहोस्",
+      "transcribing": "ट्रान्सक्राइब गरिँदैछ...",
+      "transcriptionFailed": "ट्रान्सक्रिप्सन गर्न सकिएन। रिट्राई आइकन प्रयोग गरेर फेरि ट्रान्सक्राइब गर्न सक्नुहुन्छ।",
+      "notTranscribed": "ट्रान्सक्राइब भएको छैन। रिट्राई आइकन प्रयोग गरेर ट्रान्सक्राइब गर्न सक्नुहुन्छ।",
+      "transcribeFile": "फाइल ट्रान्सक्राइब गर्नुहोस्",
+      "mediaFiles": "अडियो र भिडियो",
+      "fileUnsupported": "{{name}} बाट अडियो पढ्न सकिएन।",
+      "transcribeFailed": "ट्रान्सक्रिप्सन असफल भयो। कृपया फेरि प्रयास गर्नुहोस्।",
+      "waiting": "ट्रान्सक्राइब हुन पर्खँदै",
+      "transcribingPercent": "ट्रान्सक्राइब हुँदै, {{percent}}%",
+      "readingFile": "फाइल पढिँदैछ...",
+      "showMore": "थप देखाउनुहोस्",
+      "showLess": "कम देखाउनुहोस्",
+      "dropTitle": "ट्रान्सक्राइब गर्न छोड्नुहोस्",
+      "dropDescription": "यो इतिहासमा देखिनेछ।",
+      "tabs": {
+        "label": "History type",
+        "dictation": "Dictation",
+        "readAloud": "Read Aloud",
+        "rewrite": "Rewrite"
+      },
+      "readAloud": {
+        "empty": "Nothing read aloud yet. Select text anywhere and press your Read Aloud shortcut.",
+        "readAgain": "Read again",
+        "meta": "{{voice}} · {{speed}}x",
+        "kept_one": "The last read is kept",
+        "kept_other": "Last {{count}} reads are kept",
+        "playing": "Reading, sentence {{index}} of {{total}}",
+        "stop": "Stop reading"
+      },
+      "rewrite": {
+        "empty": "No rewrites yet. Select text anywhere and press a Refine shortcut.",
+        "kept_one": "The last rewrite is kept",
+        "kept_other": "Last {{count}} rewrites are kept"
+      },
+      "playRecording": "Play recording",
+      "noRecording": "Audio not kept",
+      "savedOnly": "Saved",
+      "savedEmpty": "Nothing saved yet. Press the star on an entry to keep it here.",
+      "audioError": "Couldn't open this recording",
+      "days": {
+        "today": "Today",
+        "yesterday": "Yesterday"
+      }
+    },
+    "debug": {
+      "title": "डिबग",
+      "logDirectory": {
+        "title": "लग डाइरेक्टरी",
+        "description": "लग फाइलहरू भण्डारण हुने स्थान"
+      },
+      "logLevel": {
+        "title": "लग स्तर",
+        "description": "लगिङको विस्तार स्तर सेट गर्नुहोस्"
+      },
+      "liveLogs": {
+        "title": "लाइभ लगहरू",
+        "description": "प्यानल खुला रहँदा तपाईंको लग स्तरका नयाँ लाइन देखाउँछ।",
+        "live": "लाइभ",
+        "paused": "रोकिएको",
+        "pause": "रोक्नुहोस्",
+        "resume": "जारी राख्नुहोस्",
+        "copied": "कपी गरियो",
+        "lineCount": "{{count}} लाइनहरू",
+        "empty": "लगहरूको प्रतीक्षा गरिँदैछ… एपले लग निकाल्दा यहाँ देखिनेछन्।"
+      },
+      "updateChecks": {
+        "label": "अपडेटहरू जाँच गर्नुहोस्",
+        "description": "Glider को नयाँ संस्करण स्वतः जाँच गर्नुहोस्",
+        "lockedDescription": "प्रणाली कन्फिगरेसनद्वारा असक्षम पारिएको (GLIDER_DISABLE_UPDATER)"
+      },
+      "whatsNewPreview": {
+        "title": "नयाँ के छ पूर्वावलोकन",
+        "description": "पछिल्लो बन्डल गरिएको रिलिज नोट हेरिएको चिन्ह नलगाई खोल्नुहोस्",
+        "button": "पूर्वावलोकन"
+      },
+      "onboardingPreview": {
+        "title": "प्रारम्भिक सेटअप पूर्वावलोकन",
+        "description": "केही नबदली सुरुका स्क्रिनहरू हेर्नुहोस्।",
+        "exitButton": "पूर्वावलोकन बन्द गर्नुहोस्",
+        "choose": "स्क्रिन छान्नुहोस्",
+        "screens": {
+          "welcome": "स्वागत",
+          "permissions": "अनुमतिहरू",
+          "model": "मोडेल",
+          "demo": "डेमो",
+          "try": "प्रयास गर्नुहोस्",
+          "done": "सबै तयार",
+          "voices": "Voices",
+          "refine": "Refine model"
+        }
+      },
+      "onboardingRun": {
+        "title": "अनबोर्डिङ चलाउनुहोस्",
+        "description": "पहिलो सेटअप साँच्चै चलाउँछ: अनुमति र मोडेल डाउनलोड।",
+        "button": "सुरु गर्नुहोस्"
+      },
+      "modelMigration": {
+        "title": "मोडेल माइग्रेसन",
+        "description": "पुरानो ढाँचाका मोडेलको अपडेट स्क्रिन साँचो रूपमा खोल्नुहोस्: यसले प्रतिस्थापन डाउनलोड गर्छ, मोडेल बदल्छ र पुराना फाइल मेटाउँछ",
+        "button": "खोल्नुहोस्"
+      },
+      "soundTheme": {
+        "label": "साउन्ड थिम",
+        "description": "रेकर्डिङ सुरु र बन्द फिडब्याकका लागि साउन्ड थिम छान्नुहोस्"
+      },
+      "wordCorrectionThreshold": {
+        "title": "शब्द सुधार थ्रेसहोल्ड",
+        "description": "कस्टम शब्द सुधारको संवेदनशीलता"
+      },
+      "historyLimit": {
+        "title": "हिस्ट्री सीमा",
+        "description": "कति हालका डिक्टेसनको अडियो राख्ने। पाठ सधैं राखिन्छ।",
+        "entries": "प्रविष्टिहरू"
+      },
+      "recordingRetention": {
+        "title": "रेकर्डिङहरू स्वतः मेटाउनुहोस्",
+        "description": "ठाउँ बचाउन पुराना रेकर्डिङहरू स्वतः मेटाउनुहोस्",
+        "never": "कहिल्यै होइन",
+        "preserveLimit": "पछिल्ला {{count}} राख्नुहोस्",
+        "days3": "3 दिनपछि",
+        "weeks2": "2 हप्तापछि",
+        "months3": "3 महिनापछि",
+        "placeholder": "राख्ने अवधि चयन गर्नुहोस्..."
+      },
+      "alwaysOnMicrophone": {
+        "label": "सधैँ-सक्रिय माइक्रोफोन",
+        "description": "छिटो प्रतिक्रियाका लागि माइक्रोफोन सक्रिय राख्नुहोस्"
+      },
+      "clamshellMicrophone": {
+        "title": "क्ल्यामशेल माइक्रोफोन",
+        "description": "ल्यापटपको ढकनी बन्द हुँदा प्रयोग गर्ने माइक्रोफोन"
+      },
+      "postProcessingToggle": {
+        "label": "पोस्ट प्रोसेसिङ",
+        "description": "ट्रान्सक्रिप्सनपछि AI-आधारित टेक्स्ट परिष्करण अन गर्नुहोस्"
+      },
+      "muteWhileRecording": {
+        "label": "रेकर्डिङ गर्दा म्युट गर्नुहोस्",
+        "description": "रेकर्डिङका बेला सिस्टम अडियो म्युट गर्नुहोस्"
+      },
+      "appendTrailingSpace": {
+        "label": "अन्त्यमा खाली ठाउँ थप्नुहोस्",
+        "description": "पेस्ट गरिएको ट्रान्सक्रिप्सनपछि खाली ठाउँ थप्नुहोस्"
+      },
+      "keyboardImplementation": {
+        "title": "किबोर्ड कार्यान्वयन",
+        "description": "किबोर्ड सर्टकट ब्याकइन्ड छान्नुहोस्।",
+        "bindingsReset": "किबोर्ड सर्टकटहरू असंगत भएकाले डिफल्टमा रिसेट गरियो"
+      },
+      "pasteDelay": {
+        "title": "पेस्ट ढिलाइ (अघि)",
+        "description": "कपीपछि, टाँस्नुअघि पर्खाइ। केही नटाँसिए बढाउनुहोस्।"
+      },
+      "pasteDelayAfter": {
+        "title": "पेस्ट ढिलाइ (पछि)",
+        "description": "क्लिपबोर्ड फर्काउनुअघि पर्खाइ। पुरानो पाठ टाँसिए बढाउनुहोस्।"
+      },
+      "holdThreshold": {
+        "title": "थिचिराख्ने सीमा",
+        "description": "थिचाइ कति लामो भए होल्ड मानिन्छ।"
+      },
+      "reliablePaste": {
+        "title": "भरपर्दो पेस्ट (Beta)",
+        "description": "एपले टाँसेपछि मात्र क्लिपबोर्ड फर्काउँछ।"
+      },
+      "recordingBuffer": {
+        "title": "अतिरिक्त रेकर्डिङ बफर",
+        "description": "छोडेपछि अलि बेर रेकर्ड गर्छ ताकि अन्तिम शब्द नकाटियोस्।"
+      },
+      "languageDetectionWindow": {
+        "title": "भाषा पहिचान अडियो",
+        "description": "डिटेक्टरले सुन्ने सेकेन्ड। लामो भए सटीक तर ढिलो।"
+      },
+      "keyboardDiagnostic": {
+        "title": "किबोर्ड डायग्नोस्टिक",
+        "description": "Glider सम्म पुग्ने कुञ्जी थिचाइ गन्छ, कुन कुञ्जी भनेर कहिल्यै होइन।",
+        "run": "१० सेकेन्डको डायग्नोस्टिक चलाउनुहोस्",
+        "running": "सुनिरहेको छ… आफ्नो सर्टकट केही पटक थिच्नुहोस् (जस्तै Option+Space)",
+        "secureInputLabel": "Secure Input",
+        "enabled": "सक्षम",
+        "disabled": "अक्षम",
+        "holder": "{{name}} (pid {{pid}}) ले समातेको छ",
+        "holderUnknown": "देखिने कुनै धारक छैन",
+        "keyDown": "कुञ्जी थिचिएको",
+        "keyUp": "कुञ्जी छाडिएको",
+        "flagsChanged": "मोडिफायर",
+        "mouse": "माउस",
+        "verdictBlocked": "Secure Input ले कुञ्जी इभेन्टहरू रोकिरहेको छ — यो समाधान नभएसम्म सामान्य कुञ्जी भएका सर्टकटहरूले काम गर्न सक्दैनन्।",
+        "verdictSuspicious": "मोडिफायर इभेन्टहरू आए तर कुञ्जी इभेन्ट आएनन् — Secure Input अक्षम देखिए पनि केहीले कुञ्जीहरू दबाइरहेको छ। कृपया यसको रिपोर्ट GitHub मा गर्नुहोस्।",
+        "verdictOk": "कुञ्जी इभेन्टहरू Glider सम्म सामान्य रूपमा पुगिरहेका छन्।",
+        "verdictNoEvents": "कुनै इभेन्ट कैद भएन — के तपाईंले परीक्षणको क्रममा कुनै कुञ्जी थिच्नुभयो?",
+        "failed": "डायग्नोस्टिक असफल: {{error}}"
+      },
+      "lede": "Tools for tracking down problems. Most people never need these.",
+      "groups": {
+        "logs": "Logs",
+        "previews": "Previews",
+        "previewsDescription": "Open screens without changing your settings.",
+        "timing": "Timing and sound",
+        "input": "Input"
+      }
+    },
+    "about": {
+      "version": {
+        "title": "संस्करण",
+        "description": "Glider को हालको संस्करण"
+      },
+      "whatsNewUpdates": {
+        "label": "नयाँ के छ देखाउनुहोस्",
+        "description": "Glider अपडेट भएपछि रिलिज नोटहरू देखाउनुहोस्"
+      },
+      "appDataDirectory": {
+        "title": "एप डेटा डाइरेक्टरी"
+      },
+      "sourceCode": {
+        "title": "स्रोत कोड",
+        "description": "स्रोत कोड हेर्नुहोस् र योगदान गर्नुहोस्",
+        "button": "GitHub मा हेर्नुहोस्"
+      },
+      "acknowledgments": {
+        "title": "आभार",
+        "ggml": {
+          "title": "ggml",
+          "description": "अन-डिभाइस मेसिन लर्निङ अनुमानका लागि उच्च-प्रदर्शन टेन्सर लाइब्रेरी",
+          "details": "Glider को स्थानीय स्पिच-टु-टेक्स्ट transcribe.cpp र ggml मा आधारित छ। Georgi Gerganov र योगदानकर्ताहरूको उत्कृष्ट कामका लागि धन्यवाद।"
+        },
+        "view": "View",
+        "handy": {
+          "title": "Handy",
+          "description": "Glider को डिक्टेसन CJ Pais को Handy मा आधारित छ, MIT लाइसेन्स।"
+        },
+        "sherpa": {
+          "title": "sherpa-onnx",
+          "description": "Read Aloud का आवाजहरू sherpa-onnx मा चल्छन्।"
+        },
+        "description": "Glider stands on these open-source projects.",
+        "candle": {
+          "title": "candle",
+          "description": "Rewrite, Hugging Face को Rust ML लाइब्रेरी candle मा चल्छ।"
+        }
+      },
+      "appTitle": "App",
+      "star": {
+        "title": "Like Glider?",
+        "description": "Star it on GitHub so other developers can find it.",
+        "button": "Star on GitHub"
+      }
+    },
+    "readAloud": {
+      "title": "Read Aloud",
+      "description": "Select text anywhere and Glider reads it to you with an AI voice that runs on this computer.",
+      "voice": {
+        "title": "Voice",
+        "description": "Which speaker reads your text."
+      },
+      "language": {
+        "title": "भाषा",
+        "description": "आवाजले तपाईंको पाठ पढ्ने भाषा।"
+      },
+      "speed": {
+        "title": "Speed",
+        "description": "How fast the voice reads. 1.0x is normal."
+      },
+      "models": {
+        "downloadFailed": "Couldn't download the voice"
+      },
+      "setupTitle": "Setup",
+      "model": {
+        "title": "Voice model",
+        "none": "No voice downloaded yet",
+        "change": "Change",
+        "download": "Get a voice",
+        "summary": "{{name}} · {{language}} · {{size}} MB"
+      },
+      "shortcutHint": "Press again while it reads to stop.",
+      "livePreview": {
+        "title": "लाइभ पूर्वावलोकन",
+        "description": "पढिँदै गरेको वाक्य प्लेयरमाथि देखाउनुहोस्।"
+      },
+      "intro": {
+        "hint": "Works anywhere you can select text. Press the shortcut again to stop.",
+        "hintMac": "Works anywhere you can select text. F8 pauses, F7 and F9 skip, Esc stops.",
+        "sample": "Long replies are easier to take in when you can sit back and listen.",
+        "label": "Example",
+        "try": "Try it",
+        "stop": "Stop"
+      }
+    },
+    "dictation": {
+      "description": "How Glider listens, turns your speech into text, and types it.",
+      "livePreview": {
+        "title": "लाइभ पूर्वावलोकन",
+        "description": "बोल्दाबोल्दै शब्द देखाउँछ, लाइभ प्रिभ्यू भएका मोडेलमा।"
+      },
+      "intro": {
+        "hint": "Keep holding while you talk, then let go. The text lands where your cursor is.",
+        "said": "can you send me the deck before tomorrow's call",
+        "typed": "Can you send me the deck before tomorrow's call?",
+        "label": "Example",
+        "try": "Try it"
+      }
+    }
+  },
+  "footer": {
+    "checkingUpdates": "अपडेटहरू जाँच गरिँदैछ...",
+    "updateAvailableShort": "अपडेट उपलब्ध छ",
+    "upToDate": "अद्यावधिक छ",
+    "updateCheckingDisabled": "अपडेट जाँच अफ छ",
+    "downloading": "डाउनलोड गरिँदैछ... {{progress}}%",
+    "installing": "इन्स्टल गरिँदैछ...",
+    "preparing": "तयारी गरिँदैछ...",
+    "checkForUpdates": "अपडेटहरू जाँच गर्नुहोस्",
+    "portableUpdateTitle": "म्यानुअल अपडेट आवश्यक",
+    "portableUpdateMessage": "पोर्टेबल इन्स्टलहरू स्वतः अपडेट गर्न सकिँदैन। तलबाट आफ्नो प्रणालीका लागि इन्स्टलर डाउनलोड गर्नुहोस्, चलाउनुहोस् र उही फोल्डरमा इन्स्टल गर्नुहोस् — तपाईंको Data/ फोल्डर (सेटिङ, मोडेल, रेकर्डिङ) जस्ताको तस्तै रहन्छ।",
+    "portableUpdateButton": "इन्स्टलर डाउनलोड गर्नुहोस्",
+    "portableUpdateBrowseMessage": "पोर्टेबल इन्स्टलहरू स्वतः अपडेट गर्न सकिँदैन। GitHub Releases बाट आफ्नो प्रणालीका लागि पछिल्लो संस्करण डाउनलोड गर्नुहोस् र उही फोल्डरमा इन्स्टल गर्नुहोस् — तपाईंको Data/ फोल्डर (सेटिङ, मोडेल, रेकर्डिङ) जस्ताको तस्तै रहन्छ।",
+    "portableUpdateBrowseButton": "GitHub Releases खोल्नुहोस्",
+    "noVoice": "No voice yet",
+    "voiceLabel": "Voice: {{voice}}",
+    "dictationModel": "Dictation model",
+    "readAloudModel": "Read aloud voice",
+    "rewriteModel": "Rewrite model",
+    "noRewriteModel": "No rewrite model yet",
+    "rewriteLabel": "Rewrite model: {{model}}",
+    "chooseVoices": "Voices",
+    "voicesTitle": "Choose a voice",
+    "providerDesc": "Runs on {{provider}}, online"
+  },
+  "whatsNew": {
+    "title": "Glider v{{version}} मा नयाँ"
+  },
+  "common": {
+    "playbackPosition": "प्लेब्याकको स्थान",
+    "resetSetting": "{{setting}}लाई पूर्वनिर्धारित मानमा रिसेट गर्नुहोस्",
+    "loading": "लोड गरिँदैछ...",
+    "delete": "मेटाउनुहोस्",
+    "close": "बन्द गर्नुहोस्",
+    "open": "खोल्नुहोस्",
+    "copy": "कपी गर्नुहोस्",
+    "clear": "खाली गर्नुहोस्",
+    "noOptionsFound": "कुनै विकल्प भेटिएन",
+    "hearExample": "उदाहरण सुन्नुहोस्",
+    "muteExample": "उदाहरण म्युट गर्नुहोस्"
+  },
+  "errors": {
+    "micPermissionDeniedTitle": "माइक्रोफोन पहुँच अस्वीकृत गरियो",
+    "micPermissionDenied": {
+      "generic": "अपरेटिङ सिस्टमले माइक्रोफोन पहुँच अस्वीकार गर्‍यो। कृपया सिस्टम सेटिङहरूमा माइक्रोफोन अनुमति दिनुहोस्।",
+      "windows": "Settings → Privacy & security → Microphone मा माइक्रोफोन पहुँच अन गर्नुहोस् (डेस्कटप एप पहुँचसहित)।",
+      "macos": "System Settings → Privacy & Security → Microphone मा माइक्रोफोन पहुँच दिनुहोस्।",
+      "linux": "आफ्नो सिस्टमको साउन्ड वा गोपनीयता सेटिङहरूमा माइक्रोफोन पहुँच दिनुहोस्।"
+    },
+    "noInputDeviceTitle": "कुनै माइक्रोफोन भेटिएन",
+    "noInputDevice": "कुनै अडियो इनपुट डिभाइस भेटिएन। कृपया माइक्रोफोन वा हेडसेट जोडेर फेरि प्रयास गर्नुहोस्।",
+    "recordingFailedTitle": "रेकर्डिङ सुरु गर्न सकिएन",
+    "modelLoadFailed": "Glider ले यो मोडेल लोड गर्न सकेन। फेरि प्रयास गर्नुहोस् वा अर्को मोडेल छान्नुहोस्।",
+    "modelLoadFailedTitle": "मोडेल लोड गर्न सकिएन",
+    "modelDownloadFailed": "डाउनलोड असफल भयो",
+    "pasteFailedTitle": "टेक्स्ट पेस्ट गर्न सकिएन",
+    "pasteFailed": "सक्रिय एपमा टेक्स्ट पेस्ट गर्न सकिएन।",
+    "postProcessFailedTitle": "पोस्ट प्रोसेस बिना पेस्ट गरियो",
+    "postProcessFailed": "पोस्ट प्रोसेस पूरा भएन, त्यसैले ट्रान्सक्रिप्ट जस्तो थियो त्यस्तै पेस्ट गरियो।",
+    "filePostProcessFailedTitle": "पोस्ट प्रोसेस बिना ट्रान्सक्राइब गरियो",
+    "filePostProcessFailed": "पोस्ट प्रोसेस पूरा भएन, त्यसैले ट्रान्सक्रिप्ट जस्तो थियो त्यस्तै सुरक्षित गरियो।",
+    "fileTranscriptionFailedTitle": "फाइल ट्रान्सक्रिप्सन गर्न सकिएन",
+    "transcriptionFailedTitle": "ट्रान्सक्रिप्सन गर्न सकिएन",
+    "noTextSelectedTitle": "No Text Selected",
+    "noTextSelected": "Select some text first, then press the Read Aloud shortcut.",
+    "voiceModelMissingTitle": "No Voice Downloaded",
+    "voiceModelMissing": "Download a voice in Read Aloud settings first.",
+    "readAloudFailedTitle": "Read Aloud Failed",
+    "refineFailedTitle": "Refine Failed",
+    "refineFailed": "The selected text couldn't be rewritten. Check the Post Process provider and model.",
+    "noLlmModelTitle": "No Rewrite Model",
+    "noLlmModel": "Download a rewrite model in Models, then try again."
+  },
+  "notices": {
+    "errorOne": "{{n}} त्रुटि",
+    "errorMany": "{{n}} त्रुटिहरू",
+    "warningOne": "{{n}} चेतावनी",
+    "warningMany": "{{n}} चेतावनीहरू",
+    "errorsAndWarnings": "{{errors}}, {{warnings}}"
+  },
+  "appLanguage": {
+    "title": "एपको भाषा",
+    "description": "Glider इन्टरफेसको भाषा परिवर्तन गर्नुहोस्"
+  },
+  "theme": {
+    "title": "अनुप्रयोगको थिम",
+    "description": "प्रणाली अनुसार, वा सधैं उज्यालो वा अँध्यारो।",
+    "options": {
+      "system": "सिस्टम",
+      "light": "उज्यालो",
+      "dark": "अँध्यारो"
+    }
+  },
+  "overlay": {
+    "transcribing": "ट्रान्सक्राइब गरिँदैछ...",
+    "loadingModel": "मोडेल लोड गरिँदैछ...",
+    "readingAloud": "Reading aloud",
+    "preparingVoice": "Preparing voice...",
+    "refining": "Refining",
+    "seeChanges": "See changes",
+    "changesLabel": "Changes",
+    "changes_one": "{{count}} change",
+    "changes_other": "{{count}} changes",
+    "toUndo": "to undo",
+    "close": "Close",
+    "copy": "Copy",
+    "again": "Refine again",
+    "previous": "Previous sentence",
+    "next": "Next sentence",
+    "pause": "Pause",
+    "play": "Play",
+    "slower": "Slower",
+    "faster": "Faster",
+    "listening": "Listening",
+    "cancel": "Cancel",
+    "finishAndPaste": "सकेर टाँस्नुहोस्",
+    "usingRewrite": "{{name}} प्रयोग गर्दै",
+    "done": "भयो",
+    "doneReading": "पढ्न सकियो",
+    "noVoiceYet": "अहिलेसम्म आवाज छैन",
+    "getVoice": "आवाज लिनुहोस्",
+    "nowhereHint": "पहिले टेक्स्ट बाकसमा क्लिक गर्नुहोस्, अनि बोल्नुहोस्",
+    "savedInHistory": "इतिहासमा पनि सुरक्षित",
+    "pasteHint": "टेक्स्ट बाकसमा क्लिक गरी {{keys}} थिच्नुहोस्",
+    "copied": "प्रतिलिपि भयो",
+    "sentence": "वाक्य {{index}} / {{total}}",
+    "toStop": "रोक्न",
+    "copyResult": "नतिजा प्रतिलिपि गर्नुहोस्"
+  },
+  "secureInput": {
+    "blockedWithCulprit_one": "{{name}} ले 1 सर्टकट रोकिरहेको हुन सक्छ",
+    "blockedWithCulprit_other": "{{name}} ले {{count}} सर्टकटहरू रोकिरहेको हुन सक्छ",
+    "blockedNoCulprit_one": "macOS ले अस्थायी रूपमा 1 सर्टकट रोकिरहेको छ",
+    "blockedNoCulprit_other": "macOS ले अस्थायी रूपमा {{count}} सर्टकटहरू रोकिरहेको छ",
+    "recorderBlockedWithCulprit": "{{name}} ले सर्टकट परिवर्तन रोकिरहेको हुन सक्छ",
+    "recorderBlockedNoCulprit": "macOS ले अस्थायी रूपमा सर्टकट परिवर्तन रोकिरहेको छ",
+    "learnMore": "यसलाई कसरी ठिक गर्ने",
+    "recorderBlocked": "अहिले सर्टकट रेकर्ड गर्न सकिँदैन — macOS Secure Input ले कुञ्जी इभेन्टहरू रोकिरहेको छ। पहिले Secure Input चेतावनी समाधान गर्नुहोस्।",
+    "dismiss": "हटाउनुहोस्"
+  },
+  "home": {
+    "welcome": "Welcome back",
+    "welcomeName": "Welcome back, {{name}}",
+    "shortcutsLabel": "Your shortcuts",
+    "statsLabel": "Your numbers",
+    "dictateLine": "Hold <keys/> to dictate",
+    "dictateHint": "Works in every app. What you say is typed where your cursor is.",
+    "listenLine": "Select text, press <keys/> to listen",
+    "listenHint": "Hear AI replies, docs and web pages read aloud, up to 3x speed.",
+    "listening": "Listening...",
+    "reading": "Reading aloud...",
+    "changeShortcuts": "Change shortcuts",
+    "stats": {
+      "dictated": "words dictated",
+      "read": "words read aloud",
+      "streak_one": "day streak",
+      "streak_other": "day streak"
+    },
+    "today": "Today",
+    "seeAll": "See all history",
+    "filterLabel": "Show only",
+    "empty": "Nothing yet today. Your dictations, reads and rewrites will show up here.",
+    "kind": {
+      "dictation": "Dictation",
+      "read": "Read aloud",
+      "rewrite": "Rewrite"
+    },
+    "howToUse": "How to use",
+    "tutorial": {
+      "play": "Play the how-to video",
+      "title": "See how Glider works",
+      "soon": "Video coming soon",
+      "button": "Tutorial"
+    }
+  },
+  "insights": {
+    "rangeLabel": "Time range",
+    "last30": "30 days",
+    "allTime": "All time",
+    "wpmUp": "Up from {{from}} in {{month}}",
+    "wpmDown": "Down from {{from}} in {{month}}",
+    "wpmSteady": "Steady since {{month}}",
+    "wpmNoTrend": "Trend shows from next week",
+    "wpmEmpty": "Dictate to see your pace",
+    "hours": "{{n}} h",
+    "minutes": "{{n}} min",
+    "timeListened": "Time listened",
+    "longestRead": "Longest read",
+    "words_one": "{{n}} word",
+    "words_other": "{{n}} words",
+    "appsLabel": "Where you dictate",
+    "appsTitle": "Where you talk",
+    "appsHint": "Dictated words by app",
+    "appsEmpty": "Dictate in a few apps and they show up here.",
+    "otherApps": "Other",
+    "appShare": "{{name}}, {{share}}%",
+    "streakLabel": "Streak",
+    "streak_one": "{{count}} day streak",
+    "streak_other": "{{count}} day streak",
+    "noStreak": "No streak yet",
+    "longest_one": "Longest {{count}} day",
+    "longest_other": "Longest {{count}} days",
+    "calendarLabel": "Days you used Glider over the last {{weeks}} weeks",
+    "dayWords_one": "{{day}}: {{count}} word",
+    "dayWords_other": "{{day}}: {{count}} words",
+    "days": {
+      "mon": "Mon",
+      "wed": "Wed",
+      "fri": "Fri",
+      "sun": "Sun"
+    },
+    "less": "Less",
+    "more": "More",
+    "today": "Today",
+    "summary30": "In the last 30 days you dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summary30NoPace": "In the last 30 days you dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAll": "So far you have dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAllNoPace": "So far you have dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryEmpty": "Dictate, listen or rewrite something and your numbers show up here.",
+    "pace": "{{n}} a minute",
+    "rewriteCount_one": "{{n}} rewrite",
+    "rewriteCount_other": "{{n}} rewrites",
+    "savedHours_one": "{{count}} hour",
+    "savedHours_other": "{{count}} hours",
+    "savedMinutes_one": "{{count}} minute",
+    "savedMinutes_other": "{{count}} minutes",
+    "activityTitle": "Activity",
+    "lastDays": "Last {{total}} days.",
+    "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
+    "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
+    "speakingAbove": "Speaking, above",
+    "listeningBelow": "Listening, below",
+    "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
+    "busiest": "Busiest {{day}}.",
+    "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
+    "wpmUnit": "words a minute",
+    "heardUnit": "words heard",
+    "rewritesUnit_one": "rewrite",
+    "rewritesUnit_other": "rewrites",
+    "usuallyAt": "Usually at {{speed}}x",
+    "wordsRewritten_one": "{{n}} word rewritten",
+    "wordsRewritten_other": "{{n}} words rewritten",
+    "dictations": "Dictations",
+    "average": "Average",
+    "longestDictation": "Longest",
+    "languages": "Languages",
+    "reads": "Reads",
+    "voice": "Voice",
+    "rewritesEmpty": "Select text and press a Refine shortcut.",
+    "removedRewrite": "Removed rewrite",
+    "explainLabel": "What {{name}} counts",
+    "inApp": "in {{app}}",
+    "explain": {
+      "dictations": "How many times you held the shortcut and Glider typed something.",
+      "average": "The length of a typical dictation: words divided by dictations.",
+      "longest": "Your single longest dictation in this period.",
+      "languages": "The languages your dictations were transcribed in, most used first.",
+      "reads": "How many times you selected text and Read Aloud read it to you.",
+      "timeListened": "Total time Read Aloud spent speaking, at the speed you chose.",
+      "longestRead": "The most words Read Aloud read in one go.",
+      "voice": "The voice you used for the most reads in this period."
+    }
+  },
+  "rewrite": {
+    "new": "New",
+    "on": "On",
+    "off": "Off",
+    "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
+    "noModel": "No model loaded",
+    "noProvider": "No provider set",
+    "hero": {
+      "polish": "Select text, press <keys/> to polish it",
+      "prompt": "Select text, press <keys/> to make it a prompt",
+      "humanize": "Select text, press <keys/> to humanize it",
+      "grammar": "Select text, press <keys/> to fix its grammar",
+      "custom": "Select text, press <keys/> to run {{name}}",
+      "none": "Add a rewrite to get started"
+    },
+    "heroHint": "Works in Zed, your browser, chat apps, anywhere you can select text. Press {{undo}} to undo.",
+    "tryIt": "Try it",
+    "trying": "Rewriting…",
+    "demo": {
+      "label": "Example",
+      "before": "ok so um the overlay breaks when i press read while its dictating",
+      "results": {
+        "polish": "The overlay breaks when I press Read Aloud during dictation.",
+        "prompt": "Fix the bug where the overlay breaks when Read Aloud is pressed during dictation.",
+        "humanize": "Heads up, the overlay breaks if I hit Read Aloud while I'm dictating.",
+        "grammar": "OK, so, um, the overlay breaks when I press Read while it's dictating."
+      }
+    },
+    "afterDictate": {
+      "title": "After you dictate",
+      "everyTitle": "Rewrite what you dictate",
+      "everyDescription": "Run one rewrite on everything you dictate, before it is typed.",
+      "shortcutTitle": "Dictate and rewrite",
+      "shortcutDescription": "A second dictation shortcut that always rewrites."
+    },
+    "yours": "Your rewrites",
+    "resetAll": "Reset to defaults",
+    "newRewrite": "New rewrite",
+    "newName": "New rewrite",
+    "used_one": "Used {{count}} time",
+    "used_other": "Used {{count}} times",
+    "notUsed": "Not used yet",
+    "customCard": "Your own rewrite. Open it to write what it should do.",
+    "writeOwn": "Write your own",
+    "writeOwnHint": "Tell the model what to do, in plain words.",
+    "compareHint": "Press <keys/> right after a rewrite to compare it with what you wrote.",
+    "runFailed": "The rewrite didn't work. Try again.",
+    "builtin": {
+      "polish": {
+        "card": "Clearer and shorter, in your own voice.",
+        "chip": "polishes selected text",
+        "about": "Polish rewrites your text to read clearer and shorter, and keeps it sounding like you.",
+        "before": "ok so um the overlay thing, when you press the read shortcut while its already dictating it kind of breaks. can you make it so dictation wins and read just waits, and dont touch the settings page",
+        "after": "When I press the Read Aloud shortcut during dictation, the overlay breaks. Make dictation take priority and have Read Aloud wait. Don't touch the settings page."
+      },
+      "prompt": {
+        "card": "Turns a rambling request into a clear task for an AI coding tool.",
+        "chip": "turns selected text into a prompt",
+        "about": "Prompt turns a rambling request into a clear task for an AI coding tool: the goal first, then the details.",
+        "before": "so basically can you like make the history page not jump when a new entry comes in, keep the scroll where it was, and also dont touch the settings page",
+        "after": "Goal: stop the History page from jumping when a new entry arrives.\n- Keep the scroll position where it was.\n- Don't change the settings page."
+      },
+      "humanize": {
+        "card": "Removes stiff, AI-sounding phrasing.",
+        "chip": "humanizes selected text",
+        "about": "Humanize takes out stiff, AI-sounding phrasing so the text reads like a person wrote it.",
+        "before": "I hope this message finds you well. I wanted to reach out to delve into the robust new overlay, which seamlessly elevates the experience.",
+        "after": "Quick note on the new overlay: it's faster and gets out of the way."
+      },
+      "grammar": {
+        "card": "Only spelling and grammar. Nothing else changes.",
+        "chip": "fixes grammar in selected text",
+        "about": "Fix grammar corrects spelling, grammar and punctuation, and leaves every other word as you wrote it.",
+        "before": "i has went to the store yesterday and buyed three apple",
+        "after": "I went to the store yesterday and bought three apples."
+      },
+      "custom": {
+        "chip": "runs {{name}} on selected text",
+        "about": "{{name}} rewrites your text the way its instructions say."
+      }
+    },
+    "options": {
+      "shorter": "Make it shorter",
+      "clarity": "Reword for clarity",
+      "reorder": "Reorder for readability",
+      "lists": "Add lists and paragraphs",
+      "keep_tone": "Keep my tone",
+      "keep_code": "Keep code, file names and commands exactly"
+    },
+    "detail": {
+      "saved": "Saved",
+      "reset": "Reset",
+      "delete": "Delete",
+      "example": "Example",
+      "exampleView": "Example view",
+      "before": "Before",
+      "after": "After",
+      "changes": "Changes",
+      "run": "Run on this example",
+      "running": "Running…",
+      "nameTitle": "Name",
+      "shortcutTitle": "Shortcut",
+      "shortcutName": "{{name}} shortcut",
+      "shortcutHint": "Select text, then press it.",
+      "doesTitle": "What {{name}} does",
+      "instructionsTitle": "Instructions",
+      "instructionsHint": "What the model should do with the text, in plain words.",
+      "instructionsPlaceholder": "For example: turn this into a short, friendly reply.",
+      "extraTitle": "Extra instructions",
+      "extraPlaceholder": "Anything else {{name}} should do. For example: use British spelling.",
+      "modelTitle": "Model",
+      "runsOn": "Runs on",
+      "runsOnLocal": "{{model}}, on this computer",
+      "runsOnProvider": "{{model}}, through your provider",
+      "noModel": "No model yet",
+      "change": "Change"
+    },
+    "samples": {
+      "title": "Writing samples",
+      "hint": "A few things you wrote, so {{name}} matches your style.",
+      "words_one": "{{count}} word",
+      "words_other": "{{count}} words",
+      "remove": "Remove {{name}}",
+      "limit": "Plain text or Markdown, up to {{max}} words each.",
+      "add": "Add a sample",
+      "filter": "Text",
+      "trimmed": "Kept the first {{max}} words of that sample.",
+      "readFailed": "Couldn't read that file."
+    }
+  },
+  "loading": {
+    "label": "Glider is starting"
+  },
+  "topBar": {
+    "theme": "Theme",
+    "showSidebar": "Show sidebar",
+    "hideSidebar": "Hide sidebar"
+  }
+}

@@ -1,0 +1,65 @@
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Button } from "@/common/ui/Button";
+import { SettingContainer } from "@/common/ui/SettingContainer";
+import { WhatsNewModal } from "@/features/updates/whats-new/WhatsNewModal";
+import { findLatestReleaseNote } from "@/features/updates/whats-new/releaseNotes";
+import type { ReleaseNote } from "@/features/updates/whats-new/releaseNotes";
+
+interface WhatsNewPreviewProps {
+  grouped?: boolean;
+}
+
+export const WhatsNewPreview: React.FC<WhatsNewPreviewProps> = ({
+  grouped = false,
+}) => {
+  const { t } = useTranslation();
+  const [note, setNote] = useState<ReleaseNote | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const preview = () => {
+    setIsLoading(true);
+
+    try {
+      const releaseNote = findLatestReleaseNote();
+
+      if (!releaseNote) {
+        console.info("What's New preview: no bundled release notes");
+        return;
+      }
+
+      setNote(releaseNote);
+    } catch (error) {
+      console.error("Failed to preview release notes:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <>
+      <SettingContainer
+        title={t("settings.debug.whatsNewPreview.title")}
+        description={t("settings.debug.whatsNewPreview.description")}
+        grouped={grouped}
+      >
+        <Button
+          variant="secondary"
+          size="md"
+          onClick={preview}
+          disabled={isLoading}
+        >
+          {t("settings.debug.whatsNewPreview.button")}
+        </Button>
+      </SettingContainer>
+
+      {note && (
+        <WhatsNewModal
+          note={note}
+          open={true}
+          onDismiss={() => setNote(null)}
+        />
+      )}
+    </>
+  );
+};

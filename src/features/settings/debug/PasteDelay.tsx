@@ -1,0 +1,45 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { Slider } from "@/common/ui/Slider";
+import { useSettings } from "@/common/settings/useSettings";
+
+type PasteDelayKey = "paste_delay_ms" | "paste_delay_after_ms";
+
+interface PasteDelayProps {
+  grouped?: boolean;
+  settingKey?: PasteDelayKey;
+  labelKey?: string;
+  descriptionKey?: string;
+}
+
+export const PasteDelay: React.FC<PasteDelayProps> = ({
+  grouped = false,
+  settingKey = "paste_delay_ms",
+  labelKey = "settings.debug.pasteDelay.title",
+  descriptionKey = "settings.debug.pasteDelay.description",
+}) => {
+  const { t } = useTranslation();
+  const { settings, updateSetting, resetSetting, isUpdating, isDefault } =
+    useSettings();
+
+  const handleDelayChange = (value: number) => {
+    updateSetting(settingKey, value);
+  };
+
+  return (
+    <Slider
+      value={settings?.[settingKey] ?? 60}
+      onChange={handleDelayChange}
+      onReset={() => resetSetting(settingKey)}
+      showReset={!isDefault(settingKey)}
+      isResetting={isUpdating(settingKey)}
+      min={10}
+      max={5000}
+      step={10}
+      label={t(labelKey)}
+      description={t(descriptionKey)}
+      grouped={grouped}
+      formatValue={(v) => `${v} ms`}
+    />
+  );
+};

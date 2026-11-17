@@ -1,0 +1,1456 @@
+{
+  "tray": {
+    "settings": "設定...",
+    "checkUpdates": "檢查更新...",
+    "copyLastTranscript": "複製最新轉錄",
+    "unloadModel": "卸載模型",
+    "model": "模型",
+    "quit": "結束",
+    "cancel": "取消",
+    "secureInputWarning": "⚠ 快捷鍵被 Secure Input 阻擋",
+    "language": "語言",
+    "autoLanguage": "自動",
+    "otherLanguages": "其他語言"
+  },
+  "sidebar": {
+    "general": "一般",
+    "models": "模型",
+    "advanced": "進階",
+    "history": "歷史紀錄",
+    "debug": "偵錯",
+    "about": "關於",
+    "readAloud": "Read Aloud",
+    "home": "Home",
+    "label": "Sections",
+    "version": "Glider v{{version}}",
+    "insights": "Insights",
+    "rewrite": "Rewrite",
+    "dictation": "Dictation"
+  },
+  "onboarding": {
+    "customModelDescription": "官方不支援",
+    "migration": {
+      "title": "您的模型需要更新",
+      "description": "Glider 現在使用更新的模型類型。請下載新版本以繼續轉錄。舊版本將會移除。",
+      "replaces": "取代 {{name}}",
+      "oldFormat": "舊格式",
+      "failed": "下載失敗",
+      "retry": "重試",
+      "chooseAnother": "選擇其他模型",
+      "download": "下載模型（{{size}}）",
+      "continue": "繼續"
+    },
+    "models": {
+      "small": {
+        "name": "Whisper Small",
+        "description": "快速且相當準確"
+      },
+      "medium": {
+        "name": "Whisper Medium",
+        "description": "準確度高，速度適中"
+      },
+      "turbo": {
+        "name": "Whisper Turbo",
+        "description": "準確度和速度均衡"
+      },
+      "large": {
+        "name": "Whisper Large",
+        "description": "準確度高，但速度較慢"
+      },
+      "breeze-asr": {
+        "name": "Breeze ASR",
+        "description": "針對臺灣華語最佳化。支援語碼轉換。"
+      }
+    },
+    "errors": {
+      "selectModel": "選擇模型失敗"
+    },
+    "permissions": {
+      "microphone": {
+        "name": "麥克風",
+        "why": "讓 Glider 聽得到您說話。音訊只會在這台電腦上轉成文字，絕不會上傳。"
+      },
+      "accessibility": {
+        "name": "輔助使用",
+        "why": "讓快捷鍵在每個應用程式中都能使用，也讓 Glider 能把文字打在游標所在的位置。"
+      },
+      "errors": {
+        "checkFailed": "檢查權限失敗，請重試",
+        "requestFailed": "請求權限失敗，請重試"
+      },
+      "titleMac": "兩項權限，然後就大功告成",
+      "titleWindows": "一項權限，然後就大功告成",
+      "subtitleMac": "macOS 會先詢問，才允許應用程式聆聽或輸入。",
+      "subtitleWindows": "Windows 會先詢問，才允許應用程式聆聽。",
+      "allow": "允許",
+      "openSettings": "開啟設定",
+      "allowed": "已允許",
+      "waiting": "等待中",
+      "turnOnMac": "請在「系統設定」中開啟 Glider，然後回到這裡。",
+      "turnOnWindows": "請在「Windows 設定」中開啟麥克風存取權，然後回到這裡。",
+      "hintBoth": "請允許兩項權限以繼續",
+      "hintMicrophone": "請允許麥克風以繼續",
+      "welcomeBack": "歡迎回來，我們從上次中斷的地方繼續。",
+      "relaunch": "之後快捷鍵沒有反應嗎？<relaunch>重新啟動 Glider</relaunch>，就會直接回到這裡。",
+      "fnKey": {
+        "name": "Fn key",
+        "why": "You hold Fn to dictate. Turn off what macOS does when you press it alone (emoji picker or input switch). You can change it back in System Settings → Keyboard.",
+        "action": "Turn off"
+      }
+    },
+    "shell": {
+      "back": "返回",
+      "continue": "繼續",
+      "progress": "第 {{step}} 步，共 {{count}} 步"
+    },
+    "welcome": {
+      "title": "在任何應用程式中，用說的取代打字",
+      "subtitle": "選擇您要用來聽寫的語言",
+      "languagesLabel": "語言",
+      "noMatch": "找不到符合「{{query}}」的語言。Glider 的模型涵蓋約 100 種語言，更多語言可在設定中找到。",
+      "appLanguage": "應用程式語言",
+      "chinese": {
+        "question": "您說{{languages}}。Glider 該使用哪種字體書寫？",
+        "label": "中文字體",
+        "zh-Hans": "簡體",
+        "zh-Hant": "臺灣",
+        "zh-HK": "香港"
+      },
+      "hint": {
+        "pickOne": "請至少選擇一種語言"
+      },
+      "search": "Search languages",
+      "searchPlaceholder": "Search {{count}} languages"
+    },
+    "download": {
+      "checking": "正在檢查下載內容…",
+      "ready": "{{name}} 已就緒",
+      "failed": "下載已中斷",
+      "downloading": "正在下載 {{name}}",
+      "progress": "{{done}} / {{total}}",
+      "progressLeft": "{{done}} / {{total}}，還需 {{time}}",
+      "checkingName": "正在檢查 {{name}}",
+      "checkingDetail": "確認下載是否完整",
+      "stopped": "{{name}} 已停止下載",
+      "retryDetail": "重試時會從中斷處繼續",
+      "cardProgress": "已下載 {{percent}}%，{{done}} / {{total}}",
+      "timeLeft": "還需 {{time}}",
+      "speedLeft": "{{speed}}，還需 {{time}}"
+    },
+    "model": {
+      "title": "選擇語音模型",
+      "subtitle": "語音模型會直接在這台電腦上把您的語音轉成文字",
+      "label": "語音模型",
+      "lines": {
+        "recommended": "最適合您所用語言的速度與準確度平衡",
+        "faster": "速度較快，但錯誤稍多",
+        "accurate": "錯誤最少，但速度較慢"
+      },
+      "shorts": {
+        "recommended": "最適合您的平衡",
+        "faster": "較快，錯誤稍多",
+        "accurate": "錯誤最少，但較慢"
+      },
+      "model": "模型",
+      "showAll": "顯示全部 {{count}} 個模型",
+      "download": "下載 {{size}}",
+      "downloadInstead": "改為下載 {{size}}",
+      "pauses": "{{name}} 會在 {{percent}}% 暫停",
+      "resumeLater": "再次選擇它即可從中斷處繼續",
+      "hint": "會在您完成設定的同時下載",
+      "bestFor": "Best for {{languages}}",
+      "recommended": "Recommended",
+      "languageCount_one": "{{count}} language",
+      "languageCount_other": "{{count}} languages"
+    },
+    "done": {
+      "title": "全部設定完成",
+      "atLogin": "登入時啟動 Glider",
+      "finish": "完成",
+      "subtitleMac": "Glider is in your menu bar now. It works in every app, even with this window closed.",
+      "subtitle": "Glider is in your system tray now. It works in every app, even with this window closed.",
+      "dictate": "Dictate",
+      "readAloud": "Read Aloud",
+      "languages": "Languages",
+      "speechModel": "Speech model",
+      "holdAndTalk": "Hold and talk",
+      "selectThenPress": "Select, then press",
+      "change": "Change",
+      "later": "You can change these later in Settings"
+    },
+    "downloads": {
+      "background": "Downloads keep going in the background",
+      "label": "Downloads",
+      "underMinute": "less than a minute left",
+      "oneMinute": "1 min left",
+      "minutes_one": "{{count}} min left",
+      "minutes_other": "{{count}} min left",
+      "checking": "Checking…",
+      "ofSize": "{{percent}}% · {{done}} of {{total}} MB",
+      "next": "{{percent}}% · {{name}} next",
+      "about": "about {{left}}",
+      "ready": "Ready: {{names}}",
+      "cancel": "Cancel {{name}}"
+    },
+    "voices": {
+      "title": "Pick your voices",
+      "subtitle": "Pick one for each language you listen in. Add more later in Models.",
+      "label": "Voices",
+      "descriptions": {
+        "kokoro-int8-en-v0_19": "Natural, warm voices. 11 American and British speakers.",
+        "vits-piper-hi_IN-pratham-medium-int8": "A clear Hindi voice. Reads Devanagari text.",
+        "kitten-nano-en-v0_2-fp16": "Tiny and fast. Good for older computers."
+      },
+      "speakers_one": "{{count}} speaker",
+      "speakers_other": "{{count}} speakers",
+      "speed": "Up to 3x speed",
+      "sample": "Sample",
+      "sampleLabel": "Hear {{name}}"
+    },
+    "refine": {
+      "title": "Pick a refine model",
+      "subtitle": "It cleans up and rewrites your text when you ask. You can skip this.",
+      "label": "Refine model",
+      "descriptions": {
+        "qwen3-4b-instruct-2507": "Clear, natural rewrites that keep your tone.",
+        "qwen3-1_7b": "Quicker and lighter, a little less polished."
+      },
+      "quality": "Quality: {{value}}",
+      "speed": "Speed: {{value}}",
+      "memory": "Needs {{n}} GB memory",
+      "levels": {
+        "best": "best",
+        "good": "good",
+        "fair": "fair",
+        "fast": "fast",
+        "moderate": "moderate"
+      },
+      "notNow": "Not now",
+      "notNowHint": "Turn on Rewrite later and pick a model then."
+    },
+    "practice": {
+      "title": "Give it a try",
+      "subtitle": "Both shortcuts work in every app. Try them here first.",
+      "dictate": "1. Click the box, hold <keys/> and talk",
+      "listen": "2. Select that text and press <keys/> to hear it",
+      "boxLabel": "Practice box",
+      "placeholder": "Your words appear here.",
+      "done": "Done",
+      "skip": "You can skip this",
+      "voicesNote": "Read Aloud uses the voices you picked. Downloads finish in the background.",
+      "waiting": "Dictation works once {{model}} finishes downloading."
+    }
+  },
+  "modelTable": {
+    "tags": {
+      "preview": "即時預覽",
+      "previewTitle": "說話時在「即時」懸浮窗中顯示您的文字，停止後再輸入",
+      "translate": "可翻譯",
+      "translateTitle": "可以把您說的話轉成英文文字。請在設定中開啟"
+    },
+    "rubric": {
+      "gradeTitle": "{{language}}準確度：{{grade}}",
+      "accuracyTitle": "{{language}}準確度",
+      "overallTitle": "您所用語言的準確度：{{grade}}",
+      "overall": "您所用語言的準確度",
+      "meaning": {
+        "A": "錯誤非常少：您說的話通常都能原樣呈現",
+        "B": "有些錯誤：偶爾需要修正幾個字",
+        "C": "錯誤頻繁：部分細節可能會遺漏",
+        "D": "錯誤很多：需要檢查並修正輸入的內容",
+        "F": "常常聽不清楚：您說的話有許多可能會出錯"
+      },
+      "unsupported": "這個模型聽不懂{{language}}，所以無法輸入",
+      "unrated": "這個模型聽得懂{{language}}，但我們還沒測量過準確度",
+      "under": "低於 {{max}}%",
+      "between": "{{min}} 至 {{max}}%",
+      "over": "{{min}}% 以上",
+      "speedTitle": "速度：{{speed}}",
+      "speedName": {
+        "0": "非常慢",
+        "1": "慢",
+        "2": "普通",
+        "3": "快",
+        "4": "非常快"
+      },
+      "speedMeaning": {
+        "0": "要等很久文字才會出現",
+        "1": "要等一下文字才會出現",
+        "2": "稍等一下文字就會出現",
+        "3": "文字幾乎立刻出現",
+        "4": "文字立刻出現"
+      },
+      "speedPreview": "{{meaning}}，說話時有即時預覽",
+      "untimed": "我們還沒測量過它的速度",
+      "underSeconds": "少於 {{max}} 秒",
+      "betweenSeconds": "{{min}} 至 {{max}} 秒",
+      "overSeconds": "{{min}} 秒以上"
+    },
+    "roles": {
+      "recommended": "推薦",
+      "faster": "更快",
+      "accurate": "更準確",
+      "fromAll": "所有模型"
+    },
+    "speed": "速度",
+    "size": "大小",
+    "accuracy": "準確度",
+    "search": "搜尋模型",
+    "allLabel": "語音模型",
+    "noMatch": "找不到符合「{{query}}」的項目。試試輸入語言，或是 Whisper、Parakeet 這類系列名稱",
+    "noFilterMatch": "沒有符合這些篩選條件的模型",
+    "speedUntested": "尚未測量速度",
+    "speedWords": {
+      "0": "非常慢，要等很久文字才會出現",
+      "1": "慢，要等一下文字才會出現",
+      "2": "普通，稍等一下文字就會出現",
+      "3": "快，文字幾乎立刻出現",
+      "4": "非常快，文字立刻出現"
+    },
+    "speedWordsPreview": {
+      "0": "非常慢，說話時有即時預覽",
+      "1": "慢，說話時有即時預覽",
+      "2": "普通，說話時有即時預覽",
+      "3": "快，說話時有即時預覽",
+      "4": "非常快，說話時有即時預覽"
+    },
+    "missingLanguage": "缺少某種語言",
+    "allLanguages": "全部",
+    "downloadingLine": "已下載 {{percent}}%（共 {{total}}）",
+    "customLine": "從您的模型資料夾新增。未評分。",
+    "legacyLine": "較舊的下載項目。未評分。"
+  },
+  "languagePicker": {
+    "search": "搜尋語言"
+  },
+  "modelSelector": {
+    "custom": "自訂",
+    "streaming": "串流",
+    "active": "使用中",
+    "noModelsAvailable": "沒有可用的模型",
+    "verifying": "正在驗證 {{modelName}}...",
+    "verifyingGeneric": "正在驗證...",
+    "downloading": "下載中 {{percentage}}%",
+    "downloadingMultiple": "正在下載 {{count}} 個模型...",
+    "modelReady": "模型已就緒",
+    "loading": "正在載入 {{modelName}}...",
+    "loadingGeneric": "載入中...",
+    "modelError": "模型錯誤",
+    "modelUnloaded": "模型已卸載",
+    "noModelDownloadRequired": "無模型 - 需要下載",
+    "downloadSpeed": "{{speed}} MB/s",
+    "lockedWhileTranscribing": "歷史紀錄中的轉錄完成後才能更換模型。"
+  },
+  "settings": {
+    "modelSettings": {
+      "title": "{{model}} 設定",
+      "description": "Options for the speech model you use now."
+    },
+    "general": {
+      "shortcut": {
+        "title": "Glider 快捷鍵",
+        "description": "設定啟動語音轉文字錄製的鍵盤快捷鍵",
+        "loading": "載入快捷鍵中...",
+        "none": "未設定快捷鍵",
+        "notFound": "未找到快捷鍵",
+        "pressKeys": "請按鍵...",
+        "bindings": {
+          "transcribe": {
+            "name": "轉錄快捷鍵",
+            "description": "用於錄製和轉錄語音的鍵盤快捷鍵"
+          },
+          "cancel": {
+            "name": "取消快捷鍵",
+            "description": "用於取消目前錄製的鍵盤快捷鍵"
+          },
+          "transcribe_with_post_process": {
+            "name": "後處理快捷鍵",
+            "description": "可選：專用快捷鍵，使用時一律對轉錄結果套用 AI 後處理"
+          },
+          "speak_selection": {
+            "name": "Read Aloud Shortcut",
+            "description": "朗讀選取的文字。再按一次即停止。"
+          },
+          "refine_1": {
+            "name": "Refine 1",
+            "description": "用旁邊的提示詞改寫選取的文字，並原地取代。"
+          },
+          "refine_2": {
+            "name": "Refine 2",
+            "description": "用旁邊的提示詞改寫選取的文字，並原地取代。"
+          },
+          "refine_3": {
+            "name": "Refine 3",
+            "description": "用旁邊的提示詞改寫選取的文字，並原地取代。"
+          }
+        },
+        "errors": {
+          "set": "無法設定快捷鍵: {{error}}"
+        },
+        "changeLabel": "Change {{name}} ({{keys}})"
+      },
+      "language": {
+        "title": "語言",
+        "description": "你說的語言。指定語言比自動更準確。",
+        "searchPlaceholder": "搜尋語言...",
+        "noResults": "未找到語言",
+        "auto": "自動",
+        "autoUnavailable": {
+          "oneLanguage": "你的語言中只有一種適用於此模型",
+          "undetectable": "不支援{{languages}}",
+          "noMatch": "你的語言都不適用於此模型"
+        },
+        "detectorMissingTitle": "自動模式需要另外下載",
+        "detectorMissing": "此模型無法分辨你說的是哪種語言。自動模式需要一個小型語言偵測器來判斷",
+        "stopDetectorDownload": "停止下載語言偵測器"
+      },
+      "preferredLanguages": {
+        "title": "偏好語言",
+        "description": "您所說的語言。Glider 會依據這些語言推薦模型。",
+        "noMatch": "找不到符合「{{query}}」的語言",
+        "weak": "目前還沒有模型能把{{languages}}辨識得很準。",
+        "change": "Change",
+        "none": "No languages yet"
+      }
+    },
+    "models": {
+      "sections": {
+        "yours": "在這台電腦上",
+        "fits": "適用於您的語言"
+      },
+      "emptyYours": "尚無模型。請從下方選擇一個：下載完成後 Glider 就會使用它。",
+      "showMore": "再顯示 {{count}} 個",
+      "showFewer": "顯示較少",
+      "download": "下載並使用",
+      "downloadingThenUse": "{{percent}}%（共 {{total}}），完成後自動切換",
+      "loading": "載入中…",
+      "deleteAsk": "要刪除 {{name}} 嗎？這會釋出 {{size}} 的空間。",
+      "deleteAskActive": "要刪除 {{name}} 嗎？在您選擇其他模型之前，Glider 無法進行轉錄。",
+      "cancel": "取消",
+      "deleteModel": "刪除 {{name}}",
+      "cancelDownload": "停止下載 {{name}}",
+      "legend": {
+        "open": "模型如何評分",
+        "accuracyNote": "針對您的每一種語言：模型在我們的測試錄音中聽錯了多少字。",
+        "speedNote": {
+          "accelerated": "在我們的測試筆電的顯示晶片上，輸入 30 秒語音所需的時間。這台電腦可能不同。",
+          "cpu": "在我們的測試筆電的處理器上，輸入 30 秒語音所需的時間。這台電腦可能不同。"
+        },
+        "marks": "? 表示尚未測量。— 表示聽不懂該語言。",
+        "howGraded": "How models are graded"
+      },
+      "retiredNotice": {
+        "title": "舊模型已無法在 Glider 中使用",
+        "description": "它們佔用了您電腦上 {{size}} 的空間。",
+        "delete": "刪除模型",
+        "deleteFailed": "部分舊模型無法刪除。請查看記錄檔以了解詳情。"
+      },
+      "rescan": {
+        "tooltip": "重新掃描在 Glider 之外新增到模型資料夾或 Hugging Face 快取中的模型"
+      },
+      "tabs": {
+        "label": "Model type",
+        "speech": "Speech to text",
+        "voices": "Read Aloud voices",
+        "llm": "Large language model"
+      },
+      "lede": "Open-source models that run on this computer. Nothing you say is uploaded.",
+      "columns": {
+        "model": "Model",
+        "quality": "Quality",
+        "memory": "Memory",
+        "language": "Language"
+      },
+      "speed": {
+        "veryFast": "Very fast",
+        "fast": "Fast",
+        "moderate": "Moderate",
+        "slow": "Slow",
+        "verySlow": "Very slow"
+      },
+      "inUse": "In use",
+      "livePreview": "Live preview",
+      "checking": "Checking…",
+      "progress": "{{percent}}% of {{size}}",
+      "progressThenSwitch": "{{percent}}% of {{size}}, then switches",
+      "noGrade": "Doesn't hear this language",
+      "downloadAndUse": "Download and use",
+      "use": "Use",
+      "delete": "Delete {{name}}",
+      "fitsHint": "Picked for {{languages}}. Grades come from our test recordings.",
+      "noMatch": "No models match your search.",
+      "search": "Search models",
+      "sample": "Hear a sample",
+      "noVoices": "No voices yet. Download one below.",
+      "moreVoices": "More voices",
+      "moreVoicesHint": "Each voice downloads once, then works offline.",
+      "llm": {
+        "olderComputers": "Older computers",
+        "needsMemory": "Needs more memory",
+        "gb": "{{n}} GB",
+        "none": "No rewriting model yet. Download one below.",
+        "moreTitle": "More large language models",
+        "moreHint": "Picked for how much memory this computer has. Each downloads once, then works offline.",
+        "providerTitle": "Use a provider instead",
+        "useProvider": "Use a provider",
+        "useProviderHint": "Rewrites go to the service you pick, with your own API key. Only the selected text is sent.",
+        "downloadFailed": "Couldn't download the model. Check your connection and try again.",
+        "multilingual": "Many"
+      },
+      "openFolder": "Open models folder",
+      "openFolderFailed": "Couldn't open the models folder",
+      "notLoaded": "Not loaded",
+      "liveMemory": "Memory this model is using right now",
+      "cancelDeletes": "取消會刪除已下載的部分，需要重新開始下載。"
+    },
+    "languages": {
+      "title": "語言"
+    },
+    "sound": {
+      "title": "聲音",
+      "microphone": {
+        "title": "麥克風",
+        "description": "選擇您偏好的麥克風裝置",
+        "placeholder": "選擇麥克風...",
+        "loading": "載入中..."
+      },
+      "channel": {
+        "title": "輸入聲道",
+        "description": "在多輸入音訊介面上選擇錄音的輸入。",
+        "average": "所有聲道的平均值",
+        "channel": "聲道 {{n}}"
+      },
+      "audioFeedback": {
+        "label": "聲音回饋",
+        "description": "錄製開始和停止時播放聲音"
+      },
+      "outputDevice": {
+        "title": "輸出裝置",
+        "description": "選擇用於聲音回饋的音訊輸出裝置",
+        "placeholder": "選擇輸出裝置...",
+        "loading": "載入中..."
+      },
+      "volume": {
+        "title": "音量",
+        "description": "調整聲音回饋的音量"
+      }
+    },
+    "advanced": {
+      "groups": {
+        "app": "應用程式",
+        "output": "輸出",
+        "transcription": "轉錄",
+        "history": "歷史",
+        "experimental": "實驗性",
+        "outputDescription": "How your words get into the app you are typing in.",
+        "experimentalDescription": "These may change or go away."
+      },
+      "experimentalToggle": {
+        "label": "實驗性功能",
+        "description": "啟用仍在開發中的實驗性功能"
+      },
+      "lazyStreamClose": {
+        "label": "在轉錄之間保持麥克風開啟",
+        "description": "下次聽寫啟動更快。藍牙音質可能變差。"
+      },
+      "airpodsMode": {
+        "label": "AirPods 模式",
+        "description": "從 iPhone 搶回 AirPods，避免錄音無聲。"
+      },
+      "acceleration": {
+        "transcribe": {
+          "title": "硬體加速",
+          "description": "自動會盡量用 GPU，否則用 CPU。"
+        },
+        "gpuDevice": {
+          "auto": "自動"
+        }
+      },
+      "startHidden": {
+        "label": "隱藏啟動",
+        "description": "啟動至系統匣而不開啟視窗"
+      },
+      "autostart": {
+        "label": "開機啟動",
+        "description": "登入電腦時自動啟動 Glider"
+      },
+      "showTrayIcon": {
+        "label": "顯示系統匣圖示",
+        "description": "在系統匣中顯示 Glider 圖示"
+      },
+      "overlay": {
+        "style": {
+          "title": "懸浮窗",
+          "description": "即時會在你說話時顯示文字，需串流模型。",
+          "options": {
+            "none": "無",
+            "minimal": "精簡",
+            "live": "即時"
+          }
+        },
+        "position": {
+          "title": "懸浮窗位置",
+          "description": "聽寫時懸浮窗出現的位置。",
+          "options": {
+            "bottom": "底部",
+            "top": "頂部"
+          }
+        }
+      },
+      "pasteMethod": {
+        "title": "貼上方式",
+        "description": "剪貼簿會貼上，直接會逐字輸入，無只儲存。",
+        "options": {
+          "clipboard": "剪貼簿 ({{modifier}}+V)",
+          "clipboardCtrlShiftV": "剪貼簿 (Ctrl+Shift+V)",
+          "clipboardShiftInsert": "剪貼簿 (Shift+Insert)",
+          "direct": "直接",
+          "none": "無",
+          "externalScript": "外部腳本"
+        },
+        "externalScriptPlaceholder": "/path/to/your/script.sh"
+      },
+      "typingTool": {
+        "title": "輸入工具",
+        "description": "直接輸入所用的 Linux 工具。自動會選最合適的。",
+        "options": {
+          "auto": "自動（推薦）"
+        }
+      },
+      "clipboardHandling": {
+        "title": "剪貼簿處理",
+        "description": "貼上後是否把聽寫內容留在剪貼簿。",
+        "options": {
+          "dontModify": "不修改剪貼簿",
+          "copyToClipboard": "複製到剪貼簿"
+        }
+      },
+      "autoSubmit": {
+        "title": "自動送出",
+        "description": "貼上後按下此鍵，替你送出訊息。",
+        "options": {
+          "off": "關閉",
+          "enter": "Enter",
+          "cmdEnter": "Cmd+Enter",
+          "superEnter": "Super+Enter",
+          "ctrlEnter": "Ctrl+Enter"
+        }
+      },
+      "translateToEnglish": {
+        "label": "翻譯為英語",
+        "description": "無論說什麼語言，都輸出英文。"
+      },
+      "modelUnload": {
+        "title": "卸載模型",
+        "description": "語音模型閒置這麼久後釋放記憶體。",
+        "options": {
+          "never": "從不",
+          "immediately": "立即",
+          "min2": "2 分鐘後",
+          "min5": "5 分鐘後",
+          "min10": "10 分鐘後",
+          "min15": "15 分鐘後",
+          "hour1": "1 小時後",
+          "sec15": "15 秒後（偵錯）"
+        }
+      },
+      "customWords": {
+        "title": "自訂詞彙",
+        "description": "幫助模型正確寫出人名和專有名詞。",
+        "placeholder": "新增詞彙",
+        "add": "新增",
+        "remove": "刪除 {{word}}",
+        "duplicate": "「{{word}}」已存在"
+      },
+      "voiceActivityDetection": {
+        "title": "語音活動偵測",
+        "description": "去除錄音中的靜音。關閉則全部錄下。"
+      },
+      "longFormChunking": {
+        "title": "長音訊分段",
+        "description": "在停頓處切分長錄音，轉寫更準確。"
+      },
+      "languageDetection": {
+        "title": "將自動模式限制為我的語言",
+        "description": "如果自動總選到你不說的語言，請開啟。",
+        "downloadHint": "開啟後會下載一個小型語言偵測器",
+        "downloadingHint": "正在下載語言偵測器。關閉此項即可取消"
+      },
+      "vadBackend": {
+        "title": "語音活動偵測後端",
+        "description": "Earshot 仍在實驗階段。如有漏字，請改用 Silero。",
+        "options": {
+          "silero": "Silero",
+          "earshot": "Earshot"
+        }
+      },
+      "fillerWordRemoval": {
+        "title": "移除語助詞",
+        "description": "去除聽寫中的猶豫聲和語助詞。"
+      },
+      "chineseScript": {
+        "title": "繁簡轉換",
+        "description": "國語和粵語用哪種漢字書寫。",
+        "options": {
+          "asTranscribed": "保持原樣",
+          "simplified": "簡體",
+          "traditionalTw": "繁體（臺灣）",
+          "traditionalHk": "繁體（香港）"
+        }
+      }
+    },
+    "postProcessing": {
+      "api": {
+        "provider": {
+          "title": "供應商",
+          "description": "選擇一個相容 OpenAI 或 Anthropic 的供應商"
+        },
+        "apiFormat": {
+          "title": "API 格式",
+          "description": "自訂端點所需的請求格式",
+          "options": {
+            "openai": "相容 OpenAI (Chat Completions)",
+            "anthropic": "Anthropic Messages"
+          }
+        },
+        "appleIntelligence": {
+          "unavailable": "Apple Intelligence 在此裝置上不可用。需要執行 macOS Tahoe（26.0）或更高版本的 Apple Silicon Mac，並在系統設定中啟用 Apple Intelligence"
+        },
+        "baseUrl": {
+          "title": "基礎網址",
+          "description": "服務商的 API 位址。僅自訂可編輯。",
+          "placeholder": "https://api.openai.com/v1",
+          "placeholderAnthropic": "https://api.anthropic.com/v1"
+        },
+        "apiKey": {
+          "title": "API 金鑰",
+          "description": "所選供應商的 API 金鑰",
+          "placeholder": "sk-..."
+        },
+        "model": {
+          "title": "模型",
+          "descriptionCustom": "輸入自訂端點所需的模型 ID",
+          "descriptionDefault": "從所選供應商的可用模型中選擇",
+          "placeholderWithOptions": "搜尋或選擇模型",
+          "placeholderNoOptions": "輸入模型名稱",
+          "refreshModels": "重新整理模型"
+        }
+      }
+    },
+    "history": {
+      "openFolder": "開啟錄音資料夾",
+      "loading": "載入歷史紀錄中...",
+      "empty": "還沒有轉錄紀錄。開始錄製以建立您的歷史紀錄！",
+      "copyToClipboard": "複製轉錄到剪貼簿",
+      "copyError": "無法將轉錄複製到剪貼簿。",
+      "save": "儲存轉錄",
+      "unsave": "從已儲存中移除",
+      "delete": "刪除條目",
+      "deleteError": "刪除條目失敗，請重試",
+      "retranscribe": "重新轉錄",
+      "cancelTranscription": "取消轉錄",
+      "transcribing": "轉錄中...",
+      "transcriptionFailed": "轉錄失敗。您可以使用重試圖示重新轉錄。",
+      "notTranscribed": "尚未轉錄。您可以使用重試圖示進行轉錄。",
+      "transcribeFile": "轉錄檔案",
+      "mediaFiles": "音訊和影片",
+      "fileUnsupported": "無法讀取 {{name}} 中的音訊。",
+      "transcribeFailed": "轉錄失敗，請重試。",
+      "waiting": "等待轉錄",
+      "transcribingPercent": "正在轉錄，{{percent}}%",
+      "readingFile": "正在讀取檔案...",
+      "showMore": "顯示更多",
+      "showLess": "收合",
+      "dropTitle": "拖放到此處進行轉錄",
+      "dropDescription": "它會出現在歷史記錄中。",
+      "tabs": {
+        "label": "History type",
+        "dictation": "Dictation",
+        "readAloud": "Read Aloud",
+        "rewrite": "Rewrite"
+      },
+      "readAloud": {
+        "empty": "Nothing read aloud yet. Select text anywhere and press your Read Aloud shortcut.",
+        "readAgain": "Read again",
+        "meta": "{{voice}} · {{speed}}x",
+        "kept_one": "The last read is kept",
+        "kept_other": "Last {{count}} reads are kept",
+        "playing": "Reading, sentence {{index}} of {{total}}",
+        "stop": "Stop reading"
+      },
+      "rewrite": {
+        "empty": "No rewrites yet. Select text anywhere and press a Refine shortcut.",
+        "kept_one": "The last rewrite is kept",
+        "kept_other": "Last {{count}} rewrites are kept"
+      },
+      "playRecording": "Play recording",
+      "noRecording": "Audio not kept",
+      "savedOnly": "Saved",
+      "savedEmpty": "Nothing saved yet. Press the star on an entry to keep it here.",
+      "audioError": "Couldn't open this recording",
+      "days": {
+        "today": "Today",
+        "yesterday": "Yesterday"
+      }
+    },
+    "debug": {
+      "title": "偵錯",
+      "logDirectory": {
+        "title": "日誌目錄",
+        "description": "日誌檔案的儲存位置"
+      },
+      "logLevel": {
+        "title": "日誌等級",
+        "description": "設定日誌的詳細程度"
+      },
+      "liveLogs": {
+        "title": "即時日誌",
+        "description": "面板開啟期間，依日誌等級顯示新日誌。",
+        "live": "即時",
+        "paused": "已暫停",
+        "pause": "暫停",
+        "resume": "繼續",
+        "copied": "已複製",
+        "lineCount": "{{count}} 行",
+        "empty": "正在等待日誌…… 應用程式產生日誌時會顯示於此。"
+      },
+      "updateChecks": {
+        "label": "檢查更新",
+        "description": "自動檢查 Glider 的新版本",
+        "lockedDescription": "已被系統設定停用 (GLIDER_DISABLE_UPDATER)"
+      },
+      "whatsNewPreview": {
+        "title": "預覽新功能",
+        "description": "開啟最新內建版本資訊，且不標記為已看過",
+        "button": "預覽"
+      },
+      "onboardingPreview": {
+        "title": "預覽新手引導",
+        "description": "瀏覽首次啟動畫面，不做任何變更。",
+        "exitButton": "結束預覽",
+        "choose": "選擇畫面",
+        "screens": {
+          "welcome": "歡迎",
+          "permissions": "權限",
+          "model": "模型",
+          "demo": "示範",
+          "try": "試用",
+          "done": "設定完成",
+          "voices": "Voices",
+          "refine": "Refine model"
+        }
+      },
+      "onboardingRun": {
+        "title": "執行新手引導",
+        "description": "實際執行首次設定：授權並下載模型。",
+        "button": "開始"
+      },
+      "modelMigration": {
+        "title": "模型遷移",
+        "description": "實際開啟舊格式模型更新畫面：會下載替代模型、切換模型並刪除舊檔案",
+        "button": "開啟"
+      },
+      "soundTheme": {
+        "label": "聲音主題",
+        "description": "選擇錄製開始和停止回饋的聲音主題"
+      },
+      "wordCorrectionThreshold": {
+        "title": "詞彙修正閾值",
+        "description": "自訂詞彙修正的靈敏度"
+      },
+      "historyLimit": {
+        "title": "歷史紀錄上限",
+        "description": "保留音訊的最近聽寫筆數。文字一律保留。",
+        "entries": "筆"
+      },
+      "recordingRetention": {
+        "title": "自動刪除錄音",
+        "description": "自動刪除舊錄音以節省空間",
+        "never": "從不",
+        "preserveLimit": "保留最新 {{count}} 筆",
+        "days3": "3 天後",
+        "weeks2": "2 週後",
+        "months3": "3 個月後",
+        "placeholder": "選擇保留期限..."
+      },
+      "alwaysOnMicrophone": {
+        "label": "麥克風常開",
+        "description": "保持麥克風啟用以獲得更快的回應"
+      },
+      "clamshellMicrophone": {
+        "title": "闔蓋麥克風",
+        "description": "筆記型電腦闔蓋時使用的麥克風"
+      },
+      "postProcessingToggle": {
+        "label": "後處理",
+        "description": "啟用轉錄後的 AI 文字最佳化"
+      },
+      "muteWhileRecording": {
+        "label": "錄製時靜音",
+        "description": "錄製期間靜音系統音訊"
+      },
+      "appendTrailingSpace": {
+        "label": "附加尾部空格",
+        "description": "在貼上的轉錄後新增空格"
+      },
+      "keyboardImplementation": {
+        "title": "鍵盤實作",
+        "description": "選擇鍵盤快捷鍵的後端",
+        "bindingsReset": "鍵盤快捷鍵不相容，已重設為預設值"
+      },
+      "pasteDelay": {
+        "title": "貼上延遲（前）",
+        "description": "複製後到貼上前的等待。若沒貼上就調大。"
+      },
+      "pasteDelayAfter": {
+        "title": "貼上延遲（後）",
+        "description": "還原剪貼簿前的等待。若貼出舊內容就調大。"
+      },
+      "holdThreshold": {
+        "title": "長按判定時長",
+        "description": "按住多久才算長按而非輕點。"
+      },
+      "reliablePaste": {
+        "title": "可靠貼上（Beta）",
+        "description": "等應用程式貼上完成後再還原剪貼簿。"
+      },
+      "recordingBuffer": {
+        "title": "額外錄音緩衝",
+        "description": "放開按鍵後再多錄一會兒，避免截掉最後一個字。"
+      },
+      "languageDetectionWindow": {
+        "title": "語言偵測音訊",
+        "description": "偵測器聆聽的秒數。越長越準，但越慢。"
+      },
+      "keyboardDiagnostic": {
+        "title": "鍵盤診斷",
+        "description": "只計算到達 Glider 的按鍵次數，從不記錄按了哪個鍵。",
+        "run": "執行 10 秒診斷",
+        "running": "正在監聽… 請按幾次您的快捷鍵（例如 Option+Space）",
+        "secureInputLabel": "Secure Input",
+        "enabled": "已啟用",
+        "disabled": "已停用",
+        "holder": "被 {{name}}（pid {{pid}}）占用",
+        "holderUnknown": "找不到占用的程式",
+        "keyDown": "按鍵按下",
+        "keyUp": "按鍵放開",
+        "flagsChanged": "修飾鍵",
+        "mouse": "滑鼠",
+        "verdictBlocked": "Secure Input 正在阻擋按鍵事件——在問題解決前，包含一般按鍵的快捷鍵無法運作。",
+        "verdictSuspicious": "收到了修飾鍵事件，但沒有按鍵事件——即使 Secure Input 回報為已停用，仍有程式在抑制按鍵。請在 GitHub 上回報此問題。",
+        "verdictOk": "按鍵事件正常送達 Glider。",
+        "verdictNoEvents": "未擷取到任何事件——測試期間您有按鍵嗎？",
+        "failed": "診斷失敗：{{error}}"
+      },
+      "lede": "Tools for tracking down problems. Most people never need these.",
+      "groups": {
+        "logs": "Logs",
+        "previews": "Previews",
+        "previewsDescription": "Open screens without changing your settings.",
+        "timing": "Timing and sound",
+        "input": "Input"
+      }
+    },
+    "about": {
+      "version": {
+        "title": "版本",
+        "description": "Glider 的目前版本"
+      },
+      "whatsNewUpdates": {
+        "label": "顯示新功能",
+        "description": "Glider 更新後顯示版本資訊"
+      },
+      "appDataDirectory": {
+        "title": "應用程式資料目錄"
+      },
+      "sourceCode": {
+        "title": "原始碼",
+        "description": "檢視原始碼並參與貢獻",
+        "button": "在 GitHub 上檢視"
+      },
+      "acknowledgments": {
+        "title": "致謝",
+        "ggml": {
+          "title": "ggml",
+          "description": "針對 OpenAI Whisper 自動語音辨識模型的高效能推理引擎",
+          "details": "Glider 使用 ggml 進行快速的本機語音轉文字處理。感謝 Georgi Gerganov 和貢獻者們的傑出工作"
+        },
+        "view": "View",
+        "handy": {
+          "title": "Handy",
+          "description": "Glider 的聽寫基於 CJ Pais 的 Handy，MIT 授權。"
+        },
+        "sherpa": {
+          "title": "sherpa-onnx",
+          "description": "Read Aloud 的語音在 sherpa-onnx 上執行。"
+        },
+        "description": "Glider stands on these open-source projects.",
+        "candle": {
+          "title": "candle",
+          "description": "Rewrite 在 candle 上執行，即 Hugging Face 的 Rust ML 函式庫。"
+        }
+      },
+      "appTitle": "App",
+      "star": {
+        "title": "Like Glider?",
+        "description": "Star it on GitHub so other developers can find it.",
+        "button": "Star on GitHub"
+      }
+    },
+    "readAloud": {
+      "title": "Read Aloud",
+      "description": "Select text anywhere and Glider reads it to you with an AI voice that runs on this computer.",
+      "voice": {
+        "title": "Voice",
+        "description": "Which speaker reads your text."
+      },
+      "language": {
+        "title": "語言",
+        "description": "語音朗讀文字時使用的語言。"
+      },
+      "speed": {
+        "title": "Speed",
+        "description": "How fast the voice reads. 1.0x is normal."
+      },
+      "models": {
+        "downloadFailed": "Couldn't download the voice"
+      },
+      "setupTitle": "Setup",
+      "model": {
+        "title": "Voice model",
+        "none": "No voice downloaded yet",
+        "change": "Change",
+        "download": "Get a voice",
+        "summary": "{{name}} · {{language}} · {{size}} MB"
+      },
+      "shortcutHint": "Press again while it reads to stop.",
+      "livePreview": {
+        "title": "即時預覽",
+        "description": "在播放器上方顯示正在朗讀的句子。"
+      },
+      "intro": {
+        "hint": "Works anywhere you can select text. Press the shortcut again to stop.",
+        "hintMac": "Works anywhere you can select text. F8 pauses, F7 and F9 skip, Esc stops.",
+        "sample": "Long replies are easier to take in when you can sit back and listen.",
+        "label": "Example",
+        "try": "Try it",
+        "stop": "Stop"
+      }
+    },
+    "dictation": {
+      "description": "How Glider listens, turns your speech into text, and types it.",
+      "livePreview": {
+        "title": "即時預覽",
+        "description": "說話時顯示文字，需有即時預覽標記的模型。"
+      },
+      "intro": {
+        "hint": "Keep holding while you talk, then let go. The text lands where your cursor is.",
+        "said": "can you send me the deck before tomorrow's call",
+        "typed": "Can you send me the deck before tomorrow's call?",
+        "label": "Example",
+        "try": "Try it"
+      }
+    }
+  },
+  "footer": {
+    "checkingUpdates": "檢查更新中...",
+    "updateAvailableShort": "有可用更新",
+    "upToDate": "已是最新版本",
+    "updateCheckingDisabled": "更新檢查已停用",
+    "downloading": "下載中... {{progress}}%",
+    "installing": "安裝中...",
+    "preparing": "準備中...",
+    "checkForUpdates": "檢查更新",
+    "portableUpdateTitle": "需要手動更新",
+    "portableUpdateMessage": "可攜式安裝無法自動更新。請透過下方按鈕下載適用於你的系統的安裝程式，執行後安裝到相同資料夾，你的 Data/ 資料夾（設定、模型、錄音）會保留在原處。",
+    "portableUpdateButton": "下載安裝程式",
+    "portableUpdateBrowseMessage": "可攜式安裝無法自動更新。請從 GitHub Releases 下載適用於你的系統的最新版本，並安裝到相同資料夾，你的 Data/ 資料夾（設定、模型、錄音）會保留在原處。",
+    "portableUpdateBrowseButton": "開啟 GitHub Releases",
+    "noVoice": "No voice yet",
+    "voiceLabel": "Voice: {{voice}}",
+    "dictationModel": "Dictation model",
+    "readAloudModel": "Read aloud voice",
+    "rewriteModel": "Rewrite model",
+    "noRewriteModel": "No rewrite model yet",
+    "rewriteLabel": "Rewrite model: {{model}}",
+    "chooseVoices": "Voices",
+    "voicesTitle": "Choose a voice",
+    "providerDesc": "Runs on {{provider}}, online"
+  },
+  "whatsNew": {
+    "title": "Glider v{{version}} 新功能"
+  },
+  "common": {
+    "playbackPosition": "播放位置",
+    "resetSetting": "將{{setting}}重設為預設值",
+    "loading": "載入中...",
+    "delete": "刪除",
+    "close": "關閉",
+    "open": "開啟",
+    "copy": "複製",
+    "clear": "清除",
+    "noOptionsFound": "未找到選項",
+    "hearExample": "聆聽範例",
+    "muteExample": "將範例靜音"
+  },
+  "errors": {
+    "micPermissionDeniedTitle": "麥克風存取被拒絕",
+    "micPermissionDenied": {
+      "generic": "作業系統拒絕了麥克風存取。請在系統設定中授予麥克風權限。",
+      "windows": "在設定 → 隱私與安全性 → 麥克風（包括桌面應用程式存取）中啟用麥克風存取。",
+      "macos": "在系統設定 → 隱私與安全性 → 麥克風中授予麥克風存取權限。",
+      "linux": "在系統的聲音或隱私設定中授予麥克風存取權限。"
+    },
+    "noInputDeviceTitle": "找不到麥克風",
+    "noInputDevice": "未偵測到音訊輸入裝置。請連接麥克風或耳機後重試。",
+    "recordingFailedTitle": "錄音啟動失敗",
+    "modelLoadFailed": "Glider 無法載入此模型。請再試一次或選擇其他模型。",
+    "modelLoadFailedTitle": "載入模型失敗",
+    "modelDownloadFailed": "下載失敗",
+    "pasteFailedTitle": "貼上文字失敗",
+    "pasteFailed": "無法將文字貼上至目前作用中的應用程式。",
+    "postProcessFailedTitle": "已貼上，未經後處理",
+    "postProcessFailed": "後處理未完成，因此按原樣貼上轉錄內容。",
+    "filePostProcessFailedTitle": "已轉錄，未經後處理",
+    "filePostProcessFailed": "後處理未完成，因此按原樣儲存轉錄內容。",
+    "fileTranscriptionFailedTitle": "檔案轉錄失敗",
+    "transcriptionFailedTitle": "轉錄失敗",
+    "noTextSelectedTitle": "No Text Selected",
+    "noTextSelected": "Select some text first, then press the Read Aloud shortcut.",
+    "voiceModelMissingTitle": "No Voice Downloaded",
+    "voiceModelMissing": "Download a voice in Read Aloud settings first.",
+    "readAloudFailedTitle": "Read Aloud Failed",
+    "refineFailedTitle": "Refine Failed",
+    "refineFailed": "The selected text couldn't be rewritten. Check the Post Process provider and model.",
+    "noLlmModelTitle": "No Rewrite Model",
+    "noLlmModel": "Download a rewrite model in Models, then try again."
+  },
+  "notices": {
+    "errorOne": "{{n}} 個錯誤",
+    "errorMany": "{{n}} 個錯誤",
+    "warningOne": "{{n}} 個警告",
+    "warningMany": "{{n}} 個警告",
+    "errorsAndWarnings": "{{errors}}，{{warnings}}"
+  },
+  "appLanguage": {
+    "title": "應用程式語言",
+    "description": "變更 Glider 介面的語言"
+  },
+  "theme": {
+    "title": "應用程式主題",
+    "description": "跟隨系統，或一律淺色或深色。",
+    "options": {
+      "system": "跟隨系統",
+      "light": "淺色",
+      "dark": "深色"
+    }
+  },
+  "overlay": {
+    "transcribing": "正在轉錄...",
+    "loadingModel": "正在載入模型...",
+    "readingAloud": "Reading aloud",
+    "preparingVoice": "Preparing voice...",
+    "refining": "Refining",
+    "seeChanges": "See changes",
+    "changesLabel": "Changes",
+    "changes_one": "{{count}} change",
+    "changes_other": "{{count}} changes",
+    "toUndo": "to undo",
+    "close": "Close",
+    "copy": "Copy",
+    "again": "Refine again",
+    "previous": "Previous sentence",
+    "next": "Next sentence",
+    "pause": "Pause",
+    "play": "Play",
+    "slower": "Slower",
+    "faster": "Faster",
+    "listening": "Listening",
+    "cancel": "Cancel",
+    "finishAndPaste": "結束並貼上",
+    "usingRewrite": "正在使用 {{name}}",
+    "done": "完成",
+    "doneReading": "朗讀完畢",
+    "noVoiceYet": "還沒有語音",
+    "getVoice": "取得語音",
+    "nowhereHint": "請先點一下文字方塊，再開始聽寫",
+    "savedInHistory": "也已儲存到歷史記錄",
+    "pasteHint": "點一下文字方塊並按 {{keys}}",
+    "copied": "已複製",
+    "sentence": "第 {{index}} 句，共 {{total}} 句",
+    "toStop": "停止",
+    "copyResult": "複製結果"
+  },
+  "secureInput": {
+    "blockedWithCulprit_one": "{{name}} 可能正在阻擋 1 個快捷鍵",
+    "blockedWithCulprit_other": "{{name}} 可能正在阻擋 {{count}} 個快捷鍵",
+    "blockedNoCulprit_one": "macOS 正在暫時阻擋 1 個快捷鍵",
+    "blockedNoCulprit_other": "macOS 正在暫時阻擋 {{count}} 個快捷鍵",
+    "recorderBlockedWithCulprit": "{{name}} 可能正在阻擋快捷鍵變更",
+    "recorderBlockedNoCulprit": "macOS 正在暫時阻擋快捷鍵變更",
+    "learnMore": "如何解決",
+    "recorderBlocked": "目前無法錄製快捷鍵——macOS 的 Secure Input 正在阻擋按鍵事件。請先解決 Secure Input 警告。",
+    "dismiss": "關閉"
+  },
+  "home": {
+    "welcome": "Welcome back",
+    "welcomeName": "Welcome back, {{name}}",
+    "shortcutsLabel": "Your shortcuts",
+    "statsLabel": "Your numbers",
+    "dictateLine": "Hold <keys/> to dictate",
+    "dictateHint": "Works in every app. What you say is typed where your cursor is.",
+    "listenLine": "Select text, press <keys/> to listen",
+    "listenHint": "Hear AI replies, docs and web pages read aloud, up to 3x speed.",
+    "listening": "Listening...",
+    "reading": "Reading aloud...",
+    "changeShortcuts": "Change shortcuts",
+    "stats": {
+      "dictated": "words dictated",
+      "read": "words read aloud",
+      "streak_one": "day streak",
+      "streak_other": "day streak"
+    },
+    "today": "Today",
+    "seeAll": "See all history",
+    "filterLabel": "Show only",
+    "empty": "Nothing yet today. Your dictations, reads and rewrites will show up here.",
+    "kind": {
+      "dictation": "Dictation",
+      "read": "Read aloud",
+      "rewrite": "Rewrite"
+    },
+    "howToUse": "How to use",
+    "tutorial": {
+      "play": "Play the how-to video",
+      "title": "See how Glider works",
+      "soon": "Video coming soon",
+      "button": "Tutorial"
+    }
+  },
+  "insights": {
+    "rangeLabel": "Time range",
+    "last30": "30 days",
+    "allTime": "All time",
+    "wpmUp": "Up from {{from}} in {{month}}",
+    "wpmDown": "Down from {{from}} in {{month}}",
+    "wpmSteady": "Steady since {{month}}",
+    "wpmNoTrend": "Trend shows from next week",
+    "wpmEmpty": "Dictate to see your pace",
+    "hours": "{{n}} h",
+    "minutes": "{{n}} min",
+    "timeListened": "Time listened",
+    "longestRead": "Longest read",
+    "words_one": "{{n}} word",
+    "words_other": "{{n}} words",
+    "appsLabel": "Where you dictate",
+    "appsTitle": "Where you talk",
+    "appsHint": "Dictated words by app",
+    "appsEmpty": "Dictate in a few apps and they show up here.",
+    "otherApps": "Other",
+    "appShare": "{{name}}, {{share}}%",
+    "streakLabel": "Streak",
+    "streak_one": "{{count}} day streak",
+    "streak_other": "{{count}} day streak",
+    "noStreak": "No streak yet",
+    "longest_one": "Longest {{count}} day",
+    "longest_other": "Longest {{count}} days",
+    "calendarLabel": "Days you used Glider over the last {{weeks}} weeks",
+    "dayWords_one": "{{day}}: {{count}} word",
+    "dayWords_other": "{{day}}: {{count}} words",
+    "days": {
+      "mon": "Mon",
+      "wed": "Wed",
+      "fri": "Fri",
+      "sun": "Sun"
+    },
+    "less": "Less",
+    "more": "More",
+    "today": "Today",
+    "summary30": "In the last 30 days you dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summary30NoPace": "In the last 30 days you dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAll": "So far you have dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAllNoPace": "So far you have dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryEmpty": "Dictate, listen or rewrite something and your numbers show up here.",
+    "pace": "{{n}} a minute",
+    "rewriteCount_one": "{{n}} rewrite",
+    "rewriteCount_other": "{{n}} rewrites",
+    "savedHours_one": "{{count}} hour",
+    "savedHours_other": "{{count}} hours",
+    "savedMinutes_one": "{{count}} minute",
+    "savedMinutes_other": "{{count}} minutes",
+    "activityTitle": "Activity",
+    "lastDays": "Last {{total}} days.",
+    "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
+    "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
+    "speakingAbove": "Speaking, above",
+    "listeningBelow": "Listening, below",
+    "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
+    "busiest": "Busiest {{day}}.",
+    "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
+    "wpmUnit": "words a minute",
+    "heardUnit": "words heard",
+    "rewritesUnit_one": "rewrite",
+    "rewritesUnit_other": "rewrites",
+    "usuallyAt": "Usually at {{speed}}x",
+    "wordsRewritten_one": "{{n}} word rewritten",
+    "wordsRewritten_other": "{{n}} words rewritten",
+    "dictations": "Dictations",
+    "average": "Average",
+    "longestDictation": "Longest",
+    "languages": "Languages",
+    "reads": "Reads",
+    "voice": "Voice",
+    "rewritesEmpty": "Select text and press a Refine shortcut.",
+    "removedRewrite": "Removed rewrite",
+    "explainLabel": "What {{name}} counts",
+    "inApp": "in {{app}}",
+    "explain": {
+      "dictations": "How many times you held the shortcut and Glider typed something.",
+      "average": "The length of a typical dictation: words divided by dictations.",
+      "longest": "Your single longest dictation in this period.",
+      "languages": "The languages your dictations were transcribed in, most used first.",
+      "reads": "How many times you selected text and Read Aloud read it to you.",
+      "timeListened": "Total time Read Aloud spent speaking, at the speed you chose.",
+      "longestRead": "The most words Read Aloud read in one go.",
+      "voice": "The voice you used for the most reads in this period."
+    }
+  },
+  "rewrite": {
+    "new": "New",
+    "on": "On",
+    "off": "Off",
+    "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
+    "noModel": "No model loaded",
+    "noProvider": "No provider set",
+    "hero": {
+      "polish": "Select text, press <keys/> to polish it",
+      "prompt": "Select text, press <keys/> to make it a prompt",
+      "humanize": "Select text, press <keys/> to humanize it",
+      "grammar": "Select text, press <keys/> to fix its grammar",
+      "custom": "Select text, press <keys/> to run {{name}}",
+      "none": "Add a rewrite to get started"
+    },
+    "heroHint": "Works in Zed, your browser, chat apps, anywhere you can select text. Press {{undo}} to undo.",
+    "tryIt": "Try it",
+    "trying": "Rewriting…",
+    "demo": {
+      "label": "Example",
+      "before": "ok so um the overlay breaks when i press read while its dictating",
+      "results": {
+        "polish": "The overlay breaks when I press Read Aloud during dictation.",
+        "prompt": "Fix the bug where the overlay breaks when Read Aloud is pressed during dictation.",
+        "humanize": "Heads up, the overlay breaks if I hit Read Aloud while I'm dictating.",
+        "grammar": "OK, so, um, the overlay breaks when I press Read while it's dictating."
+      }
+    },
+    "afterDictate": {
+      "title": "After you dictate",
+      "everyTitle": "Rewrite what you dictate",
+      "everyDescription": "Run one rewrite on everything you dictate, before it is typed.",
+      "shortcutTitle": "Dictate and rewrite",
+      "shortcutDescription": "A second dictation shortcut that always rewrites."
+    },
+    "yours": "Your rewrites",
+    "resetAll": "Reset to defaults",
+    "newRewrite": "New rewrite",
+    "newName": "New rewrite",
+    "used_one": "Used {{count}} time",
+    "used_other": "Used {{count}} times",
+    "notUsed": "Not used yet",
+    "customCard": "Your own rewrite. Open it to write what it should do.",
+    "writeOwn": "Write your own",
+    "writeOwnHint": "Tell the model what to do, in plain words.",
+    "compareHint": "Press <keys/> right after a rewrite to compare it with what you wrote.",
+    "runFailed": "The rewrite didn't work. Try again.",
+    "builtin": {
+      "polish": {
+        "card": "Clearer and shorter, in your own voice.",
+        "chip": "polishes selected text",
+        "about": "Polish rewrites your text to read clearer and shorter, and keeps it sounding like you.",
+        "before": "ok so um the overlay thing, when you press the read shortcut while its already dictating it kind of breaks. can you make it so dictation wins and read just waits, and dont touch the settings page",
+        "after": "When I press the Read Aloud shortcut during dictation, the overlay breaks. Make dictation take priority and have Read Aloud wait. Don't touch the settings page."
+      },
+      "prompt": {
+        "card": "Turns a rambling request into a clear task for an AI coding tool.",
+        "chip": "turns selected text into a prompt",
+        "about": "Prompt turns a rambling request into a clear task for an AI coding tool: the goal first, then the details.",
+        "before": "so basically can you like make the history page not jump when a new entry comes in, keep the scroll where it was, and also dont touch the settings page",
+        "after": "Goal: stop the History page from jumping when a new entry arrives.\n- Keep the scroll position where it was.\n- Don't change the settings page."
+      },
+      "humanize": {
+        "card": "Removes stiff, AI-sounding phrasing.",
+        "chip": "humanizes selected text",
+        "about": "Humanize takes out stiff, AI-sounding phrasing so the text reads like a person wrote it.",
+        "before": "I hope this message finds you well. I wanted to reach out to delve into the robust new overlay, which seamlessly elevates the experience.",
+        "after": "Quick note on the new overlay: it's faster and gets out of the way."
+      },
+      "grammar": {
+        "card": "Only spelling and grammar. Nothing else changes.",
+        "chip": "fixes grammar in selected text",
+        "about": "Fix grammar corrects spelling, grammar and punctuation, and leaves every other word as you wrote it.",
+        "before": "i has went to the store yesterday and buyed three apple",
+        "after": "I went to the store yesterday and bought three apples."
+      },
+      "custom": {
+        "chip": "runs {{name}} on selected text",
+        "about": "{{name}} rewrites your text the way its instructions say."
+      }
+    },
+    "options": {
+      "shorter": "Make it shorter",
+      "clarity": "Reword for clarity",
+      "reorder": "Reorder for readability",
+      "lists": "Add lists and paragraphs",
+      "keep_tone": "Keep my tone",
+      "keep_code": "Keep code, file names and commands exactly"
+    },
+    "detail": {
+      "saved": "Saved",
+      "reset": "Reset",
+      "delete": "Delete",
+      "example": "Example",
+      "exampleView": "Example view",
+      "before": "Before",
+      "after": "After",
+      "changes": "Changes",
+      "run": "Run on this example",
+      "running": "Running…",
+      "nameTitle": "Name",
+      "shortcutTitle": "Shortcut",
+      "shortcutName": "{{name}} shortcut",
+      "shortcutHint": "Select text, then press it.",
+      "doesTitle": "What {{name}} does",
+      "instructionsTitle": "Instructions",
+      "instructionsHint": "What the model should do with the text, in plain words.",
+      "instructionsPlaceholder": "For example: turn this into a short, friendly reply.",
+      "extraTitle": "Extra instructions",
+      "extraPlaceholder": "Anything else {{name}} should do. For example: use British spelling.",
+      "modelTitle": "Model",
+      "runsOn": "Runs on",
+      "runsOnLocal": "{{model}}, on this computer",
+      "runsOnProvider": "{{model}}, through your provider",
+      "noModel": "No model yet",
+      "change": "Change"
+    },
+    "samples": {
+      "title": "Writing samples",
+      "hint": "A few things you wrote, so {{name}} matches your style.",
+      "words_one": "{{count}} word",
+      "words_other": "{{count}} words",
+      "remove": "Remove {{name}}",
+      "limit": "Plain text or Markdown, up to {{max}} words each.",
+      "add": "Add a sample",
+      "filter": "Text",
+      "trimmed": "Kept the first {{max}} words of that sample.",
+      "readFailed": "Couldn't read that file."
+    }
+  },
+  "loading": {
+    "label": "Glider is starting"
+  },
+  "topBar": {
+    "theme": "Theme",
+    "showSidebar": "Show sidebar",
+    "hideSidebar": "Hide sidebar"
+  }
+}

@@ -1,0 +1,1456 @@
+{
+  "tray": {
+    "settings": "الإعدادات...",
+    "checkUpdates": "التحقق من وجود تحديثات...",
+    "copyLastTranscript": "نسخ آخر نص تم تفريغه",
+    "unloadModel": "تفريغ النموذج",
+    "model": "النموذج",
+    "quit": "إنهاء",
+    "cancel": "إلغاء",
+    "secureInputWarning": "⚠ الاختصارات محجوبة بواسطة Secure Input",
+    "language": "اللغة",
+    "autoLanguage": "تلقائي",
+    "otherLanguages": "لغات أخرى"
+  },
+  "sidebar": {
+    "general": "عام",
+    "models": "النماذج",
+    "advanced": "متقدم",
+    "history": "السجل",
+    "debug": "تصحيح الأخطاء",
+    "about": "حول",
+    "readAloud": "Read Aloud",
+    "home": "Home",
+    "label": "Sections",
+    "version": "Glider v{{version}}",
+    "insights": "Insights",
+    "rewrite": "Rewrite",
+    "dictation": "Dictation"
+  },
+  "onboarding": {
+    "customModelDescription": "غير مدعوم رسميًا",
+    "migration": {
+      "title": "نماذجك بحاجة إلى تحديث",
+      "description": "يستخدم Glider الآن نوعًا أحدث من النماذج. نزّل الإصدار الجديد لمواصلة التفريغ الصوتي. ستتم إزالة الإصدارات القديمة.",
+      "replaces": "يحل محل {{name}}",
+      "oldFormat": "تنسيق قديم",
+      "failed": "فشل التنزيل",
+      "retry": "حاول مرة أخرى",
+      "chooseAnother": "اختر نموذجًا مختلفًا",
+      "download": "تنزيل النماذج ({{size}})",
+      "continue": "متابعة"
+    },
+    "models": {
+      "small": {
+        "name": "Whisper Small",
+        "description": ".سريع ودقيق إلى حد ما"
+      },
+      "medium": {
+        "name": "Whisper Medium",
+        "description": ".دقة جيدة، سرعة متوسطة"
+      },
+      "turbo": {
+        "name": "Whisper Turbo",
+        "description": ".توازن بين الدقة والسرعة"
+      },
+      "large": {
+        "name": "Whisper Large",
+        "description": ".دقة جيدة، لكنه بطيء"
+      },
+      "breeze-asr": {
+        "name": "Breeze ASR",
+        "description": "محسّن للماندرين التايوانية. دعم التبديل بين اللغات."
+      }
+    },
+    "errors": {
+      "selectModel": "فشل تحديد النموذج"
+    },
+    "permissions": {
+      "microphone": {
+        "name": "الميكروفون",
+        "why": "ليتمكن Glider من سماعك. يُحوَّل الصوت إلى نص على هذا الكمبيوتر ولا يُرفع أبدًا."
+      },
+      "accessibility": {
+        "name": "إمكانية الوصول",
+        "why": "ليعمل اختصارك في كل التطبيقات، ويتمكن Glider من كتابة النص حيث يوجد المؤشر."
+      },
+      "errors": {
+        "checkFailed": "فشل التحقق من الأذونات. يرجير المحاولة مرة أخرى.",
+        "requestFailed": "فشل طلب الإذن. يرجى المحاولة مرة أخرى."
+      },
+      "titleMac": "إذنان فقط، وتصبح جاهزًا",
+      "titleWindows": "إذن واحد فقط، وتصبح جاهزًا",
+      "subtitleMac": "يسألك macOS قبل أن يتمكن أي تطبيق من الاستماع أو الكتابة.",
+      "subtitleWindows": "يسألك Windows قبل أن يتمكن أي تطبيق من الاستماع.",
+      "allow": "سماح",
+      "openSettings": "فتح الإعدادات",
+      "allowed": "تم السماح",
+      "waiting": "في الانتظار",
+      "turnOnMac": "فعّل Glider في «إعدادات النظام»، ثم عد إلى هنا.",
+      "turnOnWindows": "فعّل الوصول إلى الميكروفون في «إعدادات Windows»، ثم عد إلى هنا.",
+      "hintBoth": "اسمح بالإذنين للمتابعة",
+      "hintMicrophone": "اسمح بالوصول إلى الميكروفون للمتابعة",
+      "welcomeBack": "أهلًا بعودتك. سنكمل من حيث توقفت.",
+      "relaunch": "الاختصار لا يستجيب بعد هذا؟ <relaunch>أعد تشغيل Glider</relaunch> وستعود إلى هنا مباشرة.",
+      "fnKey": {
+        "name": "Fn key",
+        "why": "You hold Fn to dictate. Turn off what macOS does when you press it alone (emoji picker or input switch). You can change it back in System Settings → Keyboard.",
+        "action": "Turn off"
+      }
+    },
+    "shell": {
+      "back": "رجوع",
+      "continue": "متابعة",
+      "progress": "الخطوة {{step}} من {{count}}"
+    },
+    "welcome": {
+      "title": "تحدّث بدل أن تكتب، في أي تطبيق",
+      "subtitle": "اختر اللغات التي ستُملي بها",
+      "languagesLabel": "اللغات",
+      "noMatch": "لا توجد لغة تطابق «{{query}}». تغطي نماذج Glider نحو 100 لغة، والمزيد في الإعدادات.",
+      "appLanguage": "لغة التطبيق",
+      "chinese": {
+        "question": "أنت تتحدث {{languages}}. بأي حروف يجب أن يكتب Glider؟",
+        "label": "الحروف الصينية",
+        "zh-Hans": "المبسّطة",
+        "zh-Hant": "تايوان",
+        "zh-HK": "هونغ كونغ"
+      },
+      "hint": {
+        "pickOne": "اختر لغة واحدة على الأقل"
+      },
+      "search": "Search languages",
+      "searchPlaceholder": "Search {{count}} languages"
+    },
+    "download": {
+      "checking": "جارٍ فحص التنزيل…",
+      "ready": "{{name}} جاهز",
+      "failed": "توقف التنزيل",
+      "downloading": "جارٍ تنزيل {{name}}",
+      "progress": "{{done}} من {{total}}",
+      "progressLeft": "{{done}} من {{total}}، متبقي {{time}}",
+      "checkingName": "جارٍ فحص {{name}}",
+      "checkingDetail": "نتأكد من اكتمال التنزيل",
+      "stopped": "توقف تنزيل {{name}}",
+      "retryDetail": "تستأنف إعادة المحاولة من حيث توقف",
+      "cardProgress": "جارٍ التنزيل {{percent}}%، {{done}} من {{total}}",
+      "timeLeft": "متبقي {{time}}",
+      "speedLeft": "{{speed}}، متبقي {{time}}"
+    },
+    "model": {
+      "title": "اختر نموذج الكلام",
+      "subtitle": "نموذج الكلام يحوّل كلامك إلى نص، مباشرةً على هذا الكمبيوتر",
+      "label": "نموذج الكلام",
+      "lines": {
+        "recommended": "أفضل توازن بين السرعة والدقة للغاتك",
+        "faster": "أسرع، مع أخطاء أكثر قليلًا",
+        "accurate": "أقل عدد من الأخطاء، لكنه أبطأ"
+      },
+      "shorts": {
+        "recommended": "الأنسب لك",
+        "faster": "أسرع، وأخطاء أكثر قليلًا",
+        "accurate": "أقل أخطاء، لكنه أبطأ"
+      },
+      "model": "النموذج",
+      "showAll": "عرض كل النماذج ({{count}})",
+      "download": "تنزيل {{size}}",
+      "downloadInstead": "تنزيل {{size}} بدلًا من ذلك",
+      "pauses": "يتوقف {{name}} مؤقتًا عند {{percent}}%",
+      "resumeLater": "اخترْه مرة أخرى ليكمل من حيث توقف",
+      "hint": "يُنزَّل أثناء إكمالك للإعداد",
+      "bestFor": "Best for {{languages}}",
+      "recommended": "Recommended",
+      "languageCount_one": "{{count}} language",
+      "languageCount_other": "{{count}} languages"
+    },
+    "done": {
+      "title": "كل شيء جاهز",
+      "atLogin": "تشغيل Glider عند تسجيل الدخول",
+      "finish": "تم",
+      "subtitleMac": "Glider is in your menu bar now. It works in every app, even with this window closed.",
+      "subtitle": "Glider is in your system tray now. It works in every app, even with this window closed.",
+      "dictate": "Dictate",
+      "readAloud": "Read Aloud",
+      "languages": "Languages",
+      "speechModel": "Speech model",
+      "holdAndTalk": "Hold and talk",
+      "selectThenPress": "Select, then press",
+      "change": "Change",
+      "later": "You can change these later in Settings"
+    },
+    "downloads": {
+      "background": "Downloads keep going in the background",
+      "label": "Downloads",
+      "underMinute": "less than a minute left",
+      "oneMinute": "1 min left",
+      "minutes_one": "{{count}} min left",
+      "minutes_other": "{{count}} min left",
+      "checking": "Checking…",
+      "ofSize": "{{percent}}% · {{done}} of {{total}} MB",
+      "next": "{{percent}}% · {{name}} next",
+      "about": "about {{left}}",
+      "ready": "Ready: {{names}}",
+      "cancel": "Cancel {{name}}"
+    },
+    "voices": {
+      "title": "Pick your voices",
+      "subtitle": "Pick one for each language you listen in. Add more later in Models.",
+      "label": "Voices",
+      "descriptions": {
+        "kokoro-int8-en-v0_19": "Natural, warm voices. 11 American and British speakers.",
+        "vits-piper-hi_IN-pratham-medium-int8": "A clear Hindi voice. Reads Devanagari text.",
+        "kitten-nano-en-v0_2-fp16": "Tiny and fast. Good for older computers."
+      },
+      "speakers_one": "{{count}} speaker",
+      "speakers_other": "{{count}} speakers",
+      "speed": "Up to 3x speed",
+      "sample": "Sample",
+      "sampleLabel": "Hear {{name}}"
+    },
+    "refine": {
+      "title": "Pick a refine model",
+      "subtitle": "It cleans up and rewrites your text when you ask. You can skip this.",
+      "label": "Refine model",
+      "descriptions": {
+        "qwen3-4b-instruct-2507": "Clear, natural rewrites that keep your tone.",
+        "qwen3-1_7b": "Quicker and lighter, a little less polished."
+      },
+      "quality": "Quality: {{value}}",
+      "speed": "Speed: {{value}}",
+      "memory": "Needs {{n}} GB memory",
+      "levels": {
+        "best": "best",
+        "good": "good",
+        "fair": "fair",
+        "fast": "fast",
+        "moderate": "moderate"
+      },
+      "notNow": "Not now",
+      "notNowHint": "Turn on Rewrite later and pick a model then."
+    },
+    "practice": {
+      "title": "Give it a try",
+      "subtitle": "Both shortcuts work in every app. Try them here first.",
+      "dictate": "1. Click the box, hold <keys/> and talk",
+      "listen": "2. Select that text and press <keys/> to hear it",
+      "boxLabel": "Practice box",
+      "placeholder": "Your words appear here.",
+      "done": "Done",
+      "skip": "You can skip this",
+      "voicesNote": "Read Aloud uses the voices you picked. Downloads finish in the background.",
+      "waiting": "Dictation works once {{model}} finishes downloading."
+    }
+  },
+  "modelTable": {
+    "tags": {
+      "preview": "معاينة مباشرة",
+      "previewTitle": "يعرض كلماتك في التراكب المباشر أثناء حديثك، ثم يكتبها عندما تتوقف",
+      "translate": "يترجم",
+      "translateTitle": "يمكنه تحويل ما تقوله إلى نص إنجليزي. فعّله من الإعدادات"
+    },
+    "rubric": {
+      "gradeTitle": "دقة {{language}}: {{grade}}",
+      "accuracyTitle": "دقة {{language}}",
+      "overallTitle": "الدقة في لغاتك: {{grade}}",
+      "overall": "الدقة في لغاتك",
+      "meaning": {
+        "A": "أخطاء قليلة جدًا: غالبًا تظهر كلماتك كما نطقتها",
+        "B": "بعض الأخطاء: توقّع تصحيح كلمة بين حين وآخر",
+        "C": "أخطاء متكررة: قد تضيع بعض التفاصيل",
+        "D": "أخطاء كثيرة: توقّع أن تراجع ما يكتبه وتصححه",
+        "F": "غالبًا غير واضح: قد يظهر الكثير مما تقوله خاطئًا"
+      },
+      "unsupported": "هذا النموذج لا يفهم {{language}}، لذا لا يستطيع كتابتها",
+      "unrated": "هذا النموذج يفهم {{language}}، لكننا لم نقِس مستوى جودته بعد",
+      "under": "أقل من {{max}}%",
+      "between": "من {{min}} إلى {{max}}%",
+      "over": "{{min}}% أو أكثر",
+      "speedTitle": "السرعة: {{speed}}",
+      "speedName": {
+        "0": "بطيء جدًا",
+        "1": "بطيء",
+        "2": "متوسط",
+        "3": "سريع",
+        "4": "سريع جدًا"
+      },
+      "speedMeaning": {
+        "0": "تظهر كلماتك بعد انتظار طويل",
+        "1": "تظهر كلماتك بعد انتظار",
+        "2": "تظهر كلماتك بعد انتظار قصير",
+        "3": "تظهر كلماتك تقريبًا فورًا",
+        "4": "تظهر كلماتك فورًا"
+      },
+      "speedPreview": "{{meaning}}، مع معاينة مباشرة أثناء حديثك",
+      "untimed": "لم نقِس سرعته بعد",
+      "underSeconds": "أقل من {{max}} ث",
+      "betweenSeconds": "من {{min}} إلى {{max}} ث",
+      "overSeconds": "{{min}} ث أو أكثر"
+    },
+    "roles": {
+      "recommended": "موصى به",
+      "faster": "أسرع",
+      "accurate": "أكثر دقة",
+      "fromAll": "من كل النماذج"
+    },
+    "speed": "السرعة",
+    "size": "الحجم",
+    "accuracy": "الدقة",
+    "search": "البحث عن النماذج",
+    "allLabel": "نماذج الكلام",
+    "noMatch": "لا شيء يطابق «{{query}}». جرّب لغة، أو عائلة نماذج مثل Whisper أو Parakeet",
+    "noFilterMatch": "لا توجد نماذج تطابق هذه التصفيات",
+    "speedUntested": "لم تُقَس السرعة بعد",
+    "speedWords": {
+      "0": "بطيء جدًا، تظهر الكلمات بعد انتظار طويل",
+      "1": "بطيء، تظهر الكلمات بعد انتظار",
+      "2": "متوسط، تظهر الكلمات بعد انتظار قصير",
+      "3": "سريع، تظهر الكلمات تقريبًا فورًا",
+      "4": "سريع جدًا، تظهر الكلمات فورًا"
+    },
+    "speedWordsPreview": {
+      "0": "بطيء جدًا، مع معاينة مباشرة أثناء حديثك",
+      "1": "بطيء، مع معاينة مباشرة أثناء حديثك",
+      "2": "متوسط، مع معاينة مباشرة أثناء حديثك",
+      "3": "سريع، مع معاينة مباشرة أثناء حديثك",
+      "4": "سريع جدًا، مع معاينة مباشرة أثناء حديثك"
+    },
+    "missingLanguage": "لغة ناقصة",
+    "allLanguages": "الكل",
+    "downloadingLine": "جارٍ تنزيل {{percent}}% من {{total}}",
+    "customLine": "أُضيف من مجلد نماذجك. غير مُقيَّم.",
+    "legacyLine": "تنزيل أقدم. غير مُقيَّم."
+  },
+  "languagePicker": {
+    "search": "البحث عن اللغات"
+  },
+  "modelSelector": {
+    "custom": "مخصص",
+    "streaming": "البث",
+    "active": "نشط",
+    "noModelsAvailable": "لا توجد نماذج متاحة",
+    "verifying": "جارٍ التحقق من {{modelName}}...",
+    "verifyingGeneric": "جارٍ التحقق...",
+    "downloading": "جاري التنزيل {{percentage}}%",
+    "downloadingMultiple": "جاري تنزيل {{count}} من النماذج...",
+    "modelReady": "النموذج جاهز",
+    "loading": "جاري تحميل {{modelName}}...",
+    "loadingGeneric": "جاري التحميل...",
+    "modelError": "خطأ في النموذج",
+    "modelUnloaded": "تم إلغاء تحميل النموذج",
+    "noModelDownloadRequired": "لا يوجد نموذج - التنزيل مطلوب",
+    "downloadSpeed": "{{speed}} ميجابايت/ث",
+    "lockedWhileTranscribing": "يمكنك تغيير النموذج بعد انتهاء النسخ في السجل."
+  },
+  "settings": {
+    "modelSettings": {
+      "title": "إعدادات {{model}}",
+      "description": "Options for the speech model you use now."
+    },
+    "general": {
+      "shortcut": {
+        "title": "اختصارات Glider",
+        "description": "إعداد اختصارات لوحة المفاتيح لبدء تسجيل التفريغ الصوتي",
+        "loading": "جاري تحميل الاختصارات...",
+        "none": "لا توجد اختصارات مجهزة",
+        "notFound": "الاختصار غير موجود",
+        "pressKeys": "اضغط على المفاتيح...",
+        "bindings": {
+          "transcribe": {
+            "name": "اختصار التفريغ الصوتي",
+            "description": ".اختصار لوحة المفاتيح لتسجيل وتفريغ صوتك"
+          },
+          "cancel": {
+            "name": "اختصار الإلغاء",
+            "description": ".اختصار لوحة المفاتيح لإلغاء التسجيل الحالي"
+          },
+          "transcribe_with_post_process": {
+            "name": "مفتاح المعالجة اللاحقة",
+            "description": "اختياري: مفتاح اختصار مخصص يطبق دائماً المعالجة اللاحقة بالذكاء الاصطناعي على التفريغ الصوتي."
+          },
+          "speak_selection": {
+            "name": "Read Aloud Shortcut",
+            "description": "يقرأ النص المحدد بصوت عالٍ في أي تطبيق. اضغط مجددًا للإيقاف."
+          },
+          "refine_1": {
+            "name": "Refine 1",
+            "description": "يعيد كتابة النص المحدد بالموجّه المجاور ويضعه مكانه."
+          },
+          "refine_2": {
+            "name": "Refine 2",
+            "description": "يعيد كتابة النص المحدد بالموجّه المجاور ويضعه مكانه."
+          },
+          "refine_3": {
+            "name": "Refine 3",
+            "description": "يعيد كتابة النص المحدد بالموجّه المجاور ويضعه مكانه."
+          }
+        },
+        "errors": {
+          "set": "فشل تعيين الاختصار: {{error}}"
+        },
+        "changeLabel": "Change {{name}} ({{keys}})"
+      },
+      "language": {
+        "title": "اللغة",
+        "description": "اللغة التي تتحدث بها. اختيار لغة محددة أدق من تلقائي.",
+        "searchPlaceholder": "البحث عن اللغات...",
+        "noResults": "لم يتم العثور على لغات",
+        "auto": "تلقائي",
+        "autoUnavailable": {
+          "oneLanguage": "لغة واحدة فقط من لغاتك تعمل مع هذا النموذج",
+          "undetectable": "غير متاح مع {{languages}}",
+          "noMatch": "لا تعمل أي من لغاتك مع هذا النموذج"
+        },
+        "detectorMissingTitle": "يحتاج الوضع التلقائي إلى تنزيل منفصل",
+        "detectorMissing": "لا يستطيع هذا النموذج معرفة اللغة التي تتحدث بها. يحتاج الوضع التلقائي إلى أداة صغيرة لاكتشاف اللغة لمعرفتها",
+        "stopDetectorDownload": "إيقاف تنزيل أداة اكتشاف اللغة"
+      },
+      "preferredLanguages": {
+        "title": "اللغات المفضلة",
+        "description": "اللغات التي تتحدثها. يستخدمها Glider للتوصية بالنماذج.",
+        "noMatch": "لا توجد لغة تطابق «{{query}}»",
+        "weak": "لا يوجد نموذج يتعرف على {{languages}} جيدًا بعد.",
+        "change": "Change",
+        "none": "No languages yet"
+      }
+    },
+    "models": {
+      "sections": {
+        "yours": "على هذا الكمبيوتر",
+        "fits": "للغاتك"
+      },
+      "emptyYours": "لا توجد نماذج بعد. اختر واحدًا أدناه: يُنزَّل ثم يستخدمه Glider.",
+      "showMore": "عرض {{count}} أخرى",
+      "showFewer": "عرض أقل",
+      "download": "تنزيل واستخدام",
+      "downloadingThenUse": "{{percent}}% من {{total}}، ثم يتم التبديل",
+      "loading": "جارٍ التحميل…",
+      "deleteAsk": "حذف {{name}}؟ سيحرر {{size}}.",
+      "deleteAskActive": "حذف {{name}}؟ لن يستطيع Glider التفريغ الصوتي حتى تختار نموذجًا آخر.",
+      "cancel": "إلغاء",
+      "deleteModel": "حذف {{name}}",
+      "cancelDownload": "إيقاف تنزيل {{name}}",
+      "legend": {
+        "open": "كيف تُقيَّم النماذج",
+        "accuracyNote": "لكل لغة من لغاتك: عدد الكلمات التي أخطأ فيها النموذج في تسجيلات الاختبار لدينا.",
+        "speedNote": {
+          "accelerated": "المدة التي تستغرقها كتابة 30 ثانية من الكلام على معالج الرسوميات في لابتوب الاختبار لدينا. قد يختلف هذا الكمبيوتر.",
+          "cpu": "المدة التي تستغرقها كتابة 30 ثانية من الكلام على معالج لابتوب الاختبار لدينا. قد يختلف هذا الكمبيوتر."
+        },
+        "marks": "? لم يُقَس بعد. — لا يسمع تلك اللغة.",
+        "howGraded": "How models are graded"
+      },
+      "retiredNotice": {
+        "title": "النماذج القديمة لم تعد تعمل مع Glider",
+        "description": "إنها تشغل {{size}} على جهاز الكمبيوتر الخاص بك.",
+        "delete": "حذف النماذج",
+        "deleteFailed": "تعذّر حذف بعض النماذج القديمة. تحقق من السجل لمزيد من التفاصيل."
+      },
+      "rescan": {
+        "tooltip": "إعادة الفحص بحثًا عن النماذج المضافة إلى مجلد النماذج أو ذاكرة Hugging Face التخزينية المؤقتة خارج Glider"
+      },
+      "tabs": {
+        "label": "Model type",
+        "speech": "Speech to text",
+        "voices": "Read Aloud voices",
+        "llm": "Large language model"
+      },
+      "lede": "Open-source models that run on this computer. Nothing you say is uploaded.",
+      "columns": {
+        "model": "Model",
+        "quality": "Quality",
+        "memory": "Memory",
+        "language": "Language"
+      },
+      "speed": {
+        "veryFast": "Very fast",
+        "fast": "Fast",
+        "moderate": "Moderate",
+        "slow": "Slow",
+        "verySlow": "Very slow"
+      },
+      "inUse": "In use",
+      "livePreview": "Live preview",
+      "checking": "Checking…",
+      "progress": "{{percent}}% of {{size}}",
+      "progressThenSwitch": "{{percent}}% of {{size}}, then switches",
+      "noGrade": "Doesn't hear this language",
+      "downloadAndUse": "Download and use",
+      "use": "Use",
+      "delete": "Delete {{name}}",
+      "fitsHint": "Picked for {{languages}}. Grades come from our test recordings.",
+      "noMatch": "No models match your search.",
+      "search": "Search models",
+      "sample": "Hear a sample",
+      "noVoices": "No voices yet. Download one below.",
+      "moreVoices": "More voices",
+      "moreVoicesHint": "Each voice downloads once, then works offline.",
+      "llm": {
+        "olderComputers": "Older computers",
+        "needsMemory": "Needs more memory",
+        "gb": "{{n}} GB",
+        "none": "No rewriting model yet. Download one below.",
+        "moreTitle": "More large language models",
+        "moreHint": "Picked for how much memory this computer has. Each downloads once, then works offline.",
+        "providerTitle": "Use a provider instead",
+        "useProvider": "Use a provider",
+        "useProviderHint": "Rewrites go to the service you pick, with your own API key. Only the selected text is sent.",
+        "downloadFailed": "Couldn't download the model. Check your connection and try again.",
+        "multilingual": "Many"
+      },
+      "openFolder": "Open models folder",
+      "openFolderFailed": "Couldn't open the models folder",
+      "notLoaded": "Not loaded",
+      "liveMemory": "Memory this model is using right now",
+      "cancelDeletes": "الإلغاء يحذف ما تم تنزيله حتى الآن، وستحتاج إلى بدء التنزيل من جديد."
+    },
+    "languages": {
+      "title": "اللغات"
+    },
+    "sound": {
+      "title": "الصوت",
+      "microphone": {
+        "title": "الميكروفون",
+        "description": "اختر جهاز الميكروفون المفضل لديك",
+        "placeholder": "اختر الميكروفون...",
+        "loading": "جاري التحميل..."
+      },
+      "channel": {
+        "title": "قناة الإدخال",
+        "description": "أي مدخل يُسجَّل في واجهة صوت متعددة المداخل.",
+        "average": "متوسط جميع القنوات",
+        "channel": "القناة {{n}}"
+      },
+      "audioFeedback": {
+        "label": "تنبيهات صوتية",
+        "description": "تشغيل صوت عند بدء التسجيل وتوقفه"
+      },
+      "outputDevice": {
+        "title": "جهاز الإخراج",
+        "description": "اختر جهاز إخراج الصوت المفضل لتنبيهات الصوت",
+        "placeholder": "اختر جهاز الإخراج...",
+        "loading": "جاري التحميل..."
+      },
+      "volume": {
+        "title": "مستوى الصوت",
+        "description": "ضبط مستوى صوت تنبيهات الصوت"
+      }
+    },
+    "advanced": {
+      "groups": {
+        "app": "التطبيق",
+        "output": "الإخراج",
+        "transcription": "التفريغ الصوتي",
+        "history": "السجل",
+        "experimental": "تجريبي",
+        "outputDescription": "How your words get into the app you are typing in.",
+        "experimentalDescription": "These may change or go away."
+      },
+      "experimentalToggle": {
+        "label": "الميزات التجريبية",
+        "description": ".تمكين الميزات التجريبية التي لا تزال قيد التطوير"
+      },
+      "lazyStreamClose": {
+        "label": "إبقاء الميكروفون مفتوحًا بين عمليات النسخ",
+        "description": "يبدأ الإملاء التالي أسرع. قد تسوء جودة صوت Bluetooth."
+      },
+      "airpodsMode": {
+        "label": "وضع AirPods",
+        "description": "يستعيد سماعات AirPods من iPhone كي لا تكون التسجيلات صامتة."
+      },
+      "acceleration": {
+        "transcribe": {
+          "title": "تسريع الأجهزة",
+          "description": "تلقائي يستخدم GPU متى أمكن، وإلا يستخدم CPU."
+        },
+        "gpuDevice": {
+          "auto": "تلقائي"
+        }
+      },
+      "startHidden": {
+        "label": "بدء مخفي",
+        "description": ".التشغيل في صينية النظام دون فتح النافذة"
+      },
+      "autostart": {
+        "label": "التشغيل عند بدء التشغيل",
+        "description": ".بدء تشغيل Glider تلقائياً عند تسجيل الدخول إلى جهاز الكمبيوتر الخاص بك"
+      },
+      "showTrayIcon": {
+        "label": "إظهار أيقونة شريط النظام",
+        "description": ".عرض أيقونة Glider في شريط النظام"
+      },
+      "overlay": {
+        "style": {
+          "title": "التراكب",
+          "description": "مباشر يعرض كلماتك أثناء الحديث، مع نماذج البث.",
+          "options": {
+            "none": "بلا",
+            "minimal": "مبسط",
+            "live": "مباشر"
+          }
+        },
+        "position": {
+          "title": "موقع التراكب",
+          "description": "مكان ظهور التراكب أثناء الإملاء.",
+          "options": {
+            "bottom": "أسفل",
+            "top": "أعلى"
+          }
+        }
+      },
+      "pasteMethod": {
+        "title": "طريقة اللصق",
+        "description": "الحافظة تلصق، مباشر يكتب، بلا يحفظ فقط.",
+        "options": {
+          "clipboard": "الحافظة ({{modifier}}+V)",
+          "clipboardCtrlShiftV": "الحافظة (Ctrl+Shift+V)",
+          "clipboardShiftInsert": "الحافظة (Shift+Insert)",
+          "direct": "مباشر",
+          "none": "بلا",
+          "externalScript": "نص برمجي خارجي"
+        },
+        "externalScriptPlaceholder": "/path/to/your/script.sh"
+      },
+      "typingTool": {
+        "title": "أداة الكتابة",
+        "description": "أداة Linux لطريقة اللصق المباشر. تلقائي يختار الأفضل.",
+        "options": {
+          "auto": "تلقائي (موصى به)"
+        }
+      },
+      "clipboardHandling": {
+        "title": "التعامل مع الحافظة",
+        "description": "هل يبقى الإملاء في الحافظة بعد اللصق.",
+        "options": {
+          "dontModify": "عدم تعديل الحافظة",
+          "copyToClipboard": "نسخ إلى الحافظة"
+        }
+      },
+      "autoSubmit": {
+        "title": "إرسال تلقائي",
+        "description": "يضغط هذا المفتاح بعد اللصق لإرسال الرسالة عنك.",
+        "options": {
+          "off": "إيقاف",
+          "enter": "Enter",
+          "cmdEnter": "Cmd+Enter",
+          "superEnter": "Super+Enter",
+          "ctrlEnter": "Ctrl+Enter"
+        }
+      },
+      "translateToEnglish": {
+        "label": "الترجمة إلى الإنجليزية",
+        "description": "يكتب بالإنجليزية أيًا كانت اللغة التي تتحدث بها."
+      },
+      "modelUnload": {
+        "title": "إلغاء تحميل النموذج",
+        "description": "يحرر الذاكرة إذا لم يُستخدم نموذج الكلام طوال هذه المدة.",
+        "options": {
+          "never": "أبداً",
+          "immediately": "فوراً",
+          "min2": "بعد دقيقتين",
+          "min5": "بعد 5 دقائق",
+          "min10": "بعد 10 دقائق",
+          "min15": "بعد 15 دقيقة",
+          "hour1": "بعد ساعة واحدة",
+          "sec15": "بعد 15 ثوانٍ (تصحيح أخطاء)"
+        }
+      },
+      "customWords": {
+        "title": "كلمات مخصصة",
+        "description": "يساعد النموذج على كتابة الأسماء والمصطلحات الخاصة بشكل صحيح.",
+        "placeholder": "أضف كلمة",
+        "add": "إضافة",
+        "remove": "إزالة {{word}}",
+        "duplicate": "\"{{word}}\" موجود بالفعل"
+      },
+      "voiceActivityDetection": {
+        "title": "كشف النشاط الصوتي",
+        "description": "يقص الصمت من التسجيلات. عند الإيقاف يُسجَّل كل شيء."
+      },
+      "longFormChunking": {
+        "title": "تقسيم الصوت الطويل",
+        "description": "يقسم التسجيلات الطويلة عند التوقفات لتفريغ أفضل."
+      },
+      "languageDetection": {
+        "title": "قصر الوضع التلقائي على لغاتي",
+        "description": "فعّله إذا كان تلقائي يختار لغة لا تتحدثها.",
+        "downloadHint": "يؤدي تفعيل هذا إلى تنزيل أداة صغيرة لاكتشاف اللغة",
+        "downloadingHint": "جارٍ تنزيل أداة اكتشاف اللغة. أوقف هذا الخيار للإلغاء"
+      },
+      "vadBackend": {
+        "title": "محرك كشف النشاط الصوتي",
+        "description": "Earshot تجريبي. استخدم Silero إذا كانت الكلمات تُقطع.",
+        "options": {
+          "silero": "Silero",
+          "earshot": "Earshot"
+        }
+      },
+      "fillerWordRemoval": {
+        "title": "إزالة كلمات الحشو",
+        "description": "يزيل أصوات التردد وكلمات الحشو من الإملاء."
+      },
+      "chineseScript": {
+        "title": "الكتابة الصينية",
+        "description": "الحروف التي تُكتب بها الماندرين والكانتونية.",
+        "options": {
+          "asTranscribed": "كما نُسخ",
+          "simplified": "مبسطة",
+          "traditionalTw": "تقليدية (تايوان)",
+          "traditionalHk": "تقليدية (هونغ كونغ)"
+        }
+      }
+    },
+    "postProcessing": {
+      "api": {
+        "provider": {
+          "title": "المزود",
+          "description": "اختر مزوداً متوافقاً مع OpenAI أو Anthropic."
+        },
+        "apiFormat": {
+          "title": "تنسيق API",
+          "description": "تنسيق الطلب الذي تتوقعه نقطة النهاية المخصصة الخاصة بك.",
+          "options": {
+            "openai": "متوافق مع OpenAI (Chat Completions)",
+            "anthropic": "Anthropic Messages"
+          }
+        },
+        "appleIntelligence": {
+          "unavailable": "Apple Intelligence غير متاح على هذا الجهاز. يتطلب جهاز Mac بمعالج Apple Silicon يعمل بنظام macOS Tahoe (26.0) أو أحدث مع تمكين Apple Intelligence في إعدادات النظام."
+        },
+        "baseUrl": {
+          "title": "URL الأساسي",
+          "description": "عنوان API لدى المزوّد. يمكن تعديله مع مخصص فقط.",
+          "placeholder": "https://api.openai.com/v1",
+          "placeholderAnthropic": "https://api.anthropic.com/v1"
+        },
+        "apiKey": {
+          "title": "مفتاح API",
+          "description": "مفتاح API للمزود المختار.",
+          "placeholder": "sk-..."
+        },
+        "model": {
+          "title": "النموذج",
+          "descriptionCustom": "قدم معرف النموذج المتوقع من قبل نقطة النهاية المخصصة الخاصة بك.",
+          "descriptionDefault": "اختر نموذجاً يعرضه المزود المختار.",
+          "placeholderWithOptions": "ابحث عن نموذج أو اختره",
+          "placeholderNoOptions": "اكتب اسم النموذج",
+          "refreshModels": "تحديث النماذج"
+        }
+      }
+    },
+    "history": {
+      "openFolder": "فتح مجلد التسجيلات",
+      "loading": "جاري تحميل السجل...",
+      "empty": "!لا يوجد تفريغ صوتي بعد. ابدأ التسجيل لبناء سجلك",
+      "copyToClipboard": "نسخ التفريغ إلى الحافظة",
+      "copyError": "تعذر نسخ التفريغ إلى الحافظة.",
+      "save": "حفظ التفريغ",
+      "unsave": "إزالة من المحفوظات",
+      "delete": "حذف الإدخال",
+      "deleteError": ".فشل حذف الإدخال. يرجى المحاولة مرة أخرى",
+      "retranscribe": "إعادة النسخ",
+      "cancelTranscription": "إلغاء النسخ",
+      "transcribing": "جارٍ النسخ...",
+      "transcriptionFailed": "فشل النسخ. يمكنك إعادة النسخ باستخدام أيقونة إعادة المحاولة.",
+      "notTranscribed": "لم يتم النسخ. يمكنك نسخه باستخدام أيقونة إعادة المحاولة.",
+      "transcribeFile": "نسخ ملف",
+      "mediaFiles": "الصوت والفيديو",
+      "fileUnsupported": "تعذّرت قراءة الصوت من {{name}}.",
+      "transcribeFailed": "فشل النسخ. يرجى المحاولة مرة أخرى.",
+      "waiting": "في انتظار النسخ",
+      "transcribingPercent": "جارٍ النسخ، {{percent}}%",
+      "readingFile": "جارٍ قراءة الملف...",
+      "showMore": "عرض المزيد",
+      "showLess": "عرض أقل",
+      "dropTitle": "أفلت الملف لنسخه",
+      "dropDescription": "سيظهر في السجل.",
+      "tabs": {
+        "label": "History type",
+        "dictation": "Dictation",
+        "readAloud": "Read Aloud",
+        "rewrite": "Rewrite"
+      },
+      "readAloud": {
+        "empty": "Nothing read aloud yet. Select text anywhere and press your Read Aloud shortcut.",
+        "readAgain": "Read again",
+        "meta": "{{voice}} · {{speed}}x",
+        "kept_one": "The last read is kept",
+        "kept_other": "Last {{count}} reads are kept",
+        "playing": "Reading, sentence {{index}} of {{total}}",
+        "stop": "Stop reading"
+      },
+      "rewrite": {
+        "empty": "No rewrites yet. Select text anywhere and press a Refine shortcut.",
+        "kept_one": "The last rewrite is kept",
+        "kept_other": "Last {{count}} rewrites are kept"
+      },
+      "playRecording": "Play recording",
+      "noRecording": "Audio not kept",
+      "savedOnly": "Saved",
+      "savedEmpty": "Nothing saved yet. Press the star on an entry to keep it here.",
+      "audioError": "Couldn't open this recording",
+      "days": {
+        "today": "Today",
+        "yesterday": "Yesterday"
+      }
+    },
+    "debug": {
+      "title": "تصحيح الأخطاء",
+      "logDirectory": {
+        "title": "مجلد السجلات",
+        "description": "الموقع الذي يتم فيه تخزين ملفات السجل"
+      },
+      "logLevel": {
+        "title": "مستوى السجل",
+        "description": "ضبط درجة تفصيل السجلات"
+      },
+      "liveLogs": {
+        "title": "السجلات المباشرة",
+        "description": "يعرض أسطر السجل الجديدة حسب مستوى السجل ما دامت اللوحة مفتوحة.",
+        "live": "مباشر",
+        "paused": "متوقف مؤقتًا",
+        "pause": "إيقاف مؤقت",
+        "resume": "استئناف",
+        "copied": "تم النسخ",
+        "lineCount": "{{count}} سطر",
+        "empty": "بانتظار السجلات… ستظهر الإدخالات هنا فور إصدار التطبيق لها."
+      },
+      "updateChecks": {
+        "label": "التحقق من وجود تحديثات",
+        "description": "التحقق تلقائياً من وجود إصدارات جديدة من Glider",
+        "lockedDescription": "معطّل بواسطة إعدادات النظام (GLIDER_DISABLE_UPDATER)"
+      },
+      "whatsNewPreview": {
+        "title": "معاينة الجديد",
+        "description": "افتح أحدث ملاحظات إصدار مضمنة دون وضع علامة عليها كمقروءة",
+        "button": "معاينة"
+      },
+      "onboardingPreview": {
+        "title": "معاينة الإعداد الأولي",
+        "description": "استعرض شاشات البداية دون تغيير أي شيء.",
+        "exitButton": "إنهاء المعاينة",
+        "choose": "اختر شاشة",
+        "screens": {
+          "welcome": "الترحيب",
+          "permissions": "الأذونات",
+          "model": "النموذج",
+          "demo": "عرض توضيحي",
+          "try": "جرّبه",
+          "done": "اكتمل الإعداد",
+          "voices": "Voices",
+          "refine": "Refine model"
+        }
+      },
+      "onboardingRun": {
+        "title": "تشغيل الإعداد الأولي",
+        "description": "يشغّل الإعداد الأولي فعليًا: الأذونات وتنزيل النماذج.",
+        "button": "ابدأ"
+      },
+      "modelMigration": {
+        "title": "ترحيل النماذج",
+        "description": "افتح شاشة تحديث النماذج ذات الصيغة القديمة فعليًا: تنزّل البدائل، وتبدّل النماذج، وتحذف الملفات القديمة",
+        "button": "فتح"
+      },
+      "soundTheme": {
+        "label": "سمة الصوت",
+        "description": "اختر سمة صوت لتنبيهات بدء وتوقف التسجيل"
+      },
+      "wordCorrectionThreshold": {
+        "title": "عتبة تصحيح الكلمات",
+        "description": "حساسية تصحيح الكلمات المخصصة"
+      },
+      "historyLimit": {
+        "title": "حد السجل",
+        "description": "عدد الإملاءات الأخيرة التي يُحتفظ بصوتها. النص محفوظ دائمًا.",
+        "entries": "إدخالات"
+      },
+      "recordingRetention": {
+        "title": "حذف التسجيلات تلقائياً",
+        "description": "حذف التسجيلات القديمة تلقائياً لتوفير المساحة",
+        "never": "أبداً",
+        "preserveLimit": "الاحتفاظ بآخر {{count}}",
+        "days3": "بعد 3 أيام",
+        "weeks2": "بعد أسبوعين",
+        "months3": "بعد 3 أشهر",
+        "placeholder": "اختر فترة الاحتفاظ..."
+      },
+      "alwaysOnMicrophone": {
+        "label": "ميكروفون يعمل دائماً",
+        "description": "إبقاء الميكروفون نشطاً لاستجابة أسرع"
+      },
+      "clamshellMicrophone": {
+        "title": "ميكروفون وضع الإغلاق",
+        "description": "الميكروفون المراد استخدامه عندما يكون غطاء المحمول مغلقاً"
+      },
+      "postProcessingToggle": {
+        "label": "معالجة لاحقة",
+        "description": "تمكين تحسين النص المدعوم بالذكاء الاصطناعي بعد التفريغ الصوتي"
+      },
+      "muteWhileRecording": {
+        "label": "كتم الصوت أثناء التسجيل",
+        "description": "كتم صوت النظام أثناء التسجيل"
+      },
+      "appendTrailingSpace": {
+        "label": "إضافة مسافة تابعة",
+        "description": "إضافة مسافة بعد التفريغ الملصق"
+      },
+      "keyboardImplementation": {
+        "title": "تنفيذ لوحة المفاتيح",
+        "description": ".اختر الواجهة الخلفية لاختصارات لوحة المفاتيح",
+        "bindingsReset": "كانت اختصارات لوحة المفاتيح غير متوافقة وتمت إعادة تعيينها إلى القيم الافتراضية"
+      },
+      "pasteDelay": {
+        "title": "تأخير اللصق (قبل)",
+        "description": "مهلة بعد النسخ. زدها إذا لم يُلصق شيء."
+      },
+      "pasteDelayAfter": {
+        "title": "تأخير اللصق (بعد)",
+        "description": "مهلة قبل استعادة الحافظة. زدها إذا لُصق نص قديم."
+      },
+      "holdThreshold": {
+        "title": "حد الضغط المطوّل",
+        "description": "المدة التي يجب أن يستمر فيها الضغط ليُحسب ضغطًا مطولًا."
+      },
+      "reliablePaste": {
+        "title": "لصق موثوق (Beta)",
+        "description": "ينتظر حتى يلصق التطبيق قبل استعادة الحافظة."
+      },
+      "recordingBuffer": {
+        "title": "مخزن التسجيل الإضافي",
+        "description": "يواصل التسجيل لحظة بعد الإفلات كي لا تُقطع آخر كلمة."
+      },
+      "languageDetectionWindow": {
+        "title": "صوت اكتشاف اللغة",
+        "description": "ثوانٍ يستمع فيها الكاشف. الأطول أدق لكنه أبطأ."
+      },
+      "keyboardDiagnostic": {
+        "title": "تشخيص لوحة المفاتيح",
+        "description": "يعدّ ضغطات المفاتيح التي تصل إلى Glider، ولا يسجل أي مفاتيح.",
+        "run": "تشغيل تشخيص لمدة 10 ثوانٍ",
+        "running": "جارٍ الاستماع… اضغط اختصارك عدة مرات (مثل Option+Space)",
+        "secureInputLabel": "Secure Input",
+        "enabled": "مُفعَّل",
+        "disabled": "مُعطَّل",
+        "holder": "يحتجزه {{name}} (pid {{pid}})",
+        "holderUnknown": "لا يوجد محتجِز ظاهر",
+        "keyDown": "ضغط مفتاح",
+        "keyUp": "تحرير مفتاح",
+        "flagsChanged": "مفاتيح التعديل",
+        "mouse": "الماوس",
+        "verdictBlocked": "يحجب Secure Input أحداث المفاتيح — لا يمكن للاختصارات التي تتضمن مفتاحًا عاديًا أن تعمل حتى تُحلّ المشكلة.",
+        "verdictSuspicious": "وصلت أحداث مفاتيح التعديل لكن لم يصل أي حدث مفتاح — هناك شيء يمنع المفاتيح رغم أن Secure Input يظهر معطلاً. يُرجى الإبلاغ عن ذلك على GitHub.",
+        "verdictOk": "أحداث المفاتيح تصل إلى Glider بشكل طبيعي.",
+        "verdictNoEvents": "لم يُسجَّل أي حدث — هل ضغطت أي مفاتيح أثناء الاختبار؟",
+        "failed": "فشل التشخيص: {{error}}"
+      },
+      "lede": "Tools for tracking down problems. Most people never need these.",
+      "groups": {
+        "logs": "Logs",
+        "previews": "Previews",
+        "previewsDescription": "Open screens without changing your settings.",
+        "timing": "Timing and sound",
+        "input": "Input"
+      }
+    },
+    "about": {
+      "version": {
+        "title": "الإصدار",
+        "description": "الإصدار الحالي من Glider"
+      },
+      "whatsNewUpdates": {
+        "label": "إظهار الجديد",
+        "description": "إظهار ملاحظات الإصدار بعد تحديثات Glider"
+      },
+      "appDataDirectory": {
+        "title": "مجلد بيانات التطبيق"
+      },
+      "sourceCode": {
+        "title": "كود المصدر",
+        "description": "عرض كود المصدر والمساهمة",
+        "button": "عرض على GitHub"
+      },
+      "acknowledgments": {
+        "title": "شكر وتقدير",
+        "ggml": {
+          "title": "ggml",
+          "description": "استنتاج عالي الأداء لنموذج التعرف التلقائي على الكلام Whisper من OpenAI",
+          "details": ".يستخدم Glider برنامج ggml لمعالجة سريعة ومحلية لتحويل الكلام إلى نص. شكراً للعمل الرائع الذي قام به Georgi Gerganov والمساهمون"
+        },
+        "view": "View",
+        "handy": {
+          "title": "Handy",
+          "description": "إملاء Glider مبني على Handy من CJ Pais، بترخيص MIT."
+        },
+        "sherpa": {
+          "title": "sherpa-onnx",
+          "description": "أصوات Read Aloud تعمل على sherpa-onnx."
+        },
+        "description": "Glider stands on these open-source projects.",
+        "candle": {
+          "title": "candle",
+          "description": "يعمل Rewrite على candle، مكتبة تعلم الآلة بلغة Rust من Hugging Face."
+        }
+      },
+      "appTitle": "App",
+      "star": {
+        "title": "Like Glider?",
+        "description": "Star it on GitHub so other developers can find it.",
+        "button": "Star on GitHub"
+      }
+    },
+    "readAloud": {
+      "title": "Read Aloud",
+      "description": "Select text anywhere and Glider reads it to you with an AI voice that runs on this computer.",
+      "voice": {
+        "title": "Voice",
+        "description": "Which speaker reads your text."
+      },
+      "language": {
+        "title": "اللغة",
+        "description": "اللغة التي يقرأ بها الصوت النص."
+      },
+      "speed": {
+        "title": "Speed",
+        "description": "How fast the voice reads. 1.0x is normal."
+      },
+      "models": {
+        "downloadFailed": "Couldn't download the voice"
+      },
+      "setupTitle": "Setup",
+      "model": {
+        "title": "Voice model",
+        "none": "No voice downloaded yet",
+        "change": "Change",
+        "download": "Get a voice",
+        "summary": "{{name}} · {{language}} · {{size}} MB"
+      },
+      "shortcutHint": "Press again while it reads to stop.",
+      "livePreview": {
+        "title": "معاينة مباشرة",
+        "description": "اعرض الجملة التي تُقرأ فوق المشغل."
+      },
+      "intro": {
+        "hint": "Works anywhere you can select text. Press the shortcut again to stop.",
+        "hintMac": "Works anywhere you can select text. F8 pauses, F7 and F9 skip, Esc stops.",
+        "sample": "Long replies are easier to take in when you can sit back and listen.",
+        "label": "Example",
+        "try": "Try it",
+        "stop": "Stop"
+      }
+    },
+    "dictation": {
+      "description": "How Glider listens, turns your speech into text, and types it.",
+      "livePreview": {
+        "title": "معاينة مباشرة",
+        "description": "يعرض كلماتك أثناء الحديث، مع النماذج الموسومة معاينة مباشرة."
+      },
+      "intro": {
+        "hint": "Keep holding while you talk, then let go. The text lands where your cursor is.",
+        "said": "can you send me the deck before tomorrow's call",
+        "typed": "Can you send me the deck before tomorrow's call?",
+        "label": "Example",
+        "try": "Try it"
+      }
+    }
+  },
+  "footer": {
+    "checkingUpdates": "جاري التحقق من وجود تحديثات...",
+    "updateAvailableShort": "تحديث متاح",
+    "upToDate": "محدث",
+    "updateCheckingDisabled": "تم تعطيل التحقق من التحديث",
+    "downloading": "جاري التنزيل {{progress}}%...",
+    "installing": "جاري التثبيت...",
+    "preparing": "جاري التحضير...",
+    "checkForUpdates": "التحقق من وجود تحديثات",
+    "portableUpdateTitle": "التحديث اليدوي مطلوب",
+    "portableUpdateMessage": "لا يمكن تحديث التثبيتات المحمولة تلقائيًا. نزّل المثبّت المناسب لنظامك من الزر أدناه، شغّله، وثبّته في المجلد نفسه — يبقى مجلد Data/ (الإعدادات والنماذج والتسجيلات) في مكانه.",
+    "portableUpdateButton": "تنزيل المثبّت",
+    "portableUpdateBrowseMessage": "لا يمكن تحديث التثبيتات المحمولة تلقائيًا. نزّل أحدث إصدار مناسب لنظامك من GitHub Releases وثبّته في المجلد نفسه — يبقى مجلد Data/ (الإعدادات والنماذج والتسجيلات) في مكانه.",
+    "portableUpdateBrowseButton": "فتح GitHub Releases",
+    "noVoice": "No voice yet",
+    "voiceLabel": "Voice: {{voice}}",
+    "dictationModel": "Dictation model",
+    "readAloudModel": "Read aloud voice",
+    "rewriteModel": "Rewrite model",
+    "noRewriteModel": "No rewrite model yet",
+    "rewriteLabel": "Rewrite model: {{model}}",
+    "chooseVoices": "Voices",
+    "voicesTitle": "Choose a voice",
+    "providerDesc": "Runs on {{provider}}, online"
+  },
+  "whatsNew": {
+    "title": "الجديد في Glider v{{version}}"
+  },
+  "common": {
+    "playbackPosition": "موضع التشغيل",
+    "resetSetting": "إعادة تعيين {{setting}} إلى القيمة الافتراضية",
+    "loading": "جاري التحميل...",
+    "delete": "حذف",
+    "close": "إغلاق",
+    "open": "فتح",
+    "copy": "نسخ",
+    "clear": "مسح",
+    "noOptionsFound": "لم يتم العثور على خيارات",
+    "hearExample": "استمع إلى المثال",
+    "muteExample": "كتم صوت المثال"
+  },
+  "errors": {
+    "micPermissionDeniedTitle": "تم رفض الوصول إلى الميكروفون",
+    "micPermissionDenied": {
+      "generic": "تم رفض الوصول إلى الميكروفون من قبل نظام التشغيل. يرجى منح إذن الميكروفون في إعدادات النظام.",
+      "windows": "قم بتمكين الوصول إلى الميكروفون في الإعدادات ← الخصوصية والأمان ← الميكروفون (بما في ذلك وصول تطبيقات سطح المكتب).",
+      "macos": "امنح الوصول إلى الميكروفون في إعدادات النظام ← الخصوصية والأمان ← الميكروفون.",
+      "linux": "امنح الوصول إلى الميكروفون في إعدادات الصوت أو الخصوصية في نظامك."
+    },
+    "noInputDeviceTitle": "لم يتم العثور على ميكروفون",
+    "noInputDevice": "لم يتم اكتشاف أي جهاز إدخال صوتي. يرجى توصيل ميكروفون أو سماعة رأس والمحاولة مرة أخرى.",
+    "recordingFailedTitle": "فشل في بدء التسجيل",
+    "modelLoadFailed": "تعذر على Glider تحميل هذا النموذج. حاول مرة أخرى أو اختر نموذجًا آخر.",
+    "modelLoadFailedTitle": "فشل في تحميل النموذج",
+    "modelDownloadFailed": "فشل التنزيل",
+    "pasteFailedTitle": "فشل لصق النص",
+    "pasteFailed": "تعذر لصق النص في التطبيق النشط.",
+    "postProcessFailedTitle": "لُصق بدون معالجة لاحقة",
+    "postProcessFailed": "لم تكتمل المعالجة اللاحقة، لذا لُصق النص المنسوخ كما هو.",
+    "filePostProcessFailedTitle": "نُسخ بدون معالجة لاحقة",
+    "filePostProcessFailed": "لم تكتمل المعالجة اللاحقة، لذا حُفظ النص المنسوخ كما هو.",
+    "fileTranscriptionFailedTitle": "فشل التفريغ النصي للملف",
+    "transcriptionFailedTitle": "فشل التفريغ النصي",
+    "noTextSelectedTitle": "No Text Selected",
+    "noTextSelected": "Select some text first, then press the Read Aloud shortcut.",
+    "voiceModelMissingTitle": "No Voice Downloaded",
+    "voiceModelMissing": "Download a voice in Read Aloud settings first.",
+    "readAloudFailedTitle": "Read Aloud Failed",
+    "refineFailedTitle": "Refine Failed",
+    "refineFailed": "The selected text couldn't be rewritten. Check the Post Process provider and model.",
+    "noLlmModelTitle": "No Rewrite Model",
+    "noLlmModel": "Download a rewrite model in Models, then try again."
+  },
+  "notices": {
+    "errorOne": "{{n}} خطأ",
+    "errorMany": "{{n}} أخطاء",
+    "warningOne": "{{n}} تحذير",
+    "warningMany": "{{n}} تحذيرات",
+    "errorsAndWarnings": "{{errors}}، {{warnings}}"
+  },
+  "appLanguage": {
+    "title": "لغة التطبيق",
+    "description": "تغيير لغة واجهة Glider"
+  },
+  "theme": {
+    "title": "سمة التطبيق",
+    "description": "اتبع النظام، أو استخدم الفاتح أو الداكن دائمًا.",
+    "options": {
+      "system": "النظام",
+      "light": "فاتح",
+      "dark": "داكن"
+    }
+  },
+  "overlay": {
+    "transcribing": "جاري التفريغ...",
+    "loadingModel": "جارٍ تحميل النموذج...",
+    "readingAloud": "Reading aloud",
+    "preparingVoice": "Preparing voice...",
+    "refining": "Refining",
+    "seeChanges": "See changes",
+    "changesLabel": "Changes",
+    "changes_one": "{{count}} change",
+    "changes_other": "{{count}} changes",
+    "toUndo": "to undo",
+    "close": "Close",
+    "copy": "Copy",
+    "again": "Refine again",
+    "previous": "Previous sentence",
+    "next": "Next sentence",
+    "pause": "Pause",
+    "play": "Play",
+    "slower": "Slower",
+    "faster": "Faster",
+    "listening": "Listening",
+    "cancel": "Cancel",
+    "finishAndPaste": "إنهاء ولصق",
+    "usingRewrite": "باستخدام {{name}}",
+    "done": "تم",
+    "doneReading": "انتهت القراءة",
+    "noVoiceYet": "لا يوجد صوت بعد",
+    "getVoice": "احصل على صوت",
+    "nowhereHint": "انقر على مربع نص أولًا، ثم أملِ",
+    "savedInHistory": "محفوظ أيضًا في السجل",
+    "pasteHint": "انقر على مربع نص واضغط {{keys}}",
+    "copied": "تم النسخ",
+    "sentence": "الجملة {{index}} من {{total}}",
+    "toStop": "للإيقاف",
+    "copyResult": "نسخ النتيجة"
+  },
+  "secureInput": {
+    "blockedWithCulprit_one": "قد يحظر {{name}} اختصارًا واحدًا",
+    "blockedWithCulprit_other": "قد يحظر {{name}} {{count}} اختصارات",
+    "blockedNoCulprit_one": "يحظر macOS مؤقتًا اختصارًا واحدًا",
+    "blockedNoCulprit_other": "يحظر macOS مؤقتًا {{count}} اختصارات",
+    "recorderBlockedWithCulprit": "قد يمنع {{name}} تغيير الاختصارات",
+    "recorderBlockedNoCulprit": "يمنع macOS مؤقتًا تغيير الاختصارات",
+    "learnMore": "كيفية الإصلاح",
+    "recorderBlocked": "لا يمكن تسجيل الاختصارات الآن — يحجب Secure Input في macOS أحداث المفاتيح. عالج تحذير Secure Input أولاً.",
+    "dismiss": "تجاهل"
+  },
+  "home": {
+    "welcome": "Welcome back",
+    "welcomeName": "Welcome back, {{name}}",
+    "shortcutsLabel": "Your shortcuts",
+    "statsLabel": "Your numbers",
+    "dictateLine": "Hold <keys/> to dictate",
+    "dictateHint": "Works in every app. What you say is typed where your cursor is.",
+    "listenLine": "Select text, press <keys/> to listen",
+    "listenHint": "Hear AI replies, docs and web pages read aloud, up to 3x speed.",
+    "listening": "Listening...",
+    "reading": "Reading aloud...",
+    "changeShortcuts": "Change shortcuts",
+    "stats": {
+      "dictated": "words dictated",
+      "read": "words read aloud",
+      "streak_one": "day streak",
+      "streak_other": "day streak"
+    },
+    "today": "Today",
+    "seeAll": "See all history",
+    "filterLabel": "Show only",
+    "empty": "Nothing yet today. Your dictations, reads and rewrites will show up here.",
+    "kind": {
+      "dictation": "Dictation",
+      "read": "Read aloud",
+      "rewrite": "Rewrite"
+    },
+    "howToUse": "How to use",
+    "tutorial": {
+      "play": "Play the how-to video",
+      "title": "See how Glider works",
+      "soon": "Video coming soon",
+      "button": "Tutorial"
+    }
+  },
+  "insights": {
+    "rangeLabel": "Time range",
+    "last30": "30 days",
+    "allTime": "All time",
+    "wpmUp": "Up from {{from}} in {{month}}",
+    "wpmDown": "Down from {{from}} in {{month}}",
+    "wpmSteady": "Steady since {{month}}",
+    "wpmNoTrend": "Trend shows from next week",
+    "wpmEmpty": "Dictate to see your pace",
+    "hours": "{{n}} h",
+    "minutes": "{{n}} min",
+    "timeListened": "Time listened",
+    "longestRead": "Longest read",
+    "words_one": "{{n}} word",
+    "words_other": "{{n}} words",
+    "appsLabel": "Where you dictate",
+    "appsTitle": "Where you talk",
+    "appsHint": "Dictated words by app",
+    "appsEmpty": "Dictate in a few apps and they show up here.",
+    "otherApps": "Other",
+    "appShare": "{{name}}, {{share}}%",
+    "streakLabel": "Streak",
+    "streak_one": "{{count}} day streak",
+    "streak_other": "{{count}} day streak",
+    "noStreak": "No streak yet",
+    "longest_one": "Longest {{count}} day",
+    "longest_other": "Longest {{count}} days",
+    "calendarLabel": "Days you used Glider over the last {{weeks}} weeks",
+    "dayWords_one": "{{day}}: {{count}} word",
+    "dayWords_other": "{{day}}: {{count}} words",
+    "days": {
+      "mon": "Mon",
+      "wed": "Wed",
+      "fri": "Fri",
+      "sun": "Sun"
+    },
+    "less": "Less",
+    "more": "More",
+    "today": "Today",
+    "summary30": "In the last 30 days you dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summary30NoPace": "In the last 30 days you dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAll": "So far you have dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAllNoPace": "So far you have dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryEmpty": "Dictate, listen or rewrite something and your numbers show up here.",
+    "pace": "{{n}} a minute",
+    "rewriteCount_one": "{{n}} rewrite",
+    "rewriteCount_other": "{{n}} rewrites",
+    "savedHours_one": "{{count}} hour",
+    "savedHours_other": "{{count}} hours",
+    "savedMinutes_one": "{{count}} minute",
+    "savedMinutes_other": "{{count}} minutes",
+    "activityTitle": "Activity",
+    "lastDays": "Last {{total}} days.",
+    "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
+    "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
+    "speakingAbove": "Speaking, above",
+    "listeningBelow": "Listening, below",
+    "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
+    "busiest": "Busiest {{day}}.",
+    "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
+    "wpmUnit": "words a minute",
+    "heardUnit": "words heard",
+    "rewritesUnit_one": "rewrite",
+    "rewritesUnit_other": "rewrites",
+    "usuallyAt": "Usually at {{speed}}x",
+    "wordsRewritten_one": "{{n}} word rewritten",
+    "wordsRewritten_other": "{{n}} words rewritten",
+    "dictations": "Dictations",
+    "average": "Average",
+    "longestDictation": "Longest",
+    "languages": "Languages",
+    "reads": "Reads",
+    "voice": "Voice",
+    "rewritesEmpty": "Select text and press a Refine shortcut.",
+    "removedRewrite": "Removed rewrite",
+    "explainLabel": "What {{name}} counts",
+    "inApp": "in {{app}}",
+    "explain": {
+      "dictations": "How many times you held the shortcut and Glider typed something.",
+      "average": "The length of a typical dictation: words divided by dictations.",
+      "longest": "Your single longest dictation in this period.",
+      "languages": "The languages your dictations were transcribed in, most used first.",
+      "reads": "How many times you selected text and Read Aloud read it to you.",
+      "timeListened": "Total time Read Aloud spent speaking, at the speed you chose.",
+      "longestRead": "The most words Read Aloud read in one go.",
+      "voice": "The voice you used for the most reads in this period."
+    }
+  },
+  "rewrite": {
+    "new": "New",
+    "on": "On",
+    "off": "Off",
+    "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
+    "noModel": "No model loaded",
+    "noProvider": "No provider set",
+    "hero": {
+      "polish": "Select text, press <keys/> to polish it",
+      "prompt": "Select text, press <keys/> to make it a prompt",
+      "humanize": "Select text, press <keys/> to humanize it",
+      "grammar": "Select text, press <keys/> to fix its grammar",
+      "custom": "Select text, press <keys/> to run {{name}}",
+      "none": "Add a rewrite to get started"
+    },
+    "heroHint": "Works in Zed, your browser, chat apps, anywhere you can select text. Press {{undo}} to undo.",
+    "tryIt": "Try it",
+    "trying": "Rewriting…",
+    "demo": {
+      "label": "Example",
+      "before": "ok so um the overlay breaks when i press read while its dictating",
+      "results": {
+        "polish": "The overlay breaks when I press Read Aloud during dictation.",
+        "prompt": "Fix the bug where the overlay breaks when Read Aloud is pressed during dictation.",
+        "humanize": "Heads up, the overlay breaks if I hit Read Aloud while I'm dictating.",
+        "grammar": "OK, so, um, the overlay breaks when I press Read while it's dictating."
+      }
+    },
+    "afterDictate": {
+      "title": "After you dictate",
+      "everyTitle": "Rewrite what you dictate",
+      "everyDescription": "Run one rewrite on everything you dictate, before it is typed.",
+      "shortcutTitle": "Dictate and rewrite",
+      "shortcutDescription": "A second dictation shortcut that always rewrites."
+    },
+    "yours": "Your rewrites",
+    "resetAll": "Reset to defaults",
+    "newRewrite": "New rewrite",
+    "newName": "New rewrite",
+    "used_one": "Used {{count}} time",
+    "used_other": "Used {{count}} times",
+    "notUsed": "Not used yet",
+    "customCard": "Your own rewrite. Open it to write what it should do.",
+    "writeOwn": "Write your own",
+    "writeOwnHint": "Tell the model what to do, in plain words.",
+    "compareHint": "Press <keys/> right after a rewrite to compare it with what you wrote.",
+    "runFailed": "The rewrite didn't work. Try again.",
+    "builtin": {
+      "polish": {
+        "card": "Clearer and shorter, in your own voice.",
+        "chip": "polishes selected text",
+        "about": "Polish rewrites your text to read clearer and shorter, and keeps it sounding like you.",
+        "before": "ok so um the overlay thing, when you press the read shortcut while its already dictating it kind of breaks. can you make it so dictation wins and read just waits, and dont touch the settings page",
+        "after": "When I press the Read Aloud shortcut during dictation, the overlay breaks. Make dictation take priority and have Read Aloud wait. Don't touch the settings page."
+      },
+      "prompt": {
+        "card": "Turns a rambling request into a clear task for an AI coding tool.",
+        "chip": "turns selected text into a prompt",
+        "about": "Prompt turns a rambling request into a clear task for an AI coding tool: the goal first, then the details.",
+        "before": "so basically can you like make the history page not jump when a new entry comes in, keep the scroll where it was, and also dont touch the settings page",
+        "after": "Goal: stop the History page from jumping when a new entry arrives.\n- Keep the scroll position where it was.\n- Don't change the settings page."
+      },
+      "humanize": {
+        "card": "Removes stiff, AI-sounding phrasing.",
+        "chip": "humanizes selected text",
+        "about": "Humanize takes out stiff, AI-sounding phrasing so the text reads like a person wrote it.",
+        "before": "I hope this message finds you well. I wanted to reach out to delve into the robust new overlay, which seamlessly elevates the experience.",
+        "after": "Quick note on the new overlay: it's faster and gets out of the way."
+      },
+      "grammar": {
+        "card": "Only spelling and grammar. Nothing else changes.",
+        "chip": "fixes grammar in selected text",
+        "about": "Fix grammar corrects spelling, grammar and punctuation, and leaves every other word as you wrote it.",
+        "before": "i has went to the store yesterday and buyed three apple",
+        "after": "I went to the store yesterday and bought three apples."
+      },
+      "custom": {
+        "chip": "runs {{name}} on selected text",
+        "about": "{{name}} rewrites your text the way its instructions say."
+      }
+    },
+    "options": {
+      "shorter": "Make it shorter",
+      "clarity": "Reword for clarity",
+      "reorder": "Reorder for readability",
+      "lists": "Add lists and paragraphs",
+      "keep_tone": "Keep my tone",
+      "keep_code": "Keep code, file names and commands exactly"
+    },
+    "detail": {
+      "saved": "Saved",
+      "reset": "Reset",
+      "delete": "Delete",
+      "example": "Example",
+      "exampleView": "Example view",
+      "before": "Before",
+      "after": "After",
+      "changes": "Changes",
+      "run": "Run on this example",
+      "running": "Running…",
+      "nameTitle": "Name",
+      "shortcutTitle": "Shortcut",
+      "shortcutName": "{{name}} shortcut",
+      "shortcutHint": "Select text, then press it.",
+      "doesTitle": "What {{name}} does",
+      "instructionsTitle": "Instructions",
+      "instructionsHint": "What the model should do with the text, in plain words.",
+      "instructionsPlaceholder": "For example: turn this into a short, friendly reply.",
+      "extraTitle": "Extra instructions",
+      "extraPlaceholder": "Anything else {{name}} should do. For example: use British spelling.",
+      "modelTitle": "Model",
+      "runsOn": "Runs on",
+      "runsOnLocal": "{{model}}, on this computer",
+      "runsOnProvider": "{{model}}, through your provider",
+      "noModel": "No model yet",
+      "change": "Change"
+    },
+    "samples": {
+      "title": "Writing samples",
+      "hint": "A few things you wrote, so {{name}} matches your style.",
+      "words_one": "{{count}} word",
+      "words_other": "{{count}} words",
+      "remove": "Remove {{name}}",
+      "limit": "Plain text or Markdown, up to {{max}} words each.",
+      "add": "Add a sample",
+      "filter": "Text",
+      "trimmed": "Kept the first {{max}} words of that sample.",
+      "readFailed": "Couldn't read that file."
+    }
+  },
+  "loading": {
+    "label": "Glider is starting"
+  },
+  "topBar": {
+    "theme": "Theme",
+    "showSidebar": "Show sidebar",
+    "hideSidebar": "Hide sidebar"
+  }
+}

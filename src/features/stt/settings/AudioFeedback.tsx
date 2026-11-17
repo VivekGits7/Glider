@@ -1,0 +1,29 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { ToggleSwitch } from "@/common/ui/ToggleSwitch";
+import { useSettings } from "@/common/settings/useSettings";
+
+interface AudioFeedbackProps {
+  grouped?: boolean;
+}
+
+export const AudioFeedback: React.FC<AudioFeedbackProps> = React.memo(
+  ({ grouped = false }) => {
+    const { t } = useTranslation();
+    const { getSetting, updateSetting, isUpdating } = useSettings();
+    const audioFeedbackEnabled = getSetting("audio_feedback") || false;
+
+    return (
+      <div className="flex flex-col">
+        <ToggleSwitch
+          checked={audioFeedbackEnabled}
+          onChange={(enabled) => updateSetting("audio_feedback", enabled)}
+          isUpdating={isUpdating("audio_feedback")}
+          label={t("settings.sound.audioFeedback.label")}
+          description={t("settings.sound.audioFeedback.description")}
+          grouped={grouped}
+        />
+      </div>
+    );
+  },
+);

@@ -1,0 +1,1456 @@
+{
+  "tray": {
+    "settings": "Configuració...",
+    "checkUpdates": "Comprova si hi ha actualitzacions...",
+    "copyLastTranscript": "Copia l'última transcripció",
+    "unloadModel": "Allibera el model de la memòria",
+    "model": "Model",
+    "quit": "Surt",
+    "cancel": "Cancel·la",
+    "secureInputWarning": "⚠ Dreceres blocades per l'entrada segura",
+    "language": "Llengua",
+    "autoLanguage": "Automàtica",
+    "otherLanguages": "Altres llengües"
+  },
+  "sidebar": {
+    "general": "General",
+    "models": "Models",
+    "advanced": "Avançat",
+    "history": "Historial",
+    "debug": "Depuració",
+    "about": "Quant a",
+    "readAloud": "Read Aloud",
+    "home": "Home",
+    "label": "Sections",
+    "version": "Glider v{{version}}",
+    "insights": "Insights",
+    "rewrite": "Rewrite",
+    "dictation": "Dictation"
+  },
+  "onboarding": {
+    "customModelDescription": "Sense suport oficial",
+    "migration": {
+      "title": "Cal actualitzar els vostres models",
+      "description": "Glider ara utilitza un tipus de model més nou. Baixeu la versió nova per continuar transcrivint. Les versions antigues s'eliminaran.",
+      "replaces": "Substitueix {{name}}",
+      "oldFormat": "Format antic",
+      "failed": "Ha fallat la baixada",
+      "retry": "Torna-ho a provar",
+      "chooseAnother": "Trieu un altre model",
+      "download": "Baixa els models ({{size}})",
+      "continue": "Continua"
+    },
+    "models": {
+      "small": {
+        "name": "Whisper Small",
+        "description": "Ràpid i força precís."
+      },
+      "medium": {
+        "name": "Whisper Medium",
+        "description": "Bona precisió i velocitat mitjana."
+      },
+      "turbo": {
+        "name": "Whisper Turbo",
+        "description": "Equilibri entre precisió i velocitat."
+      },
+      "large": {
+        "name": "Whisper Large",
+        "description": "Bona precisió, però lent."
+      },
+      "breeze-asr": {
+        "name": "Breeze ASR",
+        "description": "Optimitzat per al xinès mandarí de Taiwan. Admet l'alternança de llengües."
+      }
+    },
+    "errors": {
+      "selectModel": "No s'ha pogut seleccionar el model"
+    },
+    "permissions": {
+      "microphone": {
+        "name": "Micròfon",
+        "why": "Perquè el Glider us pugui sentir. L'àudio es converteix en text en aquest ordinador i no es puja mai enlloc."
+      },
+      "accessibility": {
+        "name": "Accessibilitat",
+        "why": "Perquè la drecera funcioni a totes les aplicacions i el Glider pugui escriure el text on tingueu el cursor."
+      },
+      "errors": {
+        "checkFailed": "No s'han pogut comprovar els permisos. Torneu-ho a provar.",
+        "requestFailed": "No s'ha pogut sol·licitar el permís. Torneu-ho a provar."
+      },
+      "titleMac": "Dos permisos i ja està",
+      "titleWindows": "Un permís i ja està",
+      "subtitleMac": "El macOS pregunta abans que qualsevol aplicació pugui escoltar o escriure.",
+      "subtitleWindows": "El Windows pregunta abans que qualsevol aplicació pugui escoltar.",
+      "allow": "Permet",
+      "openSettings": "Obre la configuració",
+      "allowed": "Permès",
+      "waiting": "En espera",
+      "turnOnMac": "Activeu el Glider a Configuració del Sistema i torneu aquí.",
+      "turnOnWindows": "Activeu l'accés al micròfon a Configuració de Windows i torneu aquí.",
+      "hintBoth": "Permeteu-los tots dos per continuar",
+      "hintMicrophone": "Permeteu el micròfon per continuar",
+      "welcomeBack": "Us donem la benvinguda de nou. Continuem on ho havíeu deixat.",
+      "relaunch": "La drecera no respon després d'això? <relaunch>Reinicieu el Glider</relaunch> i tornareu a aparèixer just aquí.",
+      "fnKey": {
+        "name": "Fn key",
+        "why": "You hold Fn to dictate. Turn off what macOS does when you press it alone (emoji picker or input switch). You can change it back in System Settings → Keyboard.",
+        "action": "Turn off"
+      }
+    },
+    "shell": {
+      "back": "Enrere",
+      "continue": "Continua",
+      "progress": "Pas {{step}} de {{count}}"
+    },
+    "welcome": {
+      "title": "Parleu en lloc d'escriure, a qualsevol aplicació",
+      "subtitle": "Trieu les llengües en què dictareu",
+      "languagesLabel": "Llengües",
+      "noMatch": "Cap llengua coincideix amb «{{query}}». Els models del Glider cobreixen unes 100 llengües; en trobareu més a la configuració.",
+      "appLanguage": "Llengua de l'aplicació",
+      "chinese": {
+        "question": "Parleu {{languages}}. Quins caràcters ha d'escriure el Glider?",
+        "label": "Caràcters xinesos",
+        "zh-Hans": "Simplificat",
+        "zh-Hant": "Taiwan",
+        "zh-HK": "Hong Kong"
+      },
+      "hint": {
+        "pickOne": "Trieu almenys una llengua"
+      },
+      "search": "Search languages",
+      "searchPlaceholder": "Search {{count}} languages"
+    },
+    "download": {
+      "checking": "S'està comprovant la baixada…",
+      "ready": "{{name}} està a punt",
+      "failed": "La baixada s'ha aturat",
+      "downloading": "S'està baixant {{name}}",
+      "progress": "{{done}} de {{total}}",
+      "progressLeft": "{{done}} de {{total}}, queden {{time}}",
+      "checkingName": "S'està comprovant {{name}}",
+      "checkingDetail": "Ens assegurem que la baixada estigui completa",
+      "stopped": "{{name}} ha deixat de baixar-se",
+      "retryDetail": "En tornar-ho a provar, continua on s'havia aturat",
+      "cardProgress": "S'està baixant {{percent}} %, {{done}} de {{total}}",
+      "timeLeft": "Queden {{time}}",
+      "speedLeft": "{{speed}}, queden {{time}}"
+    },
+    "model": {
+      "title": "Trieu un model de veu",
+      "subtitle": "El model de veu converteix la vostra parla en text, directament en aquest ordinador",
+      "label": "Model de veu",
+      "lines": {
+        "recommended": "El millor equilibri entre velocitat i precisió per a les vostres llengües",
+        "faster": "Més ràpid, amb alguns errors més",
+        "accurate": "Menys errors, però més lent"
+      },
+      "shorts": {
+        "recommended": "El millor equilibri per a vós",
+        "faster": "Més ràpid, uns quants errors més",
+        "accurate": "Menys errors, però més lent"
+      },
+      "model": "Model",
+      "showAll": "Mostra els {{count}} models",
+      "download": "Baixa {{size}}",
+      "downloadInstead": "Baixa {{size}} en lloc seu",
+      "pauses": "{{name}} es posa en pausa al {{percent}} %",
+      "resumeLater": "Torneu-lo a triar per continuar on s'havia quedat",
+      "hint": "Es baixa mentre acabeu la configuració",
+      "bestFor": "Best for {{languages}}",
+      "recommended": "Recommended",
+      "languageCount_one": "{{count}} language",
+      "languageCount_other": "{{count}} languages"
+    },
+    "done": {
+      "title": "Tot a punt",
+      "atLogin": "Inicia el Glider quan entri a la sessió",
+      "finish": "Fet",
+      "subtitleMac": "Glider is in your menu bar now. It works in every app, even with this window closed.",
+      "subtitle": "Glider is in your system tray now. It works in every app, even with this window closed.",
+      "dictate": "Dictate",
+      "readAloud": "Read Aloud",
+      "languages": "Languages",
+      "speechModel": "Speech model",
+      "holdAndTalk": "Hold and talk",
+      "selectThenPress": "Select, then press",
+      "change": "Change",
+      "later": "You can change these later in Settings"
+    },
+    "downloads": {
+      "background": "Downloads keep going in the background",
+      "label": "Downloads",
+      "underMinute": "less than a minute left",
+      "oneMinute": "1 min left",
+      "minutes_one": "{{count}} min left",
+      "minutes_other": "{{count}} min left",
+      "checking": "Checking…",
+      "ofSize": "{{percent}}% · {{done}} of {{total}} MB",
+      "next": "{{percent}}% · {{name}} next",
+      "about": "about {{left}}",
+      "ready": "Ready: {{names}}",
+      "cancel": "Cancel {{name}}"
+    },
+    "voices": {
+      "title": "Pick your voices",
+      "subtitle": "Pick one for each language you listen in. Add more later in Models.",
+      "label": "Voices",
+      "descriptions": {
+        "kokoro-int8-en-v0_19": "Natural, warm voices. 11 American and British speakers.",
+        "vits-piper-hi_IN-pratham-medium-int8": "A clear Hindi voice. Reads Devanagari text.",
+        "kitten-nano-en-v0_2-fp16": "Tiny and fast. Good for older computers."
+      },
+      "speakers_one": "{{count}} speaker",
+      "speakers_other": "{{count}} speakers",
+      "speed": "Up to 3x speed",
+      "sample": "Sample",
+      "sampleLabel": "Hear {{name}}"
+    },
+    "refine": {
+      "title": "Pick a refine model",
+      "subtitle": "It cleans up and rewrites your text when you ask. You can skip this.",
+      "label": "Refine model",
+      "descriptions": {
+        "qwen3-4b-instruct-2507": "Clear, natural rewrites that keep your tone.",
+        "qwen3-1_7b": "Quicker and lighter, a little less polished."
+      },
+      "quality": "Quality: {{value}}",
+      "speed": "Speed: {{value}}",
+      "memory": "Needs {{n}} GB memory",
+      "levels": {
+        "best": "best",
+        "good": "good",
+        "fair": "fair",
+        "fast": "fast",
+        "moderate": "moderate"
+      },
+      "notNow": "Not now",
+      "notNowHint": "Turn on Rewrite later and pick a model then."
+    },
+    "practice": {
+      "title": "Give it a try",
+      "subtitle": "Both shortcuts work in every app. Try them here first.",
+      "dictate": "1. Click the box, hold <keys/> and talk",
+      "listen": "2. Select that text and press <keys/> to hear it",
+      "boxLabel": "Practice box",
+      "placeholder": "Your words appear here.",
+      "done": "Done",
+      "skip": "You can skip this",
+      "voicesNote": "Read Aloud uses the voices you picked. Downloads finish in the background.",
+      "waiting": "Dictation works once {{model}} finishes downloading."
+    }
+  },
+  "modelTable": {
+    "tags": {
+      "preview": "Vista prèvia en directe",
+      "previewTitle": "Mostra les paraules a la finestra superposada En directe mentre parleu i les escriu quan acabeu",
+      "translate": "Tradueix",
+      "translateTitle": "Pot convertir el que digueu en text en anglès. Activeu-ho a la configuració"
+    },
+    "rubric": {
+      "gradeTitle": "Precisió en {{language}}: {{grade}}",
+      "accuracyTitle": "Precisió en {{language}}",
+      "overallTitle": "Precisió en les vostres llengües: {{grade}}",
+      "overall": "Precisió en les vostres llengües",
+      "meaning": {
+        "A": "Molt pocs errors: les paraules solen sortir tal com les dieu",
+        "B": "Alguns errors: caldrà corregir alguna paraula de tant en tant",
+        "C": "Errors freqüents: pot ser que es perdin alguns detalls",
+        "D": "Molts errors: caldrà revisar i corregir el que escriu",
+        "F": "Sovint poc clar: gran part del que digueu pot sortir malament"
+      },
+      "unsupported": "Aquest model no entén {{language}}, així que no el pot escriure",
+      "unrated": "Aquest model entén {{language}}, però encara no hem mesurat com de bé",
+      "under": "menys del {{max}} %",
+      "between": "del {{min}} al {{max}} %",
+      "over": "{{min}} % o més",
+      "speedTitle": "Velocitat: {{speed}}",
+      "speedName": {
+        "0": "Molt lent",
+        "1": "Lent",
+        "2": "Moderat",
+        "3": "Ràpid",
+        "4": "Molt ràpid"
+      },
+      "speedMeaning": {
+        "0": "Les paraules apareixen després d'una espera llarga",
+        "1": "Les paraules apareixen després d'una espera",
+        "2": "Les paraules apareixen després d'una espera breu",
+        "3": "Les paraules apareixen gairebé a l'instant",
+        "4": "Les paraules apareixen a l'instant"
+      },
+      "speedPreview": "{{meaning}}, amb una vista prèvia en directe mentre parleu",
+      "untimed": "Encara no hem mesurat com de ràpid és",
+      "underSeconds": "menys de {{max}} s",
+      "betweenSeconds": "de {{min}} a {{max}} s",
+      "overSeconds": "{{min}} s o més"
+    },
+    "roles": {
+      "recommended": "Recomanat",
+      "faster": "Més ràpid",
+      "accurate": "Més precís",
+      "fromAll": "De tots els models"
+    },
+    "speed": "Velocitat",
+    "size": "Mida",
+    "accuracy": "Precisió",
+    "search": "Cerca models",
+    "allLabel": "Models de veu",
+    "noMatch": "Cap resultat per a «{{query}}». Proveu una llengua o una família com Whisper o Parakeet",
+    "noFilterMatch": "Cap model coincideix amb aquests filtres",
+    "speedUntested": "Velocitat encara sense mesurar",
+    "speedWords": {
+      "0": "Molt lent, les paraules apareixen després d'una espera llarga",
+      "1": "Lent, les paraules apareixen després d'una espera",
+      "2": "Moderat, les paraules apareixen després d'una espera breu",
+      "3": "Ràpid, les paraules apareixen gairebé a l'instant",
+      "4": "Molt ràpid, les paraules apareixen a l'instant"
+    },
+    "speedWordsPreview": {
+      "0": "Molt lent, amb una vista prèvia en directe mentre parleu",
+      "1": "Lent, amb una vista prèvia en directe mentre parleu",
+      "2": "Moderat, amb una vista prèvia en directe mentre parleu",
+      "3": "Ràpid, amb una vista prèvia en directe mentre parleu",
+      "4": "Molt ràpid, amb una vista prèvia en directe mentre parleu"
+    },
+    "missingLanguage": "Falta una llengua",
+    "allLanguages": "Totes",
+    "downloadingLine": "S'està baixant el {{percent}} % de {{total}}",
+    "customLine": "Afegit des de la carpeta de models. Sense puntuar.",
+    "legacyLine": "Una baixada antiga. Sense puntuar."
+  },
+  "languagePicker": {
+    "search": "Cerca llengües"
+  },
+  "modelSelector": {
+    "custom": "Personalitzat",
+    "streaming": "En temps real",
+    "active": "Actiu",
+    "noModelsAvailable": "No hi ha models disponibles",
+    "verifying": "S'està verificant {{modelName}}...",
+    "verifyingGeneric": "S'està verificant...",
+    "downloading": "S'està baixant: {{percentage}}%",
+    "downloadingMultiple": "S'estan baixant {{count}} models...",
+    "modelReady": "Model a punt",
+    "loading": "S'està carregant {{modelName}}...",
+    "loadingGeneric": "S'està carregant...",
+    "modelError": "Error del model",
+    "modelUnloaded": "Model alliberat de la memòria",
+    "noModelDownloadRequired": "No hi ha cap model: cal baixar-ne un",
+    "downloadSpeed": "{{speed}} MB/s",
+    "lockedWhileTranscribing": "Podràs canviar de model quan acabi la transcripció a l'Historial."
+  },
+  "settings": {
+    "modelSettings": {
+      "title": "Configuració de {{model}}",
+      "description": "Options for the speech model you use now."
+    },
+    "general": {
+      "shortcut": {
+        "title": "Dreceres del Glider",
+        "description": "Configura les dreceres de teclat per iniciar l'enregistrament de veu per a la transcripció",
+        "loading": "S'estan carregant les dreceres...",
+        "none": "No hi ha cap drecera configurada",
+        "notFound": "No s'ha trobat la drecera",
+        "pressKeys": "Premeu les tecles...",
+        "bindings": {
+          "transcribe": {
+            "name": "Drecera de transcripció",
+            "description": "La drecera de teclat per enregistrar i transcriure la vostra veu."
+          },
+          "cancel": {
+            "name": "Drecera de cancel·lació",
+            "description": "La drecera de teclat per cancel·lar l'enregistrament actual."
+          },
+          "transcribe_with_post_process": {
+            "name": "Drecera de postprocessament",
+            "description": "Opcional: una drecera específica que sempre aplica postprocessament amb IA a la transcripció."
+          },
+          "speak_selection": {
+            "name": "Read Aloud Shortcut",
+            "description": "Llegeix en veu alta el text seleccionat. Torneu a prémer per aturar."
+          },
+          "refine_1": {
+            "name": "Refine 1",
+            "description": "Reescriu el text seleccionat amb el prompt del costat, al mateix lloc."
+          },
+          "refine_2": {
+            "name": "Refine 2",
+            "description": "Reescriu el text seleccionat amb el prompt del costat, al mateix lloc."
+          },
+          "refine_3": {
+            "name": "Refine 3",
+            "description": "Reescriu el text seleccionat amb el prompt del costat, al mateix lloc."
+          }
+        },
+        "errors": {
+          "set": "No s'ha pogut definir la drecera: {{error}}"
+        },
+        "changeLabel": "Change {{name}} ({{keys}})"
+      },
+      "language": {
+        "title": "Llengua",
+        "description": "La vostra llengua. Triar-ne una és més precís que Automàtica.",
+        "searchPlaceholder": "Cerca llengües...",
+        "noResults": "No s'ha trobat cap llengua",
+        "auto": "Automàtica",
+        "autoUnavailable": {
+          "oneLanguage": "Només una de les teves llengües funciona amb aquest model",
+          "undetectable": "No disponible amb {{languages}}",
+          "noMatch": "Cap de les teves llengües funciona amb aquest model"
+        },
+        "detectorMissingTitle": "Automàtica necessita una baixada a part",
+        "detectorMissing": "Aquest model no pot saber en quin idioma parles. Automàtica necessita un petit detector d'idioma per esbrinar-ho",
+        "stopDetectorDownload": "Atura la baixada del detector d'idioma"
+      },
+      "preferredLanguages": {
+        "title": "Llengües preferides",
+        "description": "Les llengües que parleu. El Glider les utilitza per recomanar models.",
+        "noMatch": "Cap llengua coincideix amb «{{query}}»",
+        "weak": "Cap model reconeix bé {{languages}} encara.",
+        "change": "Change",
+        "none": "No languages yet"
+      }
+    },
+    "models": {
+      "sections": {
+        "yours": "En aquest ordinador",
+        "fits": "Per a les vostres llengües"
+      },
+      "emptyYours": "Encara no hi ha models. Trieu-ne un a sota: es baixa i el Glider l'utilitza.",
+      "showMore": "Mostra'n {{count}} més",
+      "showFewer": "Mostra'n menys",
+      "download": "Baixa i utilitza",
+      "downloadingThenUse": "{{percent}} % de {{total}}, i després canvia",
+      "loading": "S'està carregant…",
+      "deleteAsk": "Voleu suprimir {{name}}? S'alliberen {{size}}.",
+      "deleteAskActive": "Voleu suprimir {{name}}? El Glider no podrà transcriure fins que en trieu un altre.",
+      "cancel": "Cancel·la",
+      "deleteModel": "Suprimeix {{name}}",
+      "cancelDownload": "Atura la baixada de {{name}}",
+      "legend": {
+        "open": "Com es puntuen els models",
+        "accuracyNote": "Per a cadascuna de les vostres llengües: quantes paraules ha fallat un model en les nostres gravacions de prova.",
+        "speedNote": {
+          "accelerated": "Quant triguen a escriure's 30 segons de veu amb el xip gràfic del nostre portàtil de prova. Aquest ordinador pot ser diferent.",
+          "cpu": "Quant triguen a escriure's 30 segons de veu amb el processador del nostre portàtil de prova. Aquest ordinador pot ser diferent."
+        },
+        "marks": "? encara no s'ha mesurat. — no entén aquesta llengua.",
+        "howGraded": "How models are graded"
+      },
+      "retiredNotice": {
+        "title": "Els models antics ja no funcionen amb Glider",
+        "description": "Ocupen {{size}} a l'ordinador.",
+        "delete": "Suprimeix els models",
+        "deleteFailed": "No s'han pogut suprimir alguns models antics. Consulteu el registre per a més detalls."
+      },
+      "rescan": {
+        "tooltip": "Torna a cercar models afegits a la carpeta de models o a la memòria cau de Hugging Face des de fora del Glider"
+      },
+      "tabs": {
+        "label": "Model type",
+        "speech": "Speech to text",
+        "voices": "Read Aloud voices",
+        "llm": "Large language model"
+      },
+      "lede": "Open-source models that run on this computer. Nothing you say is uploaded.",
+      "columns": {
+        "model": "Model",
+        "quality": "Quality",
+        "memory": "Memory",
+        "language": "Language"
+      },
+      "speed": {
+        "veryFast": "Very fast",
+        "fast": "Fast",
+        "moderate": "Moderate",
+        "slow": "Slow",
+        "verySlow": "Very slow"
+      },
+      "inUse": "In use",
+      "livePreview": "Live preview",
+      "checking": "Checking…",
+      "progress": "{{percent}}% of {{size}}",
+      "progressThenSwitch": "{{percent}}% of {{size}}, then switches",
+      "noGrade": "Doesn't hear this language",
+      "downloadAndUse": "Download and use",
+      "use": "Use",
+      "delete": "Delete {{name}}",
+      "fitsHint": "Picked for {{languages}}. Grades come from our test recordings.",
+      "noMatch": "No models match your search.",
+      "search": "Search models",
+      "sample": "Hear a sample",
+      "noVoices": "No voices yet. Download one below.",
+      "moreVoices": "More voices",
+      "moreVoicesHint": "Each voice downloads once, then works offline.",
+      "llm": {
+        "olderComputers": "Older computers",
+        "needsMemory": "Needs more memory",
+        "gb": "{{n}} GB",
+        "none": "No rewriting model yet. Download one below.",
+        "moreTitle": "More large language models",
+        "moreHint": "Picked for how much memory this computer has. Each downloads once, then works offline.",
+        "providerTitle": "Use a provider instead",
+        "useProvider": "Use a provider",
+        "useProviderHint": "Rewrites go to the service you pick, with your own API key. Only the selected text is sent.",
+        "downloadFailed": "Couldn't download the model. Check your connection and try again.",
+        "multilingual": "Many"
+      },
+      "openFolder": "Open models folder",
+      "openFolderFailed": "Couldn't open the models folder",
+      "notLoaded": "Not loaded",
+      "liveMemory": "Memory this model is using right now",
+      "cancelDeletes": "Cancel·lar esborra el que s'ha baixat fins ara. Hauràs de tornar a començar la baixada."
+    },
+    "languages": {
+      "title": "Llengües"
+    },
+    "sound": {
+      "title": "So",
+      "microphone": {
+        "title": "Micròfon",
+        "description": "Selecciona el micròfon preferit",
+        "placeholder": "Seleccionaun micròfon...",
+        "loading": "S'està carregant..."
+      },
+      "channel": {
+        "title": "Canal d'entrada",
+        "description": "Quina entrada es grava en una interfície d'àudio amb diverses entrades.",
+        "average": "Fes la mitjana de tots els canals",
+        "channel": "Canal {{n}}"
+      },
+      "audioFeedback": {
+        "label": "Avisos sonors",
+        "description": "Reprodueix un so quan s'inicia i s'atura l'enregistrament"
+      },
+      "outputDevice": {
+        "title": "Dispositiu de sortida",
+        "description": "Selecciona el dispositiu de sortida d'àudio preferit per als avisos sonors",
+        "placeholder": "Selecciona un dispositiu de sortida...",
+        "loading": "S'està carregant..."
+      },
+      "volume": {
+        "title": "Volum",
+        "description": "Ajusta el volum dels avisos sonors"
+      }
+    },
+    "advanced": {
+      "groups": {
+        "app": "Aplicació",
+        "output": "Sortida",
+        "transcription": "Transcripció",
+        "history": "Historial",
+        "experimental": "Experimental",
+        "outputDescription": "How your words get into the app you are typing in.",
+        "experimentalDescription": "These may change or go away."
+      },
+      "experimentalToggle": {
+        "label": "Funcions experimentals",
+        "description": "Activa les funcions experimentals que encara estan en desenvolupament."
+      },
+      "lazyStreamClose": {
+        "label": "Mantén el micròfon obert entre transcripcions",
+        "description": "El dictat següent comença abans. L'àudio Bluetooth pot empitjorar."
+      },
+      "airpodsMode": {
+        "label": "Mode AirPods",
+        "description": "Recupera els AirPods de l'iPhone perquè les gravacions no quedin mudes."
+      },
+      "acceleration": {
+        "transcribe": {
+          "title": "Acceleració per maquinari",
+          "description": "Automàtica fa servir la GPU si pot i, si no, la CPU."
+        },
+        "gpuDevice": {
+          "auto": "Automàtica"
+        }
+      },
+      "startHidden": {
+        "label": "Inicia ocult",
+        "description": "Inicia a la safata del sistema sense obrir la finestra."
+      },
+      "autostart": {
+        "label": "Inicia en entrar a la sessió",
+        "description": "Inicia automàticament el Glider quan entreu a la sessió de l'ordinador."
+      },
+      "showTrayIcon": {
+        "label": "Mostra la icona a la safata",
+        "description": "Mostra la icona del Glider a la safata del sistema."
+      },
+      "overlay": {
+        "style": {
+          "title": "Finestra superposada",
+          "description": "En directe mostra les paraules mentre parleu, amb models de streaming.",
+          "options": {
+            "none": "Cap",
+            "minimal": "Mínima",
+            "live": "En directe"
+          }
+        },
+        "position": {
+          "title": "Posició de la finestra superposada",
+          "description": "On apareix la finestra superposada mentre dicteu.",
+          "options": {
+            "bottom": "A baix",
+            "top": "A dalt"
+          }
+        }
+      },
+      "pasteMethod": {
+        "title": "Mètode d'enganxament",
+        "description": "Porta-retalls enganxa, Directe escriu, Cap només ho desa.",
+        "options": {
+          "clipboard": "Porta-retalls ({{modifier}}+V)",
+          "clipboardCtrlShiftV": "Porta-retalls (Ctrl+Maj+V)",
+          "clipboardShiftInsert": "Porta-retalls (Maj+Insert)",
+          "direct": "Directe",
+          "none": "Cap",
+          "externalScript": "Script extern"
+        },
+        "externalScriptPlaceholder": "/camí/al/vostre/script.sh"
+      },
+      "typingTool": {
+        "title": "Eina d'escriptura",
+        "description": "L'eina de Linux que fa servir Directe. Automàtica tria la millor.",
+        "options": {
+          "auto": "Automàtica (recomanada)"
+        }
+      },
+      "clipboardHandling": {
+        "title": "Gestió del porta-retalls",
+        "description": "Si el dictat es queda al porta-retalls després d'enganxar.",
+        "options": {
+          "dontModify": "No modifiqueu el porta-retalls",
+          "copyToClipboard": "Copia al porta-retalls"
+        }
+      },
+      "autoSubmit": {
+        "title": "Enviament automàtic",
+        "description": "Prem aquesta tecla després d'enganxar, per enviar el missatge.",
+        "options": {
+          "off": "Desactivat",
+          "enter": "Enter",
+          "cmdEnter": "Cmd+Enter",
+          "superEnter": "Super+Enter",
+          "ctrlEnter": "Ctrl+Enter"
+        }
+      },
+      "translateToEnglish": {
+        "label": "Traduïu a l'anglès",
+        "description": "Escriu en anglès sigui quina sigui la llengua que parleu."
+      },
+      "modelUnload": {
+        "title": "Allibera el model de la memòria",
+        "description": "Allibera memòria si el model de veu no s'usa durant aquest temps.",
+        "options": {
+          "never": "Mai",
+          "immediately": "Immediatament",
+          "min2": "Al cap de 2 minuts",
+          "min5": "Al cap de 5 minuts",
+          "min10": "Al cap de 10 minuts",
+          "min15": "Al cap de 15 minuts",
+          "hour1": "Al cap d'1 hora",
+          "sec15": "Al cap de 15 segons (depuració)"
+        }
+      },
+      "customWords": {
+        "title": "Paraules personalitzades",
+        "description": "Ajuda el model a escriure bé noms i termes que feu servir.",
+        "placeholder": "Afegiu una paraula",
+        "add": "Afegiu",
+        "remove": "Suprimiu {{word}}",
+        "duplicate": "«{{word}}» ja existeix"
+      },
+      "voiceActivityDetection": {
+        "title": "Detecció d'activitat de veu",
+        "description": "Treu els silencis de les gravacions. Desactivat ho grava tot."
+      },
+      "longFormChunking": {
+        "title": "Divisió d'àudio llarg",
+        "description": "Divideix gravacions llargues a les pauses per transcriure-les millor."
+      },
+      "languageDetection": {
+        "title": "Limita Automàtica als meus idiomes",
+        "description": "Activeu-ho si Automàtica tria una llengua que no parleu.",
+        "downloadHint": "Activar-ho baixa un petit detector d'idioma",
+        "downloadingHint": "S'està baixant el detector d'idioma. Desactiva-ho per cancel·lar"
+      },
+      "vadBackend": {
+        "title": "Motor de detecció d'activitat de veu",
+        "description": "Earshot és experimental. Feu servir Silero si es tallen paraules.",
+        "options": {
+          "silero": "Silero",
+          "earshot": "Earshot"
+        }
+      },
+      "fillerWordRemoval": {
+        "title": "Elimina les falques",
+        "description": "Treu vacil·lacions i sons de farciment del dictat."
+      },
+      "chineseScript": {
+        "title": "Escriptura xinesa",
+        "description": "Amb quins caràcters s'escriuen el mandarí i el cantonès.",
+        "options": {
+          "asTranscribed": "Tal com s'ha transcrit",
+          "simplified": "Simplificat",
+          "traditionalTw": "Tradicional (Taiwan)",
+          "traditionalHk": "Tradicional (Hong Kong)"
+        }
+      }
+    },
+    "postProcessing": {
+      "api": {
+        "provider": {
+          "title": "Proveïdor",
+          "description": "Seleccioneu un proveïdor compatible amb OpenAI o Anthropic."
+        },
+        "apiFormat": {
+          "title": "Format de l'API",
+          "description": "Format de sol·licitud que espera el punt de connexió personalitzat.",
+          "options": {
+            "openai": "Compatible amb OpenAI (Chat Completions)",
+            "anthropic": "Anthropic Messages"
+          }
+        },
+        "appleIntelligence": {
+          "unavailable": "L'Apple Intelligence no està disponible en aquest dispositiu. Cal un Mac amb Apple Silicon i macOS Tahoe (26.0) o posterior, amb l'Apple Intelligence activada a la configuració del sistema."
+        },
+        "baseUrl": {
+          "title": "URL de base",
+          "description": "L'adreça API del proveïdor. Només es pot editar a Personalitzat.",
+          "placeholder": "https://api.openai.com/v1",
+          "placeholderAnthropic": "https://api.anthropic.com/v1"
+        },
+        "apiKey": {
+          "title": "Clau de l'API",
+          "description": "Clau de l'API del proveïdor seleccionat.",
+          "placeholder": "sk-..."
+        },
+        "model": {
+          "title": "Model",
+          "descriptionCustom": "Introduïu l'identificador de model que espera el punt de connexió personalitzat.",
+          "descriptionDefault": "Trieu un model ofert pel proveïdor seleccionat.",
+          "placeholderWithOptions": "Cerqueu o seleccioneu un model",
+          "placeholderNoOptions": "Escriviu el nom d'un model",
+          "refreshModels": "Actualitzeu els models"
+        }
+      }
+    },
+    "history": {
+      "openFolder": "Obriu la carpeta d'enregistraments",
+      "loading": "S'està carregant l'historial...",
+      "empty": "Encara no hi ha transcripcions. Comenceu a enregistrar per crear l'historial!",
+      "copyToClipboard": "Copia la transcripció al porta-retalls",
+      "copyError": "No s'ha pogut copiar la transcripció al porta-retalls.",
+      "save": "Desa la transcripció",
+      "unsave": "Treu de les desades",
+      "delete": "Suprimeix l'entrada",
+      "deleteError": "No s'ha pogut suprimir l'entrada. Torneu-ho a provar.",
+      "retranscribe": "Torneu a transcriure",
+      "cancelTranscription": "Cancel·la la transcripció",
+      "transcribing": "S'està transcrivint...",
+      "transcriptionFailed": "La transcripció ha fallat. Podeu tornar a transcriure amb la icona de reintent.",
+      "notTranscribed": "No s'ha transcrit. Podeu transcriure-ho amb la icona de reintent.",
+      "transcribeFile": "Transcriu un fitxer",
+      "mediaFiles": "Àudio i vídeo",
+      "fileUnsupported": "No s'ha pogut llegir l'àudio de {{name}}.",
+      "transcribeFailed": "La transcripció ha fallat. Torna-ho a provar.",
+      "waiting": "Esperant per transcriure",
+      "transcribingPercent": "Transcrivint, {{percent}}%",
+      "readingFile": "S'està llegint el fitxer...",
+      "showMore": "Mostra'n més",
+      "showLess": "Mostra'n menys",
+      "dropTitle": "Deixa anar per transcriure",
+      "dropDescription": "Apareixerà a l'historial.",
+      "tabs": {
+        "label": "History type",
+        "dictation": "Dictation",
+        "readAloud": "Read Aloud",
+        "rewrite": "Rewrite"
+      },
+      "readAloud": {
+        "empty": "Nothing read aloud yet. Select text anywhere and press your Read Aloud shortcut.",
+        "readAgain": "Read again",
+        "meta": "{{voice}} · {{speed}}x",
+        "kept_one": "The last read is kept",
+        "kept_other": "Last {{count}} reads are kept",
+        "playing": "Reading, sentence {{index}} of {{total}}",
+        "stop": "Stop reading"
+      },
+      "rewrite": {
+        "empty": "No rewrites yet. Select text anywhere and press a Refine shortcut.",
+        "kept_one": "The last rewrite is kept",
+        "kept_other": "Last {{count}} rewrites are kept"
+      },
+      "playRecording": "Play recording",
+      "noRecording": "Audio not kept",
+      "savedOnly": "Saved",
+      "savedEmpty": "Nothing saved yet. Press the star on an entry to keep it here.",
+      "audioError": "Couldn't open this recording",
+      "days": {
+        "today": "Today",
+        "yesterday": "Yesterday"
+      }
+    },
+    "debug": {
+      "title": "Depuració",
+      "logDirectory": {
+        "title": "Directori de registres",
+        "description": "Ubicació on es desen els fitxers de registre"
+      },
+      "logLevel": {
+        "title": "Nivell de registre",
+        "description": "Establiu el nivell de detall dels registres"
+      },
+      "liveLogs": {
+        "title": "Registres en directe",
+        "description": "Mostra registres nous del nivell triat mentre el tauler és obert.",
+        "live": "En directe",
+        "paused": "En pausa",
+        "pause": "Pauseu",
+        "resume": "Repreneu",
+        "copied": "Copiat",
+        "lineCount": "{{count}} línies",
+        "empty": "S'estan esperant registres… Les entrades apareixeran aquí a mesura que l'aplicació les emeti."
+      },
+      "updateChecks": {
+        "label": "Comproveu si hi ha actualitzacions",
+        "description": "Comprova automàticament si hi ha versions noves del Glider",
+        "lockedDescription": "Desactivat per la configuració del sistema (GLIDER_DISABLE_UPDATER)"
+      },
+      "whatsNewPreview": {
+        "title": "Previsualització de les novetats",
+        "description": "Obre les últimes notes de la versió incloses sense marcar-les com a llegides",
+        "button": "Previsualitzeu"
+      },
+      "onboardingPreview": {
+        "title": "Previsualització de la configuració inicial",
+        "description": "Mostra les pantalles inicials sense canviar res.",
+        "exitButton": "Sortiu de la previsualització",
+        "choose": "Trieu una pantalla",
+        "screens": {
+          "welcome": "Benvinguda",
+          "permissions": "Permisos",
+          "model": "Model",
+          "demo": "Demostració",
+          "try": "Prova-ho",
+          "done": "Tot a punt",
+          "voices": "Voices",
+          "refine": "Refine model"
+        }
+      },
+      "onboardingRun": {
+        "title": "Executa la introducció",
+        "description": "Executa la configuració inicial de veritat: permisos i models.",
+        "button": "Inicia"
+      },
+      "modelMigration": {
+        "title": "Migració de models",
+        "description": "Obre de debò la pantalla d'actualització de models de format antic: baixa els substituts, canvia de model i elimina els fitxers antics",
+        "button": "Obre"
+      },
+      "soundTheme": {
+        "label": "Tema de so",
+        "description": "Trieu un tema de so per als avisos d'inici i d'aturada de l'enregistrament"
+      },
+      "wordCorrectionThreshold": {
+        "title": "Llindar de correcció de paraules",
+        "description": "Sensibilitat de les correccions de paraules personalitzades"
+      },
+      "historyLimit": {
+        "title": "Límit de l'historial",
+        "description": "Quants dictats recents conserven l'àudio. El text es conserva sempre.",
+        "entries": "entrades"
+      },
+      "recordingRetention": {
+        "title": "Supressió automàtica d'enregistraments",
+        "description": "Suprimeix automàticament els enregistraments antics per estalviar espai",
+        "never": "Mai",
+        "preserveLimit": "Conserva els últims {{count}}",
+        "days3": "Al cap de 3 dies",
+        "weeks2": "Al cap de 2 setmanes",
+        "months3": "Al cap de 3 mesos",
+        "placeholder": "Selecciona el període de conservació..."
+      },
+      "alwaysOnMicrophone": {
+        "label": "Micròfon sempre actiu",
+        "description": "Mantén el micròfon actiu per respondre més de pressa"
+      },
+      "clamshellMicrophone": {
+        "title": "Micròfon amb la tapa tancada",
+        "description": "Micròfon que s'utilitzarà quan la tapa del portàtil estigui tancada"
+      },
+      "postProcessingToggle": {
+        "label": "Postprocessament",
+        "description": "Activa la millora del text amb IA després de la transcripció"
+      },
+      "muteWhileRecording": {
+        "label": "Silencia durant l'enregistrament",
+        "description": "Silencia l'àudio del sistema durant l'enregistrament"
+      },
+      "appendTrailingSpace": {
+        "label": "Afegiu un espai al final",
+        "description": "Afegeix un espai après de la transcripció enganxada"
+      },
+      "keyboardImplementation": {
+        "title": "Implementació del teclat",
+        "description": "Tria el motor de dreceres de teclat.",
+        "bindingsReset": "Les dreceres de teclat eren incompatibles i s'han restablert als valors per defecte"
+      },
+      "pasteDelay": {
+        "title": "Retard abans d'enganxar",
+        "description": "Espera després de copiar. Augmenteu-la si no s'enganxa res."
+      },
+      "pasteDelayAfter": {
+        "title": "Retard après d'enganxar",
+        "description": "Espera abans de restaurar. Augmenteu-la si s'enganxa text antic."
+      },
+      "holdThreshold": {
+        "title": "Llindar de pulsació llarga",
+        "description": "Quant ha de durar una pulsació per comptar com a mantinguda."
+      },
+      "reliablePaste": {
+        "title": "Enganxament fiable (beta)",
+        "description": "Espera que l'app enganxi abans de restaurar el porta-retalls."
+      },
+      "recordingBuffer": {
+        "title": "Marge addicional d'enregistrament",
+        "description": "Grava una mica més en deixar anar, perquè no es talli l'última paraula."
+      },
+      "languageDetectionWindow": {
+        "title": "Àudio de detecció d'idioma",
+        "description": "Segons que escolta el detector. Més llarg és més precís però més lent."
+      },
+      "keyboardDiagnostic": {
+        "title": "Diagnòstic del teclat",
+        "description": "Compta les tecles que arriben a Glider, mai quines són.",
+        "run": "Executa un diagnòstic de 10 s",
+        "running": "S'està escoltant… prema la drecera unes quantes vegades (p. ex., Option+Space)",
+        "secureInputLabel": "Entrada segura",
+        "enabled": "activada",
+        "disabled": "desactivada",
+        "holder": "en ús per {{name}} (pid {{pid}})",
+        "holderUnknown": "cap procés responsable visible",
+        "keyDown": "Tecla premuda",
+        "keyUp": "Tecla alliberada",
+        "flagsChanged": "Modificadors",
+        "mouse": "Ratolí",
+        "verdictBlocked": "L'entrada segura bloca els esdeveniments de tecla. Les dreceres amb tecles no poden funcionar fins que es resolgui.",
+        "verdictSuspicious": "Han arribat esdeveniments de modificadors, però no de tecles. Alguna cosa suprimeix les tecles tot i que l'entrada segura consta com a desactivada. Informeu-ne al GitHub.",
+        "verdictOk": "Els esdeveniments de tecla arriben al Glider amb normalitat.",
+        "verdictNoEvents": "No s'ha capturat cap esdeveniment. Heu premut alguna tecla durant la prova?",
+        "failed": "El diagnòstic ha fallat: {{error}}"
+      },
+      "lede": "Tools for tracking down problems. Most people never need these.",
+      "groups": {
+        "logs": "Logs",
+        "previews": "Previews",
+        "previewsDescription": "Open screens without changing your settings.",
+        "timing": "Timing and sound",
+        "input": "Input"
+      }
+    },
+    "about": {
+      "version": {
+        "title": "Versió",
+        "description": "Versió actual del Glider"
+      },
+      "whatsNewUpdates": {
+        "label": "Mostra les novetats",
+        "description": "Mostra les notes de la versió després d'actualitzar el Glider"
+      },
+      "appDataDirectory": {
+        "title": "Directori de dades de l'aplicació"
+      },
+      "sourceCode": {
+        "title": "Codi font",
+        "description": "Consulta el codi font i col·laboreu-hi",
+        "button": "Mostra al GitHub"
+      },
+      "acknowledgments": {
+        "title": "Agraïments",
+        "ggml": {
+          "title": "ggml",
+          "description": "Biblioteca de tensors d'alt rendiment per a la inferència d'aprenentatge automàtic al dispositiu",
+          "details": "La transcripció local de veu a text del Glider es basa en el transcribe.cpp i el ggml. Gràcies a la gran feina de Georgi Gerganov i dels col·laboradors."
+        },
+        "view": "View",
+        "handy": {
+          "title": "Handy",
+          "description": "El dictat de Glider es basa en Handy de CJ Pais, llicència MIT."
+        },
+        "sherpa": {
+          "title": "sherpa-onnx",
+          "description": "Les veus de Read Aloud funcionen amb sherpa-onnx."
+        },
+        "description": "Glider stands on these open-source projects.",
+        "candle": {
+          "title": "candle",
+          "description": "Rewrite funciona amb candle, la biblioteca d'ML en Rust de Hugging Face."
+        }
+      },
+      "appTitle": "App",
+      "star": {
+        "title": "Like Glider?",
+        "description": "Star it on GitHub so other developers can find it.",
+        "button": "Star on GitHub"
+      }
+    },
+    "readAloud": {
+      "title": "Read Aloud",
+      "description": "Select text anywhere and Glider reads it to you with an AI voice that runs on this computer.",
+      "voice": {
+        "title": "Voice",
+        "description": "Which speaker reads your text."
+      },
+      "language": {
+        "title": "Idioma",
+        "description": "L'idioma en què la veu llegeix el text."
+      },
+      "speed": {
+        "title": "Speed",
+        "description": "How fast the voice reads. 1.0x is normal."
+      },
+      "models": {
+        "downloadFailed": "Couldn't download the voice"
+      },
+      "setupTitle": "Setup",
+      "model": {
+        "title": "Voice model",
+        "none": "No voice downloaded yet",
+        "change": "Change",
+        "download": "Get a voice",
+        "summary": "{{name}} · {{language}} · {{size}} MB"
+      },
+      "shortcutHint": "Press again while it reads to stop.",
+      "livePreview": {
+        "title": "Vista prèvia en directe",
+        "description": "Mostra la frase que s'està llegint sobre el reproductor."
+      },
+      "intro": {
+        "hint": "Works anywhere you can select text. Press the shortcut again to stop.",
+        "hintMac": "Works anywhere you can select text. F8 pauses, F7 and F9 skip, Esc stops.",
+        "sample": "Long replies are easier to take in when you can sit back and listen.",
+        "label": "Example",
+        "try": "Try it",
+        "stop": "Stop"
+      }
+    },
+    "dictation": {
+      "description": "How Glider listens, turns your speech into text, and types it.",
+      "livePreview": {
+        "title": "Vista prèvia en directe",
+        "description": "Mostra les paraules en parlar, amb models de Vista prèvia en directe."
+      },
+      "intro": {
+        "hint": "Keep holding while you talk, then let go. The text lands where your cursor is.",
+        "said": "can you send me the deck before tomorrow's call",
+        "typed": "Can you send me the deck before tomorrow's call?",
+        "label": "Example",
+        "try": "Try it"
+      }
+    }
+  },
+  "footer": {
+    "checkingUpdates": "S'està comprovant si hi ha actualitzacions...",
+    "updateAvailableShort": "Hi ha una actualització disponible",
+    "upToDate": "Actualitzat",
+    "updateCheckingDisabled": "Comprovació d'actualitzacions desactivada",
+    "downloading": "S'està baixant... {{progress}}%",
+    "installing": "S'està instal·lant...",
+    "preparing": "S'està preparant...",
+    "checkForUpdates": "Comprova si hi ha actualitzacions",
+    "portableUpdateTitle": "Cal actualitzar manualment",
+    "portableUpdateMessage": "Les instal·lacions portables no es poden actualitzar automàticament. Baixa l'instal·lador per al vostre sistema a continuació, executeu-lo i instal·leu-lo a la mateixa carpeta. La carpeta Data/ (configuració, models i enregistraments) es conserva.",
+    "portableUpdateButton": "Baixa l'instal·lador",
+    "portableUpdateBrowseMessage": "Les instal·lacions portables no es poden actualitzar automàticament. Baixa l'última versió per al vostre sistema des de GitHub Releases i instal·leu-la a la mateixa carpeta. La carpeta Data/ (configuració, models i enregistraments) es conserva.",
+    "portableUpdateBrowseButton": "Obriu GitHub Releases",
+    "noVoice": "No voice yet",
+    "voiceLabel": "Voice: {{voice}}",
+    "dictationModel": "Dictation model",
+    "readAloudModel": "Read aloud voice",
+    "rewriteModel": "Rewrite model",
+    "noRewriteModel": "No rewrite model yet",
+    "rewriteLabel": "Rewrite model: {{model}}",
+    "chooseVoices": "Voices",
+    "voicesTitle": "Choose a voice",
+    "providerDesc": "Runs on {{provider}}, online"
+  },
+  "whatsNew": {
+    "title": "Novetats del Glider v{{version}}"
+  },
+  "common": {
+    "playbackPosition": "Posició de reproducció",
+    "resetSetting": "Restableix {{setting}} al valor predeterminat",
+    "loading": "S'està carregant...",
+    "delete": "Suprimeix",
+    "close": "Tanca",
+    "open": "Obre",
+    "copy": "Copia",
+    "clear": "Neteja",
+    "noOptionsFound": "No s'ha trobat cap opció",
+    "hearExample": "Escolta l'exemple",
+    "muteExample": "Silencia l'exemple"
+  },
+  "errors": {
+    "micPermissionDeniedTitle": "Accés al micròfon denegat",
+    "micPermissionDenied": {
+      "generic": "El sistema operatiu ha denegat l'accés al micròfon. Concediu el permís del micròfon a la configuració del sistema.",
+      "windows": "Activa l'accés al micròfon a Configuració → Privadesa i seguretat → Micròfon (inclòs l'accés de les aplicacions d'escriptori).",
+      "macos": "Concediu l'accés al micròfon a Configuració del sistema → Privadesa i seguretat → Micròfon.",
+      "linux": "Concediu l'accés al micròfon a la configuració de so o de privadesa del sistema."
+    },
+    "noInputDeviceTitle": "No s'ha trobat cap micròfon",
+    "noInputDevice": "No s'ha detectat cap dispositiu d'entrada d'àudio. Connecteu un micròfon o uns auriculars amb micròfon i torneu-ho a provar.",
+    "recordingFailedTitle": "No s'ha pogut iniciar l'enregistrament",
+    "modelLoadFailed": "Glider no ha pogut carregar aquest model. Torna-ho a provar o tria'n un altre.",
+    "modelLoadFailedTitle": "No s'ha pogut carregar el model",
+    "modelDownloadFailed": "Ha fallat la baixada",
+    "pasteFailedTitle": "No s'ha pogut enganxar el text",
+    "pasteFailed": "No s'ha pogut enganxar el text a l'aplicació activa.",
+    "postProcessFailedTitle": "Enganxat sense postprocessament",
+    "postProcessFailed": "El postprocessament no ha acabat, així que la transcripció s'ha enganxat tal qual.",
+    "filePostProcessFailedTitle": "Transcrit sense postprocessament",
+    "filePostProcessFailed": "El postprocessament no ha acabat, així que la transcripció s'ha desat tal qual.",
+    "fileTranscriptionFailedTitle": "La transcripció del fitxer ha fallat",
+    "transcriptionFailedTitle": "La transcripció ha fallat",
+    "noTextSelectedTitle": "No Text Selected",
+    "noTextSelected": "Select some text first, then press the Read Aloud shortcut.",
+    "voiceModelMissingTitle": "No Voice Downloaded",
+    "voiceModelMissing": "Download a voice in Read Aloud settings first.",
+    "readAloudFailedTitle": "Read Aloud Failed",
+    "refineFailedTitle": "Refine Failed",
+    "refineFailed": "The selected text couldn't be rewritten. Check the Post Process provider and model.",
+    "noLlmModelTitle": "No Rewrite Model",
+    "noLlmModel": "Download a rewrite model in Models, then try again."
+  },
+  "notices": {
+    "errorOne": "{{n}} error",
+    "errorMany": "{{n}} errors",
+    "warningOne": "{{n}} avís",
+    "warningMany": "{{n}} avisos",
+    "errorsAndWarnings": "{{errors}}, {{warnings}}"
+  },
+  "appLanguage": {
+    "title": "Llengua de l'aplicació",
+    "description": "Canvia la llengua de la interfície del Glider"
+  },
+  "theme": {
+    "title": "Tema de l'aplicació",
+    "description": "Segueix el sistema, o sempre clar o fosc.",
+    "options": {
+      "system": "Sistema",
+      "light": "Clar",
+      "dark": "Fosc"
+    }
+  },
+  "overlay": {
+    "transcribing": "S'està transcrivint...",
+    "loadingModel": "S'està carregant el model...",
+    "readingAloud": "Reading aloud",
+    "preparingVoice": "Preparing voice...",
+    "refining": "Refining",
+    "seeChanges": "See changes",
+    "changesLabel": "Changes",
+    "changes_one": "{{count}} change",
+    "changes_other": "{{count}} changes",
+    "toUndo": "to undo",
+    "close": "Close",
+    "copy": "Copy",
+    "again": "Refine again",
+    "previous": "Previous sentence",
+    "next": "Next sentence",
+    "pause": "Pause",
+    "play": "Play",
+    "slower": "Slower",
+    "faster": "Faster",
+    "listening": "Listening",
+    "cancel": "Cancel",
+    "finishAndPaste": "Acaba i enganxa",
+    "usingRewrite": "Amb {{name}}",
+    "done": "Fet",
+    "doneReading": "Lectura acabada",
+    "noVoiceYet": "Encara no hi ha cap veu",
+    "getVoice": "Aconsegueix una veu",
+    "nowhereHint": "Fes clic primer en un quadre de text i després dicta",
+    "savedInHistory": "També desat a l'Historial",
+    "pasteHint": "Fes clic en un quadre de text i prem {{keys}}",
+    "copied": "Copiat",
+    "sentence": "Frase {{index}} de {{total}}",
+    "toStop": "per aturar",
+    "copyResult": "Copia el resultat"
+  },
+  "secureInput": {
+    "blockedWithCulprit_one": "{{name}} pot estar blocant 1 drecera",
+    "blockedWithCulprit_other": "{{name}} pot estar blocant {{count}} dreceres",
+    "blockedNoCulprit_one": "El macOS està blocant temporalment 1 drecera",
+    "blockedNoCulprit_other": "El macOS està blocant temporalment {{count}} dreceres",
+    "recorderBlockedWithCulprit": "{{name}} pot estar blocant els canvis de dreceres",
+    "recorderBlockedNoCulprit": "El macOS està blocant temporalment els canvis de dreceres",
+    "learnMore": "Com es resol",
+    "recorderBlocked": "Ara no se'n poden enregistrar dreceres: l'entrada segura del macOS bloca els esdeveniments de tecla. Resol primer l'avís d'entrada segura.",
+    "dismiss": "Descarta"
+  },
+  "home": {
+    "welcome": "Welcome back",
+    "welcomeName": "Welcome back, {{name}}",
+    "shortcutsLabel": "Your shortcuts",
+    "statsLabel": "Your numbers",
+    "dictateLine": "Hold <keys/> to dictate",
+    "dictateHint": "Works in every app. What you say is typed where your cursor is.",
+    "listenLine": "Select text, press <keys/> to listen",
+    "listenHint": "Hear AI replies, docs and web pages read aloud, up to 3x speed.",
+    "listening": "Listening...",
+    "reading": "Reading aloud...",
+    "changeShortcuts": "Change shortcuts",
+    "stats": {
+      "dictated": "words dictated",
+      "read": "words read aloud",
+      "streak_one": "day streak",
+      "streak_other": "day streak"
+    },
+    "today": "Today",
+    "seeAll": "See all history",
+    "filterLabel": "Show only",
+    "empty": "Nothing yet today. Your dictations, reads and rewrites will show up here.",
+    "kind": {
+      "dictation": "Dictation",
+      "read": "Read aloud",
+      "rewrite": "Rewrite"
+    },
+    "howToUse": "How to use",
+    "tutorial": {
+      "play": "Play the how-to video",
+      "title": "See how Glider works",
+      "soon": "Video coming soon",
+      "button": "Tutorial"
+    }
+  },
+  "insights": {
+    "rangeLabel": "Time range",
+    "last30": "30 days",
+    "allTime": "All time",
+    "wpmUp": "Up from {{from}} in {{month}}",
+    "wpmDown": "Down from {{from}} in {{month}}",
+    "wpmSteady": "Steady since {{month}}",
+    "wpmNoTrend": "Trend shows from next week",
+    "wpmEmpty": "Dictate to see your pace",
+    "hours": "{{n}} h",
+    "minutes": "{{n}} min",
+    "timeListened": "Time listened",
+    "longestRead": "Longest read",
+    "words_one": "{{n}} word",
+    "words_other": "{{n}} words",
+    "appsLabel": "Where you dictate",
+    "appsTitle": "Where you talk",
+    "appsHint": "Dictated words by app",
+    "appsEmpty": "Dictate in a few apps and they show up here.",
+    "otherApps": "Other",
+    "appShare": "{{name}}, {{share}}%",
+    "streakLabel": "Streak",
+    "streak_one": "{{count}} day streak",
+    "streak_other": "{{count}} day streak",
+    "noStreak": "No streak yet",
+    "longest_one": "Longest {{count}} day",
+    "longest_other": "Longest {{count}} days",
+    "calendarLabel": "Days you used Glider over the last {{weeks}} weeks",
+    "dayWords_one": "{{day}}: {{count}} word",
+    "dayWords_other": "{{day}}: {{count}} words",
+    "days": {
+      "mon": "Mon",
+      "wed": "Wed",
+      "fri": "Fri",
+      "sun": "Sun"
+    },
+    "less": "Less",
+    "more": "More",
+    "today": "Today",
+    "summary30": "In the last 30 days you dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summary30NoPace": "In the last 30 days you dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAll": "So far you have dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAllNoPace": "So far you have dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryEmpty": "Dictate, listen or rewrite something and your numbers show up here.",
+    "pace": "{{n}} a minute",
+    "rewriteCount_one": "{{n}} rewrite",
+    "rewriteCount_other": "{{n}} rewrites",
+    "savedHours_one": "{{count}} hour",
+    "savedHours_other": "{{count}} hours",
+    "savedMinutes_one": "{{count}} minute",
+    "savedMinutes_other": "{{count}} minutes",
+    "activityTitle": "Activity",
+    "lastDays": "Last {{total}} days.",
+    "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
+    "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
+    "speakingAbove": "Speaking, above",
+    "listeningBelow": "Listening, below",
+    "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
+    "busiest": "Busiest {{day}}.",
+    "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
+    "wpmUnit": "words a minute",
+    "heardUnit": "words heard",
+    "rewritesUnit_one": "rewrite",
+    "rewritesUnit_other": "rewrites",
+    "usuallyAt": "Usually at {{speed}}x",
+    "wordsRewritten_one": "{{n}} word rewritten",
+    "wordsRewritten_other": "{{n}} words rewritten",
+    "dictations": "Dictations",
+    "average": "Average",
+    "longestDictation": "Longest",
+    "languages": "Languages",
+    "reads": "Reads",
+    "voice": "Voice",
+    "rewritesEmpty": "Select text and press a Refine shortcut.",
+    "removedRewrite": "Removed rewrite",
+    "explainLabel": "What {{name}} counts",
+    "inApp": "in {{app}}",
+    "explain": {
+      "dictations": "How many times you held the shortcut and Glider typed something.",
+      "average": "The length of a typical dictation: words divided by dictations.",
+      "longest": "Your single longest dictation in this period.",
+      "languages": "The languages your dictations were transcribed in, most used first.",
+      "reads": "How many times you selected text and Read Aloud read it to you.",
+      "timeListened": "Total time Read Aloud spent speaking, at the speed you chose.",
+      "longestRead": "The most words Read Aloud read in one go.",
+      "voice": "The voice you used for the most reads in this period."
+    }
+  },
+  "rewrite": {
+    "new": "New",
+    "on": "On",
+    "off": "Off",
+    "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
+    "noModel": "No model loaded",
+    "noProvider": "No provider set",
+    "hero": {
+      "polish": "Select text, press <keys/> to polish it",
+      "prompt": "Select text, press <keys/> to make it a prompt",
+      "humanize": "Select text, press <keys/> to humanize it",
+      "grammar": "Select text, press <keys/> to fix its grammar",
+      "custom": "Select text, press <keys/> to run {{name}}",
+      "none": "Add a rewrite to get started"
+    },
+    "heroHint": "Works in Zed, your browser, chat apps, anywhere you can select text. Press {{undo}} to undo.",
+    "tryIt": "Try it",
+    "trying": "Rewriting…",
+    "demo": {
+      "label": "Example",
+      "before": "ok so um the overlay breaks when i press read while its dictating",
+      "results": {
+        "polish": "The overlay breaks when I press Read Aloud during dictation.",
+        "prompt": "Fix the bug where the overlay breaks when Read Aloud is pressed during dictation.",
+        "humanize": "Heads up, the overlay breaks if I hit Read Aloud while I'm dictating.",
+        "grammar": "OK, so, um, the overlay breaks when I press Read while it's dictating."
+      }
+    },
+    "afterDictate": {
+      "title": "After you dictate",
+      "everyTitle": "Rewrite what you dictate",
+      "everyDescription": "Run one rewrite on everything you dictate, before it is typed.",
+      "shortcutTitle": "Dictate and rewrite",
+      "shortcutDescription": "A second dictation shortcut that always rewrites."
+    },
+    "yours": "Your rewrites",
+    "resetAll": "Reset to defaults",
+    "newRewrite": "New rewrite",
+    "newName": "New rewrite",
+    "used_one": "Used {{count}} time",
+    "used_other": "Used {{count}} times",
+    "notUsed": "Not used yet",
+    "customCard": "Your own rewrite. Open it to write what it should do.",
+    "writeOwn": "Write your own",
+    "writeOwnHint": "Tell the model what to do, in plain words.",
+    "compareHint": "Press <keys/> right after a rewrite to compare it with what you wrote.",
+    "runFailed": "The rewrite didn't work. Try again.",
+    "builtin": {
+      "polish": {
+        "card": "Clearer and shorter, in your own voice.",
+        "chip": "polishes selected text",
+        "about": "Polish rewrites your text to read clearer and shorter, and keeps it sounding like you.",
+        "before": "ok so um the overlay thing, when you press the read shortcut while its already dictating it kind of breaks. can you make it so dictation wins and read just waits, and dont touch the settings page",
+        "after": "When I press the Read Aloud shortcut during dictation, the overlay breaks. Make dictation take priority and have Read Aloud wait. Don't touch the settings page."
+      },
+      "prompt": {
+        "card": "Turns a rambling request into a clear task for an AI coding tool.",
+        "chip": "turns selected text into a prompt",
+        "about": "Prompt turns a rambling request into a clear task for an AI coding tool: the goal first, then the details.",
+        "before": "so basically can you like make the history page not jump when a new entry comes in, keep the scroll where it was, and also dont touch the settings page",
+        "after": "Goal: stop the History page from jumping when a new entry arrives.\n- Keep the scroll position where it was.\n- Don't change the settings page."
+      },
+      "humanize": {
+        "card": "Removes stiff, AI-sounding phrasing.",
+        "chip": "humanizes selected text",
+        "about": "Humanize takes out stiff, AI-sounding phrasing so the text reads like a person wrote it.",
+        "before": "I hope this message finds you well. I wanted to reach out to delve into the robust new overlay, which seamlessly elevates the experience.",
+        "after": "Quick note on the new overlay: it's faster and gets out of the way."
+      },
+      "grammar": {
+        "card": "Only spelling and grammar. Nothing else changes.",
+        "chip": "fixes grammar in selected text",
+        "about": "Fix grammar corrects spelling, grammar and punctuation, and leaves every other word as you wrote it.",
+        "before": "i has went to the store yesterday and buyed three apple",
+        "after": "I went to the store yesterday and bought three apples."
+      },
+      "custom": {
+        "chip": "runs {{name}} on selected text",
+        "about": "{{name}} rewrites your text the way its instructions say."
+      }
+    },
+    "options": {
+      "shorter": "Make it shorter",
+      "clarity": "Reword for clarity",
+      "reorder": "Reorder for readability",
+      "lists": "Add lists and paragraphs",
+      "keep_tone": "Keep my tone",
+      "keep_code": "Keep code, file names and commands exactly"
+    },
+    "detail": {
+      "saved": "Saved",
+      "reset": "Reset",
+      "delete": "Delete",
+      "example": "Example",
+      "exampleView": "Example view",
+      "before": "Before",
+      "after": "After",
+      "changes": "Changes",
+      "run": "Run on this example",
+      "running": "Running…",
+      "nameTitle": "Name",
+      "shortcutTitle": "Shortcut",
+      "shortcutName": "{{name}} shortcut",
+      "shortcutHint": "Select text, then press it.",
+      "doesTitle": "What {{name}} does",
+      "instructionsTitle": "Instructions",
+      "instructionsHint": "What the model should do with the text, in plain words.",
+      "instructionsPlaceholder": "For example: turn this into a short, friendly reply.",
+      "extraTitle": "Extra instructions",
+      "extraPlaceholder": "Anything else {{name}} should do. For example: use British spelling.",
+      "modelTitle": "Model",
+      "runsOn": "Runs on",
+      "runsOnLocal": "{{model}}, on this computer",
+      "runsOnProvider": "{{model}}, through your provider",
+      "noModel": "No model yet",
+      "change": "Change"
+    },
+    "samples": {
+      "title": "Writing samples",
+      "hint": "A few things you wrote, so {{name}} matches your style.",
+      "words_one": "{{count}} word",
+      "words_other": "{{count}} words",
+      "remove": "Remove {{name}}",
+      "limit": "Plain text or Markdown, up to {{max}} words each.",
+      "add": "Add a sample",
+      "filter": "Text",
+      "trimmed": "Kept the first {{max}} words of that sample.",
+      "readFailed": "Couldn't read that file."
+    }
+  },
+  "loading": {
+    "label": "Glider is starting"
+  },
+  "topBar": {
+    "theme": "Theme",
+    "showSidebar": "Show sidebar",
+    "hideSidebar": "Hide sidebar"
+  }
+}

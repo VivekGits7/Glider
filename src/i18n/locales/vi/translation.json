@@ -1,0 +1,1456 @@
+{
+  "tray": {
+    "settings": "Cài đặt...",
+    "checkUpdates": "Kiểm tra cập nhật...",
+    "copyLastTranscript": "Sao chép bản chép lời mới nhất",
+    "unloadModel": "Dỡ mô hình",
+    "model": "Mô hình",
+    "quit": "Thoát",
+    "cancel": "Hủy",
+    "secureInputWarning": "⚠ Phím tắt bị Secure Input chặn",
+    "language": "Ngôn ngữ",
+    "autoLanguage": "Tự động",
+    "otherLanguages": "Ngôn ngữ khác"
+  },
+  "sidebar": {
+    "general": "Chung",
+    "models": "Mô hình",
+    "advanced": "Nâng cao",
+    "history": "Lịch sử",
+    "debug": "Gỡ lỗi",
+    "about": "Giới thiệu",
+    "readAloud": "Read Aloud",
+    "home": "Home",
+    "label": "Sections",
+    "version": "Glider v{{version}}",
+    "insights": "Insights",
+    "rewrite": "Rewrite",
+    "dictation": "Dictation"
+  },
+  "onboarding": {
+    "customModelDescription": "Không được hỗ trợ chính thức",
+    "migration": {
+      "title": "Các mô hình của bạn cần được cập nhật",
+      "description": "Glider hiện sử dụng loại mô hình mới hơn. Hãy tải phiên bản mới để tiếp tục chuyển đổi giọng nói. Các phiên bản cũ sẽ bị xóa.",
+      "replaces": "Thay thế {{name}}",
+      "oldFormat": "Định dạng cũ",
+      "failed": "Tải xuống thất bại",
+      "retry": "Thử lại",
+      "chooseAnother": "Chọn mô hình khác",
+      "download": "Tải mô hình ({{size}})",
+      "continue": "Tiếp tục"
+    },
+    "models": {
+      "small": {
+        "name": "Whisper Small",
+        "description": "Nhanh và khá chính xác."
+      },
+      "medium": {
+        "name": "Whisper Medium",
+        "description": "Độ chính xác tốt, tốc độ trung bình"
+      },
+      "turbo": {
+        "name": "Whisper Turbo",
+        "description": "Cân bằng giữa độ chính xác và tốc độ."
+      },
+      "large": {
+        "name": "Whisper Large",
+        "description": "Độ chính xác tốt, nhưng chậm."
+      },
+      "breeze-asr": {
+        "name": "Breeze ASR",
+        "description": "Tối ưu hóa cho tiếng Quan Thoại Đài Loan. Hỗ trợ chuyển đổi ngôn ngữ."
+      }
+    },
+    "errors": {
+      "selectModel": "Không thể chọn mô hình"
+    },
+    "permissions": {
+      "microphone": {
+        "name": "Micrô",
+        "why": "Để Glider nghe được bạn. Âm thanh được chuyển thành văn bản ngay trên máy tính này và không bao giờ được tải lên."
+      },
+      "accessibility": {
+        "name": "Trợ năng",
+        "why": "Để phím tắt của bạn hoạt động trong mọi ứng dụng, và Glider có thể gõ văn bản vào nơi con trỏ của bạn đang đứng."
+      },
+      "errors": {
+        "checkFailed": "Không thể kiểm tra quyền. Vui lòng thử lại.",
+        "requestFailed": "Không thể yêu cầu quyền. Vui lòng thử lại."
+      },
+      "titleMac": "Hai quyền, rồi là xong",
+      "titleWindows": "Một quyền, rồi là xong",
+      "subtitleMac": "macOS sẽ hỏi trước khi bất kỳ ứng dụng nào được nghe hoặc gõ.",
+      "subtitleWindows": "Windows sẽ hỏi trước khi bất kỳ ứng dụng nào được nghe.",
+      "allow": "Cho phép",
+      "openSettings": "Mở cài đặt",
+      "allowed": "Đã cho phép",
+      "waiting": "Đang chờ",
+      "turnOnMac": "Bật Glider trong Cài đặt Hệ thống, rồi quay lại đây.",
+      "turnOnWindows": "Bật quyền truy cập micrô trong Cài đặt Windows, rồi quay lại đây.",
+      "hintBoth": "Hãy cho phép cả hai để tiếp tục",
+      "hintMicrophone": "Hãy cho phép micrô để tiếp tục",
+      "welcomeBack": "Chào mừng bạn quay lại. Tiếp tục từ chỗ bạn đã dừng.",
+      "relaunch": "Phím tắt không phản hồi sau bước này? <relaunch>Khởi chạy lại Glider</relaunch> và bạn sẽ quay lại đúng chỗ này.",
+      "fnKey": {
+        "name": "Fn key",
+        "why": "You hold Fn to dictate. Turn off what macOS does when you press it alone (emoji picker or input switch). You can change it back in System Settings → Keyboard.",
+        "action": "Turn off"
+      }
+    },
+    "shell": {
+      "back": "Quay lại",
+      "continue": "Tiếp tục",
+      "progress": "Bước {{step}} / {{count}}"
+    },
+    "welcome": {
+      "title": "Nói thay vì gõ, trong mọi ứng dụng",
+      "subtitle": "Chọn các ngôn ngữ bạn sẽ dùng để đọc chính tả",
+      "languagesLabel": "Ngôn ngữ",
+      "noMatch": "Không có ngôn ngữ nào khớp với “{{query}}”. Các mô hình của Glider hỗ trợ khoảng 100 ngôn ngữ; còn nhiều ngôn ngữ khác trong cài đặt.",
+      "appLanguage": "Ngôn ngữ ứng dụng",
+      "chinese": {
+        "question": "Bạn nói {{languages}}. Glider nên viết bằng chữ nào?",
+        "label": "Chữ Hán",
+        "zh-Hans": "Giản thể",
+        "zh-Hant": "Đài Loan",
+        "zh-HK": "Hồng Kông"
+      },
+      "hint": {
+        "pickOne": "Hãy chọn ít nhất một ngôn ngữ"
+      },
+      "search": "Search languages",
+      "searchPlaceholder": "Search {{count}} languages"
+    },
+    "download": {
+      "checking": "Đang kiểm tra bản tải xuống…",
+      "ready": "{{name}} đã sẵn sàng",
+      "failed": "Quá trình tải xuống đã dừng",
+      "downloading": "Đang tải xuống {{name}}",
+      "progress": "{{done}} / {{total}}",
+      "progressLeft": "{{done}} / {{total}}, còn {{time}}",
+      "checkingName": "Đang kiểm tra {{name}}",
+      "checkingDetail": "Đang đảm bảo bản tải xuống đã đầy đủ",
+      "stopped": "{{name}} đã ngừng tải xuống",
+      "retryDetail": "Thử lại sẽ tiếp tục từ chỗ đã dừng",
+      "cardProgress": "Đang tải xuống {{percent}}%, {{done}} / {{total}}",
+      "timeLeft": "còn {{time}}",
+      "speedLeft": "{{speed}}, còn {{time}}"
+    },
+    "model": {
+      "title": "Chọn mô hình giọng nói",
+      "subtitle": "Mô hình giọng nói biến lời nói của bạn thành văn bản, ngay trên máy tính này",
+      "label": "Mô hình giọng nói",
+      "lines": {
+        "recommended": "Cân bằng tốt nhất giữa tốc độ và độ chính xác cho các ngôn ngữ của bạn",
+        "faster": "Nhanh hơn, nhưng sai nhiều hơn một chút",
+        "accurate": "Ít lỗi nhất, nhưng chậm hơn"
+      },
+      "shorts": {
+        "recommended": "Cân bằng nhất cho bạn",
+        "faster": "Nhanh hơn, sai nhiều hơn chút",
+        "accurate": "Ít lỗi nhất, nhưng chậm hơn"
+      },
+      "model": "Mô hình",
+      "showAll": "Hiển thị cả {{count}} mô hình",
+      "download": "Tải xuống {{size}}",
+      "downloadInstead": "Tải xuống {{size}} thay thế",
+      "pauses": "{{name}} tạm dừng ở {{percent}}%",
+      "resumeLater": "Chọn lại để tiếp tục từ chỗ đã dừng",
+      "hint": "Tải xuống trong lúc bạn hoàn tất thiết lập",
+      "bestFor": "Best for {{languages}}",
+      "recommended": "Recommended",
+      "languageCount_one": "{{count}} language",
+      "languageCount_other": "{{count}} languages"
+    },
+    "done": {
+      "title": "Mọi thứ đã sẵn sàng",
+      "atLogin": "Khởi động Glider khi tôi đăng nhập",
+      "finish": "Xong",
+      "subtitleMac": "Glider is in your menu bar now. It works in every app, even with this window closed.",
+      "subtitle": "Glider is in your system tray now. It works in every app, even with this window closed.",
+      "dictate": "Dictate",
+      "readAloud": "Read Aloud",
+      "languages": "Languages",
+      "speechModel": "Speech model",
+      "holdAndTalk": "Hold and talk",
+      "selectThenPress": "Select, then press",
+      "change": "Change",
+      "later": "You can change these later in Settings"
+    },
+    "downloads": {
+      "background": "Downloads keep going in the background",
+      "label": "Downloads",
+      "underMinute": "less than a minute left",
+      "oneMinute": "1 min left",
+      "minutes_one": "{{count}} min left",
+      "minutes_other": "{{count}} min left",
+      "checking": "Checking…",
+      "ofSize": "{{percent}}% · {{done}} of {{total}} MB",
+      "next": "{{percent}}% · {{name}} next",
+      "about": "about {{left}}",
+      "ready": "Ready: {{names}}",
+      "cancel": "Cancel {{name}}"
+    },
+    "voices": {
+      "title": "Pick your voices",
+      "subtitle": "Pick one for each language you listen in. Add more later in Models.",
+      "label": "Voices",
+      "descriptions": {
+        "kokoro-int8-en-v0_19": "Natural, warm voices. 11 American and British speakers.",
+        "vits-piper-hi_IN-pratham-medium-int8": "A clear Hindi voice. Reads Devanagari text.",
+        "kitten-nano-en-v0_2-fp16": "Tiny and fast. Good for older computers."
+      },
+      "speakers_one": "{{count}} speaker",
+      "speakers_other": "{{count}} speakers",
+      "speed": "Up to 3x speed",
+      "sample": "Sample",
+      "sampleLabel": "Hear {{name}}"
+    },
+    "refine": {
+      "title": "Pick a refine model",
+      "subtitle": "It cleans up and rewrites your text when you ask. You can skip this.",
+      "label": "Refine model",
+      "descriptions": {
+        "qwen3-4b-instruct-2507": "Clear, natural rewrites that keep your tone.",
+        "qwen3-1_7b": "Quicker and lighter, a little less polished."
+      },
+      "quality": "Quality: {{value}}",
+      "speed": "Speed: {{value}}",
+      "memory": "Needs {{n}} GB memory",
+      "levels": {
+        "best": "best",
+        "good": "good",
+        "fair": "fair",
+        "fast": "fast",
+        "moderate": "moderate"
+      },
+      "notNow": "Not now",
+      "notNowHint": "Turn on Rewrite later and pick a model then."
+    },
+    "practice": {
+      "title": "Give it a try",
+      "subtitle": "Both shortcuts work in every app. Try them here first.",
+      "dictate": "1. Click the box, hold <keys/> and talk",
+      "listen": "2. Select that text and press <keys/> to hear it",
+      "boxLabel": "Practice box",
+      "placeholder": "Your words appear here.",
+      "done": "Done",
+      "skip": "You can skip this",
+      "voicesNote": "Read Aloud uses the voices you picked. Downloads finish in the background.",
+      "waiting": "Dictation works once {{model}} finishes downloading."
+    }
+  },
+  "modelTable": {
+    "tags": {
+      "preview": "Xem trước trực tiếp",
+      "previewTitle": "Hiển thị lời bạn nói trong lớp phủ Trực tiếp khi bạn nói, rồi gõ ra khi bạn dừng",
+      "translate": "Dịch",
+      "translateTitle": "Có thể chuyển lời bạn nói thành văn bản tiếng Anh. Bật trong cài đặt"
+    },
+    "rubric": {
+      "gradeTitle": "Độ chính xác {{language}}: {{grade}}",
+      "accuracyTitle": "Độ chính xác {{language}}",
+      "overallTitle": "Độ chính xác cho các ngôn ngữ của bạn: {{grade}}",
+      "overall": "Độ chính xác cho các ngôn ngữ của bạn",
+      "meaning": {
+        "A": "Rất ít lỗi: lời bạn nói thường được gõ ra đúng như vậy",
+        "B": "Có một số lỗi: thỉnh thoảng bạn sẽ phải sửa vài từ",
+        "C": "Lỗi khá thường xuyên: một số chi tiết có thể bị mất",
+        "D": "Nhiều lỗi: bạn nên kiểm tra và sửa lại những gì nó gõ",
+        "F": "Thường không rõ ràng: phần lớn lời bạn nói có thể bị sai"
+      },
+      "unsupported": "Mô hình này không hiểu {{language}}, nên không thể gõ ngôn ngữ này",
+      "unrated": "Mô hình này hiểu {{language}}, nhưng chúng tôi chưa đo mức độ tốt đến đâu",
+      "under": "dưới {{max}}%",
+      "between": "{{min}} đến {{max}}%",
+      "over": "{{min}}% trở lên",
+      "speedTitle": "Tốc độ: {{speed}}",
+      "speedName": {
+        "0": "Rất chậm",
+        "1": "Chậm",
+        "2": "Vừa phải",
+        "3": "Nhanh",
+        "4": "Rất nhanh"
+      },
+      "speedMeaning": {
+        "0": "Chữ của bạn hiện ra sau một lúc lâu",
+        "1": "Chữ của bạn hiện ra sau một lúc",
+        "2": "Chữ của bạn hiện ra sau một lát",
+        "3": "Chữ của bạn hiện ra gần như ngay lập tức",
+        "4": "Chữ của bạn hiện ra ngay lập tức"
+      },
+      "speedPreview": "{{meaning}}, có xem trước trực tiếp khi bạn nói",
+      "untimed": "Chúng tôi chưa đo tốc độ của mô hình này",
+      "underSeconds": "dưới {{max}} giây",
+      "betweenSeconds": "{{min}} đến {{max}} giây",
+      "overSeconds": "{{min}} giây trở lên"
+    },
+    "roles": {
+      "recommended": "Được đề xuất",
+      "faster": "Nhanh hơn",
+      "accurate": "Chính xác hơn",
+      "fromAll": "Từ tất cả mô hình"
+    },
+    "speed": "Tốc độ",
+    "size": "Dung lượng",
+    "accuracy": "Độ chính xác",
+    "search": "Tìm kiếm mô hình",
+    "allLabel": "Các mô hình giọng nói",
+    "noMatch": "Không có gì khớp với “{{query}}”. Hãy thử một ngôn ngữ, hoặc một dòng mô hình như Whisper hay Parakeet",
+    "noFilterMatch": "Không có mô hình nào khớp với các bộ lọc này",
+    "speedUntested": "Chưa đo tốc độ",
+    "speedWords": {
+      "0": "Rất chậm, chữ hiện ra sau một lúc lâu",
+      "1": "Chậm, chữ hiện ra sau một lúc",
+      "2": "Vừa phải, chữ hiện ra sau một lát",
+      "3": "Nhanh, chữ hiện ra gần như ngay lập tức",
+      "4": "Rất nhanh, chữ hiện ra ngay lập tức"
+    },
+    "speedWordsPreview": {
+      "0": "Rất chậm, có xem trước trực tiếp khi bạn nói",
+      "1": "Chậm, có xem trước trực tiếp khi bạn nói",
+      "2": "Vừa phải, có xem trước trực tiếp khi bạn nói",
+      "3": "Nhanh, có xem trước trực tiếp khi bạn nói",
+      "4": "Rất nhanh, có xem trước trực tiếp khi bạn nói"
+    },
+    "missingLanguage": "Thiếu một ngôn ngữ",
+    "allLanguages": "Tất cả",
+    "downloadingLine": "Đang tải xuống {{percent}}% của {{total}}",
+    "customLine": "Được thêm từ thư mục mô hình của bạn. Không xếp hạng.",
+    "legacyLine": "Một bản tải xuống cũ. Không xếp hạng."
+  },
+  "languagePicker": {
+    "search": "Tìm kiếm ngôn ngữ"
+  },
+  "modelSelector": {
+    "custom": "Tùy chỉnh",
+    "streaming": "Truyền trực tiếp",
+    "active": "Đang hoạt động",
+    "noModelsAvailable": "Không có mô hình nào",
+    "verifying": "Đang xác minh {{modelName}}...",
+    "verifyingGeneric": "Đang xác minh...",
+    "downloading": "Đang tải xuống {{percentage}}%",
+    "downloadingMultiple": "Đang tải xuống {{count}} mô hình...",
+    "modelReady": "Mô Hình Sẵn Sàng",
+    "loading": "Đang tải {{modelName}}...",
+    "loadingGeneric": "Đang tải...",
+    "modelError": "Lỗi Mô Hình",
+    "modelUnloaded": "Mô Hình Đã Gỡ",
+    "noModelDownloadRequired": "Chưa Có Mô Hình - Cần Tải Xuống",
+    "downloadSpeed": "{{speed}} MB/s",
+    "lockedWhileTranscribing": "Bạn có thể đổi mô hình sau khi việc chép lời trong Lịch sử hoàn tất."
+  },
+  "settings": {
+    "modelSettings": {
+      "title": "Cài đặt {{model}}",
+      "description": "Options for the speech model you use now."
+    },
+    "general": {
+      "shortcut": {
+        "title": "Phím tắt Glider",
+        "description": "Cấu hình phím tắt để kích hoạt ghi âm chuyển đổi giọng nói thành văn bản",
+        "loading": "Đang tải phím tắt...",
+        "none": "Chưa cấu hình phím tắt",
+        "notFound": "Không tìm thấy phím tắt",
+        "pressKeys": "Nhấn phím...",
+        "bindings": {
+          "transcribe": {
+            "name": "Phím tắt chuyển đổi",
+            "description": "Phím tắt để ghi âm và chuyển đổi giọng nói của bạn."
+          },
+          "cancel": {
+            "name": "Phím tắt hủy",
+            "description": "Phím tắt để hủy bản ghi hiện tại."
+          },
+          "transcribe_with_post_process": {
+            "name": "Phím tắt xử lý sau",
+            "description": "Tùy chọn: Phím tắt chuyên dụng luôn áp dụng xử lý sau bằng AI cho bản chuyển đổi của bạn."
+          },
+          "speak_selection": {
+            "name": "Read Aloud Shortcut",
+            "description": "Đọc to văn bản đã chọn. Nhấn lần nữa để dừng."
+          },
+          "refine_1": {
+            "name": "Refine 1",
+            "description": "Viết lại văn bản đã chọn theo prompt bên cạnh, ngay tại chỗ."
+          },
+          "refine_2": {
+            "name": "Refine 2",
+            "description": "Viết lại văn bản đã chọn theo prompt bên cạnh, ngay tại chỗ."
+          },
+          "refine_3": {
+            "name": "Refine 3",
+            "description": "Viết lại văn bản đã chọn theo prompt bên cạnh, ngay tại chỗ."
+          }
+        },
+        "errors": {
+          "set": "Không thể đặt phím tắt: {{error}}"
+        },
+        "changeLabel": "Change {{name}} ({{keys}})"
+      },
+      "language": {
+        "title": "Ngôn ngữ",
+        "description": "Ngôn ngữ bạn nói. Chọn cụ thể sẽ chính xác hơn Tự động.",
+        "searchPlaceholder": "Tìm kiếm ngôn ngữ...",
+        "noResults": "Không tìm thấy ngôn ngữ",
+        "auto": "Tự động",
+        "autoUnavailable": {
+          "oneLanguage": "Chỉ một trong các ngôn ngữ của bạn hoạt động với mô hình này",
+          "undetectable": "Không khả dụng với {{languages}}",
+          "noMatch": "Không ngôn ngữ nào của bạn hoạt động với mô hình này"
+        },
+        "detectorMissingTitle": "Tự động cần tải xuống riêng",
+        "detectorMissing": "Mô hình này không nhận biết được bạn đang nói ngôn ngữ nào. Tự động cần một trình nhận diện ngôn ngữ nhỏ để xác định",
+        "stopDetectorDownload": "Dừng tải xuống trình nhận diện ngôn ngữ"
+      },
+      "preferredLanguages": {
+        "title": "Ngôn ngữ ưa thích",
+        "description": "Các ngôn ngữ bạn nói. Glider dùng chúng để đề xuất mô hình.",
+        "noMatch": "Không có ngôn ngữ nào khớp với “{{query}}”",
+        "weak": "Chưa có mô hình nào nhận dạng tốt {{languages}}.",
+        "change": "Change",
+        "none": "No languages yet"
+      }
+    },
+    "models": {
+      "sections": {
+        "yours": "Trên máy tính này",
+        "fits": "Cho các ngôn ngữ của bạn"
+      },
+      "emptyYours": "Chưa có mô hình nào. Hãy chọn một mô hình bên dưới: nó sẽ được tải xuống, rồi Glider sẽ dùng nó.",
+      "showMore": "Hiển thị thêm {{count}}",
+      "showFewer": "Hiển thị ít hơn",
+      "download": "Tải xuống và dùng",
+      "downloadingThenUse": "{{percent}}% của {{total}}, rồi tự chuyển sang",
+      "loading": "Đang tải…",
+      "deleteAsk": "Xóa {{name}}? Việc này giải phóng {{size}}.",
+      "deleteAskActive": "Xóa {{name}}? Glider không thể chuyển đổi giọng nói cho đến khi bạn chọn mô hình khác.",
+      "cancel": "Hủy",
+      "deleteModel": "Xóa {{name}}",
+      "cancelDownload": "Dừng tải xuống {{name}}",
+      "legend": {
+        "open": "Cách xếp hạng mô hình",
+        "accuracyNote": "Với mỗi ngôn ngữ của bạn: số từ mô hình nhận sai trong các bản ghi âm kiểm thử của chúng tôi.",
+        "speedNote": {
+          "accelerated": "Thời gian để gõ ra 30 giây lời nói trên chip đồ họa của laptop kiểm thử của chúng tôi. Máy tính này có thể khác.",
+          "cpu": "Thời gian để gõ ra 30 giây lời nói trên bộ xử lý của laptop kiểm thử của chúng tôi. Máy tính này có thể khác."
+        },
+        "marks": "? chưa được đo. — không nghe được ngôn ngữ đó.",
+        "howGraded": "How models are graded"
+      },
+      "retiredNotice": {
+        "title": "Các mô hình cũ không còn hoạt động với Glider",
+        "description": "Chúng đang chiếm {{size}} trên máy tính của bạn.",
+        "delete": "Xóa mô hình",
+        "deleteFailed": "Không thể xóa một số mô hình cũ. Hãy kiểm tra nhật ký để biết chi tiết."
+      },
+      "rescan": {
+        "tooltip": "Quét lại các mô hình được thêm vào thư mục mô hình hoặc bộ nhớ đệm Hugging Face bên ngoài Glider"
+      },
+      "tabs": {
+        "label": "Model type",
+        "speech": "Speech to text",
+        "voices": "Read Aloud voices",
+        "llm": "Large language model"
+      },
+      "lede": "Open-source models that run on this computer. Nothing you say is uploaded.",
+      "columns": {
+        "model": "Model",
+        "quality": "Quality",
+        "memory": "Memory",
+        "language": "Language"
+      },
+      "speed": {
+        "veryFast": "Very fast",
+        "fast": "Fast",
+        "moderate": "Moderate",
+        "slow": "Slow",
+        "verySlow": "Very slow"
+      },
+      "inUse": "In use",
+      "livePreview": "Live preview",
+      "checking": "Checking…",
+      "progress": "{{percent}}% of {{size}}",
+      "progressThenSwitch": "{{percent}}% of {{size}}, then switches",
+      "noGrade": "Doesn't hear this language",
+      "downloadAndUse": "Download and use",
+      "use": "Use",
+      "delete": "Delete {{name}}",
+      "fitsHint": "Picked for {{languages}}. Grades come from our test recordings.",
+      "noMatch": "No models match your search.",
+      "search": "Search models",
+      "sample": "Hear a sample",
+      "noVoices": "No voices yet. Download one below.",
+      "moreVoices": "More voices",
+      "moreVoicesHint": "Each voice downloads once, then works offline.",
+      "llm": {
+        "olderComputers": "Older computers",
+        "needsMemory": "Needs more memory",
+        "gb": "{{n}} GB",
+        "none": "No rewriting model yet. Download one below.",
+        "moreTitle": "More large language models",
+        "moreHint": "Picked for how much memory this computer has. Each downloads once, then works offline.",
+        "providerTitle": "Use a provider instead",
+        "useProvider": "Use a provider",
+        "useProviderHint": "Rewrites go to the service you pick, with your own API key. Only the selected text is sent.",
+        "downloadFailed": "Couldn't download the model. Check your connection and try again.",
+        "multilingual": "Many"
+      },
+      "openFolder": "Open models folder",
+      "openFolderFailed": "Couldn't open the models folder",
+      "notLoaded": "Not loaded",
+      "liveMemory": "Memory this model is using right now",
+      "cancelDeletes": "Hủy sẽ xóa phần đã tải. Bạn sẽ cần tải lại từ đầu."
+    },
+    "languages": {
+      "title": "Ngôn ngữ"
+    },
+    "sound": {
+      "title": "Âm thanh",
+      "microphone": {
+        "title": "Micrô",
+        "description": "Chọn thiết bị micrô ưa thích của bạn",
+        "placeholder": "Chọn micrô...",
+        "loading": "Đang tải..."
+      },
+      "channel": {
+        "title": "Kênh đầu vào",
+        "description": "Ghi từ đầu vào nào trên thiết bị âm thanh nhiều đầu vào.",
+        "average": "Trung bình tất cả các kênh",
+        "channel": "Kênh {{n}}"
+      },
+      "audioFeedback": {
+        "label": "Phản hồi âm thanh",
+        "description": "Phát âm thanh khi bắt đầu và kết thúc ghi âm"
+      },
+      "outputDevice": {
+        "title": "Thiết bị đầu ra",
+        "description": "Chọn thiết bị đầu ra âm thanh ưa thích của bạn cho âm thanh phản hồi",
+        "placeholder": "Chọn thiết bị đầu ra...",
+        "loading": "Đang tải..."
+      },
+      "volume": {
+        "title": "Âm lượng",
+        "description": "Điều chỉnh âm lượng của âm thanh phản hồi"
+      }
+    },
+    "advanced": {
+      "groups": {
+        "app": "Ứng dụng",
+        "output": "Đầu ra",
+        "transcription": "Chuyển đổi",
+        "history": "Lịch sử",
+        "experimental": "Thử nghiệm",
+        "outputDescription": "How your words get into the app you are typing in.",
+        "experimentalDescription": "These may change or go away."
+      },
+      "experimentalToggle": {
+        "label": "Tính năng thử nghiệm",
+        "description": "Bật các tính năng thử nghiệm đang trong quá trình phát triển."
+      },
+      "lazyStreamClose": {
+        "label": "Giữ micro mở giữa các lần phiên âm",
+        "description": "Lần đọc sau bắt đầu nhanh hơn. Âm thanh Bluetooth có thể kém đi."
+      },
+      "airpodsMode": {
+        "label": "Chế độ AirPods",
+        "description": "Lấy AirPods về từ iPhone để bản ghi không bị câm."
+      },
+      "acceleration": {
+        "transcribe": {
+          "title": "Tăng tốc phần cứng",
+          "description": "Tự động dùng GPU khi có thể, nếu không thì dùng CPU."
+        },
+        "gpuDevice": {
+          "auto": "Tự động"
+        }
+      },
+      "startHidden": {
+        "label": "Khởi động ẩn",
+        "description": "Khởi động vào khay hệ thống mà không mở cửa sổ."
+      },
+      "autostart": {
+        "label": "Khởi động cùng hệ thống",
+        "description": "Tự động khởi động Glider khi bạn đăng nhập vào máy tính."
+      },
+      "showTrayIcon": {
+        "label": "Hiển thị biểu tượng khay",
+        "description": "Hiển thị biểu tượng Glider trong khay hệ thống."
+      },
+      "overlay": {
+        "style": {
+          "title": "Lớp phủ",
+          "description": "Trực tiếp hiện lời bạn khi đang nói, với các mô hình streaming.",
+          "options": {
+            "none": "Không có",
+            "minimal": "Tối giản",
+            "live": "Trực tiếp"
+          }
+        },
+        "position": {
+          "title": "Vị trí lớp phủ",
+          "description": "Vị trí lớp phủ hiện ra khi bạn đọc chính tả.",
+          "options": {
+            "bottom": "Dưới",
+            "top": "Trên"
+          }
+        }
+      },
+      "pasteMethod": {
+        "title": "Phương thức dán",
+        "description": "Bảng nhớ tạm dán vào, Trực tiếp gõ ra, Không có chỉ lưu lại.",
+        "options": {
+          "clipboard": "Bảng nhớ tạm ({{modifier}}+V)",
+          "clipboardCtrlShiftV": "Bảng nhớ tạm (Ctrl+Shift+V)",
+          "clipboardShiftInsert": "Bảng nhớ tạm (Shift+Insert)",
+          "direct": "Trực tiếp",
+          "none": "Không có",
+          "externalScript": "Script bên ngoài"
+        },
+        "externalScriptPlaceholder": "/duong-dan/toi/script.sh"
+      },
+      "typingTool": {
+        "title": "Công cụ gõ",
+        "description": "Công cụ Linux cho cách dán Trực tiếp. Tự động chọn công cụ tốt nhất.",
+        "options": {
+          "auto": "Auto (Khuyến nghị)"
+        }
+      },
+      "clipboardHandling": {
+        "title": "Xử lý Clipboard",
+        "description": "Có giữ nội dung đọc trong bảng nhớ tạm sau khi dán hay không.",
+        "options": {
+          "dontModify": "Không sửa đổi Clipboard",
+          "copyToClipboard": "Sao chép vào Clipboard"
+        }
+      },
+      "autoSubmit": {
+        "title": "Gửi tự động",
+        "description": "Nhấn phím này sau khi dán để gửi tin nhắn giúp bạn.",
+        "options": {
+          "off": "Tắt",
+          "enter": "Enter",
+          "cmdEnter": "Cmd+Enter",
+          "superEnter": "Super+Enter",
+          "ctrlEnter": "Ctrl+Enter"
+        }
+      },
+      "translateToEnglish": {
+        "label": "Dịch sang tiếng Anh",
+        "description": "Gõ ra tiếng Anh dù bạn nói ngôn ngữ nào."
+      },
+      "modelUnload": {
+        "title": "Giải phóng mô hình",
+        "description": "Giải phóng bộ nhớ khi mô hình giọng nói không dùng trong thời gian này.",
+        "options": {
+          "never": "Không bao giờ",
+          "immediately": "Ngay lập tức",
+          "min2": "Sau 2 phút",
+          "min5": "Sau 5 phút",
+          "min10": "Sau 10 phút",
+          "min15": "Sau 15 phút",
+          "hour1": "Sau 1 giờ",
+          "sec15": "Sau 15 giây (Gỡ lỗi)"
+        }
+      },
+      "customWords": {
+        "title": "Từ tùy chỉnh",
+        "description": "Giúp mô hình viết đúng tên riêng và thuật ngữ bạn dùng.",
+        "placeholder": "Thêm một từ",
+        "add": "Thêm",
+        "remove": "Xóa {{word}}",
+        "duplicate": "\"{{word}}\" đã tồn tại"
+      },
+      "voiceActivityDetection": {
+        "title": "Phát hiện hoạt động giọng nói",
+        "description": "Cắt bỏ khoảng lặng khỏi bản ghi. Tắt thì ghi lại tất cả."
+      },
+      "longFormChunking": {
+        "title": "Chia nhỏ âm thanh dài",
+        "description": "Chia bản ghi dài tại chỗ ngắt để chép lời tốt hơn."
+      },
+      "languageDetection": {
+        "title": "Giới hạn Tự động trong ngôn ngữ của tôi",
+        "description": "Bật nếu Tự động hay chọn ngôn ngữ bạn không nói.",
+        "downloadHint": "Bật lên sẽ tải xuống một trình nhận diện ngôn ngữ nhỏ",
+        "downloadingHint": "Đang tải xuống trình nhận diện ngôn ngữ. Tắt để hủy"
+      },
+      "vadBackend": {
+        "title": "Bộ phát hiện giọng nói",
+        "description": "Earshot đang thử nghiệm. Dùng Silero nếu bị mất chữ.",
+        "options": {
+          "silero": "Silero",
+          "earshot": "Earshot"
+        }
+      },
+      "fillerWordRemoval": {
+        "title": "Loại bỏ từ đệm",
+        "description": "Bỏ các âm ngập ngừng và từ đệm khỏi nội dung đọc."
+      },
+      "chineseScript": {
+        "title": "Chữ Hán giản thể/phồn thể",
+        "description": "Chữ dùng để viết tiếng Quan Thoại và tiếng Quảng Đông.",
+        "options": {
+          "asTranscribed": "Giữ nguyên bản chép",
+          "simplified": "Giản thể",
+          "traditionalTw": "Phồn thể (Đài Loan)",
+          "traditionalHk": "Phồn thể (Hồng Kông)"
+        }
+      }
+    },
+    "postProcessing": {
+      "api": {
+        "provider": {
+          "title": "Nhà cung cấp",
+          "description": "Chọn một nhà cung cấp tương thích OpenAI hoặc Anthropic."
+        },
+        "apiFormat": {
+          "title": "Định dạng API",
+          "description": "Định dạng yêu cầu mà điểm cuối tùy chỉnh của bạn cần.",
+          "options": {
+            "openai": "Tương thích OpenAI (Chat Completions)",
+            "anthropic": "Anthropic Messages"
+          }
+        },
+        "appleIntelligence": {
+          "unavailable": "Apple Intelligence không khả dụng trên thiết bị này. Yêu cầu Mac Apple Silicon chạy macOS Tahoe (26.0) trở lên với Apple Intelligence được bật trong Cài đặt Hệ thống."
+        },
+        "baseUrl": {
+          "title": "URL cơ sở",
+          "description": "Địa chỉ API của nhà cung cấp. Chỉ sửa được với Tùy chỉnh.",
+          "placeholder": "https://api.openai.com/v1",
+          "placeholderAnthropic": "https://api.anthropic.com/v1"
+        },
+        "apiKey": {
+          "title": "Khóa API",
+          "description": "Khóa API cho nhà cung cấp đã chọn.",
+          "placeholder": "sk-..."
+        },
+        "model": {
+          "title": "Mô hình",
+          "descriptionCustom": "Cung cấp định danh mô hình được yêu cầu bởi điểm cuối tùy chỉnh của bạn.",
+          "descriptionDefault": "Chọn một mô hình được cung cấp bởi nhà cung cấp đã chọn.",
+          "placeholderWithOptions": "Tìm kiếm hoặc chọn một mô hình",
+          "placeholderNoOptions": "Nhập tên mô hình",
+          "refreshModels": "Làm mới mô hình"
+        }
+      }
+    },
+    "history": {
+      "openFolder": "Mở thư mục ghi âm",
+      "loading": "Đang tải lịch sử...",
+      "empty": "Chưa có bản ghi nào. Bắt đầu ghi âm để xây dựng lịch sử của bạn!",
+      "copyToClipboard": "Sao chép bản ghi vào clipboard",
+      "copyError": "Không thể sao chép bản ghi vào bộ nhớ tạm.",
+      "save": "Lưu bản ghi",
+      "unsave": "Xóa khỏi đã lưu",
+      "delete": "Xóa mục",
+      "deleteError": "Không thể xóa mục. Vui lòng thử lại.",
+      "retranscribe": "Phiên âm lại",
+      "cancelTranscription": "Hủy phiên âm",
+      "transcribing": "Đang phiên âm...",
+      "transcriptionFailed": "Phiên âm thất bại. Bạn có thể phiên âm lại bằng biểu tượng thử lại.",
+      "notTranscribed": "Chưa phiên âm. Bạn có thể phiên âm bằng biểu tượng thử lại.",
+      "transcribeFile": "Chép lời tệp",
+      "mediaFiles": "Âm thanh và video",
+      "fileUnsupported": "Không thể đọc âm thanh từ {{name}}.",
+      "transcribeFailed": "Chép lời thất bại. Vui lòng thử lại.",
+      "waiting": "Đang chờ chép lời",
+      "transcribingPercent": "Đang chép lời, {{percent}}%",
+      "readingFile": "Đang đọc tệp...",
+      "showMore": "Xem thêm",
+      "showLess": "Thu gọn",
+      "dropTitle": "Thả để chép lời",
+      "dropDescription": "Nó sẽ xuất hiện trong Lịch sử.",
+      "tabs": {
+        "label": "History type",
+        "dictation": "Dictation",
+        "readAloud": "Read Aloud",
+        "rewrite": "Rewrite"
+      },
+      "readAloud": {
+        "empty": "Nothing read aloud yet. Select text anywhere and press your Read Aloud shortcut.",
+        "readAgain": "Read again",
+        "meta": "{{voice}} · {{speed}}x",
+        "kept_one": "The last read is kept",
+        "kept_other": "Last {{count}} reads are kept",
+        "playing": "Reading, sentence {{index}} of {{total}}",
+        "stop": "Stop reading"
+      },
+      "rewrite": {
+        "empty": "No rewrites yet. Select text anywhere and press a Refine shortcut.",
+        "kept_one": "The last rewrite is kept",
+        "kept_other": "Last {{count}} rewrites are kept"
+      },
+      "playRecording": "Play recording",
+      "noRecording": "Audio not kept",
+      "savedOnly": "Saved",
+      "savedEmpty": "Nothing saved yet. Press the star on an entry to keep it here.",
+      "audioError": "Couldn't open this recording",
+      "days": {
+        "today": "Today",
+        "yesterday": "Yesterday"
+      }
+    },
+    "debug": {
+      "title": "Gỡ lỗi",
+      "logDirectory": {
+        "title": "Thư mục nhật ký",
+        "description": "Vị trí lưu trữ các tệp nhật ký"
+      },
+      "logLevel": {
+        "title": "Mức nhật ký",
+        "description": "Đặt mức độ chi tiết của nhật ký"
+      },
+      "liveLogs": {
+        "title": "Nhật ký trực tiếp",
+        "description": "Hiện dòng nhật ký mới theo mức nhật ký khi bảng này đang mở.",
+        "live": "Trực tiếp",
+        "paused": "Đã tạm dừng",
+        "pause": "Tạm dừng",
+        "resume": "Tiếp tục",
+        "copied": "Đã sao chép",
+        "lineCount": "{{count}} dòng",
+        "empty": "Đang chờ nhật ký… Các mục sẽ xuất hiện ở đây khi ứng dụng phát ra."
+      },
+      "updateChecks": {
+        "label": "Kiểm tra cập nhật",
+        "description": "Tự động kiểm tra phiên bản mới của Glider",
+        "lockedDescription": "Đã bị vô hiệu hóa bởi cấu hình hệ thống (GLIDER_DISABLE_UPDATER)"
+      },
+      "whatsNewPreview": {
+        "title": "Xem trước điểm mới",
+        "description": "Mở ghi chú phát hành mới nhất được đóng gói mà không đánh dấu là đã xem",
+        "button": "Xem trước"
+      },
+      "onboardingPreview": {
+        "title": "Xem trước thiết lập ban đầu",
+        "description": "Xem các màn hình khởi đầu mà không thay đổi gì.",
+        "exitButton": "Thoát xem trước",
+        "choose": "Chọn một màn hình",
+        "screens": {
+          "welcome": "Chào mừng",
+          "permissions": "Quyền",
+          "model": "Mô hình",
+          "demo": "Demo",
+          "try": "Thử xem",
+          "done": "Hoàn tất",
+          "voices": "Voices",
+          "refine": "Refine model"
+        }
+      },
+      "onboardingRun": {
+        "title": "Chạy hướng dẫn làm quen",
+        "description": "Chạy thiết lập ban đầu thật: cấp quyền và tải mô hình.",
+        "button": "Bắt đầu"
+      },
+      "modelMigration": {
+        "title": "Chuyển đổi mô hình",
+        "description": "Mở thật màn hình cập nhật mô hình định dạng cũ: nó sẽ tải xuống bản thay thế, chuyển mô hình và xóa các tệp cũ",
+        "button": "Mở"
+      },
+      "soundTheme": {
+        "label": "Chủ đề âm thanh",
+        "description": "Chọn chủ đề âm thanh cho phản hồi bắt đầu và kết thúc ghi âm"
+      },
+      "wordCorrectionThreshold": {
+        "title": "Ngưỡng sửa từ",
+        "description": "Độ nhạy cho việc sửa từ tùy chỉnh"
+      },
+      "historyLimit": {
+        "title": "Giới hạn lịch sử",
+        "description": "Số lần đọc chính tả gần đây được giữ âm thanh. Văn bản luôn được giữ.",
+        "entries": "mục"
+      },
+      "recordingRetention": {
+        "title": "Tự động xóa ghi âm",
+        "description": "Tự động xóa các bản ghi âm cũ để tiết kiệm dung lượng",
+        "never": "Không bao giờ",
+        "preserveLimit": "Giữ {{count}} bản mới nhất",
+        "days3": "Sau 3 ngày",
+        "weeks2": "Sau 2 tuần",
+        "months3": "Sau 3 tháng",
+        "placeholder": "Chọn thời gian lưu giữ..."
+      },
+      "alwaysOnMicrophone": {
+        "label": "Micrô luôn bật",
+        "description": "Giữ micrô hoạt động để phản hồi nhanh hơn"
+      },
+      "clamshellMicrophone": {
+        "title": "Micrô chế độ gập",
+        "description": "Micrô sử dụng khi nắp laptop được đóng"
+      },
+      "postProcessingToggle": {
+        "label": "Xử lý sau",
+        "description": "Bật tinh chỉnh văn bản bằng AI sau khi chuyển đổi"
+      },
+      "muteWhileRecording": {
+        "label": "Tắt tiếng khi ghi âm",
+        "description": "Tắt tiếng âm thanh hệ thống trong khi ghi âm"
+      },
+      "appendTrailingSpace": {
+        "label": "Thêm dấu cách cuối",
+        "description": "Thêm một dấu cách sau bản ghi đã dán"
+      },
+      "keyboardImplementation": {
+        "title": "Triển khai bàn phím",
+        "description": "Chọn hệ thống xử lý phím tắt.",
+        "bindingsReset": "Các phím tắt không tương thích và đã được đặt lại về mặc định"
+      },
+      "pasteDelay": {
+        "title": "Độ trễ dán (trước)",
+        "description": "Chờ sau khi sao chép. Tăng lên nếu không dán được gì."
+      },
+      "pasteDelayAfter": {
+        "title": "Độ trễ dán (sau)",
+        "description": "Chờ trước khi khôi phục bảng nhớ tạm. Tăng lên nếu dán ra chữ cũ."
+      },
+      "holdThreshold": {
+        "title": "Ngưỡng giữ phím",
+        "description": "Nhấn bao lâu thì được tính là giữ phím."
+      },
+      "reliablePaste": {
+        "title": "Dán đáng tin cậy (Beta)",
+        "description": "Chờ ứng dụng dán xong rồi mới khôi phục bảng nhớ tạm."
+      },
+      "recordingBuffer": {
+        "title": "Bộ đệm ghi âm thêm",
+        "description": "Ghi thêm một chút sau khi nhả phím để không mất chữ cuối."
+      },
+      "languageDetectionWindow": {
+        "title": "Âm thanh nhận diện ngôn ngữ",
+        "description": "Số giây bộ dò lắng nghe. Lâu hơn thì chính xác hơn nhưng chậm hơn."
+      },
+      "keyboardDiagnostic": {
+        "title": "Chẩn đoán bàn phím",
+        "description": "Đếm số lần nhấn phím đến Glider, không bao giờ ghi phím nào.",
+        "run": "Chạy chẩn đoán 10 giây",
+        "running": "Đang lắng nghe… hãy bấm phím tắt của bạn vài lần (ví dụ: Option+Space)",
+        "secureInputLabel": "Secure Input",
+        "enabled": "đang bật",
+        "disabled": "đang tắt",
+        "holder": "bị {{name}} (pid {{pid}}) giữ",
+        "holderUnknown": "không thấy tiến trình nào giữ",
+        "keyDown": "Nhấn phím",
+        "keyUp": "Nhả phím",
+        "flagsChanged": "Phím bổ trợ",
+        "mouse": "Chuột",
+        "verdictBlocked": "Secure Input đang chặn các sự kiện phím — phím tắt có chứa phím thường không thể hoạt động cho đến khi vấn đề này được xử lý.",
+        "verdictSuspicious": "Có sự kiện phím bổ trợ nhưng không có sự kiện phím nào — thứ gì đó đang chặn phím dù Secure Input báo là đang tắt. Vui lòng báo cáo việc này trên GitHub.",
+        "verdictOk": "Các sự kiện phím đang đến Glider bình thường.",
+        "verdictNoEvents": "Không ghi nhận sự kiện nào — bạn có bấm phím nào trong lúc kiểm tra không?",
+        "failed": "Chẩn đoán thất bại: {{error}}"
+      },
+      "lede": "Tools for tracking down problems. Most people never need these.",
+      "groups": {
+        "logs": "Logs",
+        "previews": "Previews",
+        "previewsDescription": "Open screens without changing your settings.",
+        "timing": "Timing and sound",
+        "input": "Input"
+      }
+    },
+    "about": {
+      "version": {
+        "title": "Phiên bản",
+        "description": "Phiên bản hiện tại của Glider"
+      },
+      "whatsNewUpdates": {
+        "label": "Hiển thị điểm mới",
+        "description": "Hiển thị ghi chú phát hành sau khi Glider cập nhật"
+      },
+      "appDataDirectory": {
+        "title": "Thư mục dữ liệu ứng dụng"
+      },
+      "sourceCode": {
+        "title": "Mã nguồn",
+        "description": "Xem mã nguồn và đóng góp",
+        "button": "Xem trên GitHub"
+      },
+      "acknowledgments": {
+        "title": "Lời cảm ơn",
+        "ggml": {
+          "title": "ggml",
+          "description": "Suy luận hiệu suất cao của mô hình nhận dạng giọng nói tự động Whisper của OpenAI",
+          "details": "Glider sử dụng ggml để xử lý chuyển đổi giọng nói thành văn bản nhanh, cục bộ. Cảm ơn công việc tuyệt vời của Georgi Gerganov và các cộng tác viên."
+        },
+        "view": "View",
+        "handy": {
+          "title": "Handy",
+          "description": "Đọc chính tả của Glider dựa trên Handy của CJ Pais, giấy phép MIT."
+        },
+        "sherpa": {
+          "title": "sherpa-onnx",
+          "description": "Giọng đọc của Read Aloud chạy trên sherpa-onnx."
+        },
+        "description": "Glider stands on these open-source projects.",
+        "candle": {
+          "title": "candle",
+          "description": "Rewrite chạy trên candle, thư viện ML bằng Rust của Hugging Face."
+        }
+      },
+      "appTitle": "App",
+      "star": {
+        "title": "Like Glider?",
+        "description": "Star it on GitHub so other developers can find it.",
+        "button": "Star on GitHub"
+      }
+    },
+    "readAloud": {
+      "title": "Read Aloud",
+      "description": "Select text anywhere and Glider reads it to you with an AI voice that runs on this computer.",
+      "voice": {
+        "title": "Voice",
+        "description": "Which speaker reads your text."
+      },
+      "language": {
+        "title": "Ngôn ngữ",
+        "description": "Ngôn ngữ mà giọng đọc dùng để đọc văn bản của bạn."
+      },
+      "speed": {
+        "title": "Speed",
+        "description": "How fast the voice reads. 1.0x is normal."
+      },
+      "models": {
+        "downloadFailed": "Couldn't download the voice"
+      },
+      "setupTitle": "Setup",
+      "model": {
+        "title": "Voice model",
+        "none": "No voice downloaded yet",
+        "change": "Change",
+        "download": "Get a voice",
+        "summary": "{{name}} · {{language}} · {{size}} MB"
+      },
+      "shortcutHint": "Press again while it reads to stop.",
+      "livePreview": {
+        "title": "Xem trước trực tiếp",
+        "description": "Hiện câu đang được đọc phía trên trình phát."
+      },
+      "intro": {
+        "hint": "Works anywhere you can select text. Press the shortcut again to stop.",
+        "hintMac": "Works anywhere you can select text. F8 pauses, F7 and F9 skip, Esc stops.",
+        "sample": "Long replies are easier to take in when you can sit back and listen.",
+        "label": "Example",
+        "try": "Try it",
+        "stop": "Stop"
+      }
+    },
+    "dictation": {
+      "description": "How Glider listens, turns your speech into text, and types it.",
+      "livePreview": {
+        "title": "Xem trước trực tiếp",
+        "description": "Hiện lời bạn khi đang nói, với mô hình có nhãn Xem trước trực tiếp."
+      },
+      "intro": {
+        "hint": "Keep holding while you talk, then let go. The text lands where your cursor is.",
+        "said": "can you send me the deck before tomorrow's call",
+        "typed": "Can you send me the deck before tomorrow's call?",
+        "label": "Example",
+        "try": "Try it"
+      }
+    }
+  },
+  "footer": {
+    "checkingUpdates": "Đang kiểm tra cập nhật...",
+    "updateAvailableShort": "Có bản cập nhật",
+    "upToDate": "Đã cập nhật",
+    "updateCheckingDisabled": "Đã tắt kiểm tra cập nhật",
+    "downloading": "Đang tải... {{progress}}%",
+    "installing": "Đang cài đặt...",
+    "preparing": "Đang chuẩn bị...",
+    "checkForUpdates": "Kiểm tra cập nhật",
+    "portableUpdateTitle": "Cần cập nhật thủ công",
+    "portableUpdateMessage": "Bản cài đặt di động không thể cập nhật tự động. Hãy tải trình cài đặt phù hợp với hệ thống của bạn bên dưới, chạy nó và cài vào cùng thư mục — thư mục Data/ (cài đặt, mô hình, bản ghi) của bạn được giữ nguyên.",
+    "portableUpdateButton": "Tải trình cài đặt",
+    "portableUpdateBrowseMessage": "Bản cài đặt di động không thể cập nhật tự động. Hãy tải phiên bản mới nhất phù hợp với hệ thống của bạn từ GitHub Releases và cài vào cùng thư mục — thư mục Data/ (cài đặt, mô hình, bản ghi) của bạn được giữ nguyên.",
+    "portableUpdateBrowseButton": "Mở GitHub Releases",
+    "noVoice": "No voice yet",
+    "voiceLabel": "Voice: {{voice}}",
+    "dictationModel": "Dictation model",
+    "readAloudModel": "Read aloud voice",
+    "rewriteModel": "Rewrite model",
+    "noRewriteModel": "No rewrite model yet",
+    "rewriteLabel": "Rewrite model: {{model}}",
+    "chooseVoices": "Voices",
+    "voicesTitle": "Choose a voice",
+    "providerDesc": "Runs on {{provider}}, online"
+  },
+  "whatsNew": {
+    "title": "Điểm mới trong Glider v{{version}}"
+  },
+  "common": {
+    "playbackPosition": "Vị trí phát",
+    "resetSetting": "Đặt lại {{setting}} về mặc định",
+    "loading": "Đang tải...",
+    "delete": "Xóa",
+    "close": "Đóng",
+    "open": "Mở",
+    "copy": "Sao chép",
+    "clear": "Xóa",
+    "noOptionsFound": "Không tìm thấy tùy chọn",
+    "hearExample": "Nghe ví dụ",
+    "muteExample": "Tắt tiếng ví dụ"
+  },
+  "errors": {
+    "micPermissionDeniedTitle": "Quyền truy cập micrô bị từ chối",
+    "micPermissionDenied": {
+      "generic": "Quyền truy cập micrô đã bị hệ điều hành từ chối. Vui lòng cấp quyền micrô trong cài đặt hệ thống.",
+      "windows": "Bật quyền truy cập micrô trong Cài đặt → Quyền riêng tư & bảo mật → Micrô (bao gồm quyền truy cập ứng dụng máy tính).",
+      "macos": "Cấp quyền truy cập micrô trong Cài đặt hệ thống → Quyền riêng tư & Bảo mật → Micrô.",
+      "linux": "Cấp quyền truy cập micrô trong cài đặt âm thanh hoặc quyền riêng tư của hệ thống."
+    },
+    "noInputDeviceTitle": "Không tìm thấy micrô",
+    "noInputDevice": "Không phát hiện thiết bị đầu vào âm thanh nào. Vui lòng kết nối micrô hoặc tai nghe và thử lại.",
+    "recordingFailedTitle": "Không thể bắt đầu ghi âm",
+    "modelLoadFailed": "Glider không thể tải mô hình này. Hãy thử lại hoặc chọn mô hình khác.",
+    "modelLoadFailedTitle": "Không thể tải mô hình",
+    "modelDownloadFailed": "Tải xuống thất bại",
+    "pasteFailedTitle": "Không thể dán văn bản",
+    "pasteFailed": "Không thể dán văn bản vào ứng dụng đang hoạt động.",
+    "postProcessFailedTitle": "Đã dán không qua xử lý sau",
+    "postProcessFailed": "Xử lý sau chưa hoàn tất nên bản chép lời được dán nguyên trạng.",
+    "filePostProcessFailedTitle": "Đã chép lời không qua xử lý sau",
+    "filePostProcessFailed": "Xử lý sau chưa hoàn tất nên bản chép lời được lưu nguyên trạng.",
+    "fileTranscriptionFailedTitle": "Phiên âm tệp thất bại",
+    "transcriptionFailedTitle": "Phiên âm thất bại",
+    "noTextSelectedTitle": "No Text Selected",
+    "noTextSelected": "Select some text first, then press the Read Aloud shortcut.",
+    "voiceModelMissingTitle": "No Voice Downloaded",
+    "voiceModelMissing": "Download a voice in Read Aloud settings first.",
+    "readAloudFailedTitle": "Read Aloud Failed",
+    "refineFailedTitle": "Refine Failed",
+    "refineFailed": "The selected text couldn't be rewritten. Check the Post Process provider and model.",
+    "noLlmModelTitle": "No Rewrite Model",
+    "noLlmModel": "Download a rewrite model in Models, then try again."
+  },
+  "notices": {
+    "errorOne": "{{n}} lỗi",
+    "errorMany": "{{n}} lỗi",
+    "warningOne": "{{n}} cảnh báo",
+    "warningMany": "{{n}} cảnh báo",
+    "errorsAndWarnings": "{{errors}}, {{warnings}}"
+  },
+  "appLanguage": {
+    "title": "Ngôn ngữ ứng dụng",
+    "description": "Thay đổi ngôn ngữ giao diện của Glider"
+  },
+  "theme": {
+    "title": "Giao diện ứng dụng",
+    "description": "Theo hệ thống, hoặc luôn sáng hay tối.",
+    "options": {
+      "system": "Hệ thống",
+      "light": "Sáng",
+      "dark": "Tối"
+    }
+  },
+  "overlay": {
+    "transcribing": "Đang chuyển đổi...",
+    "loadingModel": "Đang tải mô hình...",
+    "readingAloud": "Reading aloud",
+    "preparingVoice": "Preparing voice...",
+    "refining": "Refining",
+    "seeChanges": "See changes",
+    "changesLabel": "Changes",
+    "changes_one": "{{count}} change",
+    "changes_other": "{{count}} changes",
+    "toUndo": "to undo",
+    "close": "Close",
+    "copy": "Copy",
+    "again": "Refine again",
+    "previous": "Previous sentence",
+    "next": "Next sentence",
+    "pause": "Pause",
+    "play": "Play",
+    "slower": "Slower",
+    "faster": "Faster",
+    "listening": "Listening",
+    "cancel": "Cancel",
+    "finishAndPaste": "Xong và dán",
+    "usingRewrite": "Dùng {{name}}",
+    "done": "Xong",
+    "doneReading": "Đã đọc xong",
+    "noVoiceYet": "Chưa có giọng đọc",
+    "getVoice": "Tải giọng đọc",
+    "nowhereHint": "Hãy bấm vào ô văn bản trước rồi đọc",
+    "savedInHistory": "Cũng đã lưu trong Lịch sử",
+    "pasteHint": "Bấm vào ô văn bản rồi nhấn {{keys}}",
+    "copied": "Đã sao chép",
+    "sentence": "Câu {{index}} / {{total}}",
+    "toStop": "để dừng",
+    "copyResult": "Sao chép kết quả"
+  },
+  "secureInput": {
+    "blockedWithCulprit_one": "{{name}} có thể đang chặn 1 phím tắt",
+    "blockedWithCulprit_other": "{{name}} có thể đang chặn {{count}} phím tắt",
+    "blockedNoCulprit_one": "macOS đang tạm thời chặn 1 phím tắt",
+    "blockedNoCulprit_other": "macOS đang tạm thời chặn {{count}} phím tắt",
+    "recorderBlockedWithCulprit": "{{name}} có thể đang chặn việc thay đổi phím tắt",
+    "recorderBlockedNoCulprit": "macOS đang tạm thời chặn việc thay đổi phím tắt",
+    "learnMore": "Cách khắc phục",
+    "recorderBlocked": "Hiện không thể ghi phím tắt — Secure Input của macOS đang chặn các sự kiện phím. Hãy xử lý cảnh báo Secure Input trước.",
+    "dismiss": "Bỏ qua"
+  },
+  "home": {
+    "welcome": "Welcome back",
+    "welcomeName": "Welcome back, {{name}}",
+    "shortcutsLabel": "Your shortcuts",
+    "statsLabel": "Your numbers",
+    "dictateLine": "Hold <keys/> to dictate",
+    "dictateHint": "Works in every app. What you say is typed where your cursor is.",
+    "listenLine": "Select text, press <keys/> to listen",
+    "listenHint": "Hear AI replies, docs and web pages read aloud, up to 3x speed.",
+    "listening": "Listening...",
+    "reading": "Reading aloud...",
+    "changeShortcuts": "Change shortcuts",
+    "stats": {
+      "dictated": "words dictated",
+      "read": "words read aloud",
+      "streak_one": "day streak",
+      "streak_other": "day streak"
+    },
+    "today": "Today",
+    "seeAll": "See all history",
+    "filterLabel": "Show only",
+    "empty": "Nothing yet today. Your dictations, reads and rewrites will show up here.",
+    "kind": {
+      "dictation": "Dictation",
+      "read": "Read aloud",
+      "rewrite": "Rewrite"
+    },
+    "howToUse": "How to use",
+    "tutorial": {
+      "play": "Play the how-to video",
+      "title": "See how Glider works",
+      "soon": "Video coming soon",
+      "button": "Tutorial"
+    }
+  },
+  "insights": {
+    "rangeLabel": "Time range",
+    "last30": "30 days",
+    "allTime": "All time",
+    "wpmUp": "Up from {{from}} in {{month}}",
+    "wpmDown": "Down from {{from}} in {{month}}",
+    "wpmSteady": "Steady since {{month}}",
+    "wpmNoTrend": "Trend shows from next week",
+    "wpmEmpty": "Dictate to see your pace",
+    "hours": "{{n}} h",
+    "minutes": "{{n}} min",
+    "timeListened": "Time listened",
+    "longestRead": "Longest read",
+    "words_one": "{{n}} word",
+    "words_other": "{{n}} words",
+    "appsLabel": "Where you dictate",
+    "appsTitle": "Where you talk",
+    "appsHint": "Dictated words by app",
+    "appsEmpty": "Dictate in a few apps and they show up here.",
+    "otherApps": "Other",
+    "appShare": "{{name}}, {{share}}%",
+    "streakLabel": "Streak",
+    "streak_one": "{{count}} day streak",
+    "streak_other": "{{count}} day streak",
+    "noStreak": "No streak yet",
+    "longest_one": "Longest {{count}} day",
+    "longest_other": "Longest {{count}} days",
+    "calendarLabel": "Days you used Glider over the last {{weeks}} weeks",
+    "dayWords_one": "{{day}}: {{count}} word",
+    "dayWords_other": "{{day}}: {{count}} words",
+    "days": {
+      "mon": "Mon",
+      "wed": "Wed",
+      "fri": "Fri",
+      "sun": "Sun"
+    },
+    "less": "Less",
+    "more": "More",
+    "today": "Today",
+    "summary30": "In the last 30 days you dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summary30NoPace": "In the last 30 days you dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAll": "So far you have dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAllNoPace": "So far you have dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryEmpty": "Dictate, listen or rewrite something and your numbers show up here.",
+    "pace": "{{n}} a minute",
+    "rewriteCount_one": "{{n}} rewrite",
+    "rewriteCount_other": "{{n}} rewrites",
+    "savedHours_one": "{{count}} hour",
+    "savedHours_other": "{{count}} hours",
+    "savedMinutes_one": "{{count}} minute",
+    "savedMinutes_other": "{{count}} minutes",
+    "activityTitle": "Activity",
+    "lastDays": "Last {{total}} days.",
+    "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
+    "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
+    "speakingAbove": "Speaking, above",
+    "listeningBelow": "Listening, below",
+    "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
+    "busiest": "Busiest {{day}}.",
+    "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
+    "wpmUnit": "words a minute",
+    "heardUnit": "words heard",
+    "rewritesUnit_one": "rewrite",
+    "rewritesUnit_other": "rewrites",
+    "usuallyAt": "Usually at {{speed}}x",
+    "wordsRewritten_one": "{{n}} word rewritten",
+    "wordsRewritten_other": "{{n}} words rewritten",
+    "dictations": "Dictations",
+    "average": "Average",
+    "longestDictation": "Longest",
+    "languages": "Languages",
+    "reads": "Reads",
+    "voice": "Voice",
+    "rewritesEmpty": "Select text and press a Refine shortcut.",
+    "removedRewrite": "Removed rewrite",
+    "explainLabel": "What {{name}} counts",
+    "inApp": "in {{app}}",
+    "explain": {
+      "dictations": "How many times you held the shortcut and Glider typed something.",
+      "average": "The length of a typical dictation: words divided by dictations.",
+      "longest": "Your single longest dictation in this period.",
+      "languages": "The languages your dictations were transcribed in, most used first.",
+      "reads": "How many times you selected text and Read Aloud read it to you.",
+      "timeListened": "Total time Read Aloud spent speaking, at the speed you chose.",
+      "longestRead": "The most words Read Aloud read in one go.",
+      "voice": "The voice you used for the most reads in this period."
+    }
+  },
+  "rewrite": {
+    "new": "New",
+    "on": "On",
+    "off": "Off",
+    "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
+    "noModel": "No model loaded",
+    "noProvider": "No provider set",
+    "hero": {
+      "polish": "Select text, press <keys/> to polish it",
+      "prompt": "Select text, press <keys/> to make it a prompt",
+      "humanize": "Select text, press <keys/> to humanize it",
+      "grammar": "Select text, press <keys/> to fix its grammar",
+      "custom": "Select text, press <keys/> to run {{name}}",
+      "none": "Add a rewrite to get started"
+    },
+    "heroHint": "Works in Zed, your browser, chat apps, anywhere you can select text. Press {{undo}} to undo.",
+    "tryIt": "Try it",
+    "trying": "Rewriting…",
+    "demo": {
+      "label": "Example",
+      "before": "ok so um the overlay breaks when i press read while its dictating",
+      "results": {
+        "polish": "The overlay breaks when I press Read Aloud during dictation.",
+        "prompt": "Fix the bug where the overlay breaks when Read Aloud is pressed during dictation.",
+        "humanize": "Heads up, the overlay breaks if I hit Read Aloud while I'm dictating.",
+        "grammar": "OK, so, um, the overlay breaks when I press Read while it's dictating."
+      }
+    },
+    "afterDictate": {
+      "title": "After you dictate",
+      "everyTitle": "Rewrite what you dictate",
+      "everyDescription": "Run one rewrite on everything you dictate, before it is typed.",
+      "shortcutTitle": "Dictate and rewrite",
+      "shortcutDescription": "A second dictation shortcut that always rewrites."
+    },
+    "yours": "Your rewrites",
+    "resetAll": "Reset to defaults",
+    "newRewrite": "New rewrite",
+    "newName": "New rewrite",
+    "used_one": "Used {{count}} time",
+    "used_other": "Used {{count}} times",
+    "notUsed": "Not used yet",
+    "customCard": "Your own rewrite. Open it to write what it should do.",
+    "writeOwn": "Write your own",
+    "writeOwnHint": "Tell the model what to do, in plain words.",
+    "compareHint": "Press <keys/> right after a rewrite to compare it with what you wrote.",
+    "runFailed": "The rewrite didn't work. Try again.",
+    "builtin": {
+      "polish": {
+        "card": "Clearer and shorter, in your own voice.",
+        "chip": "polishes selected text",
+        "about": "Polish rewrites your text to read clearer and shorter, and keeps it sounding like you.",
+        "before": "ok so um the overlay thing, when you press the read shortcut while its already dictating it kind of breaks. can you make it so dictation wins and read just waits, and dont touch the settings page",
+        "after": "When I press the Read Aloud shortcut during dictation, the overlay breaks. Make dictation take priority and have Read Aloud wait. Don't touch the settings page."
+      },
+      "prompt": {
+        "card": "Turns a rambling request into a clear task for an AI coding tool.",
+        "chip": "turns selected text into a prompt",
+        "about": "Prompt turns a rambling request into a clear task for an AI coding tool: the goal first, then the details.",
+        "before": "so basically can you like make the history page not jump when a new entry comes in, keep the scroll where it was, and also dont touch the settings page",
+        "after": "Goal: stop the History page from jumping when a new entry arrives.\n- Keep the scroll position where it was.\n- Don't change the settings page."
+      },
+      "humanize": {
+        "card": "Removes stiff, AI-sounding phrasing.",
+        "chip": "humanizes selected text",
+        "about": "Humanize takes out stiff, AI-sounding phrasing so the text reads like a person wrote it.",
+        "before": "I hope this message finds you well. I wanted to reach out to delve into the robust new overlay, which seamlessly elevates the experience.",
+        "after": "Quick note on the new overlay: it's faster and gets out of the way."
+      },
+      "grammar": {
+        "card": "Only spelling and grammar. Nothing else changes.",
+        "chip": "fixes grammar in selected text",
+        "about": "Fix grammar corrects spelling, grammar and punctuation, and leaves every other word as you wrote it.",
+        "before": "i has went to the store yesterday and buyed three apple",
+        "after": "I went to the store yesterday and bought three apples."
+      },
+      "custom": {
+        "chip": "runs {{name}} on selected text",
+        "about": "{{name}} rewrites your text the way its instructions say."
+      }
+    },
+    "options": {
+      "shorter": "Make it shorter",
+      "clarity": "Reword for clarity",
+      "reorder": "Reorder for readability",
+      "lists": "Add lists and paragraphs",
+      "keep_tone": "Keep my tone",
+      "keep_code": "Keep code, file names and commands exactly"
+    },
+    "detail": {
+      "saved": "Saved",
+      "reset": "Reset",
+      "delete": "Delete",
+      "example": "Example",
+      "exampleView": "Example view",
+      "before": "Before",
+      "after": "After",
+      "changes": "Changes",
+      "run": "Run on this example",
+      "running": "Running…",
+      "nameTitle": "Name",
+      "shortcutTitle": "Shortcut",
+      "shortcutName": "{{name}} shortcut",
+      "shortcutHint": "Select text, then press it.",
+      "doesTitle": "What {{name}} does",
+      "instructionsTitle": "Instructions",
+      "instructionsHint": "What the model should do with the text, in plain words.",
+      "instructionsPlaceholder": "For example: turn this into a short, friendly reply.",
+      "extraTitle": "Extra instructions",
+      "extraPlaceholder": "Anything else {{name}} should do. For example: use British spelling.",
+      "modelTitle": "Model",
+      "runsOn": "Runs on",
+      "runsOnLocal": "{{model}}, on this computer",
+      "runsOnProvider": "{{model}}, through your provider",
+      "noModel": "No model yet",
+      "change": "Change"
+    },
+    "samples": {
+      "title": "Writing samples",
+      "hint": "A few things you wrote, so {{name}} matches your style.",
+      "words_one": "{{count}} word",
+      "words_other": "{{count}} words",
+      "remove": "Remove {{name}}",
+      "limit": "Plain text or Markdown, up to {{max}} words each.",
+      "add": "Add a sample",
+      "filter": "Text",
+      "trimmed": "Kept the first {{max}} words of that sample.",
+      "readFailed": "Couldn't read that file."
+    }
+  },
+  "loading": {
+    "label": "Glider is starting"
+  },
+  "topBar": {
+    "theme": "Theme",
+    "showSidebar": "Show sidebar",
+    "hideSidebar": "Hide sidebar"
+  }
+}

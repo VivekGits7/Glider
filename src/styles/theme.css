@@ -1,0 +1,221 @@
+/* Glider colors: every color the app uses comes from here. Pick by job:
+ * surfaces from back to front: ground (window and sidebar), background (the
+ * inset panel), card (rows), raised (buttons, keycaps, the active nav item);
+ * greys (ink-2, ink-3, line-strong, line, wash) for text, edges and fills;
+ * logo-primary / accent-grad for brand and primary actions; plum for keys
+ * and picks (onboarding); moss / warning / error (+ -wash) for status.
+ */
+
+:root {
+  /* Palette source of truth. Each themed color is defined once as a
+     light/dark pair; the active tokens below and the `data-theme` overrides
+     in App.css reference these, so a hex value lives in exactly one place. */
+  --light-color-text: #1a1617;
+  --light-color-background: #f8f6f5;
+  --light-color-ground: #ebe7e6;
+  --light-color-card: #fdfbfa;
+  --light-color-raised: #e1dbd9;
+  /* Lilac that carries selection and icons on light grounds (>=4.5:1). */
+  --light-color-accent-ink: #8442c4;
+  --light-color-ink-3: #6b6567;
+  --light-color-logo-primary: #d8b4f8;
+  --light-color-logo-stroke: #382731;
+
+  --dark-color-text: #f3eeef;
+  --dark-color-background: #1b1718;
+  --dark-color-ground: #141112;
+  --dark-color-card: #221d1f;
+  --dark-color-raised: #2e282a;
+  --dark-color-accent-ink: #d4a3f7;
+  --dark-color-ink-3: #9a9395;
+  --dark-color-logo-primary: #c58af2;
+
+  /* Status colors. Each has a -wash tint below. */
+  --light-color-warning: #b45309;
+  --light-color-error: #dc2626;
+  --dark-color-warning: #fbbf24;
+  --dark-color-error: #f87171;
+
+  /* Success. Lilac already means "now", so it gets its own hue. */
+  --light-color-moss: #2f7d5b;
+  --dark-color-moss: #86c9a4;
+
+  /* Plum: the ink for keycaps and picked items. */
+  --light-color-plum: var(--light-color-logo-stroke);
+  --dark-color-plum: var(--dark-color-text);
+
+  /* The app icon's lilac-to-violet wing gradient, on filled controls:
+     primary buttons, switches that are on, progress. */
+  --light-color-accent-grad: linear-gradient(135deg, #e2b8f2, #bb8cf5);
+  --dark-color-accent-grad: linear-gradient(135deg, #e4a6e9, #b56ff0);
+  /* Insights charts: speaking in the wing's violet, listening in its pink,
+     and the same lilac-to-violet run left to right for capsule bars. */
+  --light-color-voice-speak: #9d62e2;
+  --dark-color-voice-speak: #b56ff0;
+  --light-color-voice-listen: #e3a8ec;
+  --dark-color-voice-listen: #e4a6e9;
+  --light-color-bar-grad: linear-gradient(90deg, #e2b8f2, #bb8cf5);
+  --dark-color-bar-grad: linear-gradient(90deg, #e4a6e9, #b56ff0);
+  /* The logo's pink to purple, deep enough to read as text (Try it links). */
+  --light-color-ink-grad: linear-gradient(90deg, #c04fc4, #8442c4);
+  --dark-color-ink-grad: linear-gradient(90deg, #eeb0f0, #c39af7);
+  /* Things that float over other apps: the overlay pill and its cards. */
+  --light-shadow-float: 0 16px 40px -16px rgba(56, 39, 49, 0.4);
+  --dark-shadow-float: 0 16px 40px -14px rgba(0, 0, 0, 0.7);
+
+  /* Status tints for the box behind a status color. */
+  --light-color-moss-wash: color-mix(
+    in srgb,
+    var(--light-color-moss) 12%,
+    var(--light-color-background)
+  );
+  --dark-color-moss-wash: color-mix(
+    in srgb,
+    var(--dark-color-moss) 14%,
+    var(--dark-color-background)
+  );
+  --light-color-warning-wash: color-mix(
+    in srgb,
+    var(--light-color-warning) 12%,
+    var(--light-color-background)
+  );
+  --dark-color-warning-wash: color-mix(
+    in srgb,
+    var(--dark-color-warning) 14%,
+    var(--dark-color-background)
+  );
+  --light-color-error-wash: color-mix(
+    in srgb,
+    var(--light-color-error) 12%,
+    var(--light-color-background)
+  );
+  --dark-color-error-wash: color-mix(
+    in srgb,
+    var(--dark-color-error) 14%,
+    var(--dark-color-background)
+  );
+
+  /* Tokens that do not change between light and dark */
+  --color-background-ui: #b56ff0;
+  /* Ink on a lilac fill (primary buttons, the selected nav dot). */
+  --color-on-accent: #1e0b2b;
+
+  /* Active palette — defaults to light, follows the OS via the media query
+     below, or is forced by `data-theme` (see the overrides below). */
+  --color-text: var(--light-color-text);
+  --color-background: var(--light-color-background);
+  --color-ground: var(--light-color-ground);
+  --color-card: var(--light-color-card);
+  --color-raised: var(--light-color-raised);
+  --color-accent-ink: var(--light-color-accent-ink);
+  --color-ink-3: var(--light-color-ink-3);
+  --color-logo-primary: var(--light-color-logo-primary);
+  --color-warning: var(--light-color-warning);
+  --color-error: var(--light-color-error);
+  --color-moss: var(--light-color-moss);
+  --color-plum: var(--light-color-plum);
+  --color-moss-wash: var(--light-color-moss-wash);
+  --color-warning-wash: var(--light-color-warning-wash);
+  --color-error-wash: var(--light-color-error-wash);
+  --color-accent-grad: var(--light-color-accent-grad);
+  --color-voice-speak: var(--light-color-voice-speak);
+  --color-voice-listen: var(--light-color-voice-listen);
+  --color-bar-grad: var(--light-color-bar-grad);
+  --color-ink-grad: var(--light-color-ink-grad);
+  --shadow-float: var(--light-shadow-float);
+
+  /* Grey steps: secondary text, hints/icons, control edges, dividers, hover fill. */
+  /* ink-3 is themed above: the old shared mid-grey missed 4.5:1 on both themes. */
+  --color-ink-2: color-mix(in srgb, var(--color-text) 64%, transparent);
+  --color-line-strong: color-mix(in srgb, var(--color-text) 22%, transparent);
+  --color-line: color-mix(in srgb, var(--color-text) 9%, transparent);
+  --color-wash: color-mix(in srgb, var(--color-text) 5%, transparent);
+  /* Edge of a picked card or option. */
+  --color-plum-pick: color-mix(in srgb, var(--color-plum) 60%, transparent);
+  /* The far end of a capture slot's breathing edge (KeySlot). */
+  --color-plum-faint: color-mix(in srgb, var(--color-plum) 22%, transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: var(--dark-color-text);
+    --color-background: var(--dark-color-background);
+    --color-ground: var(--dark-color-ground);
+    --color-card: var(--dark-color-card);
+    --color-raised: var(--dark-color-raised);
+    --color-accent-ink: var(--dark-color-accent-ink);
+    --color-ink-3: var(--dark-color-ink-3);
+    --color-logo-primary: var(--dark-color-logo-primary);
+    --color-warning: var(--dark-color-warning);
+    --color-error: var(--dark-color-error);
+    --color-moss: var(--dark-color-moss);
+    --color-plum: var(--dark-color-plum);
+    --color-moss-wash: var(--dark-color-moss-wash);
+    --color-warning-wash: var(--dark-color-warning-wash);
+    --color-error-wash: var(--dark-color-error-wash);
+    --color-accent-grad: var(--dark-color-accent-grad);
+    --color-voice-speak: var(--dark-color-voice-speak);
+    --color-voice-listen: var(--dark-color-voice-listen);
+    --color-bar-grad: var(--dark-color-bar-grad);
+    --color-ink-grad: var(--dark-color-ink-grad);
+    --shadow-float: var(--dark-shadow-float);
+  }
+}
+
+/*
+ * Explicit theme override, driven by the `theme` setting via
+ * `document.documentElement.dataset.theme`. When set, the higher-specificity
+ * attribute selectors win over the `prefers-color-scheme` media query above,
+ * so a user can keep Glider light or dark regardless of the OS setting.
+ * `system` (or no attribute) leaves the OS in charge.
+ *
+ * Lives here (not in App.css) so every window that imports the shared palette —
+ * the settings window and the recording overlay alike — honours the override.
+ */
+:root[data-theme="light"] {
+  --color-accent-grad: var(--light-color-accent-grad);
+  --color-voice-speak: var(--light-color-voice-speak);
+  --color-voice-listen: var(--light-color-voice-listen);
+  --color-bar-grad: var(--light-color-bar-grad);
+  --color-ink-grad: var(--light-color-ink-grad);
+  --shadow-float: var(--light-shadow-float);
+  --color-text: var(--light-color-text);
+  --color-background: var(--light-color-background);
+  --color-ground: var(--light-color-ground);
+  --color-card: var(--light-color-card);
+  --color-raised: var(--light-color-raised);
+  --color-accent-ink: var(--light-color-accent-ink);
+  --color-ink-3: var(--light-color-ink-3);
+  --color-logo-primary: var(--light-color-logo-primary);
+  --color-warning: var(--light-color-warning);
+  --color-error: var(--light-color-error);
+  --color-moss: var(--light-color-moss);
+  --color-plum: var(--light-color-plum);
+  --color-moss-wash: var(--light-color-moss-wash);
+  --color-warning-wash: var(--light-color-warning-wash);
+  --color-error-wash: var(--light-color-error-wash);
+}
+
+:root[data-theme="dark"] {
+  --color-accent-grad: var(--dark-color-accent-grad);
+  --color-voice-speak: var(--dark-color-voice-speak);
+  --color-voice-listen: var(--dark-color-voice-listen);
+  --color-bar-grad: var(--dark-color-bar-grad);
+  --color-ink-grad: var(--dark-color-ink-grad);
+  --shadow-float: var(--dark-shadow-float);
+  --color-text: var(--dark-color-text);
+  --color-background: var(--dark-color-background);
+  --color-ground: var(--dark-color-ground);
+  --color-card: var(--dark-color-card);
+  --color-raised: var(--dark-color-raised);
+  --color-accent-ink: var(--dark-color-accent-ink);
+  --color-ink-3: var(--dark-color-ink-3);
+  --color-logo-primary: var(--dark-color-logo-primary);
+  --color-warning: var(--dark-color-warning);
+  --color-error: var(--dark-color-error);
+  --color-moss: var(--dark-color-moss);
+  --color-plum: var(--dark-color-plum);
+  --color-moss-wash: var(--dark-color-moss-wash);
+  --color-warning-wash: var(--dark-color-warning-wash);
+  --color-error-wash: var(--dark-color-error-wash);
+}

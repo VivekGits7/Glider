@@ -1,0 +1,28 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { ToggleSwitch } from "@/common/ui/ToggleSwitch";
+import { useSettings } from "@/common/settings/useSettings";
+
+interface ExperimentalToggleProps {
+  grouped?: boolean;
+}
+
+export const ExperimentalToggle: React.FC<ExperimentalToggleProps> = React.memo(
+  ({ grouped = false }) => {
+    const { t } = useTranslation();
+    const { getSetting, updateSetting, isUpdating } = useSettings();
+
+    const enabled = getSetting("experimental_enabled") || false;
+
+    return (
+      <ToggleSwitch
+        checked={enabled}
+        onChange={(enabled) => updateSetting("experimental_enabled", enabled)}
+        isUpdating={isUpdating("experimental_enabled")}
+        label={t("settings.advanced.experimentalToggle.label")}
+        description={t("settings.advanced.experimentalToggle.description")}
+        grouped={grouped}
+      />
+    );
+  },
+);

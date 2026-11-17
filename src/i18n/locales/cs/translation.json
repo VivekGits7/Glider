@@ -1,0 +1,1456 @@
+{
+  "tray": {
+    "settings": "Nastavení...",
+    "checkUpdates": "Zkontrolovat aktualizace...",
+    "copyLastTranscript": "Zkopírovat poslední přepis",
+    "unloadModel": "Uvolnit model",
+    "model": "Model",
+    "quit": "Ukončit",
+    "cancel": "Zrušit",
+    "secureInputWarning": "⚠ Zkratky blokuje Secure Input",
+    "language": "Jazyk",
+    "autoLanguage": "Automaticky",
+    "otherLanguages": "Další jazyky"
+  },
+  "sidebar": {
+    "general": "Obecné",
+    "models": "Modely",
+    "advanced": "Pokročilé",
+    "history": "Historie",
+    "debug": "Ladění",
+    "about": "O aplikaci",
+    "readAloud": "Read Aloud",
+    "home": "Home",
+    "label": "Sections",
+    "version": "Glider v{{version}}",
+    "insights": "Insights",
+    "rewrite": "Rewrite",
+    "dictation": "Dictation"
+  },
+  "onboarding": {
+    "customModelDescription": "Oficiálně nepodporováno",
+    "migration": {
+      "title": "Vaše modely potřebují aktualizaci",
+      "description": "Glider nyní používá novější typ modelů. Stáhněte si novou verzi, abyste mohli dál přepisovat. Staré verze budou odstraněny.",
+      "replaces": "Nahrazuje {{name}}",
+      "oldFormat": "Starý formát",
+      "failed": "Stahování selhalo",
+      "retry": "Zkusit znovu",
+      "chooseAnother": "Vybrat jiný model",
+      "download": "Stáhnout modely ({{size}})",
+      "continue": "Pokračovat"
+    },
+    "models": {
+      "small": {
+        "name": "Whisper Small",
+        "description": "Rychlý a poměrně přesný."
+      },
+      "medium": {
+        "name": "Whisper Medium",
+        "description": "Dobrá přesnost, střední rychlost"
+      },
+      "turbo": {
+        "name": "Whisper Turbo",
+        "description": "Vyvážená přesnost a rychlost."
+      },
+      "large": {
+        "name": "Whisper Large",
+        "description": "Dobrá přesnost, ale pomalý."
+      },
+      "breeze-asr": {
+        "name": "Breeze ASR",
+        "description": "Optimalizováno pro tchajwanskou mandarínštinu. Podpora přepínání jazyků."
+      }
+    },
+    "errors": {
+      "selectModel": "Nepodařilo se vybrat model"
+    },
+    "permissions": {
+      "microphone": {
+        "name": "Mikrofon",
+        "why": "Aby vás Glider slyšel. Zvuk se mění na text přímo v tomto počítači a nikam se neodesílá."
+      },
+      "accessibility": {
+        "name": "Zpřístupnění",
+        "why": "Aby vaše zkratka fungovala v každé aplikaci a Glider mohl psát text tam, kde máte kurzor."
+      },
+      "errors": {
+        "checkFailed": "Nepodařilo se zkontrolovat oprávnění. Zkuste to prosím znovu.",
+        "requestFailed": "Nepodařilo se požádat o oprávnění. Zkuste to prosím znovu."
+      },
+      "titleMac": "Dvě oprávnění a máte hotovo",
+      "titleWindows": "Jedno oprávnění a máte hotovo",
+      "subtitleMac": "macOS se zeptá, než jakákoli aplikace smí poslouchat nebo psát.",
+      "subtitleWindows": "Windows se zeptá, než jakákoli aplikace smí poslouchat.",
+      "allow": "Povolit",
+      "openSettings": "Otevřít nastavení",
+      "allowed": "Povoleno",
+      "waiting": "Čeká se",
+      "turnOnMac": "Zapněte Glider v Nastavení systému a pak se vraťte sem.",
+      "turnOnWindows": "Zapněte přístup k mikrofonu v Nastavení Windows a pak se vraťte sem.",
+      "hintBoth": "Pro pokračování povolte obojí",
+      "hintMicrophone": "Pro pokračování povolte mikrofon",
+      "welcomeBack": "Vítejte zpět. Pokračujeme tam, kde jste skončili.",
+      "relaunch": "Zkratka po tomhle nereaguje? <relaunch>Restartujte Glider</relaunch> a skončíte hned zase tady.",
+      "fnKey": {
+        "name": "Fn key",
+        "why": "You hold Fn to dictate. Turn off what macOS does when you press it alone (emoji picker or input switch). You can change it back in System Settings → Keyboard.",
+        "action": "Turn off"
+      }
+    },
+    "shell": {
+      "back": "Zpět",
+      "continue": "Pokračovat",
+      "progress": "Krok {{step}} z {{count}}"
+    },
+    "welcome": {
+      "title": "Mluvte místo psaní, v jakékoli aplikaci",
+      "subtitle": "Vyberte jazyky, ve kterých budete diktovat",
+      "languagesLabel": "Jazyky",
+      "noMatch": "Žádný jazyk neodpovídá „{{query}}“. Modely Glider pokrývají zhruba 100 jazyků, další najdete v nastavení.",
+      "appLanguage": "Jazyk aplikace",
+      "chinese": {
+        "question": "Mluvíte jazykem: {{languages}}. Jaké znaky má Glider psát?",
+        "label": "Čínské znaky",
+        "zh-Hans": "Zjednodušené",
+        "zh-Hant": "Tchaj-wan",
+        "zh-HK": "Hongkong"
+      },
+      "hint": {
+        "pickOne": "Vyberte alespoň jeden jazyk"
+      },
+      "search": "Search languages",
+      "searchPlaceholder": "Search {{count}} languages"
+    },
+    "download": {
+      "checking": "Kontrola stahování…",
+      "ready": "{{name}} je připraven",
+      "failed": "Stahování se zastavilo",
+      "downloading": "Stahuje se {{name}}",
+      "progress": "{{done}} z {{total}}",
+      "progressLeft": "{{done}} z {{total}}, zbývá {{time}}",
+      "checkingName": "Kontrola: {{name}}",
+      "checkingDetail": "Ověřujeme, že je stahování kompletní",
+      "stopped": "Stahování {{name}} se zastavilo",
+      "retryDetail": "Další pokus naváže tam, kde stahování skončilo",
+      "cardProgress": "Stahuje se {{percent}} %, {{done}} z {{total}}",
+      "timeLeft": "zbývá {{time}}",
+      "speedLeft": "{{speed}}, zbývá {{time}}"
+    },
+    "model": {
+      "title": "Vyberte model řeči",
+      "subtitle": "Model řeči mění vaši řeč na text, přímo v tomto počítači",
+      "label": "Model řeči",
+      "lines": {
+        "recommended": "Nejlepší poměr rychlosti a přesnosti pro vaše jazyky",
+        "faster": "Rychlejší, s několika chybami navíc",
+        "accurate": "Nejméně chyb, ale pomalejší"
+      },
+      "shorts": {
+        "recommended": "Nejlepší volba pro vás",
+        "faster": "Rychlejší, o něco více chyb",
+        "accurate": "Nejméně chyb, ale pomalejší"
+      },
+      "model": "Model",
+      "showAll": "Zobrazit všech {{count}} modelů",
+      "download": "Stáhnout {{size}}",
+      "downloadInstead": "Stáhnout raději {{size}}",
+      "pauses": "{{name}} se pozastaví na {{percent}} %",
+      "resumeLater": "Vyberte jej znovu a stahování naváže tam, kde skončilo",
+      "hint": "Stahuje se, zatímco dokončujete nastavení",
+      "bestFor": "Best for {{languages}}",
+      "recommended": "Recommended",
+      "languageCount_one": "{{count}} language",
+      "languageCount_other": "{{count}} languages"
+    },
+    "done": {
+      "title": "Hotovo",
+      "atLogin": "Spustit Glider po přihlášení",
+      "finish": "Hotovo",
+      "subtitleMac": "Glider is in your menu bar now. It works in every app, even with this window closed.",
+      "subtitle": "Glider is in your system tray now. It works in every app, even with this window closed.",
+      "dictate": "Dictate",
+      "readAloud": "Read Aloud",
+      "languages": "Languages",
+      "speechModel": "Speech model",
+      "holdAndTalk": "Hold and talk",
+      "selectThenPress": "Select, then press",
+      "change": "Change",
+      "later": "You can change these later in Settings"
+    },
+    "downloads": {
+      "background": "Downloads keep going in the background",
+      "label": "Downloads",
+      "underMinute": "less than a minute left",
+      "oneMinute": "1 min left",
+      "minutes_one": "{{count}} min left",
+      "minutes_other": "{{count}} min left",
+      "checking": "Checking…",
+      "ofSize": "{{percent}}% · {{done}} of {{total}} MB",
+      "next": "{{percent}}% · {{name}} next",
+      "about": "about {{left}}",
+      "ready": "Ready: {{names}}",
+      "cancel": "Cancel {{name}}"
+    },
+    "voices": {
+      "title": "Pick your voices",
+      "subtitle": "Pick one for each language you listen in. Add more later in Models.",
+      "label": "Voices",
+      "descriptions": {
+        "kokoro-int8-en-v0_19": "Natural, warm voices. 11 American and British speakers.",
+        "vits-piper-hi_IN-pratham-medium-int8": "A clear Hindi voice. Reads Devanagari text.",
+        "kitten-nano-en-v0_2-fp16": "Tiny and fast. Good for older computers."
+      },
+      "speakers_one": "{{count}} speaker",
+      "speakers_other": "{{count}} speakers",
+      "speed": "Up to 3x speed",
+      "sample": "Sample",
+      "sampleLabel": "Hear {{name}}"
+    },
+    "refine": {
+      "title": "Pick a refine model",
+      "subtitle": "It cleans up and rewrites your text when you ask. You can skip this.",
+      "label": "Refine model",
+      "descriptions": {
+        "qwen3-4b-instruct-2507": "Clear, natural rewrites that keep your tone.",
+        "qwen3-1_7b": "Quicker and lighter, a little less polished."
+      },
+      "quality": "Quality: {{value}}",
+      "speed": "Speed: {{value}}",
+      "memory": "Needs {{n}} GB memory",
+      "levels": {
+        "best": "best",
+        "good": "good",
+        "fair": "fair",
+        "fast": "fast",
+        "moderate": "moderate"
+      },
+      "notNow": "Not now",
+      "notNowHint": "Turn on Rewrite later and pick a model then."
+    },
+    "practice": {
+      "title": "Give it a try",
+      "subtitle": "Both shortcuts work in every app. Try them here first.",
+      "dictate": "1. Click the box, hold <keys/> and talk",
+      "listen": "2. Select that text and press <keys/> to hear it",
+      "boxLabel": "Practice box",
+      "placeholder": "Your words appear here.",
+      "done": "Done",
+      "skip": "You can skip this",
+      "voicesNote": "Read Aloud uses the voices you picked. Downloads finish in the background.",
+      "waiting": "Dictation works once {{model}} finishes downloading."
+    }
+  },
+  "modelTable": {
+    "tags": {
+      "preview": "Živý náhled",
+      "previewTitle": "Zobrazuje vaše slova v překryvu Živě, zatímco mluvíte, a po skončení je napíše",
+      "translate": "Překládá",
+      "translateTitle": "Umí změnit to, co řeknete, na anglický text. Zapnete to v nastavení"
+    },
+    "rubric": {
+      "gradeTitle": "Přesnost pro {{language}}: {{grade}}",
+      "accuracyTitle": "Přesnost pro {{language}}",
+      "overallTitle": "Přesnost ve vašich jazycích: {{grade}}",
+      "overall": "Přesnost ve vašich jazycích",
+      "meaning": {
+        "A": "Velmi málo chyb: vaše slova obvykle vyjdou tak, jak jste je řekli",
+        "B": "Několik chyb: občas budete muset opravit slovo",
+        "C": "Časté chyby: některé detaily se mohou ztratit",
+        "D": "Mnoho chyb: počítejte s tím, že napsaný text budete kontrolovat a opravovat",
+        "F": "Často nesrozumitelné: velká část toho, co řeknete, může vyjít špatně"
+      },
+      "unsupported": "Tento model nerozumí jazyku {{language}}, takže v něm nemůže psát",
+      "unrated": "Tento model rozumí jazyku {{language}}, ale zatím jsme neměřili, jak dobře",
+      "under": "pod {{max}} %",
+      "between": "{{min}} až {{max}} %",
+      "over": "{{min}} % nebo více",
+      "speedTitle": "Rychlost: {{speed}}",
+      "speedName": {
+        "0": "Velmi pomalý",
+        "1": "Pomalý",
+        "2": "Střední",
+        "3": "Rychlý",
+        "4": "Velmi rychlý"
+      },
+      "speedMeaning": {
+        "0": "Vaše slova se objeví po dlouhém čekání",
+        "1": "Vaše slova se objeví po chvíli čekání",
+        "2": "Vaše slova se objeví po krátkém čekání",
+        "3": "Vaše slova se objeví téměř okamžitě",
+        "4": "Vaše slova se objeví okamžitě"
+      },
+      "speedPreview": "{{meaning}}, s živým náhledem během mluvení",
+      "untimed": "Rychlost zatím nebyla změřena",
+      "underSeconds": "pod {{max}} s",
+      "betweenSeconds": "{{min}} až {{max}} s",
+      "overSeconds": "{{min}} s nebo více"
+    },
+    "roles": {
+      "recommended": "Doporučeno",
+      "faster": "Rychlejší",
+      "accurate": "Přesnější",
+      "fromAll": "Ze všech modelů"
+    },
+    "speed": "Rychlost",
+    "size": "Velikost",
+    "accuracy": "Přesnost",
+    "search": "Hledat modely",
+    "allLabel": "Modely řeči",
+    "noMatch": "Pro „{{query}}“ nic nenalezeno. Zkuste jazyk nebo rodinu modelů, například Whisper či Parakeet",
+    "noFilterMatch": "Těmto filtrům žádné modely neodpovídají",
+    "speedUntested": "Rychlost zatím nebyla změřena",
+    "speedWords": {
+      "0": "Velmi pomalý, slova se objeví po dlouhém čekání",
+      "1": "Pomalý, slova se objeví po chvíli čekání",
+      "2": "Střední, slova se objeví po krátkém čekání",
+      "3": "Rychlý, slova se objeví téměř okamžitě",
+      "4": "Velmi rychlý, slova se objeví okamžitě"
+    },
+    "speedWordsPreview": {
+      "0": "Velmi pomalý, s živým náhledem během mluvení",
+      "1": "Pomalý, s živým náhledem během mluvení",
+      "2": "Střední, s živým náhledem během mluvení",
+      "3": "Rychlý, s živým náhledem během mluvení",
+      "4": "Velmi rychlý, s živým náhledem během mluvení"
+    },
+    "missingLanguage": "Chybí jazyk",
+    "allLanguages": "Vše",
+    "downloadingLine": "Stahuje se {{percent}} % z {{total}}",
+    "customLine": "Přidáno z vaší složky modelů. Nehodnoceno.",
+    "legacyLine": "Starší stažená verze. Nehodnoceno."
+  },
+  "languagePicker": {
+    "search": "Hledat jazyky"
+  },
+  "modelSelector": {
+    "custom": "Vlastní",
+    "streaming": "Streaming",
+    "active": "Aktivní",
+    "noModelsAvailable": "Nejsou dostupné žádné modely",
+    "verifying": "Ověřování {{modelName}}...",
+    "verifyingGeneric": "Ověřování...",
+    "downloading": "Stahování {{percentage}}%",
+    "downloadingMultiple": "Stahování {{count}} modelů...",
+    "modelReady": "Model připraven",
+    "loading": "Načítám {{modelName}}...",
+    "loadingGeneric": "Načítání...",
+    "modelError": "Chyba modelu",
+    "modelUnloaded": "Model uvolněn",
+    "noModelDownloadRequired": "Žádný model - je nutné stáhnout",
+    "downloadSpeed": "{{speed}} MB/s",
+    "lockedWhileTranscribing": "Model můžete změnit, až se dokončí přepis v Historii."
+  },
+  "settings": {
+    "modelSettings": {
+      "title": "Nastavení {{model}}",
+      "description": "Options for the speech model you use now."
+    },
+    "general": {
+      "shortcut": {
+        "title": "Zkratky Glider",
+        "description": "Nastavte klávesové zkratky pro spuštění nahrávání řeči na text",
+        "loading": "Načítám zkratky...",
+        "none": "Žádné zkratky nejsou nastavené",
+        "notFound": "Zkratka nenalezena",
+        "pressKeys": "Stiskněte klávesy...",
+        "bindings": {
+          "transcribe": {
+            "name": "Zkratka přepisu",
+            "description": "Klávesová zkratka pro nahrávání a přepis vašeho hlasu."
+          },
+          "cancel": {
+            "name": "Zkratka zrušení",
+            "description": "Klávesová zkratka pro zrušení aktuálního nahrávání."
+          },
+          "transcribe_with_post_process": {
+            "name": "Klávesa pro následné zpracování",
+            "description": "Volitelné: Vyhrazená klávesová zkratka, která vždy použije AI následné zpracování na váš přepis."
+          },
+          "speak_selection": {
+            "name": "Read Aloud Shortcut",
+            "description": "Přečte vybraný text nahlas. Dalším stiskem čtení zastavíte."
+          },
+          "refine_1": {
+            "name": "Refine 1",
+            "description": "Přepíše vybraný text podle promptu vedle a vloží ho zpět."
+          },
+          "refine_2": {
+            "name": "Refine 2",
+            "description": "Přepíše vybraný text podle promptu vedle a vloží ho zpět."
+          },
+          "refine_3": {
+            "name": "Refine 3",
+            "description": "Přepíše vybraný text podle promptu vedle a vloží ho zpět."
+          }
+        },
+        "errors": {
+          "set": "Nepodařilo se nastavit zkratku: {{error}}"
+        },
+        "changeLabel": "Change {{name}} ({{keys}})"
+      },
+      "language": {
+        "title": "Jazyk",
+        "description": "Jazyk, kterým mluvíte. Pevná volba je přesnější než Automaticky.",
+        "searchPlaceholder": "Hledat jazyky...",
+        "noResults": "Žádné jazyky nenalezeny",
+        "auto": "Automaticky",
+        "autoUnavailable": {
+          "oneLanguage": "S tímto modelem funguje jen jeden z vašich jazyků",
+          "undetectable": "Není k dispozici pro {{languages}}",
+          "noMatch": "Žádný z vašich jazyků s tímto modelem nefunguje"
+        },
+        "detectorMissingTitle": "Automaticky vyžaduje samostatné stažení",
+        "detectorMissing": "Tento model nepozná, jakým jazykem mluvíte. Režim Automaticky potřebuje malý detektor jazyka, který to zjistí",
+        "stopDetectorDownload": "Zastavit stahování detektoru jazyka"
+      },
+      "preferredLanguages": {
+        "title": "Preferované jazyky",
+        "description": "Jazyky, kterými mluvíte. Glider podle nich doporučuje modely.",
+        "noMatch": "Žádný jazyk neodpovídá „{{query}}“",
+        "weak": "Zatím žádný model dobře nerozpoznává: {{languages}}.",
+        "change": "Change",
+        "none": "No languages yet"
+      }
+    },
+    "models": {
+      "sections": {
+        "yours": "V tomto počítači",
+        "fits": "Pro vaše jazyky"
+      },
+      "emptyYours": "Zatím žádné modely. Vyberte některý níže: stáhne se a Glider ho začne používat.",
+      "showMore": "Zobrazit další ({{count}})",
+      "showFewer": "Zobrazit méně",
+      "download": "Stáhnout a použít",
+      "downloadingThenUse": "{{percent}} % z {{total}}, poté se přepne",
+      "loading": "Načítání…",
+      "deleteAsk": "Smazat {{name}}? Uvolní se {{size}}.",
+      "deleteAskActive": "Smazat {{name}}? Glider nebude moci přepisovat, dokud nevyberete jiný model.",
+      "cancel": "Zrušit",
+      "deleteModel": "Smazat {{name}}",
+      "cancelDownload": "Zastavit stahování {{name}}",
+      "legend": {
+        "open": "Jak se modely hodnotí",
+        "accuracyNote": "Pro každý z vašich jazyků: kolik slov model v našich testovacích nahrávkách napsal špatně.",
+        "speedNote": {
+          "accelerated": "Jak dlouho trvá napsat 30 sekund řeči na grafickém čipu našeho testovacího notebooku. Tento počítač se může lišit.",
+          "cpu": "Jak dlouho trvá napsat 30 sekund řeči na procesoru našeho testovacího notebooku. Tento počítač se může lišit."
+        },
+        "marks": "? zatím nebylo změřeno. — tomuto jazyku nerozumí.",
+        "howGraded": "How models are graded"
+      },
+      "retiredNotice": {
+        "title": "Staré modely už s Glider nefungují",
+        "description": "Zabírají {{size}} na vašem počítači.",
+        "delete": "Smazat modely",
+        "deleteFailed": "Některé staré modely se nepodařilo smazat. Podrobnosti najdete v protokolu."
+      },
+      "rescan": {
+        "tooltip": "Znovu prohledat modely přidané do složky modelů nebo mezipaměti Hugging Face mimo Glider"
+      },
+      "tabs": {
+        "label": "Model type",
+        "speech": "Speech to text",
+        "voices": "Read Aloud voices",
+        "llm": "Large language model"
+      },
+      "lede": "Open-source models that run on this computer. Nothing you say is uploaded.",
+      "columns": {
+        "model": "Model",
+        "quality": "Quality",
+        "memory": "Memory",
+        "language": "Language"
+      },
+      "speed": {
+        "veryFast": "Very fast",
+        "fast": "Fast",
+        "moderate": "Moderate",
+        "slow": "Slow",
+        "verySlow": "Very slow"
+      },
+      "inUse": "In use",
+      "livePreview": "Live preview",
+      "checking": "Checking…",
+      "progress": "{{percent}}% of {{size}}",
+      "progressThenSwitch": "{{percent}}% of {{size}}, then switches",
+      "noGrade": "Doesn't hear this language",
+      "downloadAndUse": "Download and use",
+      "use": "Use",
+      "delete": "Delete {{name}}",
+      "fitsHint": "Picked for {{languages}}. Grades come from our test recordings.",
+      "noMatch": "No models match your search.",
+      "search": "Search models",
+      "sample": "Hear a sample",
+      "noVoices": "No voices yet. Download one below.",
+      "moreVoices": "More voices",
+      "moreVoicesHint": "Each voice downloads once, then works offline.",
+      "llm": {
+        "olderComputers": "Older computers",
+        "needsMemory": "Needs more memory",
+        "gb": "{{n}} GB",
+        "none": "No rewriting model yet. Download one below.",
+        "moreTitle": "More large language models",
+        "moreHint": "Picked for how much memory this computer has. Each downloads once, then works offline.",
+        "providerTitle": "Use a provider instead",
+        "useProvider": "Use a provider",
+        "useProviderHint": "Rewrites go to the service you pick, with your own API key. Only the selected text is sent.",
+        "downloadFailed": "Couldn't download the model. Check your connection and try again.",
+        "multilingual": "Many"
+      },
+      "openFolder": "Open models folder",
+      "openFolderFailed": "Couldn't open the models folder",
+      "notLoaded": "Not loaded",
+      "liveMemory": "Memory this model is using right now",
+      "cancelDeletes": "Zrušení smaže, co se zatím stáhlo. Stahování budete muset začít znovu."
+    },
+    "languages": {
+      "title": "Jazyky"
+    },
+    "sound": {
+      "title": "Zvuk",
+      "microphone": {
+        "title": "Mikrofon",
+        "description": "Vyberte preferované zařízení mikrofonu",
+        "placeholder": "Vyberte mikrofon...",
+        "loading": "Načítání..."
+      },
+      "channel": {
+        "title": "Vstupní kanál",
+        "description": "Který vstup nahrávat na zvukovém rozhraní s více vstupy.",
+        "average": "Průměr všech kanálů",
+        "channel": "Kanál {{n}}"
+      },
+      "audioFeedback": {
+        "label": "Zvuková odezva",
+        "description": "Přehrát zvuk při zahájení a ukončení nahrávání"
+      },
+      "outputDevice": {
+        "title": "Výstupní zařízení",
+        "description": "Vyberte preferované výstupní zařízení pro zvuky odezvy",
+        "placeholder": "Vyberte výstupní zařízení...",
+        "loading": "Načítání..."
+      },
+      "volume": {
+        "title": "Hlasitost",
+        "description": "Upravte hlasitost zvukové odezvy"
+      }
+    },
+    "advanced": {
+      "groups": {
+        "app": "Aplikace",
+        "output": "Výstup",
+        "transcription": "Přepis",
+        "history": "Historie",
+        "experimental": "Experimentální",
+        "outputDescription": "How your words get into the app you are typing in.",
+        "experimentalDescription": "These may change or go away."
+      },
+      "experimentalToggle": {
+        "label": "Experimentální funkce",
+        "description": "Povolit experimentální funkce, které jsou stále ve vývoji."
+      },
+      "lazyStreamClose": {
+        "label": "Ponechat mikrofon zapnutý mezi přepisy",
+        "description": "Další diktování začne rychleji. Zvuk přes Bluetooth se může zhoršit."
+      },
+      "airpodsMode": {
+        "label": "Režim AirPods",
+        "description": "Převezme AirPods z iPhonu, aby nahrávky nebyly tiché."
+      },
+      "acceleration": {
+        "transcribe": {
+          "title": "Hardwarová akcelerace",
+          "description": "Automaticky použije GPU, když to jde, jinak CPU."
+        },
+        "gpuDevice": {
+          "auto": "Automaticky"
+        }
+      },
+      "startHidden": {
+        "label": "Spouštět skrytě",
+        "description": "Spustit do systémové lišty bez otevření okna."
+      },
+      "autostart": {
+        "label": "Spouštět při startu",
+        "description": "Automaticky spustit Glider po přihlášení do počítače."
+      },
+      "showTrayIcon": {
+        "label": "Zobrazit ikonu v systémové liště",
+        "description": "Zobrazit ikonu Glider v systémové liště."
+      },
+      "overlay": {
+        "style": {
+          "title": "Překryv",
+          "description": "Živě ukazuje slova během mluvení, u streamovacích modelů.",
+          "options": {
+            "none": "Žádné",
+            "minimal": "Minimální",
+            "live": "Živě"
+          }
+        },
+        "position": {
+          "title": "Pozice překryvu",
+          "description": "Kde se překryv zobrazí během diktování.",
+          "options": {
+            "bottom": "Dole",
+            "top": "Nahoře"
+          }
+        }
+      },
+      "pasteMethod": {
+        "title": "Způsob vložení",
+        "description": "Schránka vloží, Přímé napíše, Žádné jen uloží.",
+        "options": {
+          "clipboard": "Schránka ({{modifier}}+V)",
+          "clipboardCtrlShiftV": "Schránka (Ctrl+Shift+V)",
+          "clipboardShiftInsert": "Schránka (Shift+Insert)",
+          "direct": "Přímé",
+          "none": "Žádné",
+          "externalScript": "Externí skript"
+        },
+        "externalScriptPlaceholder": "/cesta/k/vasemu/skriptu.sh"
+      },
+      "typingTool": {
+        "title": "Nástroj pro psaní",
+        "description": "Linuxový nástroj pro Přímé vkládání. Automaticky vybere nejlepší.",
+        "options": {
+          "auto": "Auto (Doporučeno)"
+        }
+      },
+      "clipboardHandling": {
+        "title": "Práce se schránkou",
+        "description": "Zda diktát po vložení zůstane ve schránce.",
+        "options": {
+          "dontModify": "Neměnit schránku",
+          "copyToClipboard": "Kopírovat do schránky"
+        }
+      },
+      "autoSubmit": {
+        "title": "Automatické odeslání",
+        "description": "Po vložení stiskne tuto klávesu a odešle zprávu za vás.",
+        "options": {
+          "off": "Vypnuto",
+          "enter": "Enter",
+          "cmdEnter": "Cmd+Enter",
+          "superEnter": "Super+Enter",
+          "ctrlEnter": "Ctrl+Enter"
+        }
+      },
+      "translateToEnglish": {
+        "label": "Překládat do angličtiny",
+        "description": "Píše anglicky, ať mluvíte jakýmkoli jazykem."
+      },
+      "modelUnload": {
+        "title": "Uvolnění modelu",
+        "description": "Uvolní paměť, když řečový model tak dlouho nepoužíváte.",
+        "options": {
+          "never": "Nikdy",
+          "immediately": "Okamžitě",
+          "min2": "Po 2 minutách",
+          "min5": "Po 5 minutách",
+          "min10": "Po 10 minutách",
+          "min15": "Po 15 minutách",
+          "hour1": "Po 1 hodině",
+          "sec15": "Po 15 sekundách (Debug)"
+        }
+      },
+      "customWords": {
+        "title": "Vlastní slova",
+        "description": "Pomáhá modelu správně psát jména a odborné výrazy.",
+        "placeholder": "Přidat slovo",
+        "add": "Přidat",
+        "remove": "Odebrat {{word}}",
+        "duplicate": "\"{{word}}\" již existuje"
+      },
+      "voiceActivityDetection": {
+        "title": "Detekce hlasové aktivity",
+        "description": "Vystřihne z nahrávek ticho. Vypnuto nahrává vše."
+      },
+      "longFormChunking": {
+        "title": "Dělení dlouhého zvuku",
+        "description": "Dělí dlouhé nahrávky v pauzách, aby se lépe přepsaly."
+      },
+      "languageDetection": {
+        "title": "Omezit Automaticky na mé jazyky",
+        "description": "Zapněte, pokud Automaticky volí jazyk, kterým nemluvíte.",
+        "downloadHint": "Zapnutím se stáhne malý detektor jazyka",
+        "downloadingHint": "Stahuje se detektor jazyka. Vypnutím stahování zrušíte"
+      },
+      "vadBackend": {
+        "title": "Backend detekce hlasu",
+        "description": "Earshot je experimentální. Pokud usekává slova, použijte Silero.",
+        "options": {
+          "silero": "Silero",
+          "earshot": "Earshot"
+        }
+      },
+      "fillerWordRemoval": {
+        "title": "Odstranit výplňová slova",
+        "description": "Odstraní z diktátu váhavé zvuky a vycpávková slova."
+      },
+      "chineseScript": {
+        "title": "Čínské písmo",
+        "description": "Jakými znaky se píše mandarínština a kantonština.",
+        "options": {
+          "asTranscribed": "Jak bylo přepsáno",
+          "simplified": "Zjednodušené",
+          "traditionalTw": "Tradiční (Tchaj-wan)",
+          "traditionalHk": "Tradiční (Hongkong)"
+        }
+      }
+    },
+    "postProcessing": {
+      "api": {
+        "provider": {
+          "title": "Poskytovatel",
+          "description": "Vyberte poskytovatele kompatibilního s OpenAI nebo Anthropic."
+        },
+        "apiFormat": {
+          "title": "Formát API",
+          "description": "Formát požadavku očekávaný vaším vlastním endpointem.",
+          "options": {
+            "openai": "Kompatibilní s OpenAI (Chat Completions)",
+            "anthropic": "Anthropic Messages"
+          }
+        },
+        "appleIntelligence": {
+          "unavailable": "Apple Intelligence není na tomto zařízení k dispozici. Vyžaduje Mac s Apple Silicon a macOS Tahoe (26.0) nebo novější a povolené Apple Intelligence v Nastavení systému."
+        },
+        "baseUrl": {
+          "title": "Základní URL",
+          "description": "Adresa API poskytovatele. Upravit lze jen u Vlastní.",
+          "placeholder": "https://api.openai.com/v1",
+          "placeholderAnthropic": "https://api.anthropic.com/v1"
+        },
+        "apiKey": {
+          "title": "API klíč",
+          "description": "API klíč pro vybraného poskytovatele.",
+          "placeholder": "sk-..."
+        },
+        "model": {
+          "title": "Model",
+          "descriptionCustom": "Zadejte identifikátor modelu očekávaný vaším vlastním endpointem.",
+          "descriptionDefault": "Vyberte model dostupný u vybraného poskytovatele.",
+          "placeholderWithOptions": "Vyhledejte nebo vyberte model",
+          "placeholderNoOptions": "Zadejte název modelu",
+          "refreshModels": "Obnovit modely"
+        }
+      }
+    },
+    "history": {
+      "openFolder": "Otevřít složku nahrávek",
+      "loading": "Načítám historii...",
+      "empty": "Zatím žádné přepisy. Začněte nahrávat a vytvořte si historii!",
+      "copyToClipboard": "Kopírovat přepis do schránky",
+      "copyError": "Přepis se nepodařilo zkopírovat do schránky.",
+      "save": "Uložit přepis",
+      "unsave": "Odebrat z uložených",
+      "delete": "Smazat záznam",
+      "deleteError": "Nepodařilo se smazat záznam. Zkuste to prosím znovu.",
+      "retranscribe": "Přepsat znovu",
+      "cancelTranscription": "Zrušit přepis",
+      "transcribing": "Přepisuji...",
+      "transcriptionFailed": "Přepis selhal. Můžete zkusit přepis znovu pomocí ikony opakování.",
+      "notTranscribed": "Nepřepsáno. Můžete to přepsat pomocí ikony opakování.",
+      "transcribeFile": "Přepsat soubor",
+      "mediaFiles": "Zvuk a video",
+      "fileUnsupported": "Ze souboru {{name}} se nepodařilo načíst zvuk.",
+      "transcribeFailed": "Přepis se nezdařil. Zkuste to prosím znovu.",
+      "waiting": "Čeká na přepis",
+      "transcribingPercent": "Přepisuji, {{percent}} %",
+      "readingFile": "Načítám soubor...",
+      "showMore": "Zobrazit více",
+      "showLess": "Zobrazit méně",
+      "dropTitle": "Pusťte pro přepis",
+      "dropDescription": "Zobrazí se v historii.",
+      "tabs": {
+        "label": "History type",
+        "dictation": "Dictation",
+        "readAloud": "Read Aloud",
+        "rewrite": "Rewrite"
+      },
+      "readAloud": {
+        "empty": "Nothing read aloud yet. Select text anywhere and press your Read Aloud shortcut.",
+        "readAgain": "Read again",
+        "meta": "{{voice}} · {{speed}}x",
+        "kept_one": "The last read is kept",
+        "kept_other": "Last {{count}} reads are kept",
+        "playing": "Reading, sentence {{index}} of {{total}}",
+        "stop": "Stop reading"
+      },
+      "rewrite": {
+        "empty": "No rewrites yet. Select text anywhere and press a Refine shortcut.",
+        "kept_one": "The last rewrite is kept",
+        "kept_other": "Last {{count}} rewrites are kept"
+      },
+      "playRecording": "Play recording",
+      "noRecording": "Audio not kept",
+      "savedOnly": "Saved",
+      "savedEmpty": "Nothing saved yet. Press the star on an entry to keep it here.",
+      "audioError": "Couldn't open this recording",
+      "days": {
+        "today": "Today",
+        "yesterday": "Yesterday"
+      }
+    },
+    "debug": {
+      "title": "Ladění",
+      "logDirectory": {
+        "title": "Složka protokolů",
+        "description": "Umístění, kde jsou uloženy soubory protokolu"
+      },
+      "logLevel": {
+        "title": "Úroveň logování",
+        "description": "Nastavte úroveň podrobnosti logování"
+      },
+      "liveLogs": {
+        "title": "Živé logy",
+        "description": "Zobrazuje nové řádky logu podle úrovně, dokud je panel otevřený.",
+        "live": "Živě",
+        "paused": "Pozastaveno",
+        "pause": "Pozastavit",
+        "resume": "Pokračovat",
+        "copied": "Zkopírováno",
+        "lineCount": "Řádků: {{count}}",
+        "empty": "Čekání na logy… Záznamy se zde zobrazí, jakmile je aplikace vygeneruje."
+      },
+      "updateChecks": {
+        "label": "Kontrolovat aktualizace",
+        "description": "Automaticky kontrolovat nové verze Glider",
+        "lockedDescription": "Zakázáno systémovou konfigurací (GLIDER_DISABLE_UPDATER)"
+      },
+      "whatsNewPreview": {
+        "title": "Náhled novinek",
+        "description": "Otevřít nejnovější přibalené poznámky k vydání bez označení jako zobrazené",
+        "button": "Náhled"
+      },
+      "onboardingPreview": {
+        "title": "Náhled úvodního nastavení",
+        "description": "Projde úvodní obrazovky bez jakýchkoli změn.",
+        "exitButton": "Ukončit náhled",
+        "choose": "Vyberte obrazovku",
+        "screens": {
+          "welcome": "Vítejte",
+          "permissions": "Oprávnění",
+          "model": "Model",
+          "demo": "Ukázka",
+          "try": "Vyzkoušet",
+          "done": "Hotovo",
+          "voices": "Voices",
+          "refine": "Refine model"
+        }
+      },
+      "onboardingRun": {
+        "title": "Spustit úvodní nastavení",
+        "description": "Spustí úvodní nastavení naostro: oprávnění a stažení modelů.",
+        "button": "Spustit"
+      },
+      "modelMigration": {
+        "title": "Migrace modelů",
+        "description": "Doopravdy otevře obrazovku aktualizace modelů starého formátu: stáhne náhrady, přepne modely a smaže staré soubory",
+        "button": "Otevřít"
+      },
+      "soundTheme": {
+        "label": "Zvukový motiv",
+        "description": "Vyberte zvukový motiv pro odezvu při startu a ukončení nahrávání"
+      },
+      "wordCorrectionThreshold": {
+        "title": "Práh korekce slov",
+        "description": "Citlivost pro opravy vlastních slov"
+      },
+      "historyLimit": {
+        "title": "Limit historie",
+        "description": "Kolik posledních diktátů si ponechá zvuk. Text zůstává vždy.",
+        "entries": "záznamů"
+      },
+      "recordingRetention": {
+        "title": "Automatické mazání nahrávek",
+        "description": "Automaticky mazat staré nahrávky pro úsporu místa",
+        "never": "Nikdy",
+        "preserveLimit": "Ponechat posledních {{count}}",
+        "days3": "Po 3 dnech",
+        "weeks2": "Po 2 týdnech",
+        "months3": "Po 3 měsících",
+        "placeholder": "Vyberte dobu uchování..."
+      },
+      "alwaysOnMicrophone": {
+        "label": "Vždy zapnutý mikrofon",
+        "description": "Udržovat mikrofon aktivní pro rychlejší odezvu"
+      },
+      "clamshellMicrophone": {
+        "title": "Mikrofon při zavřeném víku",
+        "description": "Mikrofon, který se použije při zavřeném víku notebooku"
+      },
+      "postProcessingToggle": {
+        "label": "Následné zpracování",
+        "description": "Povolit AI vylepšení textu po přepisu"
+      },
+      "muteWhileRecording": {
+        "label": "Ztlumit při nahrávání",
+        "description": "Ztlumit systémový zvuk během nahrávání"
+      },
+      "appendTrailingSpace": {
+        "label": "Přidat koncovou mezeru",
+        "description": "Přidat mezeru po vloženém přepisu"
+      },
+      "keyboardImplementation": {
+        "title": "Implementace klávesnice",
+        "description": "Zvolte backend pro klávesové zkratky.",
+        "bindingsReset": "Klávesové zkratky byly nekompatibilní a byly obnoveny na výchozí hodnoty"
+      },
+      "pasteDelay": {
+        "title": "Zpoždění vložení (před)",
+        "description": "Prodleva po zkopírování. Zvyšte, pokud se nic nevloží."
+      },
+      "pasteDelayAfter": {
+        "title": "Zpoždění vložení (po)",
+        "description": "Prodleva před obnovením schránky. Zvyšte, pokud se vkládá starý text."
+      },
+      "holdThreshold": {
+        "title": "Práh podržení",
+        "description": "Jak dlouho musí stisk trvat, aby se počítal jako podržení."
+      },
+      "reliablePaste": {
+        "title": "Spolehlivé vložení (Beta)",
+        "description": "Počká, až aplikace vloží text, a teprve pak obnoví schránku."
+      },
+      "recordingBuffer": {
+        "title": "Extra vyrovnávací paměť nahrávání",
+        "description": "Nahrává chvíli po puštění klávesy, aby se neusekl konec."
+      },
+      "languageDetectionWindow": {
+        "title": "Zvuk pro rozpoznání jazyka",
+        "description": "Sekundy, které detektor slyší. Delší je přesnější, ale pomalejší."
+      },
+      "keyboardDiagnostic": {
+        "title": "Diagnostika klávesnice",
+        "description": "Počítá stisky kláves, které dorazí do Glideru, nikdy které klávesy.",
+        "run": "Spustit 10s diagnostiku",
+        "running": "Naslouchání… několikrát stiskněte svou zkratku (např. Option+Space)",
+        "secureInputLabel": "Secure Input",
+        "enabled": "zapnuto",
+        "disabled": "vypnuto",
+        "holder": "drží ji {{name}} (pid {{pid}})",
+        "holderUnknown": "žádný viditelný držitel",
+        "keyDown": "Stisk klávesy",
+        "keyUp": "Uvolnění klávesy",
+        "flagsChanged": "Modifikátory",
+        "mouse": "Myš",
+        "verdictBlocked": "Secure Input blokuje události kláves — zkratky obsahující běžnou klávesu nemohou fungovat, dokud se to nevyřeší.",
+        "verdictSuspicious": "Dorazily události modifikátorů, ale žádné události kláves — něco klávesy potlačuje, přestože Secure Input hlásí, že je vypnutý. Nahlaste to prosím na GitHubu.",
+        "verdictOk": "Události kláves dorazí do Glider normálně.",
+        "verdictNoEvents": "Nebyly zachyceny žádné události — stiskli jste během testu nějaké klávesy?",
+        "failed": "Diagnostika selhala: {{error}}"
+      },
+      "lede": "Tools for tracking down problems. Most people never need these.",
+      "groups": {
+        "logs": "Logs",
+        "previews": "Previews",
+        "previewsDescription": "Open screens without changing your settings.",
+        "timing": "Timing and sound",
+        "input": "Input"
+      }
+    },
+    "about": {
+      "version": {
+        "title": "Verze",
+        "description": "Aktuální verze Glider"
+      },
+      "whatsNewUpdates": {
+        "label": "Zobrazovat novinky",
+        "description": "Zobrazovat poznámky k vydání po aktualizacích Glider"
+      },
+      "appDataDirectory": {
+        "title": "Adresář dat aplikace"
+      },
+      "sourceCode": {
+        "title": "Zdrojový kód",
+        "description": "Zobrazit zdrojový kód a přispět",
+        "button": "Zobrazit na GitHubu"
+      },
+      "acknowledgments": {
+        "title": "Poděkování",
+        "ggml": {
+          "title": "ggml",
+          "description": "Vysoce výkonné inferenční zpracování modelu automatického rozpoznávání řeči Whisper od OpenAI",
+          "details": "Glider používá ggml pro rychlé lokální zpracování řeči na text. Díky skvělé práci Georgiho Gerganova a přispěvatelů."
+        },
+        "view": "View",
+        "handy": {
+          "title": "Handy",
+          "description": "Diktování v Glideru stojí na Handy od CJ Paise, licence MIT."
+        },
+        "sherpa": {
+          "title": "sherpa-onnx",
+          "description": "Hlasy Read Aloud běží na sherpa-onnx."
+        },
+        "description": "Glider stands on these open-source projects.",
+        "candle": {
+          "title": "candle",
+          "description": "Rewrite běží na candle, knihovně Hugging Face pro ML v Rustu."
+        }
+      },
+      "appTitle": "App",
+      "star": {
+        "title": "Like Glider?",
+        "description": "Star it on GitHub so other developers can find it.",
+        "button": "Star on GitHub"
+      }
+    },
+    "readAloud": {
+      "title": "Read Aloud",
+      "description": "Select text anywhere and Glider reads it to you with an AI voice that runs on this computer.",
+      "voice": {
+        "title": "Voice",
+        "description": "Which speaker reads your text."
+      },
+      "language": {
+        "title": "Jazyk",
+        "description": "Jazyk, ve kterém hlas čte váš text."
+      },
+      "speed": {
+        "title": "Speed",
+        "description": "How fast the voice reads. 1.0x is normal."
+      },
+      "models": {
+        "downloadFailed": "Couldn't download the voice"
+      },
+      "setupTitle": "Setup",
+      "model": {
+        "title": "Voice model",
+        "none": "No voice downloaded yet",
+        "change": "Change",
+        "download": "Get a voice",
+        "summary": "{{name}} · {{language}} · {{size}} MB"
+      },
+      "shortcutHint": "Press again while it reads to stop.",
+      "livePreview": {
+        "title": "Živý náhled",
+        "description": "Zobrazuje čtenou větu nad přehrávačem."
+      },
+      "intro": {
+        "hint": "Works anywhere you can select text. Press the shortcut again to stop.",
+        "hintMac": "Works anywhere you can select text. F8 pauses, F7 and F9 skip, Esc stops.",
+        "sample": "Long replies are easier to take in when you can sit back and listen.",
+        "label": "Example",
+        "try": "Try it",
+        "stop": "Stop"
+      }
+    },
+    "dictation": {
+      "description": "How Glider listens, turns your speech into text, and types it.",
+      "livePreview": {
+        "title": "Živý náhled",
+        "description": "Ukazuje slova během mluvení, u modelů s označením Živý náhled."
+      },
+      "intro": {
+        "hint": "Keep holding while you talk, then let go. The text lands where your cursor is.",
+        "said": "can you send me the deck before tomorrow's call",
+        "typed": "Can you send me the deck before tomorrow's call?",
+        "label": "Example",
+        "try": "Try it"
+      }
+    }
+  },
+  "footer": {
+    "checkingUpdates": "Kontroluji aktualizace...",
+    "updateAvailableShort": "Dostupná aktualizace",
+    "upToDate": "Vše aktuální",
+    "updateCheckingDisabled": "Kontrola aktualizací vypnuta",
+    "downloading": "Stahování... {{progress}}%",
+    "installing": "Instalace...",
+    "preparing": "Příprava...",
+    "checkForUpdates": "Zkontrolovat aktualizace",
+    "portableUpdateTitle": "Vyžadována ruční aktualizace",
+    "portableUpdateMessage": "Přenosné instalace nelze aktualizovat automaticky. Níže stáhněte instalátor pro svůj systém, spusťte jej a nainstalujte do stejné složky — vaše složka Data/ (nastavení, modely, nahrávky) zůstane na místě.",
+    "portableUpdateButton": "Stáhnout instalátor",
+    "portableUpdateBrowseMessage": "Přenosné instalace nelze aktualizovat automaticky. Stáhněte nejnovější verzi pro svůj systém z GitHub Releases a nainstalujte ji do stejné složky — vaše složka Data/ (nastavení, modely, nahrávky) zůstane na místě.",
+    "portableUpdateBrowseButton": "Otevřít GitHub Releases",
+    "noVoice": "No voice yet",
+    "voiceLabel": "Voice: {{voice}}",
+    "dictationModel": "Dictation model",
+    "readAloudModel": "Read aloud voice",
+    "rewriteModel": "Rewrite model",
+    "noRewriteModel": "No rewrite model yet",
+    "rewriteLabel": "Rewrite model: {{model}}",
+    "chooseVoices": "Voices",
+    "voicesTitle": "Choose a voice",
+    "providerDesc": "Runs on {{provider}}, online"
+  },
+  "whatsNew": {
+    "title": "Novinky v Glider v{{version}}"
+  },
+  "common": {
+    "playbackPosition": "Pozice přehrávání",
+    "resetSetting": "Obnovit výchozí hodnotu: {{setting}}",
+    "loading": "Načítání...",
+    "delete": "Smazat",
+    "close": "Zavřít",
+    "open": "Otevřít",
+    "copy": "Kopírovat",
+    "clear": "Vymazat",
+    "noOptionsFound": "Nenalezeny žádné možnosti",
+    "hearExample": "Poslechnout příklad",
+    "muteExample": "Ztlumit příklad"
+  },
+  "errors": {
+    "micPermissionDeniedTitle": "Přístup k mikrofonu byl odepřen",
+    "micPermissionDenied": {
+      "generic": "Přístup k mikrofonu byl odepřen operačním systémem. Povolte prosím přístup k mikrofonu v nastavení systému.",
+      "windows": "Povolte přístup k mikrofonu v Nastavení → Soukromí a zabezpečení → Mikrofon (včetně přístupu desktopových aplikací).",
+      "macos": "Povolte přístup k mikrofonu v Nastavení systému → Soukromí a zabezpečení → Mikrofon.",
+      "linux": "Povolte přístup k mikrofonu v nastavení zvuku nebo soukromí vašeho systému."
+    },
+    "noInputDeviceTitle": "Mikrofon nebyl nalezen",
+    "noInputDevice": "Nebylo detekováno žádné zvukové vstupní zařízení. Připojte mikrofon nebo sluchátka a zkuste to znovu.",
+    "recordingFailedTitle": "Nepodařilo se spustit nahrávání",
+    "modelLoadFailed": "Glider nemohl načíst tento model. Zkuste to znovu nebo vyberte jiný.",
+    "modelLoadFailedTitle": "Nepodařilo se načíst model",
+    "modelDownloadFailed": "Stahování selhalo",
+    "pasteFailedTitle": "Vložení textu se nezdařilo",
+    "pasteFailed": "Text nebylo možné vložit do aktivní aplikace.",
+    "postProcessFailedTitle": "Vloženo bez následného zpracování",
+    "postProcessFailed": "Následné zpracování se nedokončilo, takže byl přepis vložen beze změn.",
+    "filePostProcessFailedTitle": "Přepsáno bez následného zpracování",
+    "filePostProcessFailed": "Následné zpracování se nedokončilo, takže byl přepis uložen beze změn.",
+    "fileTranscriptionFailedTitle": "Přepis souboru selhal",
+    "transcriptionFailedTitle": "Přepis selhal",
+    "noTextSelectedTitle": "No Text Selected",
+    "noTextSelected": "Select some text first, then press the Read Aloud shortcut.",
+    "voiceModelMissingTitle": "No Voice Downloaded",
+    "voiceModelMissing": "Download a voice in Read Aloud settings first.",
+    "readAloudFailedTitle": "Read Aloud Failed",
+    "refineFailedTitle": "Refine Failed",
+    "refineFailed": "The selected text couldn't be rewritten. Check the Post Process provider and model.",
+    "noLlmModelTitle": "No Rewrite Model",
+    "noLlmModel": "Download a rewrite model in Models, then try again."
+  },
+  "notices": {
+    "errorOne": "{{n}} chyba",
+    "errorMany": "{{n}} chyby",
+    "warningOne": "{{n}} upozornění",
+    "warningMany": "{{n}} upozornění",
+    "errorsAndWarnings": "{{errors}}, {{warnings}}"
+  },
+  "appLanguage": {
+    "title": "Jazyk aplikace",
+    "description": "Změňte jazyk rozhraní Glider"
+  },
+  "theme": {
+    "title": "Motiv aplikace",
+    "description": "Podle systému, nebo vždy světlý či tmavý.",
+    "options": {
+      "system": "Systém",
+      "light": "Světlý",
+      "dark": "Tmavý"
+    }
+  },
+  "overlay": {
+    "transcribing": "Přepisuji...",
+    "loadingModel": "Načítání modelu...",
+    "readingAloud": "Reading aloud",
+    "preparingVoice": "Preparing voice...",
+    "refining": "Refining",
+    "seeChanges": "See changes",
+    "changesLabel": "Changes",
+    "changes_one": "{{count}} change",
+    "changes_other": "{{count}} changes",
+    "toUndo": "to undo",
+    "close": "Close",
+    "copy": "Copy",
+    "again": "Refine again",
+    "previous": "Previous sentence",
+    "next": "Next sentence",
+    "pause": "Pause",
+    "play": "Play",
+    "slower": "Slower",
+    "faster": "Faster",
+    "listening": "Listening",
+    "cancel": "Cancel",
+    "finishAndPaste": "Dokončit a vložit",
+    "usingRewrite": "Pomocí {{name}}",
+    "done": "Hotovo",
+    "doneReading": "Čtení dokončeno",
+    "noVoiceYet": "Zatím žádný hlas",
+    "getVoice": "Získat hlas",
+    "nowhereHint": "Nejdřív klikněte do textového pole, pak diktujte",
+    "savedInHistory": "Uloženo také v Historii",
+    "pasteHint": "Klikněte do textového pole a stiskněte {{keys}}",
+    "copied": "Zkopírováno",
+    "sentence": "Věta {{index}} z {{total}}",
+    "toStop": "pro zastavení",
+    "copyResult": "Kopírovat výsledek"
+  },
+  "secureInput": {
+    "blockedWithCulprit_one": "{{name}} může blokovat 1 zkratku",
+    "blockedWithCulprit_other": "{{name}} může blokovat {{count}} zkratek",
+    "blockedNoCulprit_one": "macOS dočasně blokuje 1 zkratku",
+    "blockedNoCulprit_other": "macOS dočasně blokuje {{count}} zkratek",
+    "recorderBlockedWithCulprit": "{{name}} může blokovat změny zkratek",
+    "recorderBlockedNoCulprit": "macOS dočasně blokuje změny zkratek",
+    "learnMore": "Jak to vyřešit",
+    "recorderBlocked": "Zkratky teď nelze nahrát — Secure Input v macOS blokuje události kláves. Nejprve vyřešte upozornění na Secure Input.",
+    "dismiss": "Zavřít"
+  },
+  "home": {
+    "welcome": "Welcome back",
+    "welcomeName": "Welcome back, {{name}}",
+    "shortcutsLabel": "Your shortcuts",
+    "statsLabel": "Your numbers",
+    "dictateLine": "Hold <keys/> to dictate",
+    "dictateHint": "Works in every app. What you say is typed where your cursor is.",
+    "listenLine": "Select text, press <keys/> to listen",
+    "listenHint": "Hear AI replies, docs and web pages read aloud, up to 3x speed.",
+    "listening": "Listening...",
+    "reading": "Reading aloud...",
+    "changeShortcuts": "Change shortcuts",
+    "stats": {
+      "dictated": "words dictated",
+      "read": "words read aloud",
+      "streak_one": "day streak",
+      "streak_other": "day streak"
+    },
+    "today": "Today",
+    "seeAll": "See all history",
+    "filterLabel": "Show only",
+    "empty": "Nothing yet today. Your dictations, reads and rewrites will show up here.",
+    "kind": {
+      "dictation": "Dictation",
+      "read": "Read aloud",
+      "rewrite": "Rewrite"
+    },
+    "howToUse": "How to use",
+    "tutorial": {
+      "play": "Play the how-to video",
+      "title": "See how Glider works",
+      "soon": "Video coming soon",
+      "button": "Tutorial"
+    }
+  },
+  "insights": {
+    "rangeLabel": "Time range",
+    "last30": "30 days",
+    "allTime": "All time",
+    "wpmUp": "Up from {{from}} in {{month}}",
+    "wpmDown": "Down from {{from}} in {{month}}",
+    "wpmSteady": "Steady since {{month}}",
+    "wpmNoTrend": "Trend shows from next week",
+    "wpmEmpty": "Dictate to see your pace",
+    "hours": "{{n}} h",
+    "minutes": "{{n}} min",
+    "timeListened": "Time listened",
+    "longestRead": "Longest read",
+    "words_one": "{{n}} word",
+    "words_other": "{{n}} words",
+    "appsLabel": "Where you dictate",
+    "appsTitle": "Where you talk",
+    "appsHint": "Dictated words by app",
+    "appsEmpty": "Dictate in a few apps and they show up here.",
+    "otherApps": "Other",
+    "appShare": "{{name}}, {{share}}%",
+    "streakLabel": "Streak",
+    "streak_one": "{{count}} day streak",
+    "streak_other": "{{count}} day streak",
+    "noStreak": "No streak yet",
+    "longest_one": "Longest {{count}} day",
+    "longest_other": "Longest {{count}} days",
+    "calendarLabel": "Days you used Glider over the last {{weeks}} weeks",
+    "dayWords_one": "{{day}}: {{count}} word",
+    "dayWords_other": "{{day}}: {{count}} words",
+    "days": {
+      "mon": "Mon",
+      "wed": "Wed",
+      "fri": "Fri",
+      "sun": "Sun"
+    },
+    "less": "Less",
+    "more": "More",
+    "today": "Today",
+    "summary30": "In the last 30 days you dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summary30NoPace": "In the last 30 days you dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAll": "So far you have dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAllNoPace": "So far you have dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryEmpty": "Dictate, listen or rewrite something and your numbers show up here.",
+    "pace": "{{n}} a minute",
+    "rewriteCount_one": "{{n}} rewrite",
+    "rewriteCount_other": "{{n}} rewrites",
+    "savedHours_one": "{{count}} hour",
+    "savedHours_other": "{{count}} hours",
+    "savedMinutes_one": "{{count}} minute",
+    "savedMinutes_other": "{{count}} minutes",
+    "activityTitle": "Activity",
+    "lastDays": "Last {{total}} days.",
+    "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
+    "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
+    "speakingAbove": "Speaking, above",
+    "listeningBelow": "Listening, below",
+    "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
+    "busiest": "Busiest {{day}}.",
+    "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
+    "wpmUnit": "words a minute",
+    "heardUnit": "words heard",
+    "rewritesUnit_one": "rewrite",
+    "rewritesUnit_other": "rewrites",
+    "usuallyAt": "Usually at {{speed}}x",
+    "wordsRewritten_one": "{{n}} word rewritten",
+    "wordsRewritten_other": "{{n}} words rewritten",
+    "dictations": "Dictations",
+    "average": "Average",
+    "longestDictation": "Longest",
+    "languages": "Languages",
+    "reads": "Reads",
+    "voice": "Voice",
+    "rewritesEmpty": "Select text and press a Refine shortcut.",
+    "removedRewrite": "Removed rewrite",
+    "explainLabel": "What {{name}} counts",
+    "inApp": "in {{app}}",
+    "explain": {
+      "dictations": "How many times you held the shortcut and Glider typed something.",
+      "average": "The length of a typical dictation: words divided by dictations.",
+      "longest": "Your single longest dictation in this period.",
+      "languages": "The languages your dictations were transcribed in, most used first.",
+      "reads": "How many times you selected text and Read Aloud read it to you.",
+      "timeListened": "Total time Read Aloud spent speaking, at the speed you chose.",
+      "longestRead": "The most words Read Aloud read in one go.",
+      "voice": "The voice you used for the most reads in this period."
+    }
+  },
+  "rewrite": {
+    "new": "New",
+    "on": "On",
+    "off": "Off",
+    "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
+    "noModel": "No model loaded",
+    "noProvider": "No provider set",
+    "hero": {
+      "polish": "Select text, press <keys/> to polish it",
+      "prompt": "Select text, press <keys/> to make it a prompt",
+      "humanize": "Select text, press <keys/> to humanize it",
+      "grammar": "Select text, press <keys/> to fix its grammar",
+      "custom": "Select text, press <keys/> to run {{name}}",
+      "none": "Add a rewrite to get started"
+    },
+    "heroHint": "Works in Zed, your browser, chat apps, anywhere you can select text. Press {{undo}} to undo.",
+    "tryIt": "Try it",
+    "trying": "Rewriting…",
+    "demo": {
+      "label": "Example",
+      "before": "ok so um the overlay breaks when i press read while its dictating",
+      "results": {
+        "polish": "The overlay breaks when I press Read Aloud during dictation.",
+        "prompt": "Fix the bug where the overlay breaks when Read Aloud is pressed during dictation.",
+        "humanize": "Heads up, the overlay breaks if I hit Read Aloud while I'm dictating.",
+        "grammar": "OK, so, um, the overlay breaks when I press Read while it's dictating."
+      }
+    },
+    "afterDictate": {
+      "title": "After you dictate",
+      "everyTitle": "Rewrite what you dictate",
+      "everyDescription": "Run one rewrite on everything you dictate, before it is typed.",
+      "shortcutTitle": "Dictate and rewrite",
+      "shortcutDescription": "A second dictation shortcut that always rewrites."
+    },
+    "yours": "Your rewrites",
+    "resetAll": "Reset to defaults",
+    "newRewrite": "New rewrite",
+    "newName": "New rewrite",
+    "used_one": "Used {{count}} time",
+    "used_other": "Used {{count}} times",
+    "notUsed": "Not used yet",
+    "customCard": "Your own rewrite. Open it to write what it should do.",
+    "writeOwn": "Write your own",
+    "writeOwnHint": "Tell the model what to do, in plain words.",
+    "compareHint": "Press <keys/> right after a rewrite to compare it with what you wrote.",
+    "runFailed": "The rewrite didn't work. Try again.",
+    "builtin": {
+      "polish": {
+        "card": "Clearer and shorter, in your own voice.",
+        "chip": "polishes selected text",
+        "about": "Polish rewrites your text to read clearer and shorter, and keeps it sounding like you.",
+        "before": "ok so um the overlay thing, when you press the read shortcut while its already dictating it kind of breaks. can you make it so dictation wins and read just waits, and dont touch the settings page",
+        "after": "When I press the Read Aloud shortcut during dictation, the overlay breaks. Make dictation take priority and have Read Aloud wait. Don't touch the settings page."
+      },
+      "prompt": {
+        "card": "Turns a rambling request into a clear task for an AI coding tool.",
+        "chip": "turns selected text into a prompt",
+        "about": "Prompt turns a rambling request into a clear task for an AI coding tool: the goal first, then the details.",
+        "before": "so basically can you like make the history page not jump when a new entry comes in, keep the scroll where it was, and also dont touch the settings page",
+        "after": "Goal: stop the History page from jumping when a new entry arrives.\n- Keep the scroll position where it was.\n- Don't change the settings page."
+      },
+      "humanize": {
+        "card": "Removes stiff, AI-sounding phrasing.",
+        "chip": "humanizes selected text",
+        "about": "Humanize takes out stiff, AI-sounding phrasing so the text reads like a person wrote it.",
+        "before": "I hope this message finds you well. I wanted to reach out to delve into the robust new overlay, which seamlessly elevates the experience.",
+        "after": "Quick note on the new overlay: it's faster and gets out of the way."
+      },
+      "grammar": {
+        "card": "Only spelling and grammar. Nothing else changes.",
+        "chip": "fixes grammar in selected text",
+        "about": "Fix grammar corrects spelling, grammar and punctuation, and leaves every other word as you wrote it.",
+        "before": "i has went to the store yesterday and buyed three apple",
+        "after": "I went to the store yesterday and bought three apples."
+      },
+      "custom": {
+        "chip": "runs {{name}} on selected text",
+        "about": "{{name}} rewrites your text the way its instructions say."
+      }
+    },
+    "options": {
+      "shorter": "Make it shorter",
+      "clarity": "Reword for clarity",
+      "reorder": "Reorder for readability",
+      "lists": "Add lists and paragraphs",
+      "keep_tone": "Keep my tone",
+      "keep_code": "Keep code, file names and commands exactly"
+    },
+    "detail": {
+      "saved": "Saved",
+      "reset": "Reset",
+      "delete": "Delete",
+      "example": "Example",
+      "exampleView": "Example view",
+      "before": "Before",
+      "after": "After",
+      "changes": "Changes",
+      "run": "Run on this example",
+      "running": "Running…",
+      "nameTitle": "Name",
+      "shortcutTitle": "Shortcut",
+      "shortcutName": "{{name}} shortcut",
+      "shortcutHint": "Select text, then press it.",
+      "doesTitle": "What {{name}} does",
+      "instructionsTitle": "Instructions",
+      "instructionsHint": "What the model should do with the text, in plain words.",
+      "instructionsPlaceholder": "For example: turn this into a short, friendly reply.",
+      "extraTitle": "Extra instructions",
+      "extraPlaceholder": "Anything else {{name}} should do. For example: use British spelling.",
+      "modelTitle": "Model",
+      "runsOn": "Runs on",
+      "runsOnLocal": "{{model}}, on this computer",
+      "runsOnProvider": "{{model}}, through your provider",
+      "noModel": "No model yet",
+      "change": "Change"
+    },
+    "samples": {
+      "title": "Writing samples",
+      "hint": "A few things you wrote, so {{name}} matches your style.",
+      "words_one": "{{count}} word",
+      "words_other": "{{count}} words",
+      "remove": "Remove {{name}}",
+      "limit": "Plain text or Markdown, up to {{max}} words each.",
+      "add": "Add a sample",
+      "filter": "Text",
+      "trimmed": "Kept the first {{max}} words of that sample.",
+      "readFailed": "Couldn't read that file."
+    }
+  },
+  "loading": {
+    "label": "Glider is starting"
+  },
+  "topBar": {
+    "theme": "Theme",
+    "showSidebar": "Show sidebar",
+    "hideSidebar": "Hide sidebar"
+  }
+}

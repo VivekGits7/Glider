@@ -1,0 +1,1456 @@
+{
+  "tray": {
+    "settings": "Налаштування...",
+    "checkUpdates": "Перевірити оновлення...",
+    "copyLastTranscript": "Скопіювати останню транскрипцію",
+    "unloadModel": "Вивантажити модель",
+    "model": "Модель",
+    "quit": "Вийти",
+    "cancel": "Скасувати",
+    "secureInputWarning": "⚠ Комбінації клавіш заблоковано Secure Input",
+    "language": "Мова",
+    "autoLanguage": "Авто",
+    "otherLanguages": "Інші мови"
+  },
+  "sidebar": {
+    "general": "Загальні",
+    "models": "Моделі",
+    "advanced": "Розширені",
+    "history": "Історія",
+    "debug": "Дебаг",
+    "about": "Інфо",
+    "readAloud": "Read Aloud",
+    "home": "Home",
+    "label": "Sections",
+    "version": "Glider v{{version}}",
+    "insights": "Insights",
+    "rewrite": "Rewrite",
+    "dictation": "Dictation"
+  },
+  "onboarding": {
+    "customModelDescription": "Офіційно не підтримується",
+    "migration": {
+      "title": "Ваші моделі потребують оновлення",
+      "description": "Glider тепер використовує моделі нового типу. Завантажте нову версію, щоб і далі транскрибувати. Старі версії буде видалено.",
+      "replaces": "Замінює {{name}}",
+      "oldFormat": "Старий формат",
+      "failed": "Помилка завантаження",
+      "retry": "Спробувати ще раз",
+      "chooseAnother": "Обрати іншу модель",
+      "download": "Завантажити моделі ({{size}})",
+      "continue": "Продовжити"
+    },
+    "models": {
+      "small": {
+        "name": "Whisper Small",
+        "description": "Швидка та досить точна"
+      },
+      "medium": {
+        "name": "Whisper Medium",
+        "description": "Хороша точність, середня швидкість"
+      },
+      "turbo": {
+        "name": "Whisper Turbo",
+        "description": "Збалансована точність та швидкість"
+      },
+      "large": {
+        "name": "Whisper Large",
+        "description": "Хороша точність, але повільна"
+      },
+      "breeze-asr": {
+        "name": "Breeze ASR",
+        "description": "Оптимізовано для тайванської мандаринської. Підтримка перемикання мов."
+      }
+    },
+    "errors": {
+      "selectModel": "Не вдалося вибрати модель"
+    },
+    "permissions": {
+      "microphone": {
+        "name": "Мікрофон",
+        "why": "Щоб Glider міг вас чути. Звук перетворюється на текст на цьому комп'ютері й нікуди не надсилається."
+      },
+      "accessibility": {
+        "name": "Універсальний доступ",
+        "why": "Щоб ваша комбінація клавіш працювала в усіх програмах, а Glider міг вводити текст там, де стоїть курсор."
+      },
+      "errors": {
+        "checkFailed": "Не вдалося перевірити дозволи. Будь ласка, спробуйте ще раз.",
+        "requestFailed": "Не вдалося запросити дозвіл. Будь ласка, спробуйте ще раз."
+      },
+      "titleMac": "Два дозволи, і все готово",
+      "titleWindows": "Один дозвіл, і все готово",
+      "subtitleMac": "macOS питає дозволу, перш ніж програма зможе слухати або вводити текст.",
+      "subtitleWindows": "Windows питає дозволу, перш ніж програма зможе слухати.",
+      "allow": "Дозволити",
+      "openSettings": "Відкрити налаштування",
+      "allowed": "Дозволено",
+      "waiting": "Очікування",
+      "turnOnMac": "Увімкніть Glider в Системних налаштуваннях і поверніться сюди.",
+      "turnOnWindows": "Увімкніть доступ до мікрофона в Параметрах Windows і поверніться сюди.",
+      "hintBoth": "Дозвольте обидва, щоб продовжити",
+      "hintMicrophone": "Дозвольте мікрофон, щоб продовжити",
+      "welcomeBack": "З поверненням. Продовжуємо з того місця, де ви зупинилися.",
+      "relaunch": "Комбінація клавіш після цього не реагує? <relaunch>Перезапустіть Glider</relaunch>, і ви повернетеся просто сюди.",
+      "fnKey": {
+        "name": "Fn key",
+        "why": "You hold Fn to dictate. Turn off what macOS does when you press it alone (emoji picker or input switch). You can change it back in System Settings → Keyboard.",
+        "action": "Turn off"
+      }
+    },
+    "shell": {
+      "back": "Назад",
+      "continue": "Продовжити",
+      "progress": "Крок {{step}} з {{count}}"
+    },
+    "welcome": {
+      "title": "Говоріть замість друку, в будь-якій програмі",
+      "subtitle": "Оберіть мови, якими ви диктуватимете",
+      "languagesLabel": "Мови",
+      "noMatch": "Жодна мова не відповідає «{{query}}». Моделі Glider охоплюють близько 100 мов; решту можна знайти в налаштуваннях.",
+      "appLanguage": "Мова застосунку",
+      "chinese": {
+        "question": "Ви говорите такими мовами: {{languages}}. Якими ієрогліфами Glider має писати?",
+        "label": "Китайські ієрогліфи",
+        "zh-Hans": "Спрощені",
+        "zh-Hant": "Тайвань",
+        "zh-HK": "Гонконг"
+      },
+      "hint": {
+        "pickOne": "Оберіть принаймні одну мову"
+      },
+      "search": "Search languages",
+      "searchPlaceholder": "Search {{count}} languages"
+    },
+    "download": {
+      "checking": "Перевірка завантаження…",
+      "ready": "{{name}} готова",
+      "failed": "Завантаження зупинилося",
+      "downloading": "Завантаження {{name}}",
+      "progress": "{{done}} з {{total}}",
+      "progressLeft": "{{done}} з {{total}}, залишилось {{time}}",
+      "checkingName": "Перевірка {{name}}",
+      "checkingDetail": "Переконуємося, що завантаження повне",
+      "stopped": "Завантаження {{name}} зупинилося",
+      "retryDetail": "Повторна спроба продовжить з місця зупинки",
+      "cardProgress": "Завантаження {{percent}}%, {{done}} з {{total}}",
+      "timeLeft": "залишилось {{time}}",
+      "speedLeft": "{{speed}}, залишилось {{time}}"
+    },
+    "model": {
+      "title": "Оберіть модель розпізнавання мовлення",
+      "subtitle": "Модель розпізнавання мовлення перетворює ваше мовлення на текст просто на цьому комп'ютері",
+      "label": "Модель розпізнавання мовлення",
+      "lines": {
+        "recommended": "Найкращий баланс швидкості й точності для ваших мов",
+        "faster": "Швидше, але з трохи більшою кількістю помилок",
+        "accurate": "Найменше помилок, але повільніше"
+      },
+      "shorts": {
+        "recommended": "Найкращий баланс для вас",
+        "faster": "Швидше, трохи більше помилок",
+        "accurate": "Найменше помилок, але повільніше"
+      },
+      "model": "Модель",
+      "showAll": "Показати всі моделі ({{count}})",
+      "download": "Завантажити {{size}}",
+      "downloadInstead": "Натомість завантажити {{size}}",
+      "pauses": "{{name}} призупиняється на {{percent}}%",
+      "resumeLater": "Оберіть її знову, щоб продовжити з місця зупинки",
+      "hint": "Завантажується, поки ви завершуєте налаштування",
+      "bestFor": "Best for {{languages}}",
+      "recommended": "Recommended",
+      "languageCount_one": "{{count}} language",
+      "languageCount_other": "{{count}} languages"
+    },
+    "done": {
+      "title": "Усе готово",
+      "atLogin": "Запускати Glider під час входу в систему",
+      "finish": "Готово",
+      "subtitleMac": "Glider is in your menu bar now. It works in every app, even with this window closed.",
+      "subtitle": "Glider is in your system tray now. It works in every app, even with this window closed.",
+      "dictate": "Dictate",
+      "readAloud": "Read Aloud",
+      "languages": "Languages",
+      "speechModel": "Speech model",
+      "holdAndTalk": "Hold and talk",
+      "selectThenPress": "Select, then press",
+      "change": "Change",
+      "later": "You can change these later in Settings"
+    },
+    "downloads": {
+      "background": "Downloads keep going in the background",
+      "label": "Downloads",
+      "underMinute": "less than a minute left",
+      "oneMinute": "1 min left",
+      "minutes_one": "{{count}} min left",
+      "minutes_other": "{{count}} min left",
+      "checking": "Checking…",
+      "ofSize": "{{percent}}% · {{done}} of {{total}} MB",
+      "next": "{{percent}}% · {{name}} next",
+      "about": "about {{left}}",
+      "ready": "Ready: {{names}}",
+      "cancel": "Cancel {{name}}"
+    },
+    "voices": {
+      "title": "Pick your voices",
+      "subtitle": "Pick one for each language you listen in. Add more later in Models.",
+      "label": "Voices",
+      "descriptions": {
+        "kokoro-int8-en-v0_19": "Natural, warm voices. 11 American and British speakers.",
+        "vits-piper-hi_IN-pratham-medium-int8": "A clear Hindi voice. Reads Devanagari text.",
+        "kitten-nano-en-v0_2-fp16": "Tiny and fast. Good for older computers."
+      },
+      "speakers_one": "{{count}} speaker",
+      "speakers_other": "{{count}} speakers",
+      "speed": "Up to 3x speed",
+      "sample": "Sample",
+      "sampleLabel": "Hear {{name}}"
+    },
+    "refine": {
+      "title": "Pick a refine model",
+      "subtitle": "It cleans up and rewrites your text when you ask. You can skip this.",
+      "label": "Refine model",
+      "descriptions": {
+        "qwen3-4b-instruct-2507": "Clear, natural rewrites that keep your tone.",
+        "qwen3-1_7b": "Quicker and lighter, a little less polished."
+      },
+      "quality": "Quality: {{value}}",
+      "speed": "Speed: {{value}}",
+      "memory": "Needs {{n}} GB memory",
+      "levels": {
+        "best": "best",
+        "good": "good",
+        "fair": "fair",
+        "fast": "fast",
+        "moderate": "moderate"
+      },
+      "notNow": "Not now",
+      "notNowHint": "Turn on Rewrite later and pick a model then."
+    },
+    "practice": {
+      "title": "Give it a try",
+      "subtitle": "Both shortcuts work in every app. Try them here first.",
+      "dictate": "1. Click the box, hold <keys/> and talk",
+      "listen": "2. Select that text and press <keys/> to hear it",
+      "boxLabel": "Practice box",
+      "placeholder": "Your words appear here.",
+      "done": "Done",
+      "skip": "You can skip this",
+      "voicesNote": "Read Aloud uses the voices you picked. Downloads finish in the background.",
+      "waiting": "Dictation works once {{model}} finishes downloading."
+    }
+  },
+  "modelTable": {
+    "tags": {
+      "preview": "Перегляд наживо",
+      "previewTitle": "Показує ваші слова в накладці «У реальному часі» під час мовлення, а коли ви закінчите, вводить їх",
+      "translate": "Перекладає",
+      "translateTitle": "Може перетворювати сказане на англійський текст. Увімкніть це в налаштуваннях"
+    },
+    "rubric": {
+      "gradeTitle": "Точність для мови «{{language}}»: {{grade}}",
+      "accuracyTitle": "Точність для мови «{{language}}»",
+      "overallTitle": "Точність для ваших мов: {{grade}}",
+      "overall": "Точність для ваших мов",
+      "meaning": {
+        "A": "Дуже мало помилок: слова здебільшого з'являються так, як ви їх сказали",
+        "B": "Є помилки: подекуди доведеться виправляти слово",
+        "C": "Часті помилки: деякі подробиці можуть губитися",
+        "D": "Багато помилок: перевіряйте й виправляйте те, що вводиться",
+        "F": "Часто незрозуміло: значна частина сказаного може вийти неправильно"
+      },
+      "unsupported": "Ця модель не розуміє мову «{{language}}», тому не може нею друкувати",
+      "unrated": "Ця модель розуміє мову «{{language}}», але ми ще не виміряли, наскільки добре",
+      "under": "менше {{max}}%",
+      "between": "від {{min}} до {{max}}%",
+      "over": "{{min}}% і більше",
+      "speedTitle": "Швидкість: {{speed}}",
+      "speedName": {
+        "0": "Дуже повільно",
+        "1": "Повільно",
+        "2": "Помірно",
+        "3": "Швидко",
+        "4": "Дуже швидко"
+      },
+      "speedMeaning": {
+        "0": "Ваші слова з'являються після довгого очікування",
+        "1": "Ваші слова з'являються після очікування",
+        "2": "Ваші слова з'являються після короткого очікування",
+        "3": "Ваші слова з'являються майже одразу",
+        "4": "Ваші слова з'являються одразу"
+      },
+      "speedPreview": "{{meaning}}, з наживо видимим текстом під час мовлення",
+      "untimed": "Ми ще не виміряли, наскільки вона швидка",
+      "underSeconds": "менше {{max}} с",
+      "betweenSeconds": "від {{min}} до {{max}} с",
+      "overSeconds": "{{min}} с і більше"
+    },
+    "roles": {
+      "recommended": "Рекомендована",
+      "faster": "Швидша",
+      "accurate": "Точніша",
+      "fromAll": "З усіх моделей"
+    },
+    "speed": "Швидкість",
+    "size": "Розмір",
+    "accuracy": "Точність",
+    "search": "Пошук моделей",
+    "allLabel": "Моделі розпізнавання мовлення",
+    "noMatch": "Нічого не знайдено за запитом «{{query}}». Спробуйте мову або сімейство, наприклад Whisper чи Parakeet",
+    "noFilterMatch": "Жодна модель не відповідає цим фільтрам",
+    "speedUntested": "Швидкість ще не виміряно",
+    "speedWords": {
+      "0": "Дуже повільно, слова з'являються після довгого очікування",
+      "1": "Повільно, слова з'являються після очікування",
+      "2": "Помірно, слова з'являються після короткого очікування",
+      "3": "Швидко, слова з'являються майже одразу",
+      "4": "Дуже швидко, слова з'являються одразу"
+    },
+    "speedWordsPreview": {
+      "0": "Дуже повільно, з наживо видимим текстом під час мовлення",
+      "1": "Повільно, з наживо видимим текстом під час мовлення",
+      "2": "Помірно, з наживо видимим текстом під час мовлення",
+      "3": "Швидко, з наживо видимим текстом під час мовлення",
+      "4": "Дуже швидко, з наживо видимим текстом під час мовлення"
+    },
+    "missingLanguage": "Бракує мови",
+    "allLanguages": "Усі",
+    "downloadingLine": "Завантаження {{percent}}% з {{total}}",
+    "customLine": "Додано з вашої папки моделей. Без оцінки.",
+    "legacyLine": "Старе завантаження. Без оцінки."
+  },
+  "languagePicker": {
+    "search": "Пошук мов"
+  },
+  "modelSelector": {
+    "custom": "Користувацька",
+    "streaming": "Потокове",
+    "active": "Активна",
+    "noModelsAvailable": "Немає доступних моделей",
+    "verifying": "Перевірка {{modelName}}...",
+    "verifyingGeneric": "Перевірка...",
+    "downloading": "Завантаження {{percentage}}%",
+    "downloadingMultiple": "Завантаження {{count}} моделей...",
+    "modelReady": "Модель готова",
+    "loading": "Завантаження {{modelName}}...",
+    "loadingGeneric": "Завантаження...",
+    "modelError": "Помилка моделі",
+    "modelUnloaded": "Модель вивантажена",
+    "noModelDownloadRequired": "Немає моделі - потрібно завантажити",
+    "downloadSpeed": "{{speed}} MB/s",
+    "lockedWhileTranscribing": "Модель можна буде змінити, коли завершиться розшифрування в Історії."
+  },
+  "settings": {
+    "modelSettings": {
+      "title": "Налаштування {{model}}",
+      "description": "Options for the speech model you use now."
+    },
+    "general": {
+      "shortcut": {
+        "title": "Комбінації клавіш",
+        "description": "Налаштуйте клавіатурні скорочення для запуску запису мовлення в текст",
+        "loading": "Завантаження скорочень...",
+        "none": "Скорочення не налаштовані",
+        "notFound": "Скорочення не знайдено",
+        "pressKeys": "Натисніть клавіші...",
+        "bindings": {
+          "transcribe": {
+            "name": "Гаряча клавіша транскрипції",
+            "description": "Комбінація клавіш для запису та транскрибування вашого голосу."
+          },
+          "cancel": {
+            "name": "Гаряча клавіша скасування",
+            "description": "Комбінація клавіш для скасування поточного запису."
+          },
+          "transcribe_with_post_process": {
+            "name": "Гаряча клавіша постобробки",
+            "description": "Необов'язково: Спеціальна гаряча клавіша, яка завжди застосовує AI-постобробку до вашої транскрипції."
+          },
+          "speak_selection": {
+            "name": "Read Aloud Shortcut",
+            "description": "Читає виділений текст уголос. Натисніть ще раз, щоб зупинити."
+          },
+          "refine_1": {
+            "name": "Refine 1",
+            "description": "Переписує виділений текст за промптом поруч і вставляє назад."
+          },
+          "refine_2": {
+            "name": "Refine 2",
+            "description": "Переписує виділений текст за промптом поруч і вставляє назад."
+          },
+          "refine_3": {
+            "name": "Refine 3",
+            "description": "Переписує виділений текст за промптом поруч і вставляє назад."
+          }
+        },
+        "errors": {
+          "set": "Не вдалося встановити скорочення: {{error}}"
+        },
+        "changeLabel": "Change {{name}} ({{keys}})"
+      },
+      "language": {
+        "title": "Мова",
+        "description": "Ваша мова. Конкретний вибір точніший, ніж Авто.",
+        "searchPlaceholder": "Пошук мов...",
+        "noResults": "Мов не знайдено",
+        "auto": "Авто",
+        "autoUnavailable": {
+          "oneLanguage": "З цією моделлю працює лише одна з ваших мов",
+          "undetectable": "Недоступно для: {{languages}}",
+          "noMatch": "Жодна з ваших мов не працює з цією моделлю"
+        },
+        "detectorMissingTitle": "Для режиму «Авто» потрібне окреме завантаження",
+        "detectorMissing": "Ця модель не може визначити, якою мовою ви говорите. Режиму «Авто» потрібен невеликий визначник мови",
+        "stopDetectorDownload": "Зупинити завантаження визначника мови"
+      },
+      "preferredLanguages": {
+        "title": "Бажані мови",
+        "description": "Мови, якими ви говорите. Glider використовує їх, щоб рекомендувати моделі.",
+        "noMatch": "Жодна мова не відповідає «{{query}}»",
+        "weak": "Жодна модель поки що не розпізнає добре: {{languages}}.",
+        "change": "Change",
+        "none": "No languages yet"
+      }
+    },
+    "models": {
+      "sections": {
+        "yours": "На цьому комп'ютері",
+        "fits": "Для ваших мов"
+      },
+      "emptyYours": "Моделей поки немає. Оберіть одну нижче: вона завантажиться, і Glider її використає.",
+      "showMore": "Показати ще {{count}}",
+      "showFewer": "Показати менше",
+      "download": "Завантажити й використовувати",
+      "downloadingThenUse": "{{percent}}% з {{total}}, потім перемкнеться",
+      "loading": "Завантаження…",
+      "deleteAsk": "Видалити {{name}}? Це звільнить {{size}}.",
+      "deleteAskActive": "Видалити {{name}}? Glider не зможе транскрибувати, доки ви не оберете іншу модель.",
+      "cancel": "Скасувати",
+      "deleteModel": "Видалити {{name}}",
+      "cancelDownload": "Зупинити завантаження {{name}}",
+      "legend": {
+        "open": "Як оцінюються моделі",
+        "accuracyNote": "Для кожної з ваших мов: скільки слів модель розпізнала неправильно в наших тестових записах.",
+        "speedNote": {
+          "accelerated": "Скільки часу потрібно, щоб надрукувати 30 секунд мовлення на графічному чипі нашого тестового ноутбука. На цьому комп'ютері результат може відрізнятися.",
+          "cpu": "Скільки часу потрібно, щоб надрукувати 30 секунд мовлення на процесорі нашого тестового ноутбука. На цьому комп'ютері результат може відрізнятися."
+        },
+        "marks": "? ще не виміряно. — не розпізнає цю мову.",
+        "howGraded": "How models are graded"
+      },
+      "retiredNotice": {
+        "title": "Старі моделі більше не працюють з Glider",
+        "description": "Вони займають {{size}} на вашому комп'ютері.",
+        "delete": "Видалити моделі",
+        "deleteFailed": "Не вдалося видалити деякі старі моделі. Подробиці дивіться в журналі."
+      },
+      "rescan": {
+        "tooltip": "Пересканувати моделі, додані до папки моделей або кешу Hugging Face поза межами Glider"
+      },
+      "tabs": {
+        "label": "Model type",
+        "speech": "Speech to text",
+        "voices": "Read Aloud voices",
+        "llm": "Large language model"
+      },
+      "lede": "Open-source models that run on this computer. Nothing you say is uploaded.",
+      "columns": {
+        "model": "Model",
+        "quality": "Quality",
+        "memory": "Memory",
+        "language": "Language"
+      },
+      "speed": {
+        "veryFast": "Very fast",
+        "fast": "Fast",
+        "moderate": "Moderate",
+        "slow": "Slow",
+        "verySlow": "Very slow"
+      },
+      "inUse": "In use",
+      "livePreview": "Live preview",
+      "checking": "Checking…",
+      "progress": "{{percent}}% of {{size}}",
+      "progressThenSwitch": "{{percent}}% of {{size}}, then switches",
+      "noGrade": "Doesn't hear this language",
+      "downloadAndUse": "Download and use",
+      "use": "Use",
+      "delete": "Delete {{name}}",
+      "fitsHint": "Picked for {{languages}}. Grades come from our test recordings.",
+      "noMatch": "No models match your search.",
+      "search": "Search models",
+      "sample": "Hear a sample",
+      "noVoices": "No voices yet. Download one below.",
+      "moreVoices": "More voices",
+      "moreVoicesHint": "Each voice downloads once, then works offline.",
+      "llm": {
+        "olderComputers": "Older computers",
+        "needsMemory": "Needs more memory",
+        "gb": "{{n}} GB",
+        "none": "No rewriting model yet. Download one below.",
+        "moreTitle": "More large language models",
+        "moreHint": "Picked for how much memory this computer has. Each downloads once, then works offline.",
+        "providerTitle": "Use a provider instead",
+        "useProvider": "Use a provider",
+        "useProviderHint": "Rewrites go to the service you pick, with your own API key. Only the selected text is sent.",
+        "downloadFailed": "Couldn't download the model. Check your connection and try again.",
+        "multilingual": "Many"
+      },
+      "openFolder": "Open models folder",
+      "openFolderFailed": "Couldn't open the models folder",
+      "notLoaded": "Not loaded",
+      "liveMemory": "Memory this model is using right now",
+      "cancelDeletes": "Скасування видалить уже завантажене. Завантаження доведеться почати знову."
+    },
+    "languages": {
+      "title": "Мови"
+    },
+    "sound": {
+      "title": "Звук",
+      "microphone": {
+        "title": "Мікрофон",
+        "description": "Оберіть бажаний мікрофон",
+        "placeholder": "Оберіть мікрофон...",
+        "loading": "Завантаження..."
+      },
+      "channel": {
+        "title": "Вхідний канал",
+        "description": "Який вхід записувати на аудіоінтерфейсі з кількома входами.",
+        "average": "Усереднювати всі канали",
+        "channel": "Канал {{n}}"
+      },
+      "audioFeedback": {
+        "label": "Звукове сповіщення",
+        "description": "Відтворювати звук при початку та зупинці запису"
+      },
+      "outputDevice": {
+        "title": "Пристрій виводу",
+        "description": "Оберіть бажаний пристрій виводу звуку для звукових сповіщень",
+        "placeholder": "Оберіть пристрій виводу...",
+        "loading": "Завантаження..."
+      },
+      "volume": {
+        "title": "Гучність",
+        "description": "Налаштуйте гучність звукових сповіщень"
+      }
+    },
+    "advanced": {
+      "groups": {
+        "app": "Додаток",
+        "output": "Вивід",
+        "transcription": "Транскрипція",
+        "history": "Історія",
+        "experimental": "Експериментальне",
+        "outputDescription": "How your words get into the app you are typing in.",
+        "experimentalDescription": "These may change or go away."
+      },
+      "experimentalToggle": {
+        "label": "Експериментальні функції",
+        "description": "Увімкнути експериментальні функції, які ще в розробці."
+      },
+      "lazyStreamClose": {
+        "label": "Залишати мікрофон увімкненим між транскрипціями",
+        "description": "Наступне диктування почнеться швидше. Звук Bluetooth може погіршитися."
+      },
+      "airpodsMode": {
+        "label": "Режим AirPods",
+        "description": "Забирає AirPods в iPhone, щоб запис не був беззвучним."
+      },
+      "acceleration": {
+        "transcribe": {
+          "title": "Апаратне прискорення",
+          "description": "Авто використовує GPU, коли може, інакше CPU."
+        },
+        "gpuDevice": {
+          "auto": "Авто"
+        }
+      },
+      "startHidden": {
+        "label": "Запуск у фоні",
+        "description": "Запускати в системному треї без відкриття вікна"
+      },
+      "autostart": {
+        "label": "Запуск при старті системи",
+        "description": "Автоматично запускати Glider при вході в систему"
+      },
+      "showTrayIcon": {
+        "label": "Показати значок у треї",
+        "description": "Відображати значок Glider у системному треї."
+      },
+      "overlay": {
+        "style": {
+          "title": "Накладка",
+          "description": "«У реальному часі» показує слова на потокових моделях.",
+          "options": {
+            "none": "Немає",
+            "minimal": "Мінімальна",
+            "live": "У реальному часі"
+          }
+        },
+        "position": {
+          "title": "Позиція оверлею",
+          "description": "Де з'являється накладка під час диктування.",
+          "options": {
+            "bottom": "Внизу",
+            "top": "Вгорі"
+          }
+        }
+      },
+      "pasteMethod": {
+        "title": "Метод вставки",
+        "description": "Буфер обміну вставляє, Прямий друкує, Немає лише зберігає.",
+        "options": {
+          "clipboard": "Буфер обміну ({{modifier}}+V)",
+          "clipboardCtrlShiftV": "Буфер обміну (Ctrl+Shift+V)",
+          "clipboardShiftInsert": "Буфер обміну (Shift+Insert)",
+          "direct": "Прямий",
+          "none": "Немає",
+          "externalScript": "Зовнішній скрипт"
+        },
+        "externalScriptPlaceholder": "/path/to/your/script.sh"
+      },
+      "typingTool": {
+        "title": "Інструмент введення",
+        "description": "Інструмент Linux для режиму «Прямий». Авто обере найкращий.",
+        "options": {
+          "auto": "Auto (Рекомендовано)"
+        }
+      },
+      "clipboardHandling": {
+        "title": "Робота з буфером обміну",
+        "description": "Чи лишати диктування в буфері обміну після вставлення.",
+        "options": {
+          "dontModify": "Не змінювати буфер обміну",
+          "copyToClipboard": "Копіювати в буфер обміну"
+        }
+      },
+      "autoSubmit": {
+        "title": "Автоматичне надсилання",
+        "description": "Натискає цю клавішу після вставлення, щоб надіслати повідомлення.",
+        "options": {
+          "off": "Вимк.",
+          "enter": "Enter",
+          "cmdEnter": "Cmd+Enter",
+          "superEnter": "Super+Enter",
+          "ctrlEnter": "Ctrl+Enter"
+        }
+      },
+      "translateToEnglish": {
+        "label": "Перекласти на англійську",
+        "description": "Пише англійською, хоч би якою мовою ви говорили."
+      },
+      "modelUnload": {
+        "title": "Вивантаження моделі",
+        "description": "Звільняє пам'ять, якщо модель мовлення стільки часу не працює.",
+        "options": {
+          "never": "Ніколи",
+          "immediately": "Негайно",
+          "min2": "Через 2 хвилини",
+          "min5": "Через 5 хвилин",
+          "min10": "Через 10 хвилин",
+          "min15": "Через 15 хвилин",
+          "hour1": "Через 1 годину",
+          "sec15": "Через 15 секунд (Дебаг)"
+        }
+      },
+      "customWords": {
+        "title": "Власні слова",
+        "description": "Допомагає моделі правильно писати імена й терміни.",
+        "placeholder": "Додати слово",
+        "add": "Додати",
+        "remove": "Видалити {{word}}",
+        "duplicate": "\"{{word}}\" вже існує"
+      },
+      "voiceActivityDetection": {
+        "title": "Виявлення голосової активності",
+        "description": "Вирізає тишу із записів. Якщо вимкнено, записується все."
+      },
+      "longFormChunking": {
+        "title": "Поділ довгого аудіо",
+        "description": "Ділить довгі записи за паузами, щоб краще їх розпізнати."
+      },
+      "languageDetection": {
+        "title": "Обмежити «Авто» моїми мовами",
+        "description": "Увімкніть, якщо Авто обирає мову, якою ви не говорите.",
+        "downloadHint": "Увімкнення завантажує невеликий визначник мови",
+        "downloadingHint": "Завантажується визначник мови. Вимкніть, щоб скасувати"
+      },
+      "vadBackend": {
+        "title": "Рушій виявлення голосу",
+        "description": "Earshot експериментальний. Якщо слова обрізаються, оберіть Silero.",
+        "options": {
+          "silero": "Silero",
+          "earshot": "Earshot"
+        }
+      },
+      "fillerWordRemoval": {
+        "title": "Видаляти слова-паразити",
+        "description": "Прибирає з диктування звуки вагання і слова-паразити."
+      },
+      "chineseScript": {
+        "title": "Китайська писемність",
+        "description": "Якими ієрогліфами писати мандаринську й кантонську.",
+        "options": {
+          "asTranscribed": "Як розпізнано",
+          "simplified": "Спрощені",
+          "traditionalTw": "Традиційні (Тайвань)",
+          "traditionalHk": "Традиційні (Гонконг)"
+        }
+      }
+    },
+    "postProcessing": {
+      "api": {
+        "provider": {
+          "title": "Провайдер",
+          "description": "Оберіть OpenAI- або Anthropic-сумісного провайдера"
+        },
+        "apiFormat": {
+          "title": "Формат API",
+          "description": "Формат запиту, який очікує ваш ендпоінт.",
+          "options": {
+            "openai": "Сумісний з OpenAI (Chat Completions)",
+            "anthropic": "Anthropic Messages"
+          }
+        },
+        "appleIntelligence": {
+          "unavailable": "Apple Intelligence недоступний на цьому пристрої. Потрібен Mac з Apple Silicon під управлінням macOS Tahoe (26.0) або новіше з увімкненим Apple Intelligence в Системних налаштуваннях."
+        },
+        "baseUrl": {
+          "title": "Базова URL-адреса",
+          "description": "Адреса API провайдера. Змінити можна лише для «Користувацька».",
+          "placeholder": "https://api.openai.com/v1",
+          "placeholderAnthropic": "https://api.anthropic.com/v1"
+        },
+        "apiKey": {
+          "title": "API-ключ",
+          "description": "API-ключ для обраного провайдера",
+          "placeholder": "sk-..."
+        },
+        "model": {
+          "title": "Модель",
+          "descriptionCustom": "Вкажіть ідентифікатор моделі, який очікує ваш ендпоінт.",
+          "descriptionDefault": "Оберіть модель, надану обраним провайдером",
+          "placeholderWithOptions": "Шукайте або оберіть модель",
+          "placeholderNoOptions": "Введіть назву моделі",
+          "refreshModels": "Оновити моделі"
+        }
+      }
+    },
+    "history": {
+      "openFolder": "Відкрити папку записів",
+      "loading": "Завантаження історії...",
+      "empty": "Транскрипцій поки немає. Почніть запис, щоб створити історію!",
+      "copyToClipboard": "Копіювати транскрипцію в буфер обміну",
+      "copyError": "Не вдалося скопіювати транскрипцію в буфер обміну.",
+      "save": "Зберегти транскрипцію",
+      "unsave": "Видалити зі збережених",
+      "delete": "Видалити запис",
+      "deleteError": "Не вдалося видалити запис. Спробуйте ще раз.",
+      "retranscribe": "Перетранскрибувати",
+      "cancelTranscription": "Скасувати транскрипцію",
+      "transcribing": "Транскрибування...",
+      "transcriptionFailed": "Транскрипція не вдалася. Ви можете перетранскрибувати за допомогою іконки повтору.",
+      "notTranscribed": "Не транскрибовано. Ви можете транскрибувати за допомогою іконки повтору.",
+      "transcribeFile": "Розшифрувати файл",
+      "mediaFiles": "Аудіо та відео",
+      "fileUnsupported": "Не вдалося прочитати аудіо з {{name}}.",
+      "transcribeFailed": "Не вдалося розшифрувати. Спробуйте ще раз.",
+      "waiting": "Очікує на розшифрування",
+      "transcribingPercent": "Розшифрування, {{percent}}%",
+      "readingFile": "Читання файлу...",
+      "showMore": "Показати більше",
+      "showLess": "Показати менше",
+      "dropTitle": "Відпустіть, щоб розшифрувати",
+      "dropDescription": "Він з'явиться в історії.",
+      "tabs": {
+        "label": "History type",
+        "dictation": "Dictation",
+        "readAloud": "Read Aloud",
+        "rewrite": "Rewrite"
+      },
+      "readAloud": {
+        "empty": "Nothing read aloud yet. Select text anywhere and press your Read Aloud shortcut.",
+        "readAgain": "Read again",
+        "meta": "{{voice}} · {{speed}}x",
+        "kept_one": "The last read is kept",
+        "kept_other": "Last {{count}} reads are kept",
+        "playing": "Reading, sentence {{index}} of {{total}}",
+        "stop": "Stop reading"
+      },
+      "rewrite": {
+        "empty": "No rewrites yet. Select text anywhere and press a Refine shortcut.",
+        "kept_one": "The last rewrite is kept",
+        "kept_other": "Last {{count}} rewrites are kept"
+      },
+      "playRecording": "Play recording",
+      "noRecording": "Audio not kept",
+      "savedOnly": "Saved",
+      "savedEmpty": "Nothing saved yet. Press the star on an entry to keep it here.",
+      "audioError": "Couldn't open this recording",
+      "days": {
+        "today": "Today",
+        "yesterday": "Yesterday"
+      }
+    },
+    "debug": {
+      "title": "Дебаг",
+      "logDirectory": {
+        "title": "Папка логів",
+        "description": "Розташування файлів логів"
+      },
+      "logLevel": {
+        "title": "Рівень логування",
+        "description": "Встановіть детальність логування"
+      },
+      "liveLogs": {
+        "title": "Логи в реальному часі",
+        "description": "Показує нові рядки журналу вибраного рівня, поки панель відкрита.",
+        "live": "У реальному часі",
+        "paused": "Призупинено",
+        "pause": "Призупинити",
+        "resume": "Відновити",
+        "copied": "Скопійовано",
+        "lineCount": "Рядків: {{count}}",
+        "empty": "Очікування логів… Записи з'являтимуться тут, щойно застосунок їх створюватиме."
+      },
+      "updateChecks": {
+        "label": "Перевірка оновлень",
+        "description": "Автоматично перевіряти наявність нових версій Glider",
+        "lockedDescription": "Вимкнено системною конфігурацією (GLIDER_DISABLE_UPDATER)"
+      },
+      "whatsNewPreview": {
+        "title": "Попередній перегляд новин",
+        "description": "Відкрити останні вбудовані примітки до випуску, не позначаючи їх як переглянуті",
+        "button": "Перегляд"
+      },
+      "onboardingPreview": {
+        "title": "Попередній перегляд початкового налаштування",
+        "description": "Показує екрани першого запуску, нічого не змінюючи.",
+        "exitButton": "Вийти з перегляду",
+        "choose": "Оберіть екран",
+        "screens": {
+          "welcome": "Вітання",
+          "permissions": "Дозволи",
+          "model": "Модель",
+          "demo": "Демо",
+          "try": "Спробувати",
+          "done": "Усе готово",
+          "voices": "Voices",
+          "refine": "Refine model"
+        }
+      },
+      "onboardingRun": {
+        "title": "Запустити початкове налаштування",
+        "description": "Запускає перше налаштування насправді: дозволи й моделі.",
+        "button": "Почати"
+      },
+      "modelMigration": {
+        "title": "Міграція моделей",
+        "description": "По-справжньому відкрити екран оновлення моделей старого формату: він завантажує заміни, перемикає моделі й видаляє старі файли",
+        "button": "Відкрити"
+      },
+      "soundTheme": {
+        "label": "Звукова тема",
+        "description": "Оберіть звукову тему для сповіщень про початок і зупинку запису"
+      },
+      "wordCorrectionThreshold": {
+        "title": "Поріг корекції слів",
+        "description": "Чутливість для корекції власних слів"
+      },
+      "historyLimit": {
+        "title": "Ліміт історії",
+        "description": "Скільки останніх диктувань зберігають аудіо. Текст зберігається завжди.",
+        "entries": "записів"
+      },
+      "recordingRetention": {
+        "title": "Автовидалення записів",
+        "description": "Автоматично видаляти старі записи для економії місця",
+        "never": "Ніколи",
+        "preserveLimit": "Зберігати останні {{count}}",
+        "days3": "Через 3 дні",
+        "weeks2": "Через 2 тижні",
+        "months3": "Через 3 місяці",
+        "placeholder": "Оберіть період зберігання..."
+      },
+      "alwaysOnMicrophone": {
+        "label": "Постійно активний мікрофон",
+        "description": "Тримати мікрофон активним для швидшого відгуку"
+      },
+      "clamshellMicrophone": {
+        "title": "Мікрофон у закритому режимі",
+        "description": "Мікрофон для використання при закритій кришці ноутбука"
+      },
+      "postProcessingToggle": {
+        "label": "Постобробка",
+        "description": "Увімкнути покращення тексту за допомогою AI після транскрипції"
+      },
+      "muteWhileRecording": {
+        "label": "Вимкнути звук під час запису",
+        "description": "Вимикати системний звук під час запису"
+      },
+      "appendTrailingSpace": {
+        "label": "Додавати пробіл в кінці",
+        "description": "Додавати пробіл після вставленої транскрипції"
+      },
+      "keyboardImplementation": {
+        "title": "Реалізація клавіатури",
+        "description": "Оберіть бекенд для клавіатурних скорочень.",
+        "bindingsReset": "Клавіатурні скорочення були несумісні та скинуті до значень за замовчуванням"
+      },
+      "pasteDelay": {
+        "title": "Затримка вставки (до)",
+        "description": "Пауза після копіювання. Збільште, якщо нічого не вставляється."
+      },
+      "pasteDelayAfter": {
+        "title": "Затримка вставки (після)",
+        "description": "Пауза перед відновленням. Збільште, якщо вставляється старе."
+      },
+      "holdThreshold": {
+        "title": "Поріг утримання",
+        "description": "Скільки триває натискання, щоб вважатися утриманням."
+      },
+      "reliablePaste": {
+        "title": "Надійна вставка (Beta)",
+        "description": "Чекає вставлення в застосунку, перш ніж повернути буфер обміну."
+      },
+      "recordingBuffer": {
+        "title": "Додатковий буфер запису",
+        "description": "Пише ще трохи після відпускання, щоб не обрізати кінець."
+      },
+      "languageDetectionWindow": {
+        "title": "Аудіо для визначення мови",
+        "description": "Скільки секунд слухає детектор. Довше означає точніше, але повільніше."
+      },
+      "keyboardDiagnostic": {
+        "title": "Діагностика клавіатури",
+        "description": "Рахує натискання, що доходять до Glider, але не які клавіші.",
+        "run": "Запустити 10-секундну діагностику",
+        "running": "Прослуховування… натисніть свою комбінацію кілька разів (наприклад, Option+Space)",
+        "secureInputLabel": "Secure Input",
+        "enabled": "увімкнено",
+        "disabled": "вимкнено",
+        "holder": "утримує {{name}} (pid {{pid}})",
+        "holderUnknown": "видимого власника не знайдено",
+        "keyDown": "Натискання клавіші",
+        "keyUp": "Відпускання клавіші",
+        "flagsChanged": "Модифікатори",
+        "mouse": "Миша",
+        "verdictBlocked": "Secure Input блокує події клавіш — комбінації зі звичайною клавішею не працюватимуть, доки це не буде усунуто.",
+        "verdictSuspicious": "Події модифікаторів надходять, а події клавіш — ні: щось пригнічує клавіші, хоча Secure Input позначено як вимкнений. Будь ласка, повідомте про це на GitHub.",
+        "verdictOk": "Події клавіш надходять до Glider нормально.",
+        "verdictNoEvents": "Подій не зафіксовано — ви натискали клавіші під час тесту?",
+        "failed": "Не вдалося виконати діагностику: {{error}}"
+      },
+      "lede": "Tools for tracking down problems. Most people never need these.",
+      "groups": {
+        "logs": "Logs",
+        "previews": "Previews",
+        "previewsDescription": "Open screens without changing your settings.",
+        "timing": "Timing and sound",
+        "input": "Input"
+      }
+    },
+    "about": {
+      "version": {
+        "title": "Версія",
+        "description": "Поточна версія Glider"
+      },
+      "whatsNewUpdates": {
+        "label": "Показувати новини",
+        "description": "Показувати примітки до випуску після оновлень Glider"
+      },
+      "appDataDirectory": {
+        "title": "Папка даних програми"
+      },
+      "sourceCode": {
+        "title": "Вихідний код",
+        "description": "Переглянути вихідний код та зробити внесок",
+        "button": "Переглянути на GitHub"
+      },
+      "acknowledgments": {
+        "title": "Подяки",
+        "ggml": {
+          "title": "ggml",
+          "description": "Високопродуктивний інференс моделі автоматичного розпізнавання мовлення Whisper від OpenAI",
+          "details": "Glider використовує ggml для швидкої локальної обробки мовлення в текст. Дякуємо за чудову роботу Георгію Герганову та контриб'юторам."
+        },
+        "view": "View",
+        "handy": {
+          "title": "Handy",
+          "description": "Диктування Glider засноване на Handy від CJ Pais, ліцензія MIT."
+        },
+        "sherpa": {
+          "title": "sherpa-onnx",
+          "description": "Голоси Read Aloud працюють на sherpa-onnx."
+        },
+        "description": "Glider stands on these open-source projects.",
+        "candle": {
+          "title": "candle",
+          "description": "Rewrite працює на candle, Rust-бібліотеці ML від Hugging Face."
+        }
+      },
+      "appTitle": "App",
+      "star": {
+        "title": "Like Glider?",
+        "description": "Star it on GitHub so other developers can find it.",
+        "button": "Star on GitHub"
+      }
+    },
+    "readAloud": {
+      "title": "Read Aloud",
+      "description": "Select text anywhere and Glider reads it to you with an AI voice that runs on this computer.",
+      "voice": {
+        "title": "Voice",
+        "description": "Which speaker reads your text."
+      },
+      "language": {
+        "title": "Мова",
+        "description": "Мова, якою голос читає ваш текст."
+      },
+      "speed": {
+        "title": "Speed",
+        "description": "How fast the voice reads. 1.0x is normal."
+      },
+      "models": {
+        "downloadFailed": "Couldn't download the voice"
+      },
+      "setupTitle": "Setup",
+      "model": {
+        "title": "Voice model",
+        "none": "No voice downloaded yet",
+        "change": "Change",
+        "download": "Get a voice",
+        "summary": "{{name}} · {{language}} · {{size}} MB"
+      },
+      "shortcutHint": "Press again while it reads to stop.",
+      "livePreview": {
+        "title": "Живий перегляд",
+        "description": "Показує речення, що читається, над плеєром."
+      },
+      "intro": {
+        "hint": "Works anywhere you can select text. Press the shortcut again to stop.",
+        "hintMac": "Works anywhere you can select text. F8 pauses, F7 and F9 skip, Esc stops.",
+        "sample": "Long replies are easier to take in when you can sit back and listen.",
+        "label": "Example",
+        "try": "Try it",
+        "stop": "Stop"
+      }
+    },
+    "dictation": {
+      "description": "How Glider listens, turns your speech into text, and types it.",
+      "livePreview": {
+        "title": "Живий перегляд",
+        "description": "Показує слова під час мовлення на моделях з міткою «Перегляд наживо»."
+      },
+      "intro": {
+        "hint": "Keep holding while you talk, then let go. The text lands where your cursor is.",
+        "said": "can you send me the deck before tomorrow's call",
+        "typed": "Can you send me the deck before tomorrow's call?",
+        "label": "Example",
+        "try": "Try it"
+      }
+    }
+  },
+  "footer": {
+    "checkingUpdates": "Перевірка оновлень...",
+    "updateAvailableShort": "Доступне оновлення",
+    "upToDate": "Актуальна версія",
+    "updateCheckingDisabled": "Перевірка оновлень вимкнена",
+    "downloading": "Завантаження... {{progress}}%",
+    "installing": "Встановлення...",
+    "preparing": "Підготовка...",
+    "checkForUpdates": "Перевірити оновлення",
+    "portableUpdateTitle": "Потрібне ручне оновлення",
+    "portableUpdateMessage": "Портативні встановлення не можна оновити автоматично. Завантажте нижче інсталятор для вашої системи, запустіть його та встановіть у ту саму теку — ваша тека Data/ (налаштування, моделі, записи) залишиться на місці.",
+    "portableUpdateButton": "Завантажити інсталятор",
+    "portableUpdateBrowseMessage": "Портативні встановлення не можна оновити автоматично. Завантажте найновішу версію для вашої системи зі сторінки GitHub Releases та встановіть її в ту саму теку — ваша тека Data/ (налаштування, моделі, записи) залишиться на місці.",
+    "portableUpdateBrowseButton": "Відкрити GitHub Releases",
+    "noVoice": "No voice yet",
+    "voiceLabel": "Voice: {{voice}}",
+    "dictationModel": "Dictation model",
+    "readAloudModel": "Read aloud voice",
+    "rewriteModel": "Rewrite model",
+    "noRewriteModel": "No rewrite model yet",
+    "rewriteLabel": "Rewrite model: {{model}}",
+    "chooseVoices": "Voices",
+    "voicesTitle": "Choose a voice",
+    "providerDesc": "Runs on {{provider}}, online"
+  },
+  "whatsNew": {
+    "title": "Нове в Glider v{{version}}"
+  },
+  "common": {
+    "playbackPosition": "Позиція відтворення",
+    "resetSetting": "Відновити значення за замовчуванням: {{setting}}",
+    "loading": "Завантаження...",
+    "delete": "Видалити",
+    "close": "Закрити",
+    "open": "Відкрити",
+    "copy": "Копіювати",
+    "clear": "Очистити",
+    "noOptionsFound": "Опцій не знайдено",
+    "hearExample": "Послухати приклад",
+    "muteExample": "Вимкнути звук прикладу"
+  },
+  "errors": {
+    "micPermissionDeniedTitle": "Доступ до мікрофона заборонено",
+    "micPermissionDenied": {
+      "generic": "Доступ до мікрофона було заборонено операційною системою. Надайте дозвіл на використання мікрофона в налаштуваннях системи.",
+      "windows": "Увімкніть доступ до мікрофона в Параметри → Конфіденційність і безпека → Мікрофон (включно з доступом класичних програм).",
+      "macos": "Надайте доступ до мікрофона в Системні налаштування → Конфіденційність і безпека → Мікрофон.",
+      "linux": "Надайте доступ до мікрофона в налаштуваннях звуку або конфіденційності вашої системи."
+    },
+    "noInputDeviceTitle": "Мікрофон не знайдено",
+    "noInputDevice": "Не виявлено жодного пристрою введення звуку. Підключіть мікрофон або гарнітуру та спробуйте знову.",
+    "recordingFailedTitle": "Не вдалося розпочати запис",
+    "modelLoadFailed": "Glider не вдалося завантажити цю модель. Спробуйте ще раз або виберіть іншу.",
+    "modelLoadFailedTitle": "Не вдалося завантажити модель",
+    "modelDownloadFailed": "Помилка завантаження",
+    "pasteFailedTitle": "Не вдалося вставити текст",
+    "pasteFailed": "Не вдалося вставити текст до активної програми.",
+    "postProcessFailedTitle": "Вставлено без постобробки",
+    "postProcessFailed": "Постобробка не завершилася, тому розшифровку вставлено як є.",
+    "filePostProcessFailedTitle": "Розшифровано без постобробки",
+    "filePostProcessFailed": "Постобробка не завершилася, тому розшифровку збережено як є.",
+    "fileTranscriptionFailedTitle": "Помилка транскрипції файлу",
+    "transcriptionFailedTitle": "Помилка транскрипції",
+    "noTextSelectedTitle": "No Text Selected",
+    "noTextSelected": "Select some text first, then press the Read Aloud shortcut.",
+    "voiceModelMissingTitle": "No Voice Downloaded",
+    "voiceModelMissing": "Download a voice in Read Aloud settings first.",
+    "readAloudFailedTitle": "Read Aloud Failed",
+    "refineFailedTitle": "Refine Failed",
+    "refineFailed": "The selected text couldn't be rewritten. Check the Post Process provider and model.",
+    "noLlmModelTitle": "No Rewrite Model",
+    "noLlmModel": "Download a rewrite model in Models, then try again."
+  },
+  "notices": {
+    "errorOne": "{{n}} помилка",
+    "errorMany": "{{n}} помилки",
+    "warningOne": "{{n}} попередження",
+    "warningMany": "{{n}} попередження",
+    "errorsAndWarnings": "{{errors}}, {{warnings}}"
+  },
+  "appLanguage": {
+    "title": "Мова інтерфейсу",
+    "description": "Змінити мову інтерфейсу Glider"
+  },
+  "theme": {
+    "title": "Тема застосунку",
+    "description": "Як у системі або завжди світла чи темна.",
+    "options": {
+      "system": "Системна",
+      "light": "Світла",
+      "dark": "Темна"
+    }
+  },
+  "overlay": {
+    "transcribing": "Обробка...",
+    "loadingModel": "Завантаження моделі...",
+    "readingAloud": "Reading aloud",
+    "preparingVoice": "Preparing voice...",
+    "refining": "Refining",
+    "seeChanges": "See changes",
+    "changesLabel": "Changes",
+    "changes_one": "{{count}} change",
+    "changes_other": "{{count}} changes",
+    "toUndo": "to undo",
+    "close": "Close",
+    "copy": "Copy",
+    "again": "Refine again",
+    "previous": "Previous sentence",
+    "next": "Next sentence",
+    "pause": "Pause",
+    "play": "Play",
+    "slower": "Slower",
+    "faster": "Faster",
+    "listening": "Listening",
+    "cancel": "Cancel",
+    "finishAndPaste": "Завершити й вставити",
+    "usingRewrite": "Через {{name}}",
+    "done": "Готово",
+    "doneReading": "Читання завершено",
+    "noVoiceYet": "Голосу ще немає",
+    "getVoice": "Завантажити голос",
+    "nowhereHint": "Спершу клацніть текстове поле, потім диктуйте",
+    "savedInHistory": "Також збережено в Історії",
+    "pasteHint": "Клацніть текстове поле й натисніть {{keys}}",
+    "copied": "Скопійовано",
+    "sentence": "Речення {{index}} з {{total}}",
+    "toStop": "щоб зупинити",
+    "copyResult": "Копіювати результат"
+  },
+  "secureInput": {
+    "blockedWithCulprit_one": "{{name}} може блокувати 1 комбінацію клавіш",
+    "blockedWithCulprit_other": "{{name}} може блокувати {{count}} комбінацій клавіш",
+    "blockedNoCulprit_one": "macOS тимчасово блокує 1 комбінацію клавіш",
+    "blockedNoCulprit_other": "macOS тимчасово блокує {{count}} комбінацій клавіш",
+    "recorderBlockedWithCulprit": "{{name}} може блокувати зміну комбінацій клавіш",
+    "recorderBlockedNoCulprit": "macOS тимчасово блокує зміну комбінацій клавіш",
+    "learnMore": "Як це виправити",
+    "recorderBlocked": "Зараз неможливо записати комбінацію — Secure Input у macOS блокує події клавіш. Спершу усуньте попередження про Secure Input.",
+    "dismiss": "Приховати"
+  },
+  "home": {
+    "welcome": "Welcome back",
+    "welcomeName": "Welcome back, {{name}}",
+    "shortcutsLabel": "Your shortcuts",
+    "statsLabel": "Your numbers",
+    "dictateLine": "Hold <keys/> to dictate",
+    "dictateHint": "Works in every app. What you say is typed where your cursor is.",
+    "listenLine": "Select text, press <keys/> to listen",
+    "listenHint": "Hear AI replies, docs and web pages read aloud, up to 3x speed.",
+    "listening": "Listening...",
+    "reading": "Reading aloud...",
+    "changeShortcuts": "Change shortcuts",
+    "stats": {
+      "dictated": "words dictated",
+      "read": "words read aloud",
+      "streak_one": "day streak",
+      "streak_other": "day streak"
+    },
+    "today": "Today",
+    "seeAll": "See all history",
+    "filterLabel": "Show only",
+    "empty": "Nothing yet today. Your dictations, reads and rewrites will show up here.",
+    "kind": {
+      "dictation": "Dictation",
+      "read": "Read aloud",
+      "rewrite": "Rewrite"
+    },
+    "howToUse": "How to use",
+    "tutorial": {
+      "play": "Play the how-to video",
+      "title": "See how Glider works",
+      "soon": "Video coming soon",
+      "button": "Tutorial"
+    }
+  },
+  "insights": {
+    "rangeLabel": "Time range",
+    "last30": "30 days",
+    "allTime": "All time",
+    "wpmUp": "Up from {{from}} in {{month}}",
+    "wpmDown": "Down from {{from}} in {{month}}",
+    "wpmSteady": "Steady since {{month}}",
+    "wpmNoTrend": "Trend shows from next week",
+    "wpmEmpty": "Dictate to see your pace",
+    "hours": "{{n}} h",
+    "minutes": "{{n}} min",
+    "timeListened": "Time listened",
+    "longestRead": "Longest read",
+    "words_one": "{{n}} word",
+    "words_other": "{{n}} words",
+    "appsLabel": "Where you dictate",
+    "appsTitle": "Where you talk",
+    "appsHint": "Dictated words by app",
+    "appsEmpty": "Dictate in a few apps and they show up here.",
+    "otherApps": "Other",
+    "appShare": "{{name}}, {{share}}%",
+    "streakLabel": "Streak",
+    "streak_one": "{{count}} day streak",
+    "streak_other": "{{count}} day streak",
+    "noStreak": "No streak yet",
+    "longest_one": "Longest {{count}} day",
+    "longest_other": "Longest {{count}} days",
+    "calendarLabel": "Days you used Glider over the last {{weeks}} weeks",
+    "dayWords_one": "{{day}}: {{count}} word",
+    "dayWords_other": "{{day}}: {{count}} words",
+    "days": {
+      "mon": "Mon",
+      "wed": "Wed",
+      "fri": "Fri",
+      "sun": "Sun"
+    },
+    "less": "Less",
+    "more": "More",
+    "today": "Today",
+    "summary30": "In the last 30 days you dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summary30NoPace": "In the last 30 days you dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAll": "So far you have dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAllNoPace": "So far you have dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryEmpty": "Dictate, listen or rewrite something and your numbers show up here.",
+    "pace": "{{n}} a minute",
+    "rewriteCount_one": "{{n}} rewrite",
+    "rewriteCount_other": "{{n}} rewrites",
+    "savedHours_one": "{{count}} hour",
+    "savedHours_other": "{{count}} hours",
+    "savedMinutes_one": "{{count}} minute",
+    "savedMinutes_other": "{{count}} minutes",
+    "activityTitle": "Activity",
+    "lastDays": "Last {{total}} days.",
+    "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
+    "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
+    "speakingAbove": "Speaking, above",
+    "listeningBelow": "Listening, below",
+    "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
+    "busiest": "Busiest {{day}}.",
+    "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
+    "wpmUnit": "words a minute",
+    "heardUnit": "words heard",
+    "rewritesUnit_one": "rewrite",
+    "rewritesUnit_other": "rewrites",
+    "usuallyAt": "Usually at {{speed}}x",
+    "wordsRewritten_one": "{{n}} word rewritten",
+    "wordsRewritten_other": "{{n}} words rewritten",
+    "dictations": "Dictations",
+    "average": "Average",
+    "longestDictation": "Longest",
+    "languages": "Languages",
+    "reads": "Reads",
+    "voice": "Voice",
+    "rewritesEmpty": "Select text and press a Refine shortcut.",
+    "removedRewrite": "Removed rewrite",
+    "explainLabel": "What {{name}} counts",
+    "inApp": "in {{app}}",
+    "explain": {
+      "dictations": "How many times you held the shortcut and Glider typed something.",
+      "average": "The length of a typical dictation: words divided by dictations.",
+      "longest": "Your single longest dictation in this period.",
+      "languages": "The languages your dictations were transcribed in, most used first.",
+      "reads": "How many times you selected text and Read Aloud read it to you.",
+      "timeListened": "Total time Read Aloud spent speaking, at the speed you chose.",
+      "longestRead": "The most words Read Aloud read in one go.",
+      "voice": "The voice you used for the most reads in this period."
+    }
+  },
+  "rewrite": {
+    "new": "New",
+    "on": "On",
+    "off": "Off",
+    "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
+    "noModel": "No model loaded",
+    "noProvider": "No provider set",
+    "hero": {
+      "polish": "Select text, press <keys/> to polish it",
+      "prompt": "Select text, press <keys/> to make it a prompt",
+      "humanize": "Select text, press <keys/> to humanize it",
+      "grammar": "Select text, press <keys/> to fix its grammar",
+      "custom": "Select text, press <keys/> to run {{name}}",
+      "none": "Add a rewrite to get started"
+    },
+    "heroHint": "Works in Zed, your browser, chat apps, anywhere you can select text. Press {{undo}} to undo.",
+    "tryIt": "Try it",
+    "trying": "Rewriting…",
+    "demo": {
+      "label": "Example",
+      "before": "ok so um the overlay breaks when i press read while its dictating",
+      "results": {
+        "polish": "The overlay breaks when I press Read Aloud during dictation.",
+        "prompt": "Fix the bug where the overlay breaks when Read Aloud is pressed during dictation.",
+        "humanize": "Heads up, the overlay breaks if I hit Read Aloud while I'm dictating.",
+        "grammar": "OK, so, um, the overlay breaks when I press Read while it's dictating."
+      }
+    },
+    "afterDictate": {
+      "title": "After you dictate",
+      "everyTitle": "Rewrite what you dictate",
+      "everyDescription": "Run one rewrite on everything you dictate, before it is typed.",
+      "shortcutTitle": "Dictate and rewrite",
+      "shortcutDescription": "A second dictation shortcut that always rewrites."
+    },
+    "yours": "Your rewrites",
+    "resetAll": "Reset to defaults",
+    "newRewrite": "New rewrite",
+    "newName": "New rewrite",
+    "used_one": "Used {{count}} time",
+    "used_other": "Used {{count}} times",
+    "notUsed": "Not used yet",
+    "customCard": "Your own rewrite. Open it to write what it should do.",
+    "writeOwn": "Write your own",
+    "writeOwnHint": "Tell the model what to do, in plain words.",
+    "compareHint": "Press <keys/> right after a rewrite to compare it with what you wrote.",
+    "runFailed": "The rewrite didn't work. Try again.",
+    "builtin": {
+      "polish": {
+        "card": "Clearer and shorter, in your own voice.",
+        "chip": "polishes selected text",
+        "about": "Polish rewrites your text to read clearer and shorter, and keeps it sounding like you.",
+        "before": "ok so um the overlay thing, when you press the read shortcut while its already dictating it kind of breaks. can you make it so dictation wins and read just waits, and dont touch the settings page",
+        "after": "When I press the Read Aloud shortcut during dictation, the overlay breaks. Make dictation take priority and have Read Aloud wait. Don't touch the settings page."
+      },
+      "prompt": {
+        "card": "Turns a rambling request into a clear task for an AI coding tool.",
+        "chip": "turns selected text into a prompt",
+        "about": "Prompt turns a rambling request into a clear task for an AI coding tool: the goal first, then the details.",
+        "before": "so basically can you like make the history page not jump when a new entry comes in, keep the scroll where it was, and also dont touch the settings page",
+        "after": "Goal: stop the History page from jumping when a new entry arrives.\n- Keep the scroll position where it was.\n- Don't change the settings page."
+      },
+      "humanize": {
+        "card": "Removes stiff, AI-sounding phrasing.",
+        "chip": "humanizes selected text",
+        "about": "Humanize takes out stiff, AI-sounding phrasing so the text reads like a person wrote it.",
+        "before": "I hope this message finds you well. I wanted to reach out to delve into the robust new overlay, which seamlessly elevates the experience.",
+        "after": "Quick note on the new overlay: it's faster and gets out of the way."
+      },
+      "grammar": {
+        "card": "Only spelling and grammar. Nothing else changes.",
+        "chip": "fixes grammar in selected text",
+        "about": "Fix grammar corrects spelling, grammar and punctuation, and leaves every other word as you wrote it.",
+        "before": "i has went to the store yesterday and buyed three apple",
+        "after": "I went to the store yesterday and bought three apples."
+      },
+      "custom": {
+        "chip": "runs {{name}} on selected text",
+        "about": "{{name}} rewrites your text the way its instructions say."
+      }
+    },
+    "options": {
+      "shorter": "Make it shorter",
+      "clarity": "Reword for clarity",
+      "reorder": "Reorder for readability",
+      "lists": "Add lists and paragraphs",
+      "keep_tone": "Keep my tone",
+      "keep_code": "Keep code, file names and commands exactly"
+    },
+    "detail": {
+      "saved": "Saved",
+      "reset": "Reset",
+      "delete": "Delete",
+      "example": "Example",
+      "exampleView": "Example view",
+      "before": "Before",
+      "after": "After",
+      "changes": "Changes",
+      "run": "Run on this example",
+      "running": "Running…",
+      "nameTitle": "Name",
+      "shortcutTitle": "Shortcut",
+      "shortcutName": "{{name}} shortcut",
+      "shortcutHint": "Select text, then press it.",
+      "doesTitle": "What {{name}} does",
+      "instructionsTitle": "Instructions",
+      "instructionsHint": "What the model should do with the text, in plain words.",
+      "instructionsPlaceholder": "For example: turn this into a short, friendly reply.",
+      "extraTitle": "Extra instructions",
+      "extraPlaceholder": "Anything else {{name}} should do. For example: use British spelling.",
+      "modelTitle": "Model",
+      "runsOn": "Runs on",
+      "runsOnLocal": "{{model}}, on this computer",
+      "runsOnProvider": "{{model}}, through your provider",
+      "noModel": "No model yet",
+      "change": "Change"
+    },
+    "samples": {
+      "title": "Writing samples",
+      "hint": "A few things you wrote, so {{name}} matches your style.",
+      "words_one": "{{count}} word",
+      "words_other": "{{count}} words",
+      "remove": "Remove {{name}}",
+      "limit": "Plain text or Markdown, up to {{max}} words each.",
+      "add": "Add a sample",
+      "filter": "Text",
+      "trimmed": "Kept the first {{max}} words of that sample.",
+      "readFailed": "Couldn't read that file."
+    }
+  },
+  "loading": {
+    "label": "Glider is starting"
+  },
+  "topBar": {
+    "theme": "Theme",
+    "showSidebar": "Show sidebar",
+    "hideSidebar": "Hide sidebar"
+  }
+}

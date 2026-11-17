@@ -1,0 +1,724 @@
+@import "../styles/theme.css";
+
+:root {
+  /* The Live text's caret: logo pink, following the theme. */
+  --s-accent: var(--color-logo-primary);
+}
+
+/* ============================================================
+   One fixed, transparent stage for every overlay. Its content is anchored
+   flush to the screen edge (bottom by default, top when placed up top) and
+   centered, so only the offsets in overlay.rs move it, whatever the window
+   height.
+   ============================================================ */
+.ov-stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.ov-stage.top {
+  align-items: flex-start;
+}
+
+/* Fade the whole stage in and out. */
+.ov-fade {
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+.ov-fade.show {
+  opacity: 1;
+}
+
+.scaret {
+  display: inline-block;
+  width: 2px;
+  height: 1.02em;
+  translate: 0 3px;
+  margin-left: 1px;
+  background: var(--s-accent);
+  border-radius: 2px;
+  animation: scaret-blink 1.05s steps(1) infinite;
+}
+@keyframes scaret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   Minimal overlay (canvas/Overlay Minimal): the listening pill, hands-free
+   buttons, transcribing dots, Refining / Using <rewrite>, Read Aloud's
+   player, and the "nowhere to type" and "See changes" cards. Colors are the
+   canvas's, per theme. One size for every pill and the player: --mo-h.
+   overlay.rs sizes the windows from these; keep them in sync.
+   ============================================================ */
+:root {
+  --mo-h: 28px; /* every pill and the player */
+  --mo-btn: 22px; /* round buttons inside them */
+  /* The app's own background, following the theme. */
+  --mo-surface: var(--color-ground);
+  --mo-raised: #e1dbd9;
+  --mo-text: #1a1617;
+  --mo-ink2: rgba(26, 22, 23, 0.64);
+  --mo-ink3: #6b6567;
+  --mo-line: rgba(26, 22, 23, 0.12);
+  --mo-pink: #d8b4f8;
+  --mo-pink-ink: #8442c4;
+  --mo-on-pink: #1e0b2b;
+  --mo-moss: #2f7d5b;
+  --mo-wash: rgba(26, 22, 23, 0.06);
+  --mo-del: #c81e1e;
+  --mo-del-bg: rgba(220, 38, 38, 0.08);
+  --mo-add-bg: rgba(47, 125, 91, 0.16);
+  --mo-float: 0 8px 22px -10px rgba(56, 39, 49, 0.4);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --mo-raised: #2e282a;
+    --mo-text: #f3eeef;
+    --mo-ink2: rgba(243, 238, 239, 0.64);
+    --mo-ink3: #9a9395;
+    --mo-line: rgba(243, 238, 239, 0.12);
+    --mo-pink: #c58af2;
+    --mo-pink-ink: #d4a3f7;
+    --mo-moss: #86c9a4;
+    --mo-wash: rgba(243, 238, 239, 0.07);
+    --mo-del: #f87171;
+    --mo-del-bg: rgba(248, 113, 113, 0.12);
+    --mo-add-bg: rgba(134, 201, 164, 0.2);
+    --mo-float: 0 8px 22px -8px rgba(0, 0, 0, 0.7);
+  }
+}
+:root[data-theme="dark"] {
+  --mo-raised: #2e282a;
+  --mo-text: #f3eeef;
+  --mo-ink2: rgba(243, 238, 239, 0.64);
+  --mo-ink3: #9a9395;
+  --mo-line: rgba(243, 238, 239, 0.12);
+  --mo-pink: #c58af2;
+  --mo-pink-ink: #d4a3f7;
+  --mo-moss: #86c9a4;
+  --mo-wash: rgba(243, 238, 239, 0.07);
+  --mo-del: #f87171;
+  --mo-del-bg: rgba(248, 113, 113, 0.12);
+  --mo-add-bg: rgba(134, 201, 164, 0.2);
+  --mo-float: 0 8px 22px -8px rgba(0, 0, 0, 0.7);
+}
+
+.mo,
+.mo * {
+  box-sizing: border-box;
+}
+.mo {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: var(--mo-text);
+}
+.mo button {
+  font: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.mo button:focus-visible {
+  outline: 2px solid var(--mo-pink-ink);
+  outline-offset: 2px;
+}
+
+/* Pill: listening, transcribing, Refining, notices, Done */
+.mo-pill {
+  height: var(--mo-h);
+  border-radius: calc(var(--mo-h) / 2);
+  background: var(--mo-surface);
+  border: 1px solid var(--mo-line);
+  box-shadow: var(--mo-float);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  font-size: 12px;
+  white-space: nowrap;
+  flex: none;
+}
+.mo-pill.hf {
+  padding: 0 2px;
+  gap: 8px;
+}
+.mo-pill .nglyph {
+  width: 13px;
+  height: 13px;
+  color: var(--notice);
+}
+.mo-pill.level-error {
+  --notice: var(--color-error);
+}
+.mo-pill.level-warning {
+  --notice: var(--color-warning);
+}
+.mo-strong {
+  font-weight: 600;
+}
+.mo-link {
+  border: 0;
+  background: none;
+  padding: 0;
+  font-weight: 600 !important;
+  color: var(--mo-pink-ink);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Bars that follow the voice, and the dots a light runs across */
+.mo-wave {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 12px;
+}
+.mo-wave i {
+  width: 2px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--mo-text);
+  transition:
+    height 80ms linear,
+    opacity 120ms linear;
+}
+.mo-wave.arming i {
+  opacity: 0.5;
+}
+.mo-wave.dots i {
+  opacity: 0.25;
+  animation: mo-sweep 1.4s linear infinite;
+}
+@keyframes mo-sweep {
+  0%,
+  30%,
+  100% {
+    opacity: 0.25;
+  }
+  12% {
+    opacity: 1;
+  }
+}
+
+/* Eight-tick spinner, Glider pink */
+.mo-spin {
+  flex: none;
+  color: var(--mo-pink-ink);
+  animation: mo-spin 0.8s steps(8) infinite;
+}
+@keyframes mo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* A label with a light passing over it while work runs */
+.mo-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--mo-ink3) 0%,
+    var(--mo-ink3) 38%,
+    var(--mo-text) 50%,
+    var(--mo-ink3) 62%,
+    var(--mo-ink3) 100%
+  );
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 500;
+  animation: mo-shine 1.8s linear infinite;
+}
+@keyframes mo-shine {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -60% 0;
+  }
+}
+
+/* Tooltips: above the pill at the bottom of the screen, below it at the top */
+.mo-tipwrap {
+  position: relative;
+  display: inline-flex;
+}
+.mo-tip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: var(--mo-surface);
+  border: 1px solid var(--mo-line);
+  box-shadow: var(--mo-float);
+  color: var(--mo-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms;
+  z-index: 2;
+}
+.mo-tip.keyed {
+  padding-right: 4px;
+}
+.ov-stage.top .mo-tip {
+  bottom: auto;
+  top: calc(100% + 8px);
+}
+.mo-tipwrap:hover .mo-tip,
+.mo-tipwrap:focus-within .mo-tip {
+  opacity: 1;
+}
+.mo kbd {
+  font:
+    600 10px ui-monospace,
+    "SF Mono",
+    Menlo,
+    monospace;
+  padding: 0 4px;
+  border-radius: 5px;
+  border: 1px solid var(--mo-line);
+  color: var(--mo-ink2);
+  background: var(--mo-wash);
+}
+
+/* Hands-free: cancel and finish */
+.mo-hbtn {
+  width: var(--mo-btn);
+  height: var(--mo-btn);
+  border-radius: 50%;
+  border: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+.mo-hbtn.cancel {
+  background: var(--mo-raised);
+  color: var(--mo-text);
+}
+/* The app's primary button: the pink gradient, as on Tutorial. */
+.mo-hbtn.finish {
+  background: var(--color-accent-grad);
+  color: var(--mo-on-pink);
+}
+
+/* Read Aloud's player: the same height as the pills */
+.mo-player {
+  height: var(--mo-h);
+  border-radius: calc(var(--mo-h) / 2);
+  background: var(--mo-surface);
+  border: 1px solid var(--mo-line);
+  box-shadow: var(--mo-float);
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  padding: 0 2px;
+  flex: none;
+}
+.mo-ibtn {
+  width: var(--mo-btn);
+  height: var(--mo-btn);
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  color: var(--mo-text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 120ms,
+    color 120ms;
+}
+.mo-ibtn:hover {
+  background: var(--mo-wash);
+}
+.mo-play {
+  width: var(--mo-btn);
+  height: var(--mo-btn);
+  border-radius: 50%;
+  border: 0;
+  background: var(--mo-pink);
+  color: var(--mo-on-pink);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 1px;
+  transition: transform 120ms;
+}
+.mo-play:hover {
+  transform: scale(1.06);
+}
+.mo-segs {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 8px;
+  height: var(--mo-btn);
+}
+.mo-seg {
+  position: relative;
+  width: 7px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--mo-raised);
+  overflow: hidden;
+}
+.mo-seg.done {
+  background: var(--mo-ink3);
+}
+.mo-seg.cur::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: var(--mo-pink);
+  animation: mo-fill var(--mo-dur, 3.4s) linear forwards;
+}
+.mo-seg.cur.paused::after {
+  animation-play-state: paused;
+}
+@keyframes mo-fill {
+  to {
+    width: 100%;
+  }
+}
+.mo-longbar {
+  position: relative;
+  width: 84px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--mo-raised);
+  overflow: hidden;
+  margin: 0 6px 0 8px;
+}
+.mo-longbar span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--mo-pink);
+  transition: width 200ms;
+}
+.mo-count {
+  font-size: 11px;
+  color: var(--mo-ink3);
+  font-variant-numeric: tabular-nums;
+  margin-right: 6px;
+}
+.mo-speed {
+  display: inline-flex;
+  align-items: center;
+  height: var(--mo-btn);
+  border-radius: calc(var(--mo-btn) / 2);
+  background: var(--mo-wash);
+  padding: 0 1px;
+  margin-left: 1px;
+}
+.mo-sbtn {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  color: var(--mo-ink2);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+.mo-sbtn:hover {
+  color: var(--mo-text);
+  background: var(--mo-wash);
+}
+.mo-sval {
+  min-width: 30px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  transition: color 200ms;
+}
+.mo-sval.changed {
+  color: var(--mo-pink-ink);
+}
+
+/* Live: what you've said so far, in a small card above the pill (below it
+   when the overlay sits at the top). */
+.mo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.ov-stage.top .mo-stack {
+  flex-direction: column-reverse;
+}
+/* Hugs its text up to 360px, in the pill's color, so card and pill read as
+   one piece. */
+.mo-card.mo-live {
+  width: auto;
+  max-width: 360px;
+  padding: 7px 12px;
+  background: var(--mo-surface);
+}
+/* Each new sentence (Read Aloud) eases in. */
+.mo-fadein {
+  animation: mo-fadein 180ms ease-out;
+}
+@keyframes mo-fadein {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+}
+.mo-livetext {
+  max-height: 58px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  line-height: 1.4;
+  scrollbar-width: none;
+}
+.mo-livetext::-webkit-scrollbar {
+  display: none;
+}
+/* Older lines fade under the top edge once the text overflows. */
+.mo-livetext.overflowing {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
+}
+.mo-livetext p {
+  /* Bottom-anchored while short; avoids flex-end's unscrollable top. */
+  margin: auto 0 0;
+}
+.mo-muted {
+  display: block;
+  color: var(--mo-ink2);
+}
+.mo-tentative {
+  color: var(--mo-ink2);
+}
+
+/* Cards: nowhere to type, and See changes. The app's own card color, not
+   the pills' near-black. */
+.mo-card {
+  width: 340px;
+  border-radius: 14px;
+  background: var(--color-card);
+  border: 1px solid var(--mo-line);
+  box-shadow: var(--mo-float);
+  padding: 8px 8px 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: none;
+}
+.mo-cardtop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mo-hint {
+  flex: 1;
+  font-size: 12px;
+  color: var(--mo-ink3);
+}
+.mo-close {
+  position: relative;
+  width: var(--mo-btn);
+  height: var(--mo-btn);
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  color: var(--mo-ink2);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+.mo-ring {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+.mo-ring circle {
+  fill: none;
+  stroke: var(--mo-ink3);
+  stroke-width: 1.5;
+  stroke-dasharray: 88;
+  animation: mo-count 8s linear forwards;
+}
+.mo-card:hover .mo-ring circle {
+  animation-play-state: paused;
+}
+@keyframes mo-count {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 88;
+  }
+}
+.mo-said {
+  margin: 0 14px 2px 0;
+  font-size: 13px;
+  line-height: 1.45;
+  max-height: 76px;
+  overflow-y: auto;
+  user-select: text;
+  -webkit-user-select: text;
+}
+.mo-cardfoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.mo-note {
+  font-size: 11px;
+  color: var(--mo-ink3);
+}
+.mo-copy,
+.mo-copied {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: var(--mo-btn);
+  border: 0;
+  border-radius: 8px;
+  padding: 0 9px;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+}
+.mo-copy {
+  background: var(--mo-pink);
+  color: var(--mo-on-pink);
+}
+.mo-copied {
+  background: var(--mo-wash);
+  color: var(--mo-moss);
+}
+.mo-changes {
+  width: 380px;
+  padding: 10px 8px 6px 14px;
+  gap: 8px;
+}
+.mo-chtop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.mo-chtitle {
+  font-size: 12px;
+  font-weight: 600;
+}
+.mo-chright {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.mo-undo {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--mo-ink3);
+}
+.mo-diff {
+  margin: 0 4px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  max-height: 160px;
+  overflow-y: auto;
+  user-select: text;
+  -webkit-user-select: text;
+}
+.mo-diff del {
+  color: var(--mo-del);
+  background: var(--mo-del-bg);
+  text-decoration: line-through;
+  border-radius: 3px;
+  padding: 1px 2px;
+}
+.mo-diff ins {
+  text-decoration: none;
+  background: var(--mo-add-bg);
+  border-radius: 3px;
+  padding: 1px 2px;
+}
+.mo-chfoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--mo-line);
+  padding-top: 6px;
+}
+.mo-acts {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+.mo-abtn {
+  width: var(--mo-btn);
+  height: var(--mo-btn);
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  color: var(--mo-ink2);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 120ms,
+    color 120ms;
+}
+.mo-abtn:hover {
+  background: var(--mo-wash);
+  color: var(--mo-text);
+}
+.mo-meta {
+  font-size: 11px;
+  color: var(--mo-ink3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mo-wave.dots i,
+  .mo-spin,
+  .mo-shimmer,
+  .mo-seg.cur::after,
+  .mo-ring circle,
+  .mo-fadein {
+    animation: none;
+  }
+  .mo-shimmer {
+    color: var(--mo-ink2);
+    background: none;
+  }
+  .mo-seg.cur::after {
+    width: 45%;
+  }
+}

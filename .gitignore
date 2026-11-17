@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.claude/
+
+# Frontend build output
+dist/
+dist-ssr/
+*.local
+
+# Rust / Tauri build output (also covered by src-tauri/.gitignore)
+src-tauri/target/
+
+# Downloaded models (see AGENTS.md "Model Setup")
+src-tauri/resources/models/*.gguf
+src-tauri/resources/models/*.onnx
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Nix
+result
+result-*
+
+# Env and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp

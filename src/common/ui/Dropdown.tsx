@@ -1,0 +1,170 @@
+import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+
+export interface DropdownOption {
+  value: string;
+  label: React.ReactNode;
+  description?: string;
+  disabled?: boolean;
+}
+
+interface DropdownProps {
+  options: DropdownOption[];
+  className?: string;
+  menuClassName?: string;
+  selectedValue: string | null;
+  onSelect: (value: string) => void;
+  placeholder?: string;
+  disabled?: boolean;
+  onOpen?: () => void;
+  /** Where the menu opens: below the button (default), or above it. */
+  placement?: "below" | "above";
+  /** Highlight colour for hover and selection. */
+  tone?: "brand" | "neutral";
+}
+
+export const Dropdown: React.FC<DropdownProps> = ({
+  options,
+  selectedValue,
+  onSelect,
+  className = "",
+  menuClassName,
+  placeholder = "Select an option...",
+  disabled = false,
+  onOpen,
+  placement = "below",
+  tone = "brand",
+}) => {
+  const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // The trigger's hover; in the menu, hover is grey so it never looks chosen.
+  const hover = tone === "neutral" ? "hover:bg-wash" : "hover:bg-wash";
+  const chosen = tone === "neutral" ? "bg-line" : "bg-logo-primary/15";
+
+  const selectedOption = options.find(
+    (option) => option.value === selectedValue,
+  );
+
+  const handleSelect = (value: string) => {
+    onSelect(value);
+    setIsOpen(false);
+  };
+
+  const handleToggle = () => {
+    if (disabled) return;
+    if (!isOpen) onOpen?.();
+    setIsOpen(!isOpen);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== "Escape" || !isOpen || disabled) return;
+    event.preventDefault();
+    event.stopPropagation();
+    setIsOpen(false);
+    triggerRef.current?.focus();
+  };
+
+  return (
+    <div
+      className={`relative ${className}`}
+      ref={dropdownRef}
+      onKeyDown={handleKeyDown}
+    >
+      <button
+        type="button"
+        ref={triggerRef}
+        className={`g-sel w-full text-start transition-[border-color,background-color] duration-150 ${
+          disabled
+            ? "opacity-50 cursor-not-allowed"
+            : `${hover} cursor-pointer ${tone === "neutral" ? "hover:border-ink-3" : "hover:border-accent-ink"}`
+        }`}
+        onClick={handleToggle}
+        disabled={disabled}
+        aria-expanded={isOpen}
+      >
+        <span className="truncate">{selectedOption?.label || placeholder}</span>
+        <i
+          className={`g-ic g-i-chev transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+          aria-hidden="true"
+        />
+      </button>
+      {isOpen && !disabled && (
+        <div
+          className={`absolute ${placement === "above" ? "bottom-full mb-1" : "top-full mt-1"} bg-card border border-line rounded-xl shadow-[0_12px_32px_-12px_rgba(0,0,0,0.5)] z-50 max-h-60 overflow-y-auto p-1 ${
+            menuClassName ?? "left-0 right-0"
+          }`}
+        >
+          {options.length === 0 ? (
+            <div className="px-2 py-1.5 text-sm text-ink-3">
+              {t("common.noOptionsFound")}
+            </div>
+          ) : (
+            options.map((option) => {
+              const isChosen = selectedValue === option.value;
+              return (
+                <button
+                  key={option.value}
+                  type="button"
+                  className={`flex w-full items-center gap-2 rounded-lg px-2.5 text-sm text-start transition-colors duration-150 ${
+                    option.description ? "py-2" : "py-1.5"
+                  } ${isChosen ? chosen : "hover:bg-wash"} ${
+                    option.disabled ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
+                  onClick={() => handleSelect(option.value)}
+                  disabled={option.disabled}
+                >
+                  <span className="min-w-0 flex-1">
+                    <span
+                      className={`block whitespace-normal break-words ${
+                        isChosen ? "font-semibold" : ""
+                      }`}
+                    >
+                      {option.label}
+                    </span>
+                    {option.description && (
+                      <span className="mt-0.5 block whitespace-normal text-xs font-normal leading-snug text-ink-3">
+                        {option.description}
+                      </span>
+                    )}
+                  </span>
+                  {isChosen && (
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2.2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                      className="shrink-0 text-ink-2"
+                    >
+                      <path d="M5 12.5l4.5 4.5L19 7.5" />
+                    </svg>
+                  )}
+                </button>
+              );
+            })
+          )}
+        </div>
+      )}
+    </div>
+  );
+};

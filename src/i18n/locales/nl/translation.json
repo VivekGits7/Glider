@@ -1,0 +1,1456 @@
+{
+  "tray": {
+    "settings": "Instellingen...",
+    "checkUpdates": "Controleren op updates...",
+    "copyLastTranscript": "Laatste transcriptie kopiëren",
+    "unloadModel": "Model ontladen",
+    "model": "Model",
+    "quit": "Afsluiten",
+    "cancel": "Annuleren",
+    "secureInputWarning": "⚠ Sneltoetsen geblokkeerd door Secure Input",
+    "language": "Taal",
+    "autoLanguage": "Automatisch",
+    "otherLanguages": "Andere talen"
+  },
+  "sidebar": {
+    "general": "Algemeen",
+    "models": "Modellen",
+    "advanced": "Geavanceerd",
+    "history": "Geschiedenis",
+    "debug": "Probleemoplossing",
+    "about": "Over Glider",
+    "readAloud": "Read Aloud",
+    "home": "Home",
+    "label": "Sections",
+    "version": "Glider v{{version}}",
+    "insights": "Insights",
+    "rewrite": "Rewrite",
+    "dictation": "Dictation"
+  },
+  "onboarding": {
+    "customModelDescription": "Niet officieel ondersteund",
+    "migration": {
+      "title": "Je modellen moeten worden bijgewerkt",
+      "description": "Glider gebruikt nu een nieuwer soort model. Download de nieuwe versie om te blijven transcriberen. Oude versies worden verwijderd.",
+      "replaces": "Vervangt {{name}}",
+      "oldFormat": "Oud formaat",
+      "failed": "Downloaden mislukt",
+      "retry": "Opnieuw proberen",
+      "chooseAnother": "Kies een ander model",
+      "download": "Modellen downloaden ({{size}})",
+      "continue": "Doorgaan"
+    },
+    "models": {
+      "small": {
+        "name": "Whisper Small",
+        "description": "Snel en redelijk nauwkeurig."
+      },
+      "medium": {
+        "name": "Whisper Medium",
+        "description": "Goede nauwkeurigheid, gemiddelde snelheid."
+      },
+      "turbo": {
+        "name": "Whisper Turbo",
+        "description": "Balans tussen nauwkeurigheid en snelheid."
+      },
+      "large": {
+        "name": "Whisper Large",
+        "description": "Hoge nauwkeurigheid, maar traag."
+      },
+      "breeze-asr": {
+        "name": "Breeze ASR",
+        "description": "Geoptimaliseerd voor Taiwanees-Mandarijn. Ondersteunt codewisseling."
+      }
+    },
+    "errors": {
+      "selectModel": "Model selecteren mislukt"
+    },
+    "permissions": {
+      "microphone": {
+        "name": "Microfoon",
+        "why": "Zodat Glider je kan horen. Audio wordt op deze computer omgezet in tekst en nooit geüpload."
+      },
+      "accessibility": {
+        "name": "Toegankelijkheid",
+        "why": "Zodat je sneltoets in elke app werkt en Glider de tekst kan typen waar je cursor staat."
+      },
+      "errors": {
+        "checkFailed": "Machtigingen controleren mislukt. Probeer het opnieuw.",
+        "requestFailed": "Machtiging aanvragen mislukt. Probeer het opnieuw."
+      },
+      "titleMac": "Twee machtigingen, en klaar",
+      "titleWindows": "Eén machtiging, en klaar",
+      "subtitleMac": "macOS vraagt eerst toestemming voordat een app kan luisteren of typen.",
+      "subtitleWindows": "Windows vraagt eerst toestemming voordat een app kan luisteren.",
+      "allow": "Toestaan",
+      "openSettings": "Instellingen openen",
+      "allowed": "Toegestaan",
+      "waiting": "Wachten",
+      "turnOnMac": "Zet Glider aan in Systeeminstellingen en kom dan hier terug.",
+      "turnOnWindows": "Zet toegang tot de microfoon aan in Windows-instellingen en kom dan hier terug.",
+      "hintBoth": "Sta beide toe om door te gaan",
+      "hintMicrophone": "Sta de microfoon toe om door te gaan",
+      "welcomeBack": "Welkom terug. We gaan verder waar je was gebleven.",
+      "relaunch": "Reageert de sneltoets hierna niet? <relaunch>Start Glider opnieuw</relaunch> en je komt direct weer hier uit.",
+      "fnKey": {
+        "name": "Fn key",
+        "why": "You hold Fn to dictate. Turn off what macOS does when you press it alone (emoji picker or input switch). You can change it back in System Settings → Keyboard.",
+        "action": "Turn off"
+      }
+    },
+    "shell": {
+      "back": "Terug",
+      "continue": "Doorgaan",
+      "progress": "Stap {{step}} van {{count}}"
+    },
+    "welcome": {
+      "title": "Praat in plaats van typen, in elke app",
+      "subtitle": "Kies de talen waarin je gaat dicteren",
+      "languagesLabel": "Talen",
+      "noMatch": "Geen taal gevonden voor „{{query}}”. De modellen van Glider dekken ongeveer 100 talen; meer vind je in de instellingen.",
+      "appLanguage": "App-taal",
+      "chinese": {
+        "question": "Je spreekt {{languages}}. Welke tekens moet Glider schrijven?",
+        "label": "Chinese tekens",
+        "zh-Hans": "Vereenvoudigd",
+        "zh-Hant": "Taiwan",
+        "zh-HK": "Hongkong"
+      },
+      "hint": {
+        "pickOne": "Kies minstens één taal"
+      },
+      "search": "Search languages",
+      "searchPlaceholder": "Search {{count}} languages"
+    },
+    "download": {
+      "checking": "Download controleren…",
+      "ready": "{{name}} is klaar",
+      "failed": "Download gestopt",
+      "downloading": "{{name}} downloaden",
+      "progress": "{{done}} van {{total}}",
+      "progressLeft": "{{done}} van {{total}}, nog {{time}}",
+      "checkingName": "{{name}} controleren",
+      "checkingDetail": "Controleren of de download compleet is",
+      "stopped": "Downloaden van {{name}} is gestopt",
+      "retryDetail": "Opnieuw proberen gaat verder waar het stopte",
+      "cardProgress": "{{percent}}% gedownload, {{done}} van {{total}}",
+      "timeLeft": "nog {{time}}",
+      "speedLeft": "{{speed}}, nog {{time}}"
+    },
+    "model": {
+      "title": "Kies een spraakmodel",
+      "subtitle": "Het spraakmodel zet je spraak om in tekst, rechtstreeks op deze computer",
+      "label": "Spraakmodel",
+      "lines": {
+        "recommended": "De beste balans tussen snelheid en nauwkeurigheid voor jouw talen",
+        "faster": "Sneller, met iets meer fouten",
+        "accurate": "Minste fouten, maar langzamer"
+      },
+      "shorts": {
+        "recommended": "Beste balans voor jou",
+        "faster": "Sneller, iets meer fouten",
+        "accurate": "Minste fouten, maar langzamer"
+      },
+      "model": "Model",
+      "showAll": "Alle {{count}} modellen tonen",
+      "download": "{{size}} downloaden",
+      "downloadInstead": "In plaats daarvan {{size}} downloaden",
+      "pauses": "{{name}} pauzeert bij {{percent}}%",
+      "resumeLater": "Kies het opnieuw om verder te gaan waar je was gebleven",
+      "hint": "Wordt gedownload terwijl je de installatie afrondt",
+      "bestFor": "Best for {{languages}}",
+      "recommended": "Recommended",
+      "languageCount_one": "{{count}} language",
+      "languageCount_other": "{{count}} languages"
+    },
+    "done": {
+      "title": "Alles is klaar",
+      "atLogin": "Glider starten als ik inlog",
+      "finish": "Klaar",
+      "subtitleMac": "Glider is in your menu bar now. It works in every app, even with this window closed.",
+      "subtitle": "Glider is in your system tray now. It works in every app, even with this window closed.",
+      "dictate": "Dictate",
+      "readAloud": "Read Aloud",
+      "languages": "Languages",
+      "speechModel": "Speech model",
+      "holdAndTalk": "Hold and talk",
+      "selectThenPress": "Select, then press",
+      "change": "Change",
+      "later": "You can change these later in Settings"
+    },
+    "downloads": {
+      "background": "Downloads keep going in the background",
+      "label": "Downloads",
+      "underMinute": "less than a minute left",
+      "oneMinute": "1 min left",
+      "minutes_one": "{{count}} min left",
+      "minutes_other": "{{count}} min left",
+      "checking": "Checking…",
+      "ofSize": "{{percent}}% · {{done}} of {{total}} MB",
+      "next": "{{percent}}% · {{name}} next",
+      "about": "about {{left}}",
+      "ready": "Ready: {{names}}",
+      "cancel": "Cancel {{name}}"
+    },
+    "voices": {
+      "title": "Pick your voices",
+      "subtitle": "Pick one for each language you listen in. Add more later in Models.",
+      "label": "Voices",
+      "descriptions": {
+        "kokoro-int8-en-v0_19": "Natural, warm voices. 11 American and British speakers.",
+        "vits-piper-hi_IN-pratham-medium-int8": "A clear Hindi voice. Reads Devanagari text.",
+        "kitten-nano-en-v0_2-fp16": "Tiny and fast. Good for older computers."
+      },
+      "speakers_one": "{{count}} speaker",
+      "speakers_other": "{{count}} speakers",
+      "speed": "Up to 3x speed",
+      "sample": "Sample",
+      "sampleLabel": "Hear {{name}}"
+    },
+    "refine": {
+      "title": "Pick a refine model",
+      "subtitle": "It cleans up and rewrites your text when you ask. You can skip this.",
+      "label": "Refine model",
+      "descriptions": {
+        "qwen3-4b-instruct-2507": "Clear, natural rewrites that keep your tone.",
+        "qwen3-1_7b": "Quicker and lighter, a little less polished."
+      },
+      "quality": "Quality: {{value}}",
+      "speed": "Speed: {{value}}",
+      "memory": "Needs {{n}} GB memory",
+      "levels": {
+        "best": "best",
+        "good": "good",
+        "fair": "fair",
+        "fast": "fast",
+        "moderate": "moderate"
+      },
+      "notNow": "Not now",
+      "notNowHint": "Turn on Rewrite later and pick a model then."
+    },
+    "practice": {
+      "title": "Give it a try",
+      "subtitle": "Both shortcuts work in every app. Try them here first.",
+      "dictate": "1. Click the box, hold <keys/> and talk",
+      "listen": "2. Select that text and press <keys/> to hear it",
+      "boxLabel": "Practice box",
+      "placeholder": "Your words appear here.",
+      "done": "Done",
+      "skip": "You can skip this",
+      "voicesNote": "Read Aloud uses the voices you picked. Downloads finish in the background.",
+      "waiting": "Dictation works once {{model}} finishes downloading."
+    }
+  },
+  "modelTable": {
+    "tags": {
+      "preview": "Live voorvertoning",
+      "previewTitle": "Toont je woorden in de Live-overlay terwijl je praat en typt ze zodra je stopt",
+      "translate": "Vertaalt",
+      "translateTitle": "Kan wat je zegt omzetten in Engelse tekst. Zet dit aan in de instellingen"
+    },
+    "rubric": {
+      "gradeTitle": "Nauwkeurigheid {{language}}: {{grade}}",
+      "accuracyTitle": "Nauwkeurigheid {{language}}",
+      "overallTitle": "Nauwkeurigheid in jouw talen: {{grade}}",
+      "overall": "Nauwkeurigheid in jouw talen",
+      "meaning": {
+        "A": "Zeer weinig fouten: je woorden komen meestal precies zo uit als je ze zei",
+        "B": "Enkele fouten: af en toe moet je een woord verbeteren",
+        "C": "Regelmatig fouten: sommige details kunnen verloren gaan",
+        "D": "Veel fouten: controleer en corrigeer wat het typt",
+        "F": "Vaak onduidelijk: veel van wat je zegt kan fout uitkomen"
+      },
+      "unsupported": "Dit model verstaat geen {{language}} en kan het dus niet typen",
+      "unrated": "Dit model verstaat {{language}}, maar we hebben nog niet gemeten hoe goed",
+      "under": "onder {{max}}%",
+      "between": "{{min}} tot {{max}}%",
+      "over": "{{min}}% of meer",
+      "speedTitle": "Snelheid: {{speed}}",
+      "speedName": {
+        "0": "Zeer langzaam",
+        "1": "Langzaam",
+        "2": "Gemiddeld",
+        "3": "Snel",
+        "4": "Zeer snel"
+      },
+      "speedMeaning": {
+        "0": "Je woorden verschijnen na lang wachten",
+        "1": "Je woorden verschijnen na een tijdje wachten",
+        "2": "Je woorden verschijnen na even wachten",
+        "3": "Je woorden verschijnen bijna meteen",
+        "4": "Je woorden verschijnen meteen"
+      },
+      "speedPreview": "{{meaning}}, met een live voorvertoning terwijl je praat",
+      "untimed": "We hebben nog niet gemeten hoe snel het is",
+      "underSeconds": "onder {{max}} s",
+      "betweenSeconds": "{{min}} tot {{max}} s",
+      "overSeconds": "{{min}} s of meer"
+    },
+    "roles": {
+      "recommended": "Aanbevolen",
+      "faster": "Sneller",
+      "accurate": "Nauwkeuriger",
+      "fromAll": "Uit alle modellen"
+    },
+    "speed": "Snelheid",
+    "size": "Grootte",
+    "accuracy": "Nauwkeurigheid",
+    "search": "Modellen zoeken",
+    "allLabel": "Spraakmodellen",
+    "noMatch": "Niets gevonden voor „{{query}}”. Probeer een taal of een familie zoals Whisper of Parakeet",
+    "noFilterMatch": "Geen modellen die bij deze filters passen",
+    "speedUntested": "Snelheid nog niet gemeten",
+    "speedWords": {
+      "0": "Zeer langzaam, woorden verschijnen na lang wachten",
+      "1": "Langzaam, woorden verschijnen na een tijdje wachten",
+      "2": "Gemiddeld, woorden verschijnen na even wachten",
+      "3": "Snel, woorden verschijnen bijna meteen",
+      "4": "Zeer snel, woorden verschijnen meteen"
+    },
+    "speedWordsPreview": {
+      "0": "Zeer langzaam, met een live voorvertoning terwijl je praat",
+      "1": "Langzaam, met een live voorvertoning terwijl je praat",
+      "2": "Gemiddeld, met een live voorvertoning terwijl je praat",
+      "3": "Snel, met een live voorvertoning terwijl je praat",
+      "4": "Zeer snel, met een live voorvertoning terwijl je praat"
+    },
+    "missingLanguage": "Een taal ontbreekt",
+    "allLanguages": "Alle",
+    "downloadingLine": "{{percent}}% van {{total}} gedownload",
+    "customLine": "Toegevoegd vanuit je modellenmap. Niet beoordeeld.",
+    "legacyLine": "Een oudere download. Niet beoordeeld."
+  },
+  "languagePicker": {
+    "search": "Talen zoeken"
+  },
+  "modelSelector": {
+    "custom": "Aangepast",
+    "streaming": "Streaming",
+    "active": "Actief",
+    "noModelsAvailable": "Geen modellen beschikbaar",
+    "verifying": "Verifiëren van {{modelName}}...",
+    "verifyingGeneric": "Verifiëren...",
+    "downloading": "Downloaden {{percentage}}%",
+    "downloadingMultiple": "Downloaden van {{count}} modellen...",
+    "modelReady": "Model gereed",
+    "loading": "Laden van {{modelName}}...",
+    "loadingGeneric": "Laden...",
+    "modelError": "Modelfout",
+    "modelUnloaded": "Model ontladen",
+    "noModelDownloadRequired": "Geen model - Download vereist",
+    "downloadSpeed": "{{speed}} MB/s",
+    "lockedWhileTranscribing": "Je kunt van model wisselen zodra het transcriberen in Geschiedenis klaar is."
+  },
+  "settings": {
+    "modelSettings": {
+      "title": "Instellingen voor {{model}}",
+      "description": "Options for the speech model you use now."
+    },
+    "general": {
+      "shortcut": {
+        "title": "Sneltoetsen",
+        "description": "Configureer sneltoetsen om spraak-naar-tekst-opnames te starten",
+        "loading": "Sneltoetsen laden...",
+        "none": "Geen sneltoetsen geconfigureerd",
+        "notFound": "Sneltoets niet gevonden",
+        "pressKeys": "Druk op toetsen...",
+        "bindings": {
+          "transcribe": {
+            "name": "Sneltoets voor dicteren",
+            "description": "De sneltoets om je stem op te nemen en te transcriberen."
+          },
+          "cancel": {
+            "name": "Sneltoets voor annuleren",
+            "description": "De sneltoets om de huidige opname te annuleren."
+          },
+          "transcribe_with_post_process": {
+            "name": "Sneltoets voor naverwerking",
+            "description": "Optioneel: Een specifieke sneltoets die altijd AI-naverwerking toepast op je transcriptie."
+          },
+          "speak_selection": {
+            "name": "Read Aloud Shortcut",
+            "description": "Leest geselecteerde tekst voor. Druk nogmaals om te stoppen."
+          },
+          "refine_1": {
+            "name": "Refine 1",
+            "description": "Herschrijft de geselecteerde tekst met de prompt ernaast, ter plekke."
+          },
+          "refine_2": {
+            "name": "Refine 2",
+            "description": "Herschrijft de geselecteerde tekst met de prompt ernaast, ter plekke."
+          },
+          "refine_3": {
+            "name": "Refine 3",
+            "description": "Herschrijft de geselecteerde tekst met de prompt ernaast, ter plekke."
+          }
+        },
+        "errors": {
+          "set": "Instellen van sneltoets mislukt: {{error}}"
+        },
+        "changeLabel": "Change {{name}} ({{keys}})"
+      },
+      "language": {
+        "title": "Taal",
+        "description": "Jouw taal. Een vaste keuze is nauwkeuriger dan Automatisch.",
+        "searchPlaceholder": "Talen zoeken...",
+        "noResults": "Geen talen gevonden",
+        "auto": "Automatisch",
+        "autoUnavailable": {
+          "oneLanguage": "Maar één van je talen werkt met dit model",
+          "undetectable": "Niet beschikbaar met {{languages}}",
+          "noMatch": "Geen van je talen werkt met dit model"
+        },
+        "detectorMissingTitle": "Automatisch heeft een aparte download nodig",
+        "detectorMissing": "Dit model kan niet bepalen welke taal je spreekt. Automatisch heeft een kleine taaldetector nodig om dat uit te zoeken",
+        "stopDetectorDownload": "Downloaden van de taaldetector stoppen"
+      },
+      "preferredLanguages": {
+        "title": "Voorkeurstalen",
+        "description": "De talen die je spreekt. Glider gebruikt ze om modellen aan te bevelen.",
+        "noMatch": "Geen taal gevonden voor „{{query}}”",
+        "weak": "Geen enkel model herkent {{languages}} al goed.",
+        "change": "Change",
+        "none": "No languages yet"
+      }
+    },
+    "models": {
+      "sections": {
+        "yours": "Op deze computer",
+        "fits": "Voor jouw talen"
+      },
+      "emptyYours": "Nog geen modellen. Kies hieronder een model: het wordt gedownload en daarna gebruikt Glider het.",
+      "showMore": "{{count}} meer tonen",
+      "showFewer": "Minder tonen",
+      "download": "Downloaden en gebruiken",
+      "downloadingThenUse": "{{percent}}% van {{total}}, daarna wordt overgeschakeld",
+      "loading": "Laden…",
+      "deleteAsk": "{{name}} verwijderen? Dit maakt {{size}} vrij.",
+      "deleteAskActive": "{{name}} verwijderen? Glider kan niet transcriberen totdat je een ander model kiest.",
+      "cancel": "Annuleren",
+      "deleteModel": "{{name}} verwijderen",
+      "cancelDownload": "Downloaden van {{name}} stoppen",
+      "legend": {
+        "open": "Hoe modellen worden beoordeeld",
+        "accuracyNote": "Per taal van jou: hoeveel woorden een model fout had in onze testopnames.",
+        "speedNote": {
+          "accelerated": "Hoe lang het duurt om 30 seconden spraak uit te typen op de grafische chip van onze testlaptop. Deze computer kan afwijken.",
+          "cpu": "Hoe lang het duurt om 30 seconden spraak uit te typen op de processor van onze testlaptop. Deze computer kan afwijken."
+        },
+        "marks": "? is nog niet gemeten. — verstaat die taal niet.",
+        "howGraded": "How models are graded"
+      },
+      "retiredNotice": {
+        "title": "Oude modellen werken niet meer met Glider",
+        "description": "Ze nemen {{size}} in beslag op je computer.",
+        "delete": "Modellen verwijderen",
+        "deleteFailed": "Sommige oude modellen konden niet worden verwijderd. Bekijk het logboek voor details."
+      },
+      "rescan": {
+        "tooltip": "Scannen naar modellen die buiten Glider om zijn toegevoegd aan de modellenmap of Hugging Face-cache"
+      },
+      "tabs": {
+        "label": "Model type",
+        "speech": "Speech to text",
+        "voices": "Read Aloud voices",
+        "llm": "Large language model"
+      },
+      "lede": "Open-source models that run on this computer. Nothing you say is uploaded.",
+      "columns": {
+        "model": "Model",
+        "quality": "Quality",
+        "memory": "Memory",
+        "language": "Language"
+      },
+      "speed": {
+        "veryFast": "Very fast",
+        "fast": "Fast",
+        "moderate": "Moderate",
+        "slow": "Slow",
+        "verySlow": "Very slow"
+      },
+      "inUse": "In use",
+      "livePreview": "Live preview",
+      "checking": "Checking…",
+      "progress": "{{percent}}% of {{size}}",
+      "progressThenSwitch": "{{percent}}% of {{size}}, then switches",
+      "noGrade": "Doesn't hear this language",
+      "downloadAndUse": "Download and use",
+      "use": "Use",
+      "delete": "Delete {{name}}",
+      "fitsHint": "Picked for {{languages}}. Grades come from our test recordings.",
+      "noMatch": "No models match your search.",
+      "search": "Search models",
+      "sample": "Hear a sample",
+      "noVoices": "No voices yet. Download one below.",
+      "moreVoices": "More voices",
+      "moreVoicesHint": "Each voice downloads once, then works offline.",
+      "llm": {
+        "olderComputers": "Older computers",
+        "needsMemory": "Needs more memory",
+        "gb": "{{n}} GB",
+        "none": "No rewriting model yet. Download one below.",
+        "moreTitle": "More large language models",
+        "moreHint": "Picked for how much memory this computer has. Each downloads once, then works offline.",
+        "providerTitle": "Use a provider instead",
+        "useProvider": "Use a provider",
+        "useProviderHint": "Rewrites go to the service you pick, with your own API key. Only the selected text is sent.",
+        "downloadFailed": "Couldn't download the model. Check your connection and try again.",
+        "multilingual": "Many"
+      },
+      "openFolder": "Open models folder",
+      "openFolderFailed": "Couldn't open the models folder",
+      "notLoaded": "Not loaded",
+      "liveMemory": "Memory this model is using right now",
+      "cancelDeletes": "Annuleren verwijdert wat al gedownload is. Je moet de download opnieuw starten."
+    },
+    "languages": {
+      "title": "Talen"
+    },
+    "sound": {
+      "title": "Geluid",
+      "microphone": {
+        "title": "Microfoon",
+        "description": "Selecteer de gewenste microfoon",
+        "placeholder": "Microfoon selecteren...",
+        "loading": "Laden..."
+      },
+      "channel": {
+        "title": "Ingangskanaal",
+        "description": "Welke ingang je opneemt op een audio-interface met meerdere ingangen.",
+        "average": "Gemiddelde van alle kanalen",
+        "channel": "Kanaal {{n}}"
+      },
+      "audioFeedback": {
+        "label": "Geluidsfeedback",
+        "description": "Geluid afspelen wanneer de opname start en stopt"
+      },
+      "outputDevice": {
+        "title": "Afspeelapparaat",
+        "description": "Selecteer het gewenste audioapparaat voor feedbackgeluiden",
+        "placeholder": "Afspeelapparaat selecteren...",
+        "loading": "Laden..."
+      },
+      "volume": {
+        "title": "Volume",
+        "description": "Pas het volume van de geluidsfeedback aan"
+      }
+    },
+    "advanced": {
+      "groups": {
+        "app": "App",
+        "output": "Uitvoer",
+        "transcription": "Transcriptie",
+        "history": "Geschiedenis",
+        "experimental": "Experimenteel",
+        "outputDescription": "How your words get into the app you are typing in.",
+        "experimentalDescription": "These may change or go away."
+      },
+      "experimentalToggle": {
+        "label": "Experimentele functies",
+        "description": "Schakel experimentele functies in die nog in ontwikkeling zijn."
+      },
+      "lazyStreamClose": {
+        "label": "Microfoon openhouden tussen transcripties",
+        "description": "Volgend dictaat start sneller. Bluetooth kan slechter klinken."
+      },
+      "airpodsMode": {
+        "label": "AirPods-modus",
+        "description": "Haalt AirPods terug van je iPhone, zodat opnames niet stil zijn."
+      },
+      "acceleration": {
+        "transcribe": {
+          "title": "Hardwareversnelling",
+          "description": "Automatisch gebruikt de GPU als het kan, anders de CPU."
+        },
+        "gpuDevice": {
+          "auto": "Automatisch"
+        }
+      },
+      "startHidden": {
+        "label": "Geminimaliseerd opstarten",
+        "description": "Start op de achtergrond in het systeemvak zonder het hoofdvenster te openen."
+      },
+      "autostart": {
+        "label": "Starten bij opstarten",
+        "description": "Glider automatisch starten zodra je inlogt op je computer."
+      },
+      "showTrayIcon": {
+        "label": "Pictogram in systeemvak tonen",
+        "description": "Toon het Glider-pictogram in het systeemvak."
+      },
+      "overlay": {
+        "style": {
+          "title": "Overlay",
+          "description": "Live toont je woorden terwijl je praat, bij streamingmodellen.",
+          "options": {
+            "none": "Geen",
+            "minimal": "Minimaal",
+            "live": "Live"
+          }
+        },
+        "position": {
+          "title": "Overlay-positie",
+          "description": "Waar de overlay verschijnt tijdens het dicteren.",
+          "options": {
+            "bottom": "Onderkant",
+            "top": "Bovenkant"
+          }
+        }
+      },
+      "pasteMethod": {
+        "title": "Plakmethode",
+        "description": "Klembord plakt, Direct typt, Geen bewaart alleen.",
+        "options": {
+          "clipboard": "Klembord ({{modifier}}+V)",
+          "clipboardCtrlShiftV": "Klembord (Ctrl+Shift+V)",
+          "clipboardShiftInsert": "Klembord (Shift+Insert)",
+          "direct": "Direct",
+          "none": "Geen",
+          "externalScript": "Extern script"
+        },
+        "externalScriptPlaceholder": "/pad/naar/je/script.sh"
+      },
+      "typingTool": {
+        "title": "Typgereedschap",
+        "description": "De Linux-tool voor Direct plakken. Automatisch kiest de beste.",
+        "options": {
+          "auto": "Automatisch (Aanbevolen)"
+        }
+      },
+      "clipboardHandling": {
+        "title": "Klembordbeheer",
+        "description": "Of je dictaat na het plakken op het klembord blijft.",
+        "options": {
+          "dontModify": "Klembord niet aanpassen",
+          "copyToClipboard": "Kopiëren naar klembord"
+        }
+      },
+      "autoSubmit": {
+        "title": "Automatisch verzenden",
+        "description": "Drukt deze toets na het plakken, om het bericht te versturen.",
+        "options": {
+          "off": "Uit",
+          "enter": "Enter",
+          "cmdEnter": "Cmd+Enter",
+          "superEnter": "Super+Enter",
+          "ctrlEnter": "Ctrl+Enter"
+        }
+      },
+      "translateToEnglish": {
+        "label": "Vertalen naar het Engels",
+        "description": "Typt Engels, welke taal je ook spreekt."
+      },
+      "modelUnload": {
+        "title": "Model ontladen",
+        "description": "Maakt geheugen vrij als het spraakmodel zo lang ongebruikt is.",
+        "options": {
+          "never": "Nooit",
+          "immediately": "Direct",
+          "min2": "Na 2 minuten",
+          "min5": "Na 5 minuten",
+          "min10": "Na 10 minuten",
+          "min15": "Na 15 minuten",
+          "hour1": "Na 1 uur",
+          "sec15": "Na 15 seconden (Debug)"
+        }
+      },
+      "customWords": {
+        "title": "Eigen woordenlijst",
+        "description": "Helpt het model namen en vaktermen goed te spellen.",
+        "placeholder": "Woord toevoegen",
+        "add": "Toevoegen",
+        "remove": "{{word}} verwijderen",
+        "duplicate": "\"{{word}}\" bestaat al"
+      },
+      "voiceActivityDetection": {
+        "title": "Spraakactiviteitsdetectie (VAD)",
+        "description": "Knipt stilte uit opnames. Uit neemt alles op."
+      },
+      "longFormChunking": {
+        "title": "Lange audio opsplitsen",
+        "description": "Splitst lange opnames bij pauzes, zodat ze beter worden uitgeschreven."
+      },
+      "languageDetection": {
+        "title": "Automatisch beperken tot mijn talen",
+        "description": "Zet aan als Automatisch een taal kiest die je niet spreekt.",
+        "downloadHint": "Aanzetten downloadt een kleine taaldetector",
+        "downloadingHint": "De taaldetector wordt gedownload. Zet dit uit om te annuleren"
+      },
+      "vadBackend": {
+        "title": "VAD-backend",
+        "description": "Earshot is experimenteel. Gebruik Silero als woorden wegvallen.",
+        "options": {
+          "silero": "Silero",
+          "earshot": "Earshot"
+        }
+      },
+      "fillerWordRemoval": {
+        "title": "Opvulwoorden verwijderen",
+        "description": "Haalt aarzelingen en stopklanken uit je dictaat."
+      },
+      "chineseScript": {
+        "title": "Chinees schrift",
+        "description": "In welke tekens Mandarijn en Kantonees worden geschreven.",
+        "options": {
+          "asTranscribed": "Zoals getranscribeerd",
+          "simplified": "Vereenvoudigd",
+          "traditionalTw": "Traditioneel (Taiwan)",
+          "traditionalHk": "Traditioneel (Hongkong)"
+        }
+      }
+    },
+    "postProcessing": {
+      "api": {
+        "provider": {
+          "title": "Provider",
+          "description": "Selecteer een OpenAI- of Anthropic-compatibele provider."
+        },
+        "apiFormat": {
+          "title": "API-indeling",
+          "description": "Verzoekindeling die door je aangepaste eindpunt wordt verwacht.",
+          "options": {
+            "openai": "OpenAI-compatibel (Chat Completions)",
+            "anthropic": "Anthropic Messages"
+          }
+        },
+        "appleIntelligence": {
+          "unavailable": "Apple Intelligence is niet beschikbaar op dit apparaat. Vereist een Apple Silicon Mac met macOS Tahoe (26.0) of nieuwer waarop Apple Intelligence is ingeschakeld via de Systeeminstellingen."
+        },
+        "baseUrl": {
+          "title": "Basis-URL",
+          "description": "Het API-adres van de provider. Alleen te bewerken bij Aangepast.",
+          "placeholder": "https://api.openai.com/v1",
+          "placeholderAnthropic": "https://api.anthropic.com/v1"
+        },
+        "apiKey": {
+          "title": "API-sleutel",
+          "description": "API-sleutel voor de geselecteerde provider.",
+          "placeholder": "sk-..."
+        },
+        "model": {
+          "title": "Model",
+          "descriptionCustom": "Geef de model-ID op die door je aangepaste eindpunt wordt verwacht.",
+          "descriptionDefault": "Kies een model dat door de geselecteerde provider wordt aangeboden.",
+          "placeholderWithOptions": "Zoek of selecteer een model",
+          "placeholderNoOptions": "Typ een modelnaam",
+          "refreshModels": "Modellen verversen"
+        }
+      }
+    },
+    "history": {
+      "openFolder": "Opnamemap openen",
+      "loading": "Geschiedenis laden...",
+      "empty": "Nog geen transcripties. Start met opnemen om je geschiedenis op te bouwen!",
+      "copyToClipboard": "Transcriptie naar klembord kopiëren",
+      "copyError": "Transcriptie naar het klembord kopiëren mislukt.",
+      "save": "Transcriptie opslaan",
+      "unsave": "Verwijderen uit opgeslagen",
+      "delete": "Item verwijderen",
+      "deleteError": "Item verwijderen mislukt. Probeer het opnieuw.",
+      "retranscribe": "Opnieuw transcriberen",
+      "cancelTranscription": "Transcriptie annuleren",
+      "transcribing": "Transcriberen...",
+      "transcriptionFailed": "Transcriptie mislukt. Je kunt het opnieuw proberen via het herlaad-pictogram.",
+      "notTranscribed": "Niet getranscribeerd. Je kunt het transcriberen via het herlaad-pictogram.",
+      "transcribeFile": "Bestand transcriberen",
+      "mediaFiles": "Audio en video",
+      "fileUnsupported": "Kon geen audio lezen uit {{name}}.",
+      "transcribeFailed": "Transcriptie mislukt. Probeer het opnieuw.",
+      "waiting": "Wacht op transcriptie",
+      "transcribingPercent": "Transcriberen, {{percent}}%",
+      "readingFile": "Bestand lezen...",
+      "showMore": "Meer tonen",
+      "showLess": "Minder tonen",
+      "dropTitle": "Loslaten om te transcriberen",
+      "dropDescription": "Het verschijnt in de geschiedenis.",
+      "tabs": {
+        "label": "History type",
+        "dictation": "Dictation",
+        "readAloud": "Read Aloud",
+        "rewrite": "Rewrite"
+      },
+      "readAloud": {
+        "empty": "Nothing read aloud yet. Select text anywhere and press your Read Aloud shortcut.",
+        "readAgain": "Read again",
+        "meta": "{{voice}} · {{speed}}x",
+        "kept_one": "The last read is kept",
+        "kept_other": "Last {{count}} reads are kept",
+        "playing": "Reading, sentence {{index}} of {{total}}",
+        "stop": "Stop reading"
+      },
+      "rewrite": {
+        "empty": "No rewrites yet. Select text anywhere and press a Refine shortcut.",
+        "kept_one": "The last rewrite is kept",
+        "kept_other": "Last {{count}} rewrites are kept"
+      },
+      "playRecording": "Play recording",
+      "noRecording": "Audio not kept",
+      "savedOnly": "Saved",
+      "savedEmpty": "Nothing saved yet. Press the star on an entry to keep it here.",
+      "audioError": "Couldn't open this recording",
+      "days": {
+        "today": "Today",
+        "yesterday": "Yesterday"
+      }
+    },
+    "debug": {
+      "title": "Probleemoplossing",
+      "logDirectory": {
+        "title": "Logboekmap",
+        "description": "Locatie waar logbestanden worden opgeslagen"
+      },
+      "logLevel": {
+        "title": "Logboekniveau",
+        "description": "Stel de gedetailleerdheid van de logboeken in"
+      },
+      "liveLogs": {
+        "title": "Live logboeken",
+        "description": "Toont nieuwe logregels van je niveau zolang dit paneel open is.",
+        "live": "Live",
+        "paused": "Gepauzeerd",
+        "pause": "Pauzeren",
+        "resume": "Hervatten",
+        "copied": "Gekopieerd",
+        "lineCount": "{{count}} regels",
+        "empty": "Wachten op logboeken... Meldingen verschijnen hier zodra de app ze genereert."
+      },
+      "updateChecks": {
+        "label": "Controleren op updates",
+        "description": "Automatisch controleren op nieuwe versies van Glider",
+        "lockedDescription": "Uitgeschakeld door systeemconfiguratie (GLIDER_DISABLE_UPDATER)"
+      },
+      "whatsNewPreview": {
+        "title": "Voorbeeld van release-notes",
+        "description": "Open de nieuwste meegeleverde release-notes zonder deze als gelezen te markeren",
+        "button": "Voorbeeld"
+      },
+      "onboardingPreview": {
+        "title": "Voorbeeld van onboarding",
+        "description": "Bekijk de eerste schermen zonder iets te wijzigen.",
+        "exitButton": "Voorbeeld sluiten",
+        "choose": "Kies een scherm",
+        "screens": {
+          "welcome": "Welkom",
+          "permissions": "Machtigingen",
+          "model": "Model",
+          "demo": "Demo",
+          "try": "Proberen",
+          "done": "Klaar",
+          "voices": "Voices",
+          "refine": "Refine model"
+        }
+      },
+      "onboardingRun": {
+        "title": "Onboarding uitvoeren",
+        "description": "Doorloopt de eerste setup echt: rechten en modeldownloads.",
+        "button": "Starten"
+      },
+      "modelMigration": {
+        "title": "Modelmigratie",
+        "description": "Open het updatescherm voor modellen in het oude formaat echt: het downloadt vervangers, wisselt van model en verwijdert oude bestanden",
+        "button": "Openen"
+      },
+      "soundTheme": {
+        "label": "Geluidsthema",
+        "description": "Kies een geluidsthema voor feedback bij het starten en stoppen van opnames"
+      },
+      "wordCorrectionThreshold": {
+        "title": "Drempelwaarde woordcorrectie",
+        "description": "Gevoeligheid voor eigen woordcorrecties"
+      },
+      "historyLimit": {
+        "title": "Geschiedenislimiet",
+        "description": "Hoeveel recente dictaten hun audio houden. Tekst blijft altijd bewaard.",
+        "entries": "items"
+      },
+      "recordingRetention": {
+        "title": "Opnames automatisch verwijderen",
+        "description": "Oude opnames automatisch verwijderen om ruimte te besparen",
+        "never": "Nooit",
+        "preserveLimit": "Bewaar de nieuwste {{count}}",
+        "days3": "Na 3 dagen",
+        "weeks2": "Na 2 weken",
+        "months3": "Na 3 maanden",
+        "placeholder": "Selecteer bewaarperiode..."
+      },
+      "alwaysOnMicrophone": {
+        "label": "Microfoon altijd aan",
+        "description": "Houd de microfoon actief voor een snellere reactietijd"
+      },
+      "clamshellMicrophone": {
+        "title": "Clamshell-microfoon",
+        "description": "Microfoon die gebruikt moet worden wanneer het laptopscherm gesloten is"
+      },
+      "postProcessingToggle": {
+        "label": "Naverwerking",
+        "description": "Schakel AI-gestuurde tekstverfijning in na transcriptie"
+      },
+      "muteWhileRecording": {
+        "label": "Dempen tijdens opname",
+        "description": "Systeemgeluid dempen tijdens het opnemen"
+      },
+      "appendTrailingSpace": {
+        "label": "Spatie achteraan toevoegen",
+        "description": "Voeg een spatie toe na de geplakte transcriptie"
+      },
+      "keyboardImplementation": {
+        "title": "Toetsenbord-implementatie",
+        "description": "Kies de backend voor sneltoetsen.",
+        "bindingsReset": "Sneltoetsen waren incompatibel en zijn teruggezet naar de standaardwaarden"
+      },
+      "pasteDelay": {
+        "title": "Plakvertraging (voor)",
+        "description": "Wachttijd na kopiëren, vóór plakken. Verhoog als er niets plakt."
+      },
+      "pasteDelayAfter": {
+        "title": "Plakvertraging (na)",
+        "description": "Wachttijd vóór herstel van het klembord. Verhoog als oude tekst plakt."
+      },
+      "holdThreshold": {
+        "title": "Vasthouddrempel",
+        "description": "Hoe lang een druk moet duren om als vasthouden te tellen."
+      },
+      "reliablePaste": {
+        "title": "Betrouwbaar plakken (Beta)",
+        "description": "Wacht tot de app heeft geplakt voordat het klembord terugkomt."
+      },
+      "recordingBuffer": {
+        "title": "Extra opnamebuffer",
+        "description": "Neemt even door na loslaten, zodat je laatste woord niet wegvalt."
+      },
+      "languageDetectionWindow": {
+        "title": "Audio voor taaldetectie",
+        "description": "Seconden die de detector hoort. Langer is nauwkeuriger maar trager."
+      },
+      "keyboardDiagnostic": {
+        "title": "Toetsenborddiagnose",
+        "description": "Telt toetsaanslagen die Glider bereiken, nooit welke toetsen.",
+        "run": "Diagnose van 10 s uitvoeren",
+        "running": "Luisteren… druk je sneltoets een paar keer in (bijv. Option+Space)",
+        "secureInputLabel": "Secure Input",
+        "enabled": "ingeschakeld",
+        "disabled": "uitgeschakeld",
+        "holder": "vastgehouden door {{name}} (pid {{pid}})",
+        "holderUnknown": "geen zichtbare veroorzaker",
+        "keyDown": "Toets ingedrukt",
+        "keyUp": "Toets losgelaten",
+        "flagsChanged": "Modificatietoetsen",
+        "mouse": "Muis",
+        "verdictBlocked": "Secure Input blokkeert toetsgebeurtenissen — sneltoetsen met een gewone toets kunnen pas weer werken als dit is opgelost.",
+        "verdictSuspicious": "Er kwamen wel modificatiegebeurtenissen binnen, maar geen toetsgebeurtenissen — iets onderdrukt toetsen terwijl Secure Input als uitgeschakeld wordt gemeld. Meld dit op GitHub.",
+        "verdictOk": "Toetsgebeurtenissen bereiken Glider normaal.",
+        "verdictNoEvents": "Geen gebeurtenissen vastgelegd — heb je tijdens de test toetsen ingedrukt?",
+        "failed": "Diagnose mislukt: {{error}}"
+      },
+      "lede": "Tools for tracking down problems. Most people never need these.",
+      "groups": {
+        "logs": "Logs",
+        "previews": "Previews",
+        "previewsDescription": "Open screens without changing your settings.",
+        "timing": "Timing and sound",
+        "input": "Input"
+      }
+    },
+    "about": {
+      "version": {
+        "title": "Versie",
+        "description": "Huidige versie van Glider"
+      },
+      "whatsNewUpdates": {
+        "label": "Toon 'Wat is er nieuw'",
+        "description": "Release-notes tonen nadat Glider is bijgewerkt"
+      },
+      "appDataDirectory": {
+        "title": "App-datamap"
+      },
+      "sourceCode": {
+        "title": "Broncode",
+        "description": "Bekijk de broncode en draag bij",
+        "button": "Bekijk op GitHub"
+      },
+      "acknowledgments": {
+        "title": "Dankbetuigingen",
+        "ggml": {
+          "title": "ggml",
+          "description": "Krachtige tensorbibliotheek voor lokale AI-verwerking",
+          "details": "Glider's lokale spraak-naar-tekst is gebouwd op transcribe.cpp en ggml. Met dank aan het geweldige werk van Georgi Gerganov en alle bijdragers."
+        },
+        "view": "View",
+        "handy": {
+          "title": "Handy",
+          "description": "Gliders dicteren is gebouwd op Handy van CJ Pais, MIT-licentie."
+        },
+        "sherpa": {
+          "title": "sherpa-onnx",
+          "description": "De stemmen van Read Aloud draaien op sherpa-onnx."
+        },
+        "description": "Glider stands on these open-source projects.",
+        "candle": {
+          "title": "candle",
+          "description": "Rewrite draait op candle, de Rust-ML-bibliotheek van Hugging Face."
+        }
+      },
+      "appTitle": "App",
+      "star": {
+        "title": "Like Glider?",
+        "description": "Star it on GitHub so other developers can find it.",
+        "button": "Star on GitHub"
+      }
+    },
+    "readAloud": {
+      "title": "Read Aloud",
+      "description": "Select text anywhere and Glider reads it to you with an AI voice that runs on this computer.",
+      "voice": {
+        "title": "Voice",
+        "description": "Which speaker reads your text."
+      },
+      "language": {
+        "title": "Taal",
+        "description": "De taal waarin de stem je tekst voorleest."
+      },
+      "speed": {
+        "title": "Speed",
+        "description": "How fast the voice reads. 1.0x is normal."
+      },
+      "models": {
+        "downloadFailed": "Couldn't download the voice"
+      },
+      "setupTitle": "Setup",
+      "model": {
+        "title": "Voice model",
+        "none": "No voice downloaded yet",
+        "change": "Change",
+        "download": "Get a voice",
+        "summary": "{{name}} · {{language}} · {{size}} MB"
+      },
+      "shortcutHint": "Press again while it reads to stop.",
+      "livePreview": {
+        "title": "Live voorbeeld",
+        "description": "Toont de zin die wordt voorgelezen boven de speler."
+      },
+      "intro": {
+        "hint": "Works anywhere you can select text. Press the shortcut again to stop.",
+        "hintMac": "Works anywhere you can select text. F8 pauses, F7 and F9 skip, Esc stops.",
+        "sample": "Long replies are easier to take in when you can sit back and listen.",
+        "label": "Example",
+        "try": "Try it",
+        "stop": "Stop"
+      }
+    },
+    "dictation": {
+      "description": "How Glider listens, turns your speech into text, and types it.",
+      "livePreview": {
+        "title": "Live voorbeeld",
+        "description": "Toont je woorden terwijl je praat, bij modellen met Live voorvertoning."
+      },
+      "intro": {
+        "hint": "Keep holding while you talk, then let go. The text lands where your cursor is.",
+        "said": "can you send me the deck before tomorrow's call",
+        "typed": "Can you send me the deck before tomorrow's call?",
+        "label": "Example",
+        "try": "Try it"
+      }
+    }
+  },
+  "footer": {
+    "checkingUpdates": "Controleren op updates...",
+    "updateAvailableShort": "Update beschikbaar",
+    "upToDate": "Up-to-date",
+    "updateCheckingDisabled": "Updatecontrole uitgeschakeld",
+    "downloading": "Downloaden... {{progress}}%",
+    "installing": "Installeren...",
+    "preparing": "Voorbereiden...",
+    "checkForUpdates": "Controleren op updates",
+    "portableUpdateTitle": "Handmatige update vereist",
+    "portableUpdateMessage": "Draagbare (portable) installaties kunnen niet automatisch worden bijgewerkt. Download hieronder het installatiebestand voor je systeem, voer het uit en installeer in dezelfde map — je Data/-map (instellingen, modellen, opnames) blijft behouden.",
+    "portableUpdateButton": "Installatiebestand downloaden",
+    "portableUpdateBrowseMessage": "Draagbare (portable) installaties kunnen niet automatisch worden bijgewerkt. Download de nieuwste versie voor je systeem van GitHub Releases en installeer die in dezelfde map — je Data/-map (instellingen, modellen, opnames) blijft behouden.",
+    "portableUpdateBrowseButton": "GitHub Releases openen",
+    "noVoice": "No voice yet",
+    "voiceLabel": "Voice: {{voice}}",
+    "dictationModel": "Dictation model",
+    "readAloudModel": "Read aloud voice",
+    "rewriteModel": "Rewrite model",
+    "noRewriteModel": "No rewrite model yet",
+    "rewriteLabel": "Rewrite model: {{model}}",
+    "chooseVoices": "Voices",
+    "voicesTitle": "Choose a voice",
+    "providerDesc": "Runs on {{provider}}, online"
+  },
+  "whatsNew": {
+    "title": "Nieuw in Glider v{{version}}"
+  },
+  "common": {
+    "playbackPosition": "Afspeelpositie",
+    "resetSetting": "{{setting}} terugzetten naar de standaardwaarde",
+    "loading": "Laden...",
+    "delete": "Verwijderen",
+    "close": "Sluiten",
+    "open": "Openen",
+    "copy": "Kopiëren",
+    "clear": "Wissen",
+    "noOptionsFound": "Geen opties gevonden",
+    "hearExample": "Voorbeeld beluisteren",
+    "muteExample": "Voorbeeld dempen"
+  },
+  "errors": {
+    "micPermissionDeniedTitle": "Microfoontoegang geweigerd",
+    "micPermissionDenied": {
+      "generic": "Microfoontoegang is geweigerd door het besturingssysteem. Verleen microfoonmachtiging in je systeeminstellingen.",
+      "windows": "Schakel microfoontoegang in via Instellingen → Privacy & beveiliging → Microfoon (inclusief toegang voor desktop-apps).",
+      "macos": "Verleen microfoontoegang via Systeeminstellingen → Privacy & Beveiliging → Microfoon.",
+      "linux": "Verleen microfoontoegang in de geluids- of privacyinstellingen van je systeem."
+    },
+    "noInputDeviceTitle": "Geen microfoon gevonden",
+    "noInputDevice": "Er is geen audio-invoerapparaat gedetecteerd. Sluit een microfoon of headset aan en probeer het opnieuw.",
+    "recordingFailedTitle": "Opname starten mislukt",
+    "modelLoadFailed": "Glider kon dit model niet laden. Probeer het opnieuw of kies een ander model.",
+    "modelLoadFailedTitle": "Model laden mislukt",
+    "modelDownloadFailed": "Downloaden mislukt",
+    "pasteFailedTitle": "Tekst plakken mislukt",
+    "pasteFailed": "Tekst kon niet worden geplakt in de actieve applicatie.",
+    "postProcessFailedTitle": "Geplakt zonder naverwerking",
+    "postProcessFailed": "De naverwerking is niet voltooid, dus de transcriptie is ongewijzigd geplakt.",
+    "filePostProcessFailedTitle": "Getranscribeerd zonder naverwerking",
+    "filePostProcessFailed": "De naverwerking is niet voltooid, dus de transcriptie is ongewijzigd opgeslagen.",
+    "fileTranscriptionFailedTitle": "Transcriptie van bestand mislukt",
+    "transcriptionFailedTitle": "Transcriptie mislukt",
+    "noTextSelectedTitle": "No Text Selected",
+    "noTextSelected": "Select some text first, then press the Read Aloud shortcut.",
+    "voiceModelMissingTitle": "No Voice Downloaded",
+    "voiceModelMissing": "Download a voice in Read Aloud settings first.",
+    "readAloudFailedTitle": "Read Aloud Failed",
+    "refineFailedTitle": "Refine Failed",
+    "refineFailed": "The selected text couldn't be rewritten. Check the Post Process provider and model.",
+    "noLlmModelTitle": "No Rewrite Model",
+    "noLlmModel": "Download a rewrite model in Models, then try again."
+  },
+  "notices": {
+    "errorOne": "{{n}} fout",
+    "errorMany": "{{n}} fouten",
+    "warningOne": "{{n}} waarschuwing",
+    "warningMany": "{{n}} waarschuwingen",
+    "errorsAndWarnings": "{{errors}}, {{warnings}}"
+  },
+  "appLanguage": {
+    "title": "Interfacetaal",
+    "description": "Wijzig de taal van de Glider-interface"
+  },
+  "theme": {
+    "title": "App-thema",
+    "description": "Volg het systeem, of altijd licht of donker.",
+    "options": {
+      "system": "Systeem",
+      "light": "Licht",
+      "dark": "Donker"
+    }
+  },
+  "overlay": {
+    "transcribing": "Transcriberen...",
+    "loadingModel": "Model laden...",
+    "readingAloud": "Reading aloud",
+    "preparingVoice": "Preparing voice...",
+    "refining": "Refining",
+    "seeChanges": "See changes",
+    "changesLabel": "Changes",
+    "changes_one": "{{count}} change",
+    "changes_other": "{{count}} changes",
+    "toUndo": "to undo",
+    "close": "Close",
+    "copy": "Copy",
+    "again": "Refine again",
+    "previous": "Previous sentence",
+    "next": "Next sentence",
+    "pause": "Pause",
+    "play": "Play",
+    "slower": "Slower",
+    "faster": "Faster",
+    "listening": "Listening",
+    "cancel": "Cancel",
+    "finishAndPaste": "Klaar en plakken",
+    "usingRewrite": "Met {{name}}",
+    "done": "Klaar",
+    "doneReading": "Voorlezen klaar",
+    "noVoiceYet": "Nog geen stem",
+    "getVoice": "Stem ophalen",
+    "nowhereHint": "Klik eerst in een tekstvak en dicteer dan",
+    "savedInHistory": "Ook bewaard in Geschiedenis",
+    "pasteHint": "Klik in een tekstvak en druk op {{keys}}",
+    "copied": "Gekopieerd",
+    "sentence": "Zin {{index}} van {{total}}",
+    "toStop": "om te stoppen",
+    "copyResult": "Resultaat kopiëren"
+  },
+  "secureInput": {
+    "blockedWithCulprit_one": "{{name}} blokkeert mogelijk 1 sneltoets",
+    "blockedWithCulprit_other": "{{name}} blokkeert mogelijk {{count}} sneltoetsen",
+    "blockedNoCulprit_one": "macOS blokkeert tijdelijk 1 sneltoets",
+    "blockedNoCulprit_other": "macOS blokkeert tijdelijk {{count}} sneltoetsen",
+    "recorderBlockedWithCulprit": "{{name}} blokkeert mogelijk wijzigingen aan sneltoetsen",
+    "recorderBlockedNoCulprit": "macOS blokkeert tijdelijk wijzigingen aan sneltoetsen",
+    "learnMore": "Hoe je dit oplost",
+    "recorderBlocked": "Sneltoetsen kunnen nu niet worden opgenomen — Secure Input van macOS blokkeert toetsgebeurtenissen. Los eerst de Secure Input-waarschuwing op.",
+    "dismiss": "Sluiten"
+  },
+  "home": {
+    "welcome": "Welcome back",
+    "welcomeName": "Welcome back, {{name}}",
+    "shortcutsLabel": "Your shortcuts",
+    "statsLabel": "Your numbers",
+    "dictateLine": "Hold <keys/> to dictate",
+    "dictateHint": "Works in every app. What you say is typed where your cursor is.",
+    "listenLine": "Select text, press <keys/> to listen",
+    "listenHint": "Hear AI replies, docs and web pages read aloud, up to 3x speed.",
+    "listening": "Listening...",
+    "reading": "Reading aloud...",
+    "changeShortcuts": "Change shortcuts",
+    "stats": {
+      "dictated": "words dictated",
+      "read": "words read aloud",
+      "streak_one": "day streak",
+      "streak_other": "day streak"
+    },
+    "today": "Today",
+    "seeAll": "See all history",
+    "filterLabel": "Show only",
+    "empty": "Nothing yet today. Your dictations, reads and rewrites will show up here.",
+    "kind": {
+      "dictation": "Dictation",
+      "read": "Read aloud",
+      "rewrite": "Rewrite"
+    },
+    "howToUse": "How to use",
+    "tutorial": {
+      "play": "Play the how-to video",
+      "title": "See how Glider works",
+      "soon": "Video coming soon",
+      "button": "Tutorial"
+    }
+  },
+  "insights": {
+    "rangeLabel": "Time range",
+    "last30": "30 days",
+    "allTime": "All time",
+    "wpmUp": "Up from {{from}} in {{month}}",
+    "wpmDown": "Down from {{from}} in {{month}}",
+    "wpmSteady": "Steady since {{month}}",
+    "wpmNoTrend": "Trend shows from next week",
+    "wpmEmpty": "Dictate to see your pace",
+    "hours": "{{n}} h",
+    "minutes": "{{n}} min",
+    "timeListened": "Time listened",
+    "longestRead": "Longest read",
+    "words_one": "{{n}} word",
+    "words_other": "{{n}} words",
+    "appsLabel": "Where you dictate",
+    "appsTitle": "Where you talk",
+    "appsHint": "Dictated words by app",
+    "appsEmpty": "Dictate in a few apps and they show up here.",
+    "otherApps": "Other",
+    "appShare": "{{name}}, {{share}}%",
+    "streakLabel": "Streak",
+    "streak_one": "{{count}} day streak",
+    "streak_other": "{{count}} day streak",
+    "noStreak": "No streak yet",
+    "longest_one": "Longest {{count}} day",
+    "longest_other": "Longest {{count}} days",
+    "calendarLabel": "Days you used Glider over the last {{weeks}} weeks",
+    "dayWords_one": "{{day}}: {{count}} word",
+    "dayWords_other": "{{day}}: {{count}} words",
+    "days": {
+      "mon": "Mon",
+      "wed": "Wed",
+      "fri": "Fri",
+      "sun": "Sun"
+    },
+    "less": "Less",
+    "more": "More",
+    "today": "Today",
+    "summary30": "In the last 30 days you dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summary30NoPace": "In the last 30 days you dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAll": "So far you have dictated <em>{{words}}</em> at <em>{{pace}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryAllNoPace": "So far you have dictated <em>{{words}}</em>, listened to <em>{{heard}}</em>, and ran <em>{{rewrites}}</em>. About <em>{{saved}}</em> of typing saved.",
+    "summaryEmpty": "Dictate, listen or rewrite something and your numbers show up here.",
+    "pace": "{{n}} a minute",
+    "rewriteCount_one": "{{n}} rewrite",
+    "rewriteCount_other": "{{n}} rewrites",
+    "savedHours_one": "{{count}} hour",
+    "savedHours_other": "{{count}} hours",
+    "savedMinutes_one": "{{count}} minute",
+    "savedMinutes_other": "{{count}} minutes",
+    "activityTitle": "Activity",
+    "lastDays": "Last {{total}} days.",
+    "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
+    "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
+    "speakingAbove": "Speaking, above",
+    "listeningBelow": "Listening, below",
+    "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
+    "busiest": "Busiest {{day}}.",
+    "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
+    "wpmUnit": "words a minute",
+    "heardUnit": "words heard",
+    "rewritesUnit_one": "rewrite",
+    "rewritesUnit_other": "rewrites",
+    "usuallyAt": "Usually at {{speed}}x",
+    "wordsRewritten_one": "{{n}} word rewritten",
+    "wordsRewritten_other": "{{n}} words rewritten",
+    "dictations": "Dictations",
+    "average": "Average",
+    "longestDictation": "Longest",
+    "languages": "Languages",
+    "reads": "Reads",
+    "voice": "Voice",
+    "rewritesEmpty": "Select text and press a Refine shortcut.",
+    "removedRewrite": "Removed rewrite",
+    "explainLabel": "What {{name}} counts",
+    "inApp": "in {{app}}",
+    "explain": {
+      "dictations": "How many times you held the shortcut and Glider typed something.",
+      "average": "The length of a typical dictation: words divided by dictations.",
+      "longest": "Your single longest dictation in this period.",
+      "languages": "The languages your dictations were transcribed in, most used first.",
+      "reads": "How many times you selected text and Read Aloud read it to you.",
+      "timeListened": "Total time Read Aloud spent speaking, at the speed you chose.",
+      "longestRead": "The most words Read Aloud read in one go.",
+      "voice": "The voice you used for the most reads in this period."
+    }
+  },
+  "rewrite": {
+    "new": "New",
+    "on": "On",
+    "off": "Off",
+    "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
+    "noModel": "No model loaded",
+    "noProvider": "No provider set",
+    "hero": {
+      "polish": "Select text, press <keys/> to polish it",
+      "prompt": "Select text, press <keys/> to make it a prompt",
+      "humanize": "Select text, press <keys/> to humanize it",
+      "grammar": "Select text, press <keys/> to fix its grammar",
+      "custom": "Select text, press <keys/> to run {{name}}",
+      "none": "Add a rewrite to get started"
+    },
+    "heroHint": "Works in Zed, your browser, chat apps, anywhere you can select text. Press {{undo}} to undo.",
+    "tryIt": "Try it",
+    "trying": "Rewriting…",
+    "demo": {
+      "label": "Example",
+      "before": "ok so um the overlay breaks when i press read while its dictating",
+      "results": {
+        "polish": "The overlay breaks when I press Read Aloud during dictation.",
+        "prompt": "Fix the bug where the overlay breaks when Read Aloud is pressed during dictation.",
+        "humanize": "Heads up, the overlay breaks if I hit Read Aloud while I'm dictating.",
+        "grammar": "OK, so, um, the overlay breaks when I press Read while it's dictating."
+      }
+    },
+    "afterDictate": {
+      "title": "After you dictate",
+      "everyTitle": "Rewrite what you dictate",
+      "everyDescription": "Run one rewrite on everything you dictate, before it is typed.",
+      "shortcutTitle": "Dictate and rewrite",
+      "shortcutDescription": "A second dictation shortcut that always rewrites."
+    },
+    "yours": "Your rewrites",
+    "resetAll": "Reset to defaults",
+    "newRewrite": "New rewrite",
+    "newName": "New rewrite",
+    "used_one": "Used {{count}} time",
+    "used_other": "Used {{count}} times",
+    "notUsed": "Not used yet",
+    "customCard": "Your own rewrite. Open it to write what it should do.",
+    "writeOwn": "Write your own",
+    "writeOwnHint": "Tell the model what to do, in plain words.",
+    "compareHint": "Press <keys/> right after a rewrite to compare it with what you wrote.",
+    "runFailed": "The rewrite didn't work. Try again.",
+    "builtin": {
+      "polish": {
+        "card": "Clearer and shorter, in your own voice.",
+        "chip": "polishes selected text",
+        "about": "Polish rewrites your text to read clearer and shorter, and keeps it sounding like you.",
+        "before": "ok so um the overlay thing, when you press the read shortcut while its already dictating it kind of breaks. can you make it so dictation wins and read just waits, and dont touch the settings page",
+        "after": "When I press the Read Aloud shortcut during dictation, the overlay breaks. Make dictation take priority and have Read Aloud wait. Don't touch the settings page."
+      },
+      "prompt": {
+        "card": "Turns a rambling request into a clear task for an AI coding tool.",
+        "chip": "turns selected text into a prompt",
+        "about": "Prompt turns a rambling request into a clear task for an AI coding tool: the goal first, then the details.",
+        "before": "so basically can you like make the history page not jump when a new entry comes in, keep the scroll where it was, and also dont touch the settings page",
+        "after": "Goal: stop the History page from jumping when a new entry arrives.\n- Keep the scroll position where it was.\n- Don't change the settings page."
+      },
+      "humanize": {
+        "card": "Removes stiff, AI-sounding phrasing.",
+        "chip": "humanizes selected text",
+        "about": "Humanize takes out stiff, AI-sounding phrasing so the text reads like a person wrote it.",
+        "before": "I hope this message finds you well. I wanted to reach out to delve into the robust new overlay, which seamlessly elevates the experience.",
+        "after": "Quick note on the new overlay: it's faster and gets out of the way."
+      },
+      "grammar": {
+        "card": "Only spelling and grammar. Nothing else changes.",
+        "chip": "fixes grammar in selected text",
+        "about": "Fix grammar corrects spelling, grammar and punctuation, and leaves every other word as you wrote it.",
+        "before": "i has went to the store yesterday and buyed three apple",
+        "after": "I went to the store yesterday and bought three apples."
+      },
+      "custom": {
+        "chip": "runs {{name}} on selected text",
+        "about": "{{name}} rewrites your text the way its instructions say."
+      }
+    },
+    "options": {
+      "shorter": "Make it shorter",
+      "clarity": "Reword for clarity",
+      "reorder": "Reorder for readability",
+      "lists": "Add lists and paragraphs",
+      "keep_tone": "Keep my tone",
+      "keep_code": "Keep code, file names and commands exactly"
+    },
+    "detail": {
+      "saved": "Saved",
+      "reset": "Reset",
+      "delete": "Delete",
+      "example": "Example",
+      "exampleView": "Example view",
+      "before": "Before",
+      "after": "After",
+      "changes": "Changes",
+      "run": "Run on this example",
+      "running": "Running…",
+      "nameTitle": "Name",
+      "shortcutTitle": "Shortcut",
+      "shortcutName": "{{name}} shortcut",
+      "shortcutHint": "Select text, then press it.",
+      "doesTitle": "What {{name}} does",
+      "instructionsTitle": "Instructions",
+      "instructionsHint": "What the model should do with the text, in plain words.",
+      "instructionsPlaceholder": "For example: turn this into a short, friendly reply.",
+      "extraTitle": "Extra instructions",
+      "extraPlaceholder": "Anything else {{name}} should do. For example: use British spelling.",
+      "modelTitle": "Model",
+      "runsOn": "Runs on",
+      "runsOnLocal": "{{model}}, on this computer",
+      "runsOnProvider": "{{model}}, through your provider",
+      "noModel": "No model yet",
+      "change": "Change"
+    },
+    "samples": {
+      "title": "Writing samples",
+      "hint": "A few things you wrote, so {{name}} matches your style.",
+      "words_one": "{{count}} word",
+      "words_other": "{{count}} words",
+      "remove": "Remove {{name}}",
+      "limit": "Plain text or Markdown, up to {{max}} words each.",
+      "add": "Add a sample",
+      "filter": "Text",
+      "trimmed": "Kept the first {{max}} words of that sample.",
+      "readFailed": "Couldn't read that file."
+    }
+  },
+  "loading": {
+    "label": "Glider is starting"
+  },
+  "topBar": {
+    "theme": "Theme",
+    "showSidebar": "Show sidebar",
+    "hideSidebar": "Hide sidebar"
+  }
+}
