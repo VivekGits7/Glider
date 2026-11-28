@@ -7,7 +7,7 @@ import { commands, type SecureInputStatus } from "@/bindings";
 
 // Detailed remediation steps live in the docs rather than in the banner
 export const SECURE_INPUT_HELP_URL =
-  "https://github.com/VivekGits7/Glider/blob/main/app/README.md#shortcuts-stopped-working-on-macos-secure-input";
+  "https://github.com/VivekGits7/Glider/blob/main/TROUBLESHOOT.md#shortcuts-stopped-working-secure-input";
 
 /**
  * Compact warning banner shown while macOS Secure Input is stuck on.

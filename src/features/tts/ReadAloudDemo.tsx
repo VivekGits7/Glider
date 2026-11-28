@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
-  narrate,
+  voiceExample,
   paces,
   prefersStill,
   sleep,
@@ -61,7 +61,7 @@ const MiniPlayer: React.FC<{
 
 /** Read Aloud's example on a loop: the text gets selected, the shortcut is
  * pressed, the overlay player comes up, and each word lights up as it's read,
- * in the user's voice when `sound` is on. */
+ * spoken by its bundled clip when `sound` is on. */
 export const ReadAloudDemo: React.FC<{
   text: string;
   /** The shortcut as plain text, e.g. "⌥ R"; empty when it has none. */
@@ -87,7 +87,7 @@ export const ReadAloudDemo: React.FC<{
     const play = async () => {
       if (prefersStill()) {
         setStill(true);
-        if (sound) await narrate(text, signal);
+        if (sound) await voiceExample("read", text, signal);
         return;
       }
       for (;;) {
@@ -105,7 +105,7 @@ export const ReadAloudDemo: React.FC<{
         await sleep(280, signal);
         setPressed(false);
         setPlaying(true);
-        const ms = sound ? await narrate(text, signal) : null;
+        const ms = sound ? await voiceExample("read", text, signal) : null;
         const count = words.filter((w) => w.trim()).length;
         const steps = paces(words, ms ?? count * WORD_MS);
         for (let i = 0; i < words.length; i++) {

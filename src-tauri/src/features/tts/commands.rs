@@ -100,6 +100,26 @@ pub fn speak_demo(app: AppHandle, text: String) -> Result<(), String> {
     Ok(())
 }
 
+/// Plays an intro example's bundled voice clip ("dictation" or "read") in
+/// `language`. Returns its length in ms, or null when there's no clip for that
+/// language and the example should voice its line live.
+#[tauri::command]
+#[specta::specta]
+pub fn play_demo_clip(
+    app: AppHandle,
+    clip: String,
+    language: String,
+) -> Result<Option<u64>, String> {
+    super::demo::play(&app, &clip, &language)
+}
+
+/// Stops an intro example's clip.
+#[tauri::command]
+#[specta::specta]
+pub fn stop_demo_clip() {
+    super::demo::stop();
+}
+
 #[tauri::command]
 #[specta::specta]
 pub fn delete_tts_model(app: AppHandle, model_id: String) -> Result<(), String> {

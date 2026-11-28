@@ -1198,6 +1198,25 @@ async speakDemo(text: string) : Promise<Result<null, string>> {
     else return { status: "error", error: e  as any };
 }
 },
+/**
+ * Plays an intro example's bundled voice clip ("dictation" or "read") in
+ * `language`. Returns its length in ms, or null when there's no clip for that
+ * language and the example should voice its line live.
+ */
+async playDemoClip(clip: string, language: string) : Promise<Result<number | null, string>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("play_demo_clip", { clip, language }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
+/**
+ * Stops an intro example's clip.
+ */
+async stopDemoClip() : Promise<void> {
+    await TAURI_INVOKE("stop_demo_clip");
+},
 async stopSpeaking() : Promise<void> {
     await TAURI_INVOKE("stop_speaking");
 },

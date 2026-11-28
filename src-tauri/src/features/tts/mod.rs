@@ -4,5 +4,6 @@
 pub mod actions;
 pub mod catalog;
 pub mod commands;
+pub mod demo;
 pub mod service;
 pub mod worker;

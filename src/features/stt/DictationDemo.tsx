@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
-  narrate,
+  voiceExample,
   paces,
   prefersStill,
   sleep,
@@ -37,7 +37,7 @@ const MiniPill: React.FC<{ phase: Phase; shown: boolean }> = ({
 );
 
 /** Dictation's example on a loop: the shortcut is held, the words arrive as
- * they're said (in the user's voice when `sound` is on) while the overlay
+ * they're said (spoken by its bundled clip when `sound` is on) while the overlay
  * listens, and on release it transcribes and the clean text types itself out. */
 export const DictationDemo: React.FC<{
   said: string;
@@ -62,7 +62,7 @@ export const DictationDemo: React.FC<{
     const play = async () => {
       if (prefersStill()) {
         setStill(true);
-        if (sound) await narrate(said, signal);
+        if (sound) await voiceExample("dictation", said, signal);
         return;
       }
       for (;;) {
@@ -72,7 +72,7 @@ export const DictationDemo: React.FC<{
         await sleep(600, signal);
         setPhase("listening");
         await sleep(250, signal);
-        const ms = sound ? await narrate(said, signal) : null;
+        const ms = sound ? await voiceExample("dictation", said, signal) : null;
         const count = words.filter((w) => w.trim()).length;
         const steps = paces(words, ms ?? count * WORD_MS);
         for (let i = 0; i < words.length; i++) {

@@ -108,16 +108,14 @@ export const ReadAloudPage: React.FC<{ onManageVoices: () => void }> = ({
           </button>
         }
         demoLabel={t("settings.readAloud.intro.label")}
-        sound={
-          selected ? { on: sound, toggle: () => setSound(!sound) } : undefined
-        }
+        sound={{ on: sound, toggle: () => setSound(!sound) }}
         demo={
           <ReadAloudDemo
             text={introSample}
             keys={binding ? keycapLabel(binding, osType) : ""}
             label={t("settings.readAloud.title")}
             speed={speed}
-            sound={sound && !!selected}
+            sound={sound}
           />
         }
       />

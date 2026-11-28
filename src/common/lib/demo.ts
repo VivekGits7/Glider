@@ -1,5 +1,6 @@
 import { listen } from "@tauri-apps/api/event";
 import { commands } from "@/bindings";
+import i18n from "@/i18n";
 
 /** Helpers for the looping examples on the feature pages' intro cards. */
 
@@ -84,3 +85,30 @@ export const narrate = (text: string, signal: AbortSignal) =>
       });
     });
   });
+
+
+const CLIP_LINES = {
+  dictation: "settings.dictation.intro.said",
+  read: "settings.readAloud.intro.sample",
+} as const;
+
+export const voiceExample = async (
+  clip: keyof typeof CLIP_LINES,
+  text: string,
+  signal: AbortSignal,
+): Promise<number | null> => {
+  const english = i18n.getFixedT("en")(CLIP_LINES[clip]);
+  const language = text === english ? "en" : i18n.language.split("-")[0];
+  const played = await commands.playDemoClip(clip, language).catch(() => null);
+  if (played?.status === "ok" && played.data != null) {
+    if (signal.aborted) {
+      void commands.stopDemoClip();
+      return null;
+    }
+    signal.addEventListener("abort", () => void commands.stopDemoClip(), {
+      once: true,
+    });
+    return played.data;
+  }
+  return signal.aborted ? null : narrate(text, signal);
+};

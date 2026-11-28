@@ -844,6 +844,8 @@ pub fn run(cli_args: CliArgs) {
             features::insights::commands::get_insights,
             features::tts::commands::speak_text,
             features::tts::commands::speak_demo,
+            features::tts::commands::play_demo_clip,
+            features::tts::commands::stop_demo_clip,
             features::tts::commands::stop_speaking,
             features::tts::commands::is_speaking,
             features::tts::commands::change_tts_model_setting,

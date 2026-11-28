@@ -9,7 +9,6 @@ import { IntroCard } from "@/common/shared/IntroCard";
 import { Keycaps } from "@/common/shared/Keycaps";
 import { useOsType } from "@/common/hooks/useOsType";
 import { keycapLabel } from "@/common/lib/keyboard";
-import { useVoiceModels } from "@/features/tts/hooks/useVoiceModels";
 import { DictationDemo } from "./DictationDemo";
 import { ModelSettingsCard } from "./settings/ModelSettingsCard";
 import { MicrophoneSelector } from "./settings/MicrophoneSelector";
@@ -41,8 +40,7 @@ export const DictationPage: React.FC<{
   const osType = useOsType();
   const { audioFeedbackEnabled, getSetting } = useSettings();
   const binding = getSetting("bindings")?.transcribe?.current_binding;
-  // The example speaks in the Read Aloud voice, and starts muted every visit.
-  const voice = useVoiceModels().selected;
+  // The example's voice is a bundled clip; it starts muted every visit.
   const [sound, setSound] = useState(false);
   const isLinux = type() === "linux";
   return (
@@ -71,16 +69,14 @@ export const DictationPage: React.FC<{
           </button>
         }
         demoLabel={t("settings.dictation.intro.label")}
-        sound={
-          voice ? { on: sound, toggle: () => setSound(!sound) } : undefined
-        }
+        sound={{ on: sound, toggle: () => setSound(!sound) }}
         demo={
           <DictationDemo
             said={t("settings.dictation.intro.said")}
             typed={t("settings.dictation.intro.typed")}
             keys={binding ? keycapLabel(binding, osType) : ""}
             label={t("sidebar.dictation")}
-            sound={sound && !!voice}
+            sound={sound}
           />
         }
       />

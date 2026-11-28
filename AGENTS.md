@@ -40,12 +40,7 @@ bun run format:frontend   # Prettier only
 bun run format:backend    # cargo fmt only
 ```
 
-**Model Setup (Required for Development):**
-
-```bash
-mkdir -p src-tauri/resources/models
-curl -L -o src-tauri/resources/models/silero-vad-v6.2-F32.gguf https://huggingface.co/handy-computer/silero-vad-v6.2-gguf/resolve/main/silero-vad-v6.2-F32.gguf
-```
+**Voice detection model:** `src-tauri/resources/models/silero-vad-v6.2-F32.gguf` is committed (the one exception to the models ignore in `.gitignore`), so building needs no model download.
 
 For detailed platform-specific build setup, see [BUILD.md](BUILD.md).
 
@@ -63,7 +58,7 @@ Both halves are split by feature: `stt` (Dictation), `tts` (Read Aloud), `llm` (
 - `lib.rs` - Tauri setup: creates the managers and registers every command and event
 - `features/` - One folder per feature. Each has `commands.rs` (Tauri commands the frontend calls), `service.rs` (the logic), `catalog.rs` (its model list), `actions.rs` (what its shortcut does) and, for model features, `worker/`
   - `stt/` - Dictation: `recorder.rs` (microphone), `coordinator.rs` (shortcut → record → transcribe), `transcription/` (pipeline), `models/` (catalog, downloads, GGUF probing), `processing/` (VAD, chunking, text cleanup, WAV I/O), `language/`, `output/` (clipboard, paste, typing, hook), `worker/` (transcribe.cpp worker process and its supervisor)
-  - `tts/` - Read Aloud: `catalog.rs` (voices), `service.rs` (reading and playback), `commands.rs`, `actions.rs`, `worker/` (sherpa-onnx worker process)
+  - `tts/` - Read Aloud: `catalog.rs` (voices), `service.rs` (reading and playback), `commands.rs`, `actions.rs`, `demo.rs` (the intro examples' bundled voice clips in `resources/demo/`, recorded with Supertonic 3 by an ignored test in `worker/`), `worker/` (sherpa-onnx worker process)
   - `llm/` - Rewrite: `catalog.rs`, `service.rs` (talks to the LLM worker), `worker/` (candle `engine.rs` in its own process), `rewrite.rs` (Refine shortcuts), `provider.rs` (online providers), `apple.rs` (Apple Intelligence)
   - `history/`, `insights/` - `commands.rs` + `service.rs`
 - `common/` - Shared by two or more features
@@ -241,7 +236,7 @@ Access debug features: `Cmd+Shift+D` (macOS) or `Ctrl+Shift+D` (Windows/Linux)
 
 ## Troubleshooting
 
-See the [Troubleshooting](README.md#troubleshooting) section in README.md.
+See [TROUBLESHOOT.md](TROUBLESHOOT.md), for using Glider and for building it.
 
 ## GitHub workflow for AI coding assistants
 
