@@ -183,6 +183,13 @@ struct InputEvent {
     /// They fire on every edge by design and must never be debounced —
     /// dropping one desyncs toggle parity and wedges recording on.
     external: bool,
+    /// When the sender saw the edge, not when the coordinator thread dequeues
+    /// it. `Effect::Start` runs inline, and the first one after launch spends
+    /// hundreds of milliseconds opening the microphone; a release queued
+    /// behind that must still be timed from the real key-up, or a short tap
+    /// counts as a hold and the new recording stops with no audio (Handy
+    /// #2089). The loop passes this as the `now` of `on_input`.
+    received_at: Instant,
 }
 
 impl InputEvent {
@@ -683,7 +690,11 @@ impl TranscriptionCoordinator {
                     let was_locked = state.is_recording_locked();
                     match cmd {
                         Command::Input(input) => {
-                            if let Some(effect) = state.on_input(input, Instant::now()) {
+                            // Timed edge to edge from the sender's stamp, so
+                            // time blocked in an earlier effect (the first
+                            // microphone start) can't turn a tap into a hold.
+                            let now = input.received_at;
+                            if let Some(effect) = state.on_input(input, now) {
                                 run_effect(&app, &mut state, effect);
                             }
                         }
@@ -774,6 +785,7 @@ impl TranscriptionCoordinator {
                 mode,
                 hold_threshold,
                 external,
+                received_at: Instant::now(),
             }))
             .is_err()
         {
@@ -1043,6 +1055,7 @@ mod tests {
             mode: ShortcutActivation::PushToTalk,
             hold_threshold: Duration::ZERO,
             external: false,
+            received_at: Instant::now(),
         }
     }
 
@@ -1199,6 +1212,7 @@ mod tests {
                     mode: ShortcutActivation::Toggle,
                     hold_threshold: Duration::ZERO,
                     external: true,
+                    received_at: at,
                 },
                 at,
             )
@@ -1261,6 +1275,7 @@ mod tests {
             mode: ShortcutActivation::Toggle,
             hold_threshold: Duration::ZERO,
             external,
+            received_at: Instant::now(),
         }
     }
 
@@ -1386,6 +1401,7 @@ mod tests {
             mode,
             hold_threshold: HOLD_THRESHOLD,
             external: false,
+            received_at: Instant::now(),
         }
     }
 
@@ -1411,6 +1427,40 @@ mod tests {
             "an 800ms hold must stop when its release grace elapses"
         );
         assert_eq!(state.stage, Stage::Processing);
+    }
+
+    /// Regression for Handy #2089: the first activation after launch blocks the
+    /// coordinator thread in `Effect::Start` while the microphone opens
+    /// (~400ms). A short tap whose release queues behind that block must still
+    /// count as a tap, so the loop times holds from the sender's `received_at`
+    /// stamps, never its own dequeue time. This drives the machine with those
+    /// stamps. Before the fix the release was stamped after the block, so a
+    /// 150ms tap measured past the 300ms threshold and stopped the recording
+    /// with no audio.
+    #[test]
+    fn hold_or_toggle_tap_survives_first_activation_start_latency() {
+        let mode = ShortcutActivation::HoldOrToggle;
+        let mut state = CoordinatorState::new();
+        let t0 = Instant::now();
+
+        let mut press = input(mode, true);
+        press.received_at = t0;
+        assert!(matches!(
+            state.on_input(press, t0),
+            Some(Effect::Start { .. })
+        ));
+
+        // The key really goes up 150ms in, while the coordinator is still
+        // opening the microphone; the release carries that edge time.
+        let mut release = input(mode, false);
+        release.received_at = t0 + ms(150);
+        let now = release.received_at;
+        assert!(state.on_input(release, now).is_none());
+        assert!(
+            state.on_grace_expired().is_none(),
+            "a 150ms tap timed edge to edge must not stop the recording"
+        );
+        assert_eq!(state.stage, Stage::Recording(BINDING.to_string()));
     }
 
     /// Hands-free by double tap: press, tap again inside the window, then
