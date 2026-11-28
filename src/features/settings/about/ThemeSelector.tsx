@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Segmented } from "@/common/ui/Segmented";
 import { SettingContainer } from "@/common/ui/SettingContainer";
 import { useSettings } from "@/common/settings/useSettings";
 import { applyTheme, THEME_OPTIONS } from "@/common/lib/theme";
@@ -21,8 +22,7 @@ export const ThemeSelector: React.FC<ThemeSelectorProps> = React.memo(
       label: t(`theme.options.${value}`),
     }));
 
-    const handleThemeChange = (value: string) => {
-      const theme = value as Theme;
+    const handleThemeChange = (theme: Theme) => {
       applyTheme(theme);
       updateSetting("theme", theme);
     };
@@ -33,24 +33,12 @@ export const ThemeSelector: React.FC<ThemeSelectorProps> = React.memo(
         description={t("theme.description")}
         grouped={grouped}
       >
-        <div
-          className="g-tabs sm"
-          role="radiogroup"
-          aria-label={t("theme.title")}
-        >
-          {themeOptions.map((option) => (
-            <button
-              key={option.value}
-              type="button"
-              role="radio"
-              aria-checked={currentTheme === option.value}
-              onClick={() => handleThemeChange(option.value)}
-              className={`g-tab ${currentTheme === option.value ? "on" : ""} cursor-pointer`}
-            >
-              {option.label}
-            </button>
-          ))}
-        </div>
+        <Segmented
+          options={themeOptions}
+          value={currentTheme}
+          onChange={handleThemeChange}
+          label={t("theme.title")}
+        />
       </SettingContainer>
     );
   },

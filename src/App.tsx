@@ -39,10 +39,10 @@ import { LoadingScreen } from "@/app/LoadingScreen";
 import { useModelStore } from "@/features/stt/store/modelStore";
 import { FileDropOverlay } from "@/app/FileDropOverlay";
 import { Sidebar, SidebarSection, SECTIONS_CONFIG } from "@/app/Sidebar";
-import { TopBar } from "@/app/TopBar";
 import { WhatsNewGate } from "@/features/updates/whats-new";
 import { useSettings } from "@/common/settings/useSettings";
 import { useSettingsStore } from "@/common/settings/settingsStore";
+import { useOsType } from "@/common/hooks/useOsType";
 import { commands } from "@/bindings";
 import { deleteRetiredModel } from "@/features/stt/lib/retired";
 import { NoticePanel } from "@/common/notices/NoticePanel";
@@ -50,8 +50,6 @@ import { getLanguageDirection, initializeRTL } from "@/common/lib/rtl";
 
 /** The longest the launch screen waits for the speech model. */
 const BOOT_LIMIT_MS = 4000;
-/** "0" once the user opens the sidebar; it starts folded to its icon rail. */
-const SIDEBAR_COLLAPSED_KEY = "glider.sidebarCollapsed";
 
 // flow is first-run onboarding; the rest are single screens for returning users.
 type OnboardingStep =
@@ -71,23 +69,13 @@ const renderSettingsContent = (
   openModels: (tab: ModelsTab) => void,
 ) => {
   if (section === "home") {
-    return (
-      <HomePage
-        onNavigate={onSectionChange}
-        onHowToUse={() => onPreviewOnboarding("try")}
-      />
-    );
+    return <HomePage onNavigate={onSectionChange} />;
   }
   if (section === "insights") {
     return <InsightsPage />;
   }
   if (section === "dictation") {
-    return (
-      <DictationPage
-        onTry={() => onPreviewOnboarding("try")}
-        onManageModels={() => openModels("speech")}
-      />
-    );
+    return <DictationPage onTry={() => onPreviewOnboarding("try")} />;
   }
   if (section === "readAloud") {
     return <ReadAloudPage onManageVoices={() => openModels("voices")} />;
@@ -149,14 +137,11 @@ function App() {
   );
   const hasCompletedPostOnboardingInit = useRef(false);
   const [booted, setBooted] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(
-    () => localStorage.getItem(SIDEBAR_COLLAPSED_KEY) === "0",
-  );
-  const toggleSidebar = () =>
-    setSidebarOpen((open) => {
-      localStorage.setItem(SIDEBAR_COLLAPSED_KEY, open ? "1" : "0");
-      return !open;
-    });
+  const isMac = useOsType() === "macos";
+  // The sidebar opens full every time the window opens; folding it to the
+  // icon rail (macOS) lasts until the window closes.
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const toggleSidebar = () => setSidebarOpen((open) => !open);
   useEffect(() => {
     if (onboardingStep === null || booted) return;
     if (onboardingStep !== "done" || !settings?.selected_model) {
@@ -419,46 +404,43 @@ function App() {
     content = (
       <div
         dir={direction}
-        className="h-screen flex flex-col select-none cursor-default bg-ground"
+        className={`flex h-screen select-none cursor-default ${isMac ? "" : "bg-background"}`}
       >
         <ErrorBoundary context="What's New">
           <WhatsNewGate />
         </ErrorBoundary>
-        <TopBar sidebarOpen={sidebarOpen} onToggleSidebar={toggleSidebar} />
-        <div className="flex-1 flex overflow-hidden">
-          <Sidebar
-            activeSection={currentSection}
-            onSectionChange={setCurrentSection}
-            collapsed={!sidebarOpen}
-          />
-          {/* The inset panel: the page scrolls inside it, the footer stays. */}
-          <main className="@container mb-2 me-2 flex flex-1 flex-col overflow-hidden rounded-[20px] border border-line bg-background">
-            {/* Relative, so absolutely placed children (sr-only labels) stay
-                inside the panel instead of stretching the whole window. */}
+        <Sidebar
+          activeSection={currentSection}
+          onSectionChange={setCurrentSection}
+          collapsed={isMac && !sidebarOpen}
+          onToggle={toggleSidebar}
+        />
+        {/* The page scrolls under its title bar, above the footer. */}
+        <main className="@container relative flex min-w-0 flex-1 flex-col overflow-hidden bg-background">
+          {/* Relative, so absolutely placed children (sr-only labels) stay
+              inside the page instead of stretching the whole window. */}
+          <div
+            ref={settingsScrollRef}
+            className="relative flex-1 overflow-x-hidden overflow-y-auto"
+          >
+            {/* Insights fills the page: it fits itself to the height. */}
             <div
-              ref={settingsScrollRef}
-              className="relative flex-1 overflow-y-auto"
+              className={`g-pagecol mx-auto flex w-full max-w-[1280px] flex-col ${currentSection === "insights" ? "h-full" : ""}`}
             >
-              {/* Models and Insights fill the panel: Models' table scrolls,
-                  and Insights fits itself to the height, not the page. */}
-              <div
-                className={`mx-auto flex w-full flex-col gap-7 max-w-[1280px] px-6 pt-9 pb-10 @[640px]:px-10 ${currentSection === "models" || currentSection === "insights" ? "h-full" : ""}`}
-              >
-                <SecureInputWarning />
-                {renderSettingsContent(
-                  currentSection,
-                  setOnboardingPreview,
-                  runOnboarding,
-                  runModelMigration,
-                  setCurrentSection,
-                  modelsTab,
-                  openModels,
-                )}
-              </div>
+              <SecureInputWarning />
+              {renderSettingsContent(
+                currentSection,
+                setOnboardingPreview,
+                runOnboarding,
+                runModelMigration,
+                setCurrentSection,
+                modelsTab,
+                openModels,
+              )}
             </div>
-            <Footer onShowHistory={showHistory} />
-          </main>
-        </div>
+          </div>
+          <Footer onShowHistory={showHistory} />
+        </main>
         <FileDropOverlay onDropped={showHistory} />
       </div>
     );

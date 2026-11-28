@@ -4,12 +4,16 @@ import { commands, type TtsModelInfo } from "@/bindings";
 import { NextButton, ObHeader, OnboardingShell } from "../OnboardingShell";
 import { queueVoices, unqueueVoice } from "../ObDownloads";
 import { modelLanguage } from "@/features/tts/hooks/useVoiceModels";
+import {
+  KOKORO,
+  RECOMMENDED_VOICES,
+  SUPERTONIC,
+} from "@/features/tts/lib/recommended";
 
-export const KOKORO = "kokoro-int8-en-v0_19";
 const KITTEN = "kitten-nano-en-v0_2-fp16";
 
-/** The voices offered here: Kokoro, one for each other language they speak,
- * and the small Kitten. The rest are in Models. */
+/** The voices offered here: the two Glider recommends, one for each other
+ * language they speak, and the small Kitten. The rest are in Models. */
 export const offeredVoices = (voices: TtsModelInfo[], languages: string[]) => {
   const byId = (id: string) => voices.find((v) => v.id === id);
   // One-language voices for their other languages; multi-language models
@@ -20,16 +24,23 @@ export const offeredVoices = (voices: TtsModelInfo[], languages: string[]) => {
       v.languages[0] !== "en" &&
       languages.includes(v.languages[0]),
   );
-  return [byId(KOKORO), ...others, byId(KITTEN)].filter(
+  return [byId(KOKORO), byId(SUPERTONIC), ...others, byId(KITTEN)].filter(
     (v): v is TtsModelInfo => !!v,
   );
 };
 
-/** What's picked before they choose: Kokoro and their other languages' voices. */
-export const defaultVoices = (voices: TtsModelInfo[], languages: string[]) =>
-  offeredVoices(voices, languages)
-    .filter((v) => v.id !== KITTEN)
+/** What's picked before they choose: the two recommended voices, and voices
+ * for their other languages that Supertonic doesn't read. */
+export const defaultVoices = (voices: TtsModelInfo[], languages: string[]) => {
+  const multi = voices.find((v) => v.id === SUPERTONIC)?.languages ?? [];
+  return offeredVoices(voices, languages)
+    .filter(
+      (v) =>
+        RECOMMENDED_VOICES.includes(v.id) ||
+        (v.id !== KITTEN && !multi.includes(v.languages[0])),
+    )
     .map((v) => v.id);
+};
 
 interface VoicesProps {
   progress: { index: number; count: number };
@@ -121,7 +132,7 @@ export const Voices: React.FC<VoicesProps> = ({
               >
                 <div className="g-mname flex-wrap">
                   {voice.name}
-                  {voice.id === KOKORO && (
+                  {RECOMMENDED_VOICES.includes(voice.id) && (
                     <span className="g-badge">
                       {t("onboarding.model.recommended")}
                     </span>

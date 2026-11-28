@@ -33,7 +33,7 @@ const NoticeRow: React.FC<NoticeRowProps> = ({
     <div className="flex items-start gap-2.5 px-3 py-2.5">
       <NoticeBadgeIcon className={`mt-[3px] h-3.5 w-3.5 shrink-0 ${color}`} />
       <div className="min-w-0 flex-1 select-text break-words">
-        <p className="text-sm font-medium text-text">{title}</p>
+        <p className="text-[13px] font-medium text-text">{title}</p>
         {explanation && <p className="mt-0.5">{explanation}</p>}
         {detail && <p className="mt-0.5 text-ink-3">{detail}</p>}
         {action && (
@@ -99,7 +99,7 @@ const NoticeCard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       data-notices
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`fixed ${position} end-4 z-[60] max-h-[60vh] w-80 divide-y divide-line overflow-y-auto rounded-lg border border-line bg-background text-xs text-ink-2 shadow-lg motion-safe:animate-rise`}
+      className={`fixed ${position} end-4 z-[60] max-h-[60vh] w-80 divide-y divide-line overflow-y-auto rounded-(--g-r-card) border border-line-strong bg-card text-xs text-ink-2 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.45)] motion-safe:animate-rise`}
     >
       {children}
     </div>

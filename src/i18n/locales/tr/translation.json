@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "Ara",
+    "show": "Kenar çubuğunu göster",
+    "hide": "Kenar çubuğunu gizle"
   },
   "onboarding": {
     "customModelDescription": "Resmi olarak desteklenmiyor",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "Canlı Loglar",
-        "description": "Panel açıkken seçili seviyedeki yeni log satırlarını gösterir.",
+        "description": "Varsayılan olarak duraklatılmıştır, bu yüzden hiçbir şey kaydedilmez. Seçili seviyedeki yeni log satırlarını burada görmek ve log klasörüne kaydetmek için devam ettirin.",
         "live": "Canlı",
         "paused": "Duraklatıldı",
         "pause": "Duraklat",
         "resume": "Sürdür",
         "copied": "Kopyalandı",
         "lineCount": "{{count}} satır",
-        "empty": "Loglar bekleniyor… Uygulama logları ürettikçe girişler burada görünür."
+        "empty": "Loglar bekleniyor… Uygulama logları ürettikçe girişler burada görünür.",
+        "emptyPaused": "Günlük kaydı duraklatıldı. Hiçbir şey gösterilmez veya kaydedilmez."
       },
       "updateChecks": {
         "label": "Güncellemeleri Kontrol Et",
@@ -967,28 +972,6 @@
         "title": "Kaynak Kodu",
         "description": "Kaynak kodunu görüntüle ve katkıda bulun",
         "button": "GitHub'da Görüntüle"
-      },
-      "acknowledgments": {
-        "title": "Teşekkürler",
-        "ggml": {
-          "title": "ggml",
-          "description": "Cihaz üzerinde makine öğrenmesi çıkarımı için yüksek performanslı tensör kütüphanesi",
-          "details": "Glider'nin yerel konuşmadan metne dönüştürme özelliği transcribe.cpp ve ggml üzerine kuruludur. Georgi Gerganov'a ve katkıda bulunanlara harika çalışmaları için teşekkür ederiz."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "Glider'ın diktesi CJ Pais'in Handy'si üzerine kurulu, MIT lisansı."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Read Aloud sesleri sherpa-onnx üzerinde çalışır."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite, Hugging Face'in Rust ML kütüphanesi candle üzerinde çalışır."
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "Koyu"
     }
   },
+  "appIcon": {
+    "title": "Uygulama simgesi",
+    "description": "Dock ve uygulama değiştirici",
+    "descriptionTaskbar": "Görev çubuğu ve uygulama değiştirici",
+    "automatic": "Otomatik"
+  },
   "overlay": {
     "transcribing": "Transkribe ediliyor...",
     "loadingModel": "Model yükleniyor...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "Konuşma",
+    "listening": "Dinleme",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

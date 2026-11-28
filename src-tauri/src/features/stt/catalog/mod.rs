@@ -39,17 +39,20 @@ const MIRRORS: &[&str] = &["https://blob.handy.computer"];
 /// previous generator until onboarding moves to the package's recommendations.
 /// `(id, rank, recommended)`: rank is the editorial sort position (lower =
 /// higher); recommended is the small badged onboarding subset.
+/// Qwen3-ASR 1.7B is the one Glider recommends (the app's own picks follow
+/// it too: `RECOMMENDED_ASR` in src/features/stt/lib/catalog.ts).
 const GLIDER_RANKING: &[(&str, u32, bool)] = &[
-    ("parakeet-unified-en-0.6b", 1, true),
-    ("nemotron-3.5-asr-streaming-0.6b", 2, true),
-    ("canary-180m-flash", 3, true),
-    ("cohere-transcribe-03-2026", 4, true),
-    ("whisper-medium", 5, true),
-    ("Voxtral-Mini-4B-Realtime-2602", 6, false),
-    ("parakeet-tdt-0.6b-v3", 7, false),
-    ("parakeet-tdt-0.6b-v2", 8, false),
-    ("Qwen3-ASR-0.6B", 9, false),
-    ("Fun-ASR-MLT-Nano-2512", 10, false),
+    ("Qwen3-ASR-1.7B", 1, true),
+    ("parakeet-unified-en-0.6b", 2, false),
+    ("nemotron-3.5-asr-streaming-0.6b", 3, false),
+    ("canary-180m-flash", 4, false),
+    ("cohere-transcribe-03-2026", 5, false),
+    ("whisper-medium", 6, false),
+    ("Voxtral-Mini-4B-Realtime-2602", 7, false),
+    ("parakeet-tdt-0.6b-v3", 8, false),
+    ("parakeet-tdt-0.6b-v2", 9, false),
+    ("Qwen3-ASR-0.6B", 10, false),
+    ("Fun-ASR-MLT-Nano-2512", 11, false),
 ];
 
 #[derive(Deserialize)]

@@ -61,6 +61,14 @@ async changeThemeSetting(theme: string) : Promise<Result<null, string>> {
     else return { status: "error", error: e  as any };
 }
 },
+async changeAppIconSetting(icon: AppIcon) : Promise<Result<null, string>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("change_app_icon_setting", { icon }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
 async changeStartHiddenSetting(enabled: boolean) : Promise<Result<null, string>> {
     try {
     return { status: "ok", data: await TAURI_INVOKE("change_start_hidden_setting", { enabled }) };
@@ -604,6 +612,20 @@ async setLogLevel(level: LogLevel) : Promise<Result<null, string>> {
     if(e instanceof Error) throw e;
     else return { status: "error", error: e  as any };
 }
+},
+/**
+ * Turns logging on or off (the Debug page's Resume and Pause). Off, nothing
+ * is written to the log file or streamed to the window. Not saved: every
+ * launch starts with logging off.
+ */
+async setLogging(on: boolean) : Promise<void> {
+    await TAURI_INVOKE("set_logging", { on });
+},
+/**
+ * Whether logging is on right now.
+ */
+async isLogging() : Promise<boolean> {
+    return await TAURI_INVOKE("is_logging");
 },
 async openRecordingsFolder() : Promise<Result<null, string>> {
     try {
@@ -1403,6 +1425,11 @@ transcriptionJob: "transcription-job"
 /** user-defined types **/
 
 /**
+ * Which app icon the Dock (taskbar elsewhere) and app switcher show.
+ * `Automatic` picks light or dark the same way the tray icon does.
+ */
+export type AppIcon = "automatic" | "light" | "dark"
+/**
  * The container-level `serde(default)` (backed by the `Default` impl below)
  * guarantees every field — including ones added in the future — falls back to
  * its `get_default_settings()` value when missing from a stored settings
@@ -1462,7 +1489,7 @@ llm_model?: string;
  * Send rewrites to the post-processing provider instead of the LLM on
  * this computer.
  */
-llm_use_provider?: boolean; mute_while_recording?: boolean; append_trailing_space?: boolean; app_language?: string; theme?: Theme; experimental_enabled?: boolean; lazy_stream_close?: boolean; 
+llm_use_provider?: boolean; mute_while_recording?: boolean; append_trailing_space?: boolean; app_language?: string; theme?: Theme; app_icon?: AppIcon; experimental_enabled?: boolean; lazy_stream_close?: boolean; 
 /**
  * Experimental, macOS only: move a Bluetooth headset (AirPods) to this
  * Mac while recording, so its microphone does not return silence while

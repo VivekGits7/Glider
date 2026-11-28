@@ -9,7 +9,7 @@ import { Switch } from "@/common/ui/Switch";
 export const LivePreview: React.FC = () => {
   const { t } = useTranslation();
   const { getSetting, updateSetting, isUpdating } = useSettings();
-  const style = getSetting("overlay_style") ?? "live";
+  const style = getSetting("overlay_style") ?? "minimal";
   return (
     <SettingContainer
       title={t("settings.dictation.livePreview.title")}

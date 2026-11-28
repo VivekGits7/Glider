@@ -1,6 +1,7 @@
 //! Code shared by two or more features: settings, notices, overlay, tray,
 //! shortcuts, playback devices and app/system plumbing.
 
+pub(crate) mod app_icon;
 pub mod audio;
 pub(crate) mod commands;
 pub(crate) mod memory;

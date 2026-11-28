@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 import { listen } from "@tauri-apps/api/event";
 import type {
+  AppIcon,
   AppSettings as Settings,
   AudioDevice,
   PostProcessApiFormat,
@@ -178,6 +179,7 @@ const settingUpdaters: {
   log_level: (value) => commands.setLogLevel(value as any),
   app_language: (value) => commands.changeAppLanguageSetting(value as string),
   theme: (value) => commands.changeThemeSetting(value as string),
+  app_icon: (value) => commands.changeAppIconSetting(value as AppIcon),
   experimental_enabled: (value) =>
     commands.changeExperimentalEnabledSetting(value as boolean),
   lazy_stream_close: (value) =>
@@ -551,7 +553,7 @@ export const useSettingsStore = create<SettingsStore>()(
 
         // Reset the stored model since the previous value is almost certainly
         // invalid for the new endpoint (e.g. switching Custom from Groq to
-        // Cerebras). Only proceed if the reset succeeds.
+        // Ollama). Only proceed if the reset succeeds.
         const modelResult = await commands.changePostProcessModelSetting(
           providerId,
           "",

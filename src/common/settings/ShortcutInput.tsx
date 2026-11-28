@@ -114,7 +114,7 @@ export const ShortcutInput: React.FC<ShortcutInputProps> = ({
         {capturing ? (
           <div
             ref={shortcutRef}
-            className="flex h-9 items-center rounded-[10px] border border-dashed border-accent-ink px-3 text-[13px] text-ink-2"
+            className="g-shortcut border-dashed border-accent-ink text-[12px] text-ink-2"
           >
             {partial ? (
               <Keycaps binding={partial} osType={osType} size="sm" partial />
@@ -130,13 +130,12 @@ export const ShortcutInput: React.FC<ShortcutInputProps> = ({
               name: translatedName,
               keys: formatKeyCombination(binding.current_binding, osType),
             })}
-            className="g-shortcut group/keycaps cursor-pointer focus-visible:outline-2 focus-visible:outline-accent-ink"
+            className="g-shortcut cursor-pointer focus-visible:outline-2 focus-visible:outline-accent-ink"
           >
             <Keycaps
               binding={binding.current_binding}
               osType={osType}
               size="sm"
-              lift
             />
           </button>
         )}

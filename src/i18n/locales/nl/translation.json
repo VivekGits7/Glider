@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "Zoeken",
+    "show": "Zijbalk tonen",
+    "hide": "Zijbalk verbergen"
   },
   "onboarding": {
     "customModelDescription": "Niet officieel ondersteund",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "Live logboeken",
-        "description": "Toont nieuwe logregels van je niveau zolang dit paneel open is.",
+        "description": "Standaard gepauzeerd, dus er wordt niets opgeslagen. Hervat om nieuwe logregels hier te zien en ze op je niveau in de logmap op te slaan.",
         "live": "Live",
         "paused": "Gepauzeerd",
         "pause": "Pauzeren",
         "resume": "Hervatten",
         "copied": "Gekopieerd",
         "lineCount": "{{count}} regels",
-        "empty": "Wachten op logboeken... Meldingen verschijnen hier zodra de app ze genereert."
+        "empty": "Wachten op logboeken... Meldingen verschijnen hier zodra de app ze genereert.",
+        "emptyPaused": "Loggen is gepauzeerd. Er wordt niets getoond of opgeslagen."
       },
       "updateChecks": {
         "label": "Controleren op updates",
@@ -967,28 +972,6 @@
         "title": "Broncode",
         "description": "Bekijk de broncode en draag bij",
         "button": "Bekijk op GitHub"
-      },
-      "acknowledgments": {
-        "title": "Dankbetuigingen",
-        "ggml": {
-          "title": "ggml",
-          "description": "Krachtige tensorbibliotheek voor lokale AI-verwerking",
-          "details": "Glider's lokale spraak-naar-tekst is gebouwd op transcribe.cpp en ggml. Met dank aan het geweldige werk van Georgi Gerganov en alle bijdragers."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "Gliders dicteren is gebouwd op Handy van CJ Pais, MIT-licentie."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "De stemmen van Read Aloud draaien op sherpa-onnx."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite draait op candle, de Rust-ML-bibliotheek van Hugging Face."
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "Donker"
     }
   },
+  "appIcon": {
+    "title": "App-pictogram",
+    "description": "Dock en appwisselaar",
+    "descriptionTaskbar": "Taakbalk en appwisselaar",
+    "automatic": "Automatisch"
+  },
   "overlay": {
     "transcribing": "Transcriberen...",
     "loadingModel": "Model laden...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "Spreken",
+    "listening": "Luisteren",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

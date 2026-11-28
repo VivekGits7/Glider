@@ -109,13 +109,26 @@ fn notice_state(session_is_live: bool) -> &'static str {
 fn overlay_dimensions(state: &str) -> (f64, f64) {
     match state {
         REFINE_CHANGES_STATE => (OVERLAY_CHANGES_WIDTH, OVERLAY_CHANGES_HEIGHT),
-        READING_STATE => (OVERLAY_READING_WIDTH, OVERLAY_READING_HEIGHT),
+        // Read Aloud opens as the compact "Preparing voice" pill and grows
+        // to the player when its first sentence plays (`reading_dimensions`).
         NOWHERE_STATE => (OVERLAY_CARD_WIDTH, OVERLAY_CARD_HEIGHT),
         // A notice takes the listening pill's size, so the window never
         // resizes for one.
         "recording" | NOTICE_STATE => (OVERLAY_WIDTH, OVERLAY_TIPS_HEIGHT),
         _ if is_live_state(state) => (OVERLAY_STREAM_WIDTH, OVERLAY_STREAM_HEIGHT),
         _ => (OVERLAY_WIDTH, OVERLAY_HEIGHT),
+    }
+}
+
+/// Read Aloud's window once a sentence plays: the player with room above it
+/// for its tooltips, and the live preview card above that when it's on. Only
+/// what's shown gets a window: its transparent rest would catch clicks meant
+/// for the app underneath.
+fn reading_dimensions(live_preview: bool) -> (f64, f64) {
+    if live_preview {
+        (OVERLAY_READING_WIDTH, OVERLAY_READING_HEIGHT)
+    } else {
+        (OVERLAY_READING_WIDTH, OVERLAY_TIPS_HEIGHT)
     }
 }
 
@@ -346,7 +359,10 @@ fn current_overlay_logical_size(window: &tauri::webview::WebviewWindow) -> Optio
 }
 
 #[cfg(target_os = "windows")]
-static WINDOWS_OVERLAY_IS_STREAMING: AtomicBool = AtomicBool::new(false);
+/// The size (logical, as f64 bits) the overlay window was last given, so a
+/// position change can re-place it at the same size.
+#[cfg(target_os = "windows")]
+static OVERLAY_SIZE: (AtomicU64, AtomicU64) = (AtomicU64::new(0), AtomicU64::new(0));
 
 /// Windows accessibility text size (Settings > Accessibility > Text size), a
 /// separate axis from display scaling that WebView2 applies as a document zoom.
@@ -570,6 +586,7 @@ fn show_overlay_state(app_handle: &AppHandle, state: &str) {
     OVERLAY_SESSION_SHOWING.store(is_session, Ordering::SeqCst);
     OVERLAY_SESSION_LIVE.store(is_live_state(state), Ordering::SeqCst);
     OVERLAY_READING.store(state == READING_STATE, Ordering::SeqCst);
+    OVERLAY_READING_PLAYING.store(false, Ordering::SeqCst);
 
     // The rest queries monitors and the cursor and mutates window geometry. On
     // Linux the monitor/cursor lookups hit GDK/Xlib on the process's shared X11
@@ -595,59 +612,9 @@ fn show_overlay_state_on_main(app_handle: &AppHandle, state: &str) {
         // (see `hide_recording_overlay`).
         OVERLAY_SHOW_GENERATION.fetch_add(1, Ordering::SeqCst);
 
-        #[cfg(target_os = "linux")]
-        let shown_with_layer_shell = if LAYER_SHELL_ACTIVE.load(Ordering::SeqCst) {
-            let position = settings::get_settings(app_handle).overlay_position;
-            match overlay_window.gtk_window() {
-                Ok(gtk_window) => {
-                    configure_layer_shell_surface(&gtk_window, position, width, height)
-                }
-                Err(error) => log::error!("Failed to access GTK overlay window: {error}"),
-            }
-            let _ = overlay_window.show();
-            true
-        } else {
-            false
-        };
-        #[cfg(not(target_os = "linux"))]
-        let shown_with_layer_shell = false;
-
+        let shown_with_layer_shell = place_overlay(app_handle, &overlay_window, width, height);
+        let _ = overlay_window.show();
         if !shown_with_layer_shell {
-            let size_started = std::time::Instant::now();
-            #[cfg(not(target_os = "windows"))]
-            let _ =
-                overlay_window.set_size(tauri::Size::Logical(tauri::LogicalSize { width, height }));
-            #[cfg(target_os = "windows")]
-            WINDOWS_OVERLAY_IS_STREAMING.store(is_live_state(state), Ordering::Relaxed);
-            let size_elapsed = size_started.elapsed();
-
-            let pos_started = std::time::Instant::now();
-            #[cfg(not(target_os = "windows"))]
-            let set_pos_elapsed =
-                if let Some((x, y)) = calculate_overlay_position(app_handle, width, height) {
-                    let set_pos_started = std::time::Instant::now();
-                    let _ = overlay_window
-                        .set_position(tauri::Position::Logical(tauri::LogicalPosition { x, y }));
-                    set_pos_started.elapsed()
-                } else {
-                    std::time::Duration::ZERO
-                };
-            #[cfg(target_os = "windows")]
-            let set_pos_elapsed = {
-                let set_pos_started = std::time::Instant::now();
-                if let Err(error) =
-                    place_windows_overlay(app_handle, &overlay_window, width, height)
-                {
-                    log::error!("Failed to place recording overlay: {error}");
-                }
-                set_pos_started.elapsed()
-            };
-            let pos_calc_elapsed = pos_started.elapsed() - set_pos_elapsed;
-
-            let show_started = std::time::Instant::now();
-            let _ = overlay_window.show();
-            let show_elapsed = show_started.elapsed();
-
             // On Windows, aggressively re-assert "topmost" in the native Z-order after showing
             #[cfg(target_os = "windows")]
             force_overlay_topmost(&overlay_window);
@@ -658,19 +625,49 @@ fn show_overlay_state_on_main(app_handle: &AppHandle, state: &str) {
             if let Err(error) = place_windows_overlay(app_handle, &overlay_window, width, height) {
                 log::error!("Failed to re-assert recording overlay position: {error}");
             }
-
-            log::debug!(
-                "overlay '{}': set_size={:?} pos_calc={:?} set_pos={:?} show={:?}",
-                state,
-                size_elapsed,
-                pos_calc_elapsed,
-                set_pos_elapsed,
-                show_elapsed
-            );
         }
+        log::debug!("overlay '{state}' shown at {width}x{height}");
 
         let _ = overlay_window.emit("show-overlay", state);
     }
+}
+
+/// Sizes the overlay window to `width` x `height` (logical) and places it at
+/// its edge. Returns whether a GTK layer surface did it (Linux), which
+/// positions itself.
+fn place_overlay(
+    app_handle: &AppHandle,
+    overlay_window: &tauri::webview::WebviewWindow,
+    width: f64,
+    height: f64,
+) -> bool {
+    #[cfg(target_os = "linux")]
+    if LAYER_SHELL_ACTIVE.load(Ordering::SeqCst) {
+        let position = settings::get_settings(app_handle).overlay_position;
+        match overlay_window.gtk_window() {
+            Ok(gtk_window) => configure_layer_shell_surface(&gtk_window, position, width, height),
+            Err(error) => log::error!("Failed to access GTK overlay window: {error}"),
+        }
+        return true;
+    }
+
+    #[cfg(not(target_os = "windows"))]
+    {
+        let _ = overlay_window.set_size(tauri::Size::Logical(tauri::LogicalSize { width, height }));
+        if let Some((x, y)) = calculate_overlay_position(app_handle, width, height) {
+            let _ = overlay_window
+                .set_position(tauri::Position::Logical(tauri::LogicalPosition { x, y }));
+        }
+    }
+    #[cfg(target_os = "windows")]
+    {
+        OVERLAY_SIZE.0.store(width.to_bits(), Ordering::Relaxed);
+        OVERLAY_SIZE.1.store(height.to_bits(), Ordering::Relaxed);
+        if let Err(error) = place_windows_overlay(app_handle, overlay_window, width, height) {
+            log::error!("Failed to place recording overlay: {error}");
+        }
+    }
+    false
 }
 
 /// Notify the visible recording overlay that the input stream has delivered its
@@ -864,9 +861,25 @@ pub fn show_reading_overlay(app_handle: &AppHandle) {
     show_overlay_state(app_handle, READING_STATE);
 }
 
-/// Called from the audio thread as each sentence starts playing.
+/// Called from the audio thread as each sentence starts playing. The first
+/// one grows the overlay from the "Preparing voice" pill to the player before
+/// the player draws.
 pub fn emit_reading_progress(app_handle: &AppHandle, progress: ReadingProgress) {
-    // To every window: History shows which sentence is playing too.
+    if OVERLAY_READING.load(Ordering::SeqCst)
+        && !OVERLAY_READING_PLAYING.swap(true, Ordering::SeqCst)
+    {
+        let handle = app_handle.clone();
+        let _ = app_handle.run_on_main_thread(move || {
+            if let Some(window) = handle.get_webview_window("recording_overlay") {
+                let preview = settings::get_settings(&handle).tts_live_preview;
+                let (width, height) = reading_dimensions(preview);
+                place_overlay(&handle, &window, width, height);
+            }
+            // To every window: History shows which sentence is playing too.
+            let _ = handle.emit("reading-progress", progress);
+        });
+        return;
+    }
     let _ = app_handle.emit("reading-progress", progress);
 }
 
@@ -900,12 +913,13 @@ fn update_overlay_position_on_main(app_handle: &AppHandle) {
 
         #[cfg(target_os = "windows")]
         {
-            let state = if WINDOWS_OVERLAY_IS_STREAMING.load(Ordering::Relaxed) {
-                "streaming"
-            } else {
-                "recording"
+            let (width, height) = match (
+                f64::from_bits(OVERLAY_SIZE.0.load(Ordering::Relaxed)),
+                f64::from_bits(OVERLAY_SIZE.1.load(Ordering::Relaxed)),
+            ) {
+                (w, h) if w > 0.0 && h > 0.0 => (w, h),
+                _ => (OVERLAY_WIDTH, OVERLAY_HEIGHT),
             };
-            let (width, height) = overlay_dimensions(state);
             if let Err(error) = place_windows_overlay(app_handle, &overlay_window, width, height) {
                 log::error!("Failed to update recording overlay position: {error}");
             }
@@ -946,6 +960,10 @@ static OVERLAY_SESSION_LIVE: AtomicBool = AtomicBool::new(false);
 
 /// Whether the overlay's current session is Read Aloud rather than dictation.
 static OVERLAY_READING: AtomicBool = AtomicBool::new(false);
+
+/// Whether Read Aloud's first sentence has played (the overlay is the player,
+/// not the "Preparing voice" pill).
+static OVERLAY_READING_PLAYING: AtomicBool = AtomicBool::new(false);
 
 /// Whether the overlay shows something Esc closes: a card or a notice.
 static OVERLAY_CLOSABLE: AtomicBool = AtomicBool::new(false);

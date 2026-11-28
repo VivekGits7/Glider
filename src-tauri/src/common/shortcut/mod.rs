@@ -22,12 +22,13 @@ use specta::Type;
 use std::sync::atomic::{AtomicBool, Ordering};
 use tauri::{AppHandle, Emitter, Manager};
 
+use crate::common::app_icon;
 #[cfg(all(target_os = "macos", target_arch = "aarch64"))]
 use crate::common::settings::APPLE_INTELLIGENCE_DEFAULT_MODEL_ID;
 use crate::common::settings::{
-    self, get_settings, AutoSubmitKey, ChineseScript, ClipboardHandling, KeyboardImplementation,
-    LanguageDetectionMode, OverlayPosition, OverlayStyle, PasteMethod, ShortcutBinding, SoundTheme,
-    Theme, TypingTool, VadBackend, APPLE_INTELLIGENCE_PROVIDER_ID,
+    self, get_settings, AppIcon, AutoSubmitKey, ChineseScript, ClipboardHandling,
+    KeyboardImplementation, LanguageDetectionMode, OverlayPosition, OverlayStyle, PasteMethod,
+    ShortcutBinding, SoundTheme, Theme, TypingTool, VadBackend, APPLE_INTELLIGENCE_PROVIDER_ID,
 };
 use crate::common::tray;
 
@@ -660,6 +661,16 @@ pub fn change_theme_setting(app: AppHandle, theme: String) -> Result<(), String>
     Ok(())
 }
 
+#[tauri::command]
+#[specta::specta]
+pub fn change_app_icon_setting(app: AppHandle, icon: AppIcon) -> Result<(), String> {
+    let mut settings = settings::get_settings(&app);
+    settings.app_icon = icon;
+    settings::write_settings(&app, settings);
+    app_icon::apply(&app);
+    Ok(())
+}
+
 /// Applies the appearance setting to the native window chrome (title bar), which
 /// CSS `data-theme` cannot reach. `System` clears the override so the window
 /// follows the OS. Call this on startup and whenever the setting changes to keep
@@ -781,10 +792,6 @@ pub fn change_debug_mode_setting(app: AppHandle, enabled: bool) -> Result<(), St
     let mut settings = settings::get_settings(&app);
     settings.debug_mode = enabled;
     settings::write_settings(&app, settings);
-
-    // Keep webview log streaming in sync: the live log viewer only exists in
-    // debug mode, so logs are forwarded to the frontend only while it is on.
-    crate::WEBVIEW_LOG_STREAMING.store(enabled, std::sync::atomic::Ordering::Relaxed);
 
     // Emit event to notify frontend of debug mode change
     let _ = app.emit(

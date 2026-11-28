@@ -34,25 +34,48 @@ const useSize = <T extends HTMLElement>() => {
   return [ref, size] as const;
 };
 
+/** The width `text` takes in the chart's label font, for its left gutter. */
+const labelWidth = (text: string) => {
+  const ctx = document.createElement("canvas").getContext("2d");
+  if (!ctx) return text.length * 7;
+  ctx.font = `500 12px ${getComputedStyle(document.documentElement).getPropertyValue("--g-ui")}`;
+  return ctx.measureText(text).width;
+};
+
 /** Speaking rises above the line and listening falls below it, one column a
- * day, on one scale. Today gets a lilac ring on the line. */
+ * day, on one scale; the two are named at the left, either side of the line.
+ * Today gets a violet ring on the line. */
 const TwoDirections: React.FC<{
   days: Insights["days"];
   width: number;
   height: number;
 }> = ({ days, width, height }) => {
   const { t, i18n } = useTranslation();
+  const speaking = t("insights.speaking");
+  const listening = t("insights.listening");
   // Drawn at the exact size it is given, so it fills the card at any height.
   const W = width;
   const H = height;
+  // The names' column, then the days.
+  const G =
+    Math.ceil(Math.max(labelWidth(speaking), labelWidth(listening))) + 14;
   const SPAN = Math.max(40, H - 30);
-  const step = W / days.length;
+  const step = (W - G) / days.length;
   const bw = Math.min(11, Math.round(step * 0.42));
   const maxSpeak = Math.max(...days.map((d) => d.speaking_ms));
   const maxListen = Math.max(...days.map((d) => d.listening_ms));
-  const scale = (SPAN - 6) / Math.max(maxSpeak + maxListen, 1);
   // The line sits where the tallest day above meets the tallest day below.
-  const line = 4 + maxSpeak * scale + 3;
+  // It keeps room for the names either side of it; when it has to move for
+  // them, the one scale shrinks so every bar still fits.
+  let scale = (SPAN - 6) / Math.max(maxSpeak + maxListen, 1);
+  let line = 4 + maxSpeak * scale + 3;
+  if (line < 18) {
+    line = 18;
+    scale = Math.min(scale, (SPAN - 21) / Math.max(maxListen, 1));
+  } else if (line > SPAN - 12) {
+    line = SPAN - 12;
+    scale = Math.min(scale, (SPAN - 19) / Math.max(maxSpeak, 1));
+  }
   const dayFormat = new Intl.DateTimeFormat(i18n.language, {
     month: "short",
     day: "numeric",
@@ -71,8 +94,14 @@ const TwoDirections: React.FC<{
       aria-label={t("insights.activityLabel", { days: days.length })}
     >
       <line x1={0} x2={W} y1={line} y2={line} stroke="var(--g-line-strong)" />
+      <text className="speak" x={0} y={line - 6}>
+        {speaking}
+      </text>
+      <text className="listen" x={0} y={line + 16}>
+        {listening}
+      </text>
       {days.map((d, i) => {
-        const x = i * step + (step - bw) / 2;
+        const x = G + i * step + (step - bw) / 2;
         const up = d.speaking_ms ? Math.max(bw, d.speaking_ms * scale) : 0;
         const down = d.listening_ms ? Math.max(bw, d.listening_ms * scale) : 0;
         return (
@@ -86,7 +115,7 @@ const TwoDirections: React.FC<{
             </title>
             {/* The whole column answers hover with its tooltip. */}
             <rect
-              x={i * step}
+              x={G + i * step}
               y={0}
               width={step}
               height={H - 24}
@@ -133,10 +162,10 @@ const TwoDirections: React.FC<{
           </g>
         );
       })}
-      <text x={0} y={H - 2}>
+      <text x={G} y={H - 2}>
         {dayFormat.format(parseDay(days[0].day))}
       </text>
-      <text x={middle * step + step / 2} y={H - 2} textAnchor="middle">
+      <text x={G + middle * step + step / 2} y={H - 2} textAnchor="middle">
         {dayFormat.format(parseDay(days[middle].day))}
       </text>
       <text className="now" x={W} y={H - 2} textAnchor="end">
@@ -229,9 +258,12 @@ const Heatmap: React.FC<{
       i === 0 ? date : weekEnd.getMonth() !== date.getMonth() ? weekEnd : null;
     if (!starts) return;
     const label = month.format(starts);
-    if (months[months.length - 1]?.label !== label) {
-      months.push({ week: i / 7, label });
-    }
+    const last = months[months.length - 1];
+    if (last?.label === label) return;
+    // A month that starts within two weeks of the last label replaces it,
+    // so two names never run into each other.
+    if (last && i / 7 - last.week < 2) months.pop();
+    months.push({ week: i / 7, label });
   });
   const today = days[days.length - 1]?.day;
 
@@ -445,16 +477,6 @@ export const InsightsPage: React.FC = () => {
           <section className="g-icard" aria-label={t("insights.activityTitle")}>
             <div className="g-ihead">
               <h2 className="g-ititle">{t("insights.activityTitle")}</h2>
-              <div className="g-key">
-                <span>
-                  <i style={{ background: "var(--g-speak)" }} />
-                  {t("insights.speakingAbove")}
-                </span>
-                <span>
-                  <i style={{ background: "var(--g-listen)" }} />
-                  {t("insights.listeningBelow")}
-                </span>
-              </div>
             </div>
             <div ref={chartBox} className="g-box">
               <div className="g-fill">
@@ -500,7 +522,7 @@ export const InsightsPage: React.FC = () => {
 
           <section className="g-icard" aria-label={t("insights.streakLabel")}>
             <div className="g-ihead">
-              <h2 className="g-ititle">
+              <h2 className="g-ititle big">
                 {data && data.streak_days > 0
                   ? t("insights.streak", { count: data.streak_days })
                   : t("insights.noStreak")}

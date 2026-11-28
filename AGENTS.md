@@ -70,6 +70,7 @@ Both halves are split by feature: `stt` (Dictation), `tts` (Read Aloud), `llm` (
   - `settings.rs` - All settings, saved as one store (keep it one file)
   - `notices.rs` - Reports background errors to the user (see [Error notices](#error-notices))
   - `overlay.rs`, `tray/`, `commands.rs` (app-level commands), `utils.rs`, `memory.rs`, `models_dir.rs`
+  - `app_icon.rs` - The App icon setting: swaps the Dock (taskbar elsewhere) icon between `src-tauri/icons/dark/` (the bundled one) and `src-tauri/icons/light/`
   - `overlay_keys.rs` - macOS key tap for the overlay: Esc closes cards and notices; F7/F8/F9/Esc drive Read Aloud's player. Keys pass through unless that overlay is showing
   - `shortcut/` - Global shortcuts, the setting-change commands, `actions.rs` (the binding id → action registry), `fn_key.rs`, `secure_input.rs`
   - `audio/` - Playback shared by feedback sounds and Read Aloud: output devices, CPAL host, feedback sounds
@@ -80,7 +81,7 @@ Both halves are split by feature: `stt` (Dictation), `tts` (Read Aloud), `llm` (
 
 - `App.tsx` - Routing and the onboarding gate; `main.tsx` - Entry point
 - `bindings.ts` - Auto-generated Tauri type bindings (via tauri-specta); must stay at this path
-- `app/` - Window shell: `Sidebar`, `TopBar`, `LoadingScreen`, `footer/Footer.tsx` (only arranges the footer menus)
+- `app/` - Window shell: `Sidebar` (sections, search, the macOS hide button), `LoadingScreen`, `footer/Footer.tsx` (only arranges the footer menus). Each page draws its own title bar with `common/shared/PageHeader`. Platform looks come from `src/styles/glider-ui.css` (`data-platform` on the root); see DESIGN.md
 - `features/` - One folder per feature. Each has its page (`XxxPage.tsx`), `settings/` (its setting rows), `models/` (its Models page tab), `footer/` (its footer menu), `hooks/`, `store/` and `lib/`
   - `stt/`, `tts/`, `llm/` (incl. `provider/` for online providers), `history/`, `insights/`, `home/`
   - `models/` - The Models page tabs; each tab's table comes from its feature

@@ -168,15 +168,15 @@ export const Dialog: React.FC<DialogProps> = ({
         aria-labelledby={titleId}
         aria-describedby={description ? descriptionId : undefined}
         tabIndex={-1}
-        className={`flex max-h-[calc(100dvh-2rem)] w-full max-w-lg flex-col overflow-hidden rounded-lg border border-line bg-background shadow-xl outline-none sm:max-h-[calc(100dvh-3rem)] ${className}`}
+        className={`flex max-h-[calc(100dvh-2rem)] w-full max-w-lg flex-col overflow-hidden rounded-(--g-r-card) border border-line-strong bg-card shadow-[0_24px_60px_-12px_rgba(0,0,0,0.5)] outline-none sm:max-h-[calc(100dvh-3rem)] ${className}`}
       >
         <div className="flex shrink-0 items-start justify-between gap-3 border-b border-line px-4 py-2.5">
           <div className="min-w-0">
-            <h2 id={titleId} className="text-base font-semibold text-text">
+            <h2 id={titleId} className="text-[13px] font-semibold text-text">
               {title}
             </h2>
             {description && (
-              <p id={descriptionId} className="mt-1 text-sm text-ink-3">
+              <p id={descriptionId} className="mt-1 text-[12px] text-ink-3">
                 {description}
               </p>
             )}

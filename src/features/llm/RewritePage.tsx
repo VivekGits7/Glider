@@ -22,7 +22,7 @@ export const RewritePage: React.FC<RewritePageProps> = ({ onManageModels }) => {
   const { t } = useTranslation();
   const osType = useOsType();
   const { getSetting, updateSetting, refreshSettings } = useSettings();
-  const { rewrites, usage, ready, modelName, usesProvider } = useRewrites();
+  const { rewrites, usage, ready, usesProvider } = useRewrites();
   const [open, setOpen] = useState<string | null>(null);
   const [demoAfter, setDemoAfter] = useState<string | null>(null);
   const [trying, setTrying] = useState(false);
@@ -109,7 +109,6 @@ export const RewritePage: React.FC<RewritePageProps> = ({ onManageModels }) => {
     <>
       <PageHeader
         title={t("sidebar.rewrite")}
-        badge={<span className="g-badge plain">{t("rewrite.new")}</span>}
         right={
           <div className="flex items-center gap-2.5">
             {!ready && (
@@ -121,7 +120,7 @@ export const RewritePage: React.FC<RewritePageProps> = ({ onManageModels }) => {
                 {usesProvider ? t("rewrite.noProvider") : t("rewrite.noModel")}
               </button>
             )}
-            <span className="text-[14px] text-ink-2">
+            <span className="text-[12px] text-ink-2">
               {enabled ? t("rewrite.on") : t("rewrite.off")}
             </span>
             <Switch
@@ -129,6 +128,15 @@ export const RewritePage: React.FC<RewritePageProps> = ({ onManageModels }) => {
               onChange={(on) => updateSetting("post_process_enabled", on)}
               ariaLabel={t("sidebar.rewrite")}
             />
+            <button
+              type="button"
+              className="g-btn sec ms-1.5 cursor-pointer disabled:opacity-50"
+              onClick={newRewrite}
+              disabled={busy || slotsFull}
+            >
+              <i className="g-ic g-i-plus" aria-hidden="true" />
+              {t("rewrite.newRewrite")}
+            </button>
           </div>
         }
         lede={t("rewrite.lede")}
@@ -142,9 +150,7 @@ export const RewritePage: React.FC<RewritePageProps> = ({ onManageModels }) => {
               i18nKey={heroKey}
               values={{ name: firstName }}
               components={{
-                keys: (
-                  <span className="g-keys mx-1">{keysFor(first.slot)}</span>
-                ),
+                keys: keysFor(first.slot),
               }}
             />
           ) : (
@@ -153,54 +159,30 @@ export const RewritePage: React.FC<RewritePageProps> = ({ onManageModels }) => {
         }
         hint={t("rewrite.heroHint", { undo: undoKeys })}
         actions={
-          <>
-            <button
-              type="button"
-              className="g-try"
-              onClick={tryIt}
-              disabled={trying || !first}
-            >
-              {trying ? t("rewrite.trying") : t("rewrite.tryIt")}
-            </button>
-            {modelName && (
-              <button
-                type="button"
-                className="g-btn ghost cursor-pointer"
-                onClick={onManageModels}
-              >
-                <i className="g-ic g-i-cpu" aria-hidden="true" />
-                {modelName}
-              </button>
-            )}
-          </>
+          <button
+            type="button"
+            className="g-try"
+            onClick={tryIt}
+            disabled={trying || !first}
+          >
+            {trying ? t("rewrite.trying") : t("rewrite.tryIt")}
+          </button>
         }
         demoLabel={t("rewrite.demo.label")}
         demo={<RewriteDemo draft={demoBefore} steps={steps} />}
       />
 
       <section className="g-group">
-        <div className="g-titlebar items-center px-1">
-          <h2 className="g-h2i">{t("rewrite.yours")}</h2>
-          <div className="flex items-center gap-1.5">
-            <button
-              type="button"
-              className="g-btn ghost sm cursor-pointer"
-              onClick={resetAll}
-              disabled={busy}
-            >
-              <i className="g-ic g-i-again" aria-hidden="true" />
-              {t("rewrite.resetAll")}
-            </button>
-            <button
-              type="button"
-              className="g-btn sec sm cursor-pointer disabled:opacity-50"
-              onClick={newRewrite}
-              disabled={busy || slotsFull}
-            >
-              <i className="g-ic g-i-plus" aria-hidden="true" />
-              {t("rewrite.newRewrite")}
-            </button>
-          </div>
+        <div className="g-sechead">
+          <h2 className="g-gt">{t("rewrite.yours")}</h2>
+          <button
+            type="button"
+            className="g-link cursor-pointer"
+            onClick={resetAll}
+            disabled={busy}
+          >
+            {t("rewrite.resetAll")}
+          </button>
         </div>
         <div className="g-rwgrid">
           {rewrites.map(({ slot, rewrite }) => {
@@ -212,8 +194,13 @@ export const RewritePage: React.FC<RewritePageProps> = ({ onManageModels }) => {
                 className="g-rwcard cursor-pointer text-start"
                 onClick={() => setOpen(rewrite.id)}
               >
-                <span className="g-keys">{keysFor(slot)}</span>
-                <span className="g-t">{rewrite.name}</span>
+                <span className="g-rwtop">
+                  <span className="g-rwic" aria-hidden="true">
+                    <i className="g-ic g-i-sparkles" />
+                  </span>
+                  <span className="g-t">{rewrite.name}</span>
+                  <span className="ms-auto">{keysFor(slot)}</span>
+                </span>
                 <span className="g-d">
                   {rewrite.description ||
                     (isBuiltin(rewrite.id)
@@ -228,21 +215,21 @@ export const RewritePage: React.FC<RewritePageProps> = ({ onManageModels }) => {
               </button>
             );
           })}
-          {!slotsFull && (
-            <button
-              type="button"
-              className="g-rwcard new cursor-pointer text-start"
-              onClick={newRewrite}
-              disabled={busy}
-            >
-              <span className="g-plusb">
-                <i className="g-ic g-i-plus" aria-hidden="true" />
-              </span>
+        </div>
+        {!slotsFull && (
+          <button
+            type="button"
+            className="g-rwnew cursor-pointer text-start"
+            onClick={newRewrite}
+            disabled={busy}
+          >
+            <i className="g-ic g-i-plus" aria-hidden="true" />
+            <span className="flex flex-col gap-0.5">
               <span className="g-t">{t("rewrite.writeOwn")}</span>
               <span className="g-d">{t("rewrite.writeOwnHint")}</span>
-            </button>
-          )}
-        </div>
+            </span>
+          </button>
+        )}
         {bindings.refine_compare && (
           <p className="g-small mx-1 my-0">
             <Trans

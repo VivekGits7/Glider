@@ -61,6 +61,22 @@ pub fn get_log_dir_path(app: AppHandle) -> Result<String, String> {
     Ok(log_dir.to_string_lossy().to_string())
 }
 
+/// Turns logging on or off (the Debug page's Resume and Pause). Off, nothing
+/// is written to the log file or streamed to the window. Not saved: every
+/// launch starts with logging off.
+#[specta::specta]
+#[tauri::command]
+pub fn set_logging(on: bool) {
+    crate::LOGGING_ON.store(on, std::sync::atomic::Ordering::Relaxed);
+}
+
+/// Whether logging is on right now.
+#[specta::specta]
+#[tauri::command]
+pub fn is_logging() -> bool {
+    crate::LOGGING_ON.load(std::sync::atomic::Ordering::Relaxed)
+}
+
 #[specta::specta]
 #[tauri::command]
 pub fn set_log_level(app: AppHandle, level: LogLevel) -> Result<(), String> {

@@ -19,8 +19,6 @@ interface DropdownProps {
   onOpen?: () => void;
   /** Where the menu opens: below the button (default), or above it. */
   placement?: "below" | "above";
-  /** Highlight colour for hover and selection. */
-  tone?: "brand" | "neutral";
 }
 
 export const Dropdown: React.FC<DropdownProps> = ({
@@ -33,7 +31,6 @@ export const Dropdown: React.FC<DropdownProps> = ({
   disabled = false,
   onOpen,
   placement = "below",
-  tone = "brand",
 }) => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -53,10 +50,6 @@ export const Dropdown: React.FC<DropdownProps> = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // The trigger's hover; in the menu, hover is grey so it never looks chosen.
-  const hover = tone === "neutral" ? "hover:bg-wash" : "hover:bg-wash";
-  const chosen = tone === "neutral" ? "bg-line" : "bg-logo-primary/15";
-
   const selectedOption = options.find(
     (option) => option.value === selectedValue,
   );
@@ -66,9 +59,26 @@ export const Dropdown: React.FC<DropdownProps> = ({
     setIsOpen(false);
   };
 
+  // Opens upward when the page (or window) has no room for the menu below.
+  const [above, setAbove] = useState(placement === "above");
   const handleToggle = () => {
     if (disabled) return;
-    if (!isOpen) onOpen?.();
+    if (!isOpen) {
+      onOpen?.();
+      const trigger = triggerRef.current?.getBoundingClientRect();
+      const box = triggerRef.current
+        ?.closest(".overflow-y-auto")
+        ?.getBoundingClientRect() ?? { top: 0, bottom: window.innerHeight };
+      if (trigger) {
+        const roomBelow = box.bottom - trigger.bottom;
+        const roomAbove = trigger.top - box.top;
+        setAbove(
+          placement === "above"
+            ? roomAbove > 120 || roomAbove > roomBelow
+            : roomBelow < 260 && roomAbove > roomBelow,
+        );
+      }
+    }
     setIsOpen(!isOpen);
   };
 
@@ -90,28 +100,30 @@ export const Dropdown: React.FC<DropdownProps> = ({
         type="button"
         ref={triggerRef}
         className={`g-sel w-full text-start transition-[border-color,background-color] duration-150 ${
-          disabled
-            ? "opacity-50 cursor-not-allowed"
-            : `${hover} cursor-pointer ${tone === "neutral" ? "hover:border-ink-3" : "hover:border-accent-ink"}`
+          disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"
         }`}
         onClick={handleToggle}
         disabled={disabled}
+        aria-haspopup="listbox"
         aria-expanded={isOpen}
       >
         <span className="truncate">{selectedOption?.label || placeholder}</span>
-        <i
-          className={`g-ic g-i-chev transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-          aria-hidden="true"
-        />
+        <span className="g-selchev" aria-hidden="true">
+          <i className="g-ic g-i-updown g-mac-only" />
+          <i
+            className={`g-ic g-i-chev g-pc-only transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+          />
+        </span>
       </button>
       {isOpen && !disabled && (
         <div
-          className={`absolute ${placement === "above" ? "bottom-full mb-1" : "top-full mt-1"} bg-card border border-line rounded-xl shadow-[0_12px_32px_-12px_rgba(0,0,0,0.5)] z-50 max-h-60 overflow-y-auto p-1 ${
-            menuClassName ?? "left-0 right-0"
+          role="listbox"
+          className={`g-menu absolute ${above ? "bottom-full mb-1" : "top-full mt-1"} ${
+            menuClassName ?? "end-0"
           }`}
         >
           {options.length === 0 ? (
-            <div className="px-2 py-1.5 text-sm text-ink-3">
+            <div className="px-2 py-1.5 text-[13px] text-ink-3">
               {t("common.noOptionsFound")}
             </div>
           ) : (
@@ -121,44 +133,23 @@ export const Dropdown: React.FC<DropdownProps> = ({
                 <button
                   key={option.value}
                   type="button"
-                  className={`flex w-full items-center gap-2 rounded-lg px-2.5 text-sm text-start transition-colors duration-150 ${
-                    option.description ? "py-2" : "py-1.5"
-                  } ${isChosen ? chosen : "hover:bg-wash"} ${
-                    option.disabled ? "opacity-50 cursor-not-allowed" : ""
+                  role="option"
+                  aria-selected={isChosen}
+                  className={`g-mopt ${isChosen ? "on" : ""} ${
+                    option.disabled ? "cursor-not-allowed opacity-50" : ""
                   }`}
                   onClick={() => handleSelect(option.value)}
                   disabled={option.disabled}
                 >
+                  <i className="g-ic g-i-check g-mcheck" aria-hidden="true" />
                   <span className="min-w-0 flex-1">
-                    <span
-                      className={`block whitespace-normal break-words ${
-                        isChosen ? "font-semibold" : ""
-                      }`}
-                    >
-                      {option.label}
-                    </span>
+                    <span className="block">{option.label}</span>
                     {option.description && (
-                      <span className="mt-0.5 block whitespace-normal text-xs font-normal leading-snug text-ink-3">
+                      <span className="g-mdesc2 whitespace-normal">
                         {option.description}
                       </span>
                     )}
                   </span>
-                  {isChosen && (
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2.2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                      className="shrink-0 text-ink-2"
-                    >
-                      <path d="M5 12.5l4.5 4.5L19 7.5" />
-                    </svg>
-                  )}
                 </button>
               );
             })

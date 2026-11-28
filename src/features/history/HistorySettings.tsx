@@ -24,11 +24,7 @@ import { formatDateTime } from "@/common/lib/dateFormat";
 import { AudioPlayer, AudioPlayerGroup } from "@/common/ui/AudioPlayer";
 import { copyToClipboard } from "./clipboard";
 import { dayLabel, formatTime, groupByDay } from "./dayGroups";
-import {
-  pickAndTranscribeFiles,
-  useFileReadsStore,
-  type FileRead,
-} from "./transcribeFiles";
+import { useFileReadsStore, type FileRead } from "./transcribeFiles";
 
 /** A row action: the canvas's .ib, lit when `active`. */
 export const IconButton: React.FC<{
@@ -286,26 +282,6 @@ export const HistorySettings: React.FC<{
     }
   };
 
-  const transcribeFile = async () => {
-    try {
-      await pickAndTranscribeFiles();
-    } catch (error) {
-      console.error("Failed to pick a file to transcribe:", error);
-      notify({ title: t("settings.history.transcribeFailed") });
-    }
-  };
-
-  const openRecordingsFolder = async () => {
-    try {
-      const result = await commands.openRecordingsFolder();
-      if (result.status !== "ok") {
-        throw new Error(String(result.error));
-      }
-    } catch (error) {
-      console.error("Failed to open recordings folder:", error);
-    }
-  };
-
   // One card per day, under the day's name. Saved only: an entry unstarred
   // here, or a new dictation, drops out without a reload.
   const shown = savedOnly ? entries.filter((entry) => entry.saved) : entries;
@@ -367,28 +343,7 @@ export const HistorySettings: React.FC<{
 
   return (
     <>
-      <div className="flex items-center justify-between gap-4">
-        {tabs}
-        <div className="flex items-center gap-1">
-          <button
-            type="button"
-            onClick={transcribeFile}
-            className="g-btn sec cursor-pointer"
-          >
-            <i className="g-ic g-i-file" aria-hidden="true" />
-            {t("settings.history.transcribeFile")}
-          </button>
-          <button
-            type="button"
-            onClick={openRecordingsFolder}
-            className="g-ib size-9 cursor-pointer"
-            title={t("settings.history.openFolder")}
-            aria-label={t("settings.history.openFolder")}
-          >
-            <i className="g-ic g-i-folder" aria-hidden="true" />
-          </button>
-        </div>
-      </div>
+      {tabs}
       {content}
     </>
   );

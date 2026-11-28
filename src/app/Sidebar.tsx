@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getVersion } from "@tauri-apps/api/app";
-import GliderTextLogo from "@/common/icons/GliderTextLogo";
 import GliderMark from "@/common/icons/GliderMark";
+import { useOsType } from "@/common/hooks/useOsType";
 import { GeneralSettings } from "@/features/settings/general/GeneralSettings";
 import { AdvancedSettings } from "@/features/settings/advanced/AdvancedSettings";
 import { AboutSettings } from "@/features/settings/about/AboutSettings";
@@ -15,7 +15,7 @@ interface SectionConfig {
   icon: string;
   /** `null` when App renders the section itself (it needs App's handlers). */
   component: React.ComponentType | null;
-  /** main: the daily sections; more: pinned to the bottom of the sidebar. */
+  /** main: the daily sections; more: below the divider. */
   group: "main" | "more";
 }
 
@@ -46,7 +46,7 @@ export const SECTIONS_CONFIG = {
   },
   readAloud: {
     labelKey: "sidebar.readAloud",
-    icon: "audio",
+    icon: "speaker",
     component: null,
     group: "main",
   },
@@ -91,17 +91,24 @@ export const SECTIONS_CONFIG = {
 interface SidebarProps {
   activeSection: SidebarSection;
   onSectionChange: (section: SidebarSection) => void;
-  /** Icons only: the narrow rail the top bar's toggle switches to. */
+  /** macOS only: icons only, the rail the hide button folds it to. */
   collapsed?: boolean;
+  onToggle: () => void;
 }
 
+/** The section list. On macOS it sits under the window buttons, with a
+ * button that folds it to an icon rail; elsewhere the native title bar sits
+ * above it. Search narrows the list as you type; Enter opens the first match. */
 export const Sidebar: React.FC<SidebarProps> = ({
   activeSection,
   onSectionChange,
   collapsed = false,
+  onToggle,
 }) => {
   const { t } = useTranslation();
+  const isMac = useOsType() === "macos";
   const [version, setVersion] = useState("");
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     getVersion()
@@ -109,59 +116,96 @@ export const Sidebar: React.FC<SidebarProps> = ({
       .catch(() => setVersion(""));
   }, []);
 
-  const sections = Object.entries(SECTIONS_CONFIG).map(([id, config]) => ({
-    id: id as SidebarSection,
-    ...config,
-  }));
+  const needle = collapsed ? "" : query.trim().toLocaleLowerCase();
+  const sections = Object.entries(SECTIONS_CONFIG)
+    .map(([id, config]) => ({
+      id: id as SidebarSection,
+      label: t(config.labelKey),
+      ...config,
+    }))
+    .filter((s) => s.label.toLocaleLowerCase().includes(needle));
+  const main = sections.filter((s) => s.group === "main");
+  const more = sections.filter((s) => s.group === "more");
 
   const renderItem = (section: (typeof sections)[number]) => {
     const isActive = activeSection === section.id;
-    const label = t(section.labelKey);
     return (
       <button
         key={section.id}
         type="button"
         aria-current={isActive ? "page" : undefined}
-        aria-label={collapsed ? label : undefined}
+        aria-label={collapsed ? section.label : undefined}
         onClick={() => onSectionChange(section.id)}
-        className={`g-nav relative ${isActive ? "on" : ""} ${collapsed ? "justify-center px-0" : ""} w-full cursor-pointer text-start focus-visible:outline-2 focus-visible:outline-accent-ink`}
+        className={`g-nav ${isActive ? "on" : ""} ${collapsed ? "justify-center px-0" : ""} w-full shrink-0 cursor-pointer text-start focus-visible:outline-2 focus-visible:outline-accent-ink`}
       >
         <i className={`g-ic g-i-${section.icon}`} aria-hidden="true" />
         {collapsed ? (
           <span className="g-navtip" aria-hidden="true">
-            {label}
+            {section.label}
           </span>
         ) : (
-          <span className="truncate">{label}</span>
+          <span className="truncate">{section.label}</span>
         )}
       </button>
     );
   };
 
+  const toggleLabel = collapsed ? t("sidebar.show") : t("sidebar.hide");
+
   return (
     <nav
       aria-label={t("sidebar.label")}
-      className={`g-side relative z-10 shrink-0 pt-1 ${collapsed ? "w-[68px] px-2.5" : "w-[212px]"}`}
+      className={`g-side relative z-10 shrink-0 ${collapsed ? "w-[92px]" : "w-[264px]"}`}
       data-tauri-drag-region
     >
-      <div
-        className={`g-mark mb-[22px] h-auto not-italic ${collapsed ? "justify-center px-0" : ""}`}
-        style={{ font: "inherit" }}
-        data-tauri-drag-region
-      >
-        {collapsed ? (
-          <GliderMark className="h-[26px] w-auto" />
-        ) : (
-          <GliderTextLogo height={26} />
-        )}
-      </div>
-      {sections.filter((s) => s.group === "main").map(renderItem)}
-      <div className="g-spacer" data-tauri-drag-region />
-      <div className="g-rule" />
-      {sections.filter((s) => s.group === "more").map(renderItem)}
+      {isMac && (
+        <div
+          className={`g-sidetop ${collapsed ? "mt-10 justify-center px-0" : ""}`}
+          data-tauri-drag-region
+        >
+          <button
+            type="button"
+            className="g-sidebtn"
+            aria-label={toggleLabel}
+            aria-pressed={!collapsed}
+            title={toggleLabel}
+            onClick={onToggle}
+          >
+            <i className="g-ic g-i-sidebar" aria-hidden="true" />
+          </button>
+        </div>
+      )}
       {!collapsed && (
-        <p className="g-ver m-0">
-          {version && t("sidebar.version", { version })}
+        <label className="g-search">
+          <i className="g-ic g-i-search" aria-hidden="true" />
+          <input
+            type="search"
+            value={query}
+            placeholder={t("sidebar.search")}
+            aria-label={t("sidebar.search")}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && sections[0]) {
+                onSectionChange(sections[0].id);
+                setQuery("");
+              } else if (e.key === "Escape") {
+                setQuery("");
+              }
+            }}
+          />
+        </label>
+      )}
+      <div className="flex min-h-0 flex-col gap-0.5 overflow-y-auto">
+        {main.map(renderItem)}
+        {main.length > 0 && more.length > 0 && <div className="g-rule" />}
+        {more.map(renderItem)}
+      </div>
+      <div className="g-spacer" data-tauri-drag-region />
+      {!collapsed && (
+        <p className="g-sidefoot m-0">
+          <GliderMark className="h-4 w-auto" />
+          <b>{t("sidebar.appName")}</b>
+          {version && <span>{t("sidebar.version", { version })}</span>}
         </p>
       )}
     </nav>

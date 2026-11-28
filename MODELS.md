@@ -355,7 +355,7 @@ These power **Rewrite**: select text in any app, press a Refine shortcut (`Optio
 
 **Why these five.** They are small enough to run on a laptop, follow rewrite instructions well, and run in candle without extra native libraries. Phi-4 mini was in an early design; it was swapped for Qwen3 8B because candle's Phi-3 loader can't read Phi-4 mini's file layout.
 
-**Use a provider instead.** In **Models → Large language model** you can send rewrites to OpenAI, Anthropic, OpenRouter, Groq, Cerebras, Z.ai, a custom OpenAI-compatible server (such as Ollama or LM Studio), or Apple Intelligence on supported Macs. Only the selected text is sent.
+**Use a provider instead.** In **Models → Large language model** you can send rewrites to OpenAI, Anthropic, OpenRouter, Groq, a custom OpenAI-compatible server (such as Ollama or LM Studio), or Apple Intelligence on supported Macs. Only the selected text is sent.
 
 ## Engines
 

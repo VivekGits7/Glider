@@ -12,8 +12,8 @@ import { useSettings } from "@/common/settings/useSettings";
 import { useOsType } from "@/common/hooks/useOsType";
 import { Keycaps } from "@/common/shared/Keycaps";
 import { AudioPlayerGroup } from "@/common/ui/AudioPlayer";
-import { Button } from "@/common/ui/Button";
 import { Dialog } from "@/common/ui/Dialog";
+import { PageHeader } from "@/common/shared/PageHeader";
 import { TutorialVideo } from "./TutorialVideo";
 import type { SidebarSection } from "@/app/Sidebar";
 import { copyToClipboard } from "@/features/history/clipboard";
@@ -40,7 +40,7 @@ type ActivityKind = Activity["kind"];
 const FILTERS: [ActivityKind, string, string][] = [
   ["dictation", "mic", "home.kind.dictation"],
   ["read", "audio", "home.kind.read"],
-  ["rewrite", "sparkles", "home.kind.rewrite"],
+  ["rewrite", "star4", "home.kind.rewrite"],
 ];
 
 const startOfToday = () => {
@@ -50,23 +50,9 @@ const startOfToday = () => {
   );
 };
 
-/** Five bars that move while a shortcut is working. */
-const LiveBars: React.FC = () => (
-  <span
-    className="ms-3 inline-flex h-5 items-center gap-[3px] align-middle"
-    aria-hidden="true"
-  >
-    {[0, 1, 2, 3, 4].map((i) => (
-      <i
-        key={i}
-        className="block h-full w-[3px] origin-center animate-bar rounded-full bg-logo-primary"
-        style={{ animationDelay: `${i * 120}ms` }}
-      />
-    ))}
-  </span>
-);
-
-interface ShortcutLineProps {
+interface ShortcutRowProps {
+  /** A canvas icon (g-i-<icon>). */
+  icon: string;
   binding: string | undefined;
   live: boolean;
   idleKey: string;
@@ -74,8 +60,10 @@ interface ShortcutLineProps {
   hintKey: string;
 }
 
-/** One serif sentence with the shortcut's keycaps set inside it. */
-const ShortcutLine: React.FC<ShortcutLineProps> = ({
+/** One shortcut: its icon, "Hold fn to dictate" with the keys set in the
+ * sentence, and a line on what it does. While it works the sentence says so. */
+const ShortcutRow: React.FC<ShortcutRowProps> = ({
+  icon,
   binding,
   live,
   idleKey,
@@ -85,43 +73,43 @@ const ShortcutLine: React.FC<ShortcutLineProps> = ({
   const { t } = useTranslation();
   const osType = useOsType();
   const keys = binding ? (
-    <Keycaps
-      binding={binding}
-      osType={osType}
-      size="hero"
-      live={live}
-      className="mx-1"
-    />
+    <Keycaps binding={binding} osType={osType} live={live} />
   ) : (
     <span />
   );
   return (
-    <div className="py-4 first:pt-0 last:pb-0">
-      {/* Both states share one grid cell, so the hidden keycap line keeps the
-          card's height and nothing jumps while listening or reading. */}
-      <div
-        aria-live="polite"
-        className="grid items-center font-serif text-[24px] leading-[1.25] text-balance text-text @[640px]:text-[28px]"
-      >
-        <p className={`[grid-area:1/1] ${live ? "invisible" : ""}`}>
-          <Trans i18nKey={idleKey} components={{ keys }} />
-        </p>
-        {live && (
-          <p className="[grid-area:1/1]">
-            {t(liveKey)}
-            <LiveBars />
+    <div className="g-srow">
+      <span className="g-picon">
+        <i className={`g-ic g-i-${icon}`} aria-hidden="true" />
+      </span>
+      <div className="flex min-w-0 flex-col gap-[3px]">
+        {/* Both states share one grid cell, so nothing jumps while it works. */}
+        <div aria-live="polite" className="grid">
+          <p className={`g-srow-t [grid-area:1/1] ${live ? "invisible" : ""}`}>
+            <Trans i18nKey={idleKey} components={{ keys }} />
           </p>
-        )}
+          {live && (
+            <p className="g-srow-t [grid-area:1/1]">
+              {t(liveKey)}
+              <span className="g-bars sm" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+                <i />
+                <i />
+              </span>
+            </p>
+          )}
+        </div>
+        <p className="m-0 text-[12px] text-ink-2">{t(hintKey)}</p>
       </div>
-      <p className="mt-1.5 text-[14px] text-ink-2">{t(hintKey)}</p>
     </div>
   );
 };
 
 export const HomePage: React.FC<{
   onNavigate: (section: SidebarSection) => void;
-  onHowToUse: () => void;
-}> = ({ onNavigate, onHowToUse }) => {
+}> = ({ onNavigate }) => {
   const { t, i18n } = useTranslation();
   const { getSetting } = useSettings();
   const bindings = getSetting("bindings");
@@ -212,25 +200,35 @@ export const HomePage: React.FC<{
   });
 
   return (
-    <div className="flex flex-col gap-8">
-      <h1 className="font-ui text-[36px] font-normal leading-[1.1] tracking-[-0.01em] text-text">
+    <>
+      <PageHeader title={t("sidebar.home")} />
+      <p className="g-welcome">
         {name ? t("home.welcomeName", { name }) : t("home.welcome")}
-      </h1>
+      </p>
 
-      <div className="grid grid-cols-1 gap-3 @[720px]:grid-cols-[minmax(0,1fr)_200px]">
-        <section
-          aria-label={t("home.shortcutsLabel")}
-          className="flex flex-col rounded-[22px] border border-line bg-card px-7 py-6"
-        >
-          <div className="divide-y divide-line">
-            <ShortcutLine
+      <section className="g-group" aria-label={t("home.shortcutsLabel")}>
+        <div className="g-sechead">
+          <h2 className="g-gt">{t("home.shortcutsLabel")}</h2>
+          <button
+            type="button"
+            className="g-link cursor-pointer"
+            onClick={() => onNavigate("dictation")}
+          >
+            {t("home.changeShortcuts")}
+          </button>
+        </div>
+        <div className="grid grid-cols-1 gap-2.5 @[720px]:grid-cols-[minmax(0,1fr)_240px]">
+          <div className="g-card">
+            <ShortcutRow
+              icon="mic"
               binding={bindings?.transcribe?.current_binding}
               live={listening}
               idleKey="home.dictateLine"
               liveKey="home.listening"
               hintKey="home.dictateHint"
             />
-            <ShortcutLine
+            <ShortcutRow
+              icon="speaker"
               binding={bindings?.speak_selection?.current_binding}
               live={speaking}
               idleKey="home.listenLine"
@@ -238,85 +236,62 @@ export const HomePage: React.FC<{
               hintKey="home.listenHint"
             />
           </div>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <Button variant="primary" onClick={() => setTutorialOpen(true)}>
-              {t("home.tutorial.button")}
-            </Button>
-            <Button variant="secondary" onClick={onHowToUse}>
-              {t("home.howToUse")}
-            </Button>
-            <Button variant="ghost" onClick={() => onNavigate("dictation")}>
-              {t("home.changeShortcuts")}
-            </Button>
-          </div>
-        </section>
-
-        <section
-          aria-label={t("home.statsLabel")}
-          className="grid grid-cols-3 gap-4 rounded-[22px] border border-line bg-card px-6 py-6 @[720px]:flex @[720px]:flex-col @[720px]:justify-center @[720px]:gap-4"
-        >
-          {(
-            [
-              [stats?.dictated_words, t("home.stats.dictated")],
-              [stats?.read_words, t("home.stats.read")],
+          <div className="g-card g-numbers" aria-label={t("home.statsLabel")}>
+            {(
               [
-                stats?.streak_days,
-                t("home.stats.streak", { count: stats?.streak_days ?? 0 }),
-              ],
-            ] as const
-          ).map(([value, label]) => (
-            <p key={label} className="flex flex-col gap-1">
-              <span className="font-serif text-[28px] leading-none tabular-nums text-text @[720px]:text-[34px]">
-                {value === undefined ? "–" : compact.format(value)}
-              </span>
-              <span className="text-[13px] text-ink-2">{label}</span>
-            </p>
-          ))}
-        </section>
-      </div>
-
-      <section className="flex flex-col gap-3">
-        <div className="flex items-center justify-between px-1">
-          <h2 className="font-ui text-[18px] font-normal text-text">
-            {t("home.today")}
-          </h2>
-          <div className="flex items-center gap-3">
-            <div
-              role="group"
-              aria-label={t("home.filterLabel")}
-              className="flex items-center gap-0.5"
-            >
-              {FILTERS.map(([kind, icon, label]) => (
-                <IconButton
-                  key={kind}
-                  icon={icon}
-                  title={t(label)}
-                  active={filter === kind}
-                  onClick={() =>
-                    setFilter((current) => (current === kind ? null : kind))
-                  }
-                />
-              ))}
-            </div>
-            <button
-              type="button"
-              onClick={() => onNavigate("history")}
-              className="cursor-pointer text-[13px] text-ink-2 underline decoration-line-strong underline-offset-[3px] hover:text-text"
-            >
-              {t("home.seeAll")}
-            </button>
+                [stats?.dictated_words, t("home.stats.dictated")],
+                [stats?.read_words, t("home.stats.read")],
+                [
+                  stats?.streak_days,
+                  t("home.stats.streak", { count: stats?.streak_days ?? 0 }),
+                ],
+              ] as const
+            ).map(([value, label]) => (
+              <p key={label}>
+                <b>{value === undefined ? "–" : compact.format(value)}</b>
+                <span>{label}</span>
+              </p>
+            ))}
           </div>
         </div>
+      </section>
+
+      <section className="g-group">
+        <div className="g-sechead">
+          <h2 className="g-gt">{t("home.today")}</h2>
+          <div
+            role="group"
+            aria-label={t("home.filterLabel")}
+            className="ms-auto me-3.5 flex h-[18px] items-center gap-0.5 self-center"
+          >
+            {FILTERS.map(([kind, icon, label]) => (
+              <IconButton
+                key={kind}
+                icon={icon}
+                title={t(label)}
+                active={filter === kind}
+                onClick={() =>
+                  setFilter((current) => (current === kind ? null : kind))
+                }
+              />
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={() => onNavigate("history")}
+            className="g-link cursor-pointer"
+          >
+            {t("home.seeAll")}
+          </button>
+        </div>
         <AudioPlayerGroup>
-          <div className="g-list">
-            {shown == null ? (
-              <div className="h-24" aria-busy="true" />
-            ) : shown.length === 0 ? (
-              <p className="m-0 px-6 py-8 text-[14px] leading-relaxed text-ink-2">
-                {t("home.empty")}
-              </p>
-            ) : (
-              shown.map((item) =>
+          {shown == null ? (
+            <div className="h-20" aria-busy="true" />
+          ) : shown.length === 0 ? (
+            <p className="g-empty">{t("home.empty")}</p>
+          ) : (
+            <div className="g-list">
+              {shown.map((item) =>
                 item.kind === "dictation" ? (
                   <HistoryEntryComponent
                     key={`d${item.entry.id}`}
@@ -347,10 +322,31 @@ export const HomePage: React.FC<{
                     onChanged={load}
                   />
                 ),
-              )
-            )}
-          </div>
+              )}
+            </div>
+          )}
         </AudioPlayerGroup>
+      </section>
+
+      <section className="g-group">
+        <h2 className="g-gt ms-1">{t("home.howToUse")}</h2>
+        <button
+          type="button"
+          className="g-card g-howto"
+          onClick={() => setTutorialOpen(true)}
+        >
+          <span className="g-thumb" aria-hidden="true">
+            <i className="g-ic g-i-play" />
+          </span>
+          <span className="flex flex-col gap-[3px]">
+            <span className="text-[13px] font-medium text-text">
+              {t("home.tutorial.title")}
+            </span>
+            <span className="text-[12px] text-ink-2">
+              {t("home.tutorial.soon")}
+            </span>
+          </span>
+        </button>
       </section>
       <Dialog
         open={tutorialOpen}
@@ -362,6 +358,6 @@ export const HomePage: React.FC<{
       >
         <TutorialVideo />
       </Dialog>
-    </div>
+    </>
   );
 };

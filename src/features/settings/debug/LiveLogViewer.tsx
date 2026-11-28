@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { listen } from "@tauri-apps/api/event";
+import { commands } from "@/bindings";
 import { SettingContainer } from "@/common/ui/SettingContainer";
 import { Button } from "@/common/ui/Button";
 
@@ -81,18 +82,36 @@ export const LiveLogViewer: React.FC<LiveLogViewerProps> = ({
 }) => {
   const { t } = useTranslation();
   const [logs, setLogs] = useState<LogLine[]>([]);
-  const [paused, setPaused] = useState(false);
+  // Logging is paused until Resume: nothing is shown here or written to the
+  // log file. The switch lives in the app, so it holds across pages.
+  const [paused, setPaused] = useState(true);
   const [copied, setCopied] = useState(false);
 
   const pendingRef = useRef<LogLine[]>([]);
   const idRef = useRef(0);
-  const pausedRef = useRef(false);
+  const pausedRef = useRef(true);
   const pinnedRef = useRef(true);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     pausedRef.current = paused;
   }, [paused]);
+
+  useEffect(() => {
+    commands
+      .isLogging()
+      .then((on) => setPaused(!on))
+      .catch(() => setPaused(true));
+  }, []);
+
+  const toggleLogging = useCallback(() => {
+    const on = pausedRef.current;
+    setPaused(!on);
+    commands.setLogging(on).catch((error) => {
+      console.error("Failed to switch logging:", error);
+      setPaused(on);
+    });
+  }, []);
 
   // Subscribe to the backend log stream. Lines land in a ref buffer rather than
   // state so high log volume never overwhelms React.
@@ -191,11 +210,7 @@ export const LiveLogViewer: React.FC<LiveLogViewerProps> = ({
           </span>
         </div>
         <div className="flex items-center gap-2 shrink-0">
-          <Button
-            variant="secondary"
-            size="sm"
-            onClick={() => setPaused((p) => !p)}
-          >
+          <Button variant="secondary" size="sm" onClick={toggleLogging}>
             {paused
               ? t("settings.debug.liveLogs.resume")
               : t("settings.debug.liveLogs.pause")}
@@ -226,7 +241,9 @@ export const LiveLogViewer: React.FC<LiveLogViewerProps> = ({
       >
         {logs.length === 0 ? (
           <div className="text-ink-3 select-none">
-            {t("settings.debug.liveLogs.empty")}
+            {paused
+              ? t("settings.debug.liveLogs.emptyPaused")
+              : t("settings.debug.liveLogs.empty")}
           </div>
         ) : (
           logs.map((line) => {

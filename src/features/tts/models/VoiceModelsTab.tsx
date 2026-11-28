@@ -5,6 +5,7 @@ import { modelLanguage, useVoiceModels } from "../hooks/useVoiceModels";
 import { languageName } from "@/common/lib/languages";
 import { notify } from "@/common/notices/noticeStore";
 import { useSettings } from "@/common/settings/useSettings";
+import { RECOMMENDED_VOICES } from "../lib/recommended";
 import { Dropdown } from "@/common/ui/Dropdown";
 import { Tooltip } from "@/common/ui/Tooltip";
 import { estimateMemory, formatModelSize } from "@/common/lib/format";
@@ -15,7 +16,10 @@ const gridStyle: React.CSSProperties = {
   gridTemplateColumns: "72px 56px 80px 64px 72px",
 };
 
-const ACTIONS = "flex w-[380px] items-center justify-end gap-2";
+// One width for every row's actions (and the header's spacer), so the
+// columns line up; room for a voice, a sample button, a language and Use.
+const ACTIONS_W = "w-[300px]";
+const ACTIONS = `flex ${ACTIONS_W} items-center justify-end gap-2`;
 
 /** Read Aloud voices: the ones on this computer, then more to download.
  * `live` is the loaded voice's memory: `undefined` until known, `null` when
@@ -99,10 +103,15 @@ export const VoiceModelsTab: React.FC<{
     return (
       <div className="g-mrow" key={model.id}>
         <div className="min-w-0">
-          <div className="g-mname">
+          <div className="g-mname flex-wrap">
             {model.name}
             {inUse && (
               <span className="g-badge">{t("settings.models.inUse")}</span>
+            )}
+            {RECOMMENDED_VOICES.includes(model.id) && (
+              <span className="g-badge plain">
+                {t("modelTable.roles.recommended")}
+              </span>
             )}
           </div>
           {model.is_downloading ? (
@@ -165,52 +174,32 @@ export const VoiceModelsTab: React.FC<{
               </Tooltip>
             ) : model.is_downloaded ? (
               <>
-                {/* One pill: the voice, its sample button, then the arrow. */}
-                {model.voices.length > 1 ? (
-                  <div className="relative">
-                    <Dropdown
-                      className="w-[150px] [&_.g-sel]:h-8 [&_.g-sel]:min-w-0 [&_.g-sel_.g-i-chev]:ms-7 [&_button]:text-[13px]"
-                      tone="neutral"
-                      options={voicesOf(model).map(({ name, index }) => ({
-                        value: String(index),
-                        label: name,
-                      }))}
-                      selectedValue={String(voiceOf(model))}
-                      onSelect={(value) => pickVoice(model, Number(value))}
-                    />
-                    <button
-                      type="button"
-                      className="absolute end-8 top-1/2 grid size-6 -translate-y-1/2 cursor-pointer place-items-center rounded-md text-ink-2 hover:bg-wash hover:text-text"
-                      aria-pressed={sampling === model.id}
-                      aria-label={t("settings.models.sample")}
-                      title={t("settings.models.sample")}
-                      onClick={() => sample(model)}
-                    >
-                      <i
-                        className={`g-ic size-3.5 ${sampling === model.id ? "g-i-stop text-accent-ink" : "g-i-play"}`}
-                        aria-hidden="true"
-                      />
-                    </button>
-                  </div>
-                ) : (
-                  <button
-                    type="button"
-                    className="g-ib cursor-pointer"
-                    aria-pressed={sampling === model.id}
-                    aria-label={t("settings.models.sample")}
-                    title={t("settings.models.sample")}
-                    onClick={() => sample(model)}
-                  >
-                    <i
-                      className={`g-ic size-3.5 ${sampling === model.id ? "g-i-stop text-accent-ink" : "g-i-play"}`}
-                      aria-hidden="true"
-                    />
-                  </button>
+                {/* The voice, then a button that plays a sample of it. */}
+                {model.voices.length > 1 && (
+                  <Dropdown
+                    options={voicesOf(model).map(({ name, index }) => ({
+                      value: String(index),
+                      label: name,
+                    }))}
+                    selectedValue={String(voiceOf(model))}
+                    onSelect={(value) => pickVoice(model, Number(value))}
+                  />
                 )}
+                <button
+                  type="button"
+                  className="g-ib cursor-pointer"
+                  aria-pressed={sampling === model.id}
+                  aria-label={t("settings.models.sample")}
+                  title={t("settings.models.sample")}
+                  onClick={() => sample(model)}
+                >
+                  <i
+                    className={`g-ic size-3.5 ${sampling === model.id ? "g-i-stop text-accent-ink" : "g-i-play"}`}
+                    aria-hidden="true"
+                  />
+                </button>
                 {model.languages.length > 1 && (
                   <Dropdown
-                    className="w-[118px] [&_.g-sel]:h-8 [&_.g-sel]:min-w-0 [&_button]:text-[13px]"
-                    tone="neutral"
                     options={languageOptions(model)}
                     selectedValue={readingLanguage(model)}
                     onSelect={(value) => setLanguage(model, value)}
@@ -262,7 +251,7 @@ export const VoiceModelsTab: React.FC<{
           <span>{t("modelTable.size")}</span>
           <span>{t("settings.models.columns.memory")}</span>
         </div>
-        <span className="w-[380px]" />
+        <span className={ACTIONS_W} />
       </div>
     </div>
   );
@@ -280,6 +269,12 @@ export const VoiceModelsTab: React.FC<{
   );
   const onDisk = shown.filter((m) => m.is_downloaded);
   const more = shown.filter((m) => !m.is_downloaded);
+  // The recommended voices lead the ones to download.
+  more.sort(
+    (a, b) =>
+      Number(RECOMMENDED_VOICES.includes(b.id)) -
+      Number(RECOMMENDED_VOICES.includes(a.id)),
+  );
   // The voice in use comes first.
   onDisk.sort(
     (a, b) => Number(b.id === selected?.id) - Number(a.id === selected?.id),

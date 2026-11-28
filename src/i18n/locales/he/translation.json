@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "חיפוש",
+    "show": "הצגת סרגל הצד",
+    "hide": "הסתרת סרגל הצד"
   },
   "onboarding": {
     "customModelDescription": "לא נתמך באופן רשמי",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "לוגים בזמן אמת",
-        "description": "מציג שורות לוג חדשות לפי רמת הלוג כל עוד החלונית פתוחה.",
+        "description": "מושהה כברירת מחדל, כך ששום דבר לא נשמר. המשך כדי להציג כאן שורות לוג חדשות ולשמור אותן בתיקיית הלוגים, לפי רמת הלוג.",
         "live": "בזמן אמת",
         "paused": "מושהה",
         "pause": "השהה",
         "resume": "המשך",
         "copied": "הועתק",
         "lineCount": "{{count}} שורות",
-        "empty": "ממתין ללוגים… רשומות יופיעו כאן כשהאפליקציה תפיק אותן."
+        "empty": "ממתין ללוגים… רשומות יופיעו כאן כשהאפליקציה תפיק אותן.",
+        "emptyPaused": "הרישום מושהה. שום דבר לא מוצג או נשמר."
       },
       "updateChecks": {
         "label": "בדוק עדכונים",
@@ -967,28 +972,6 @@
         "title": "קוד מקור",
         "description": "צפה בקוד המקור ותרום",
         "button": "צפה ב-GitHub"
-      },
-      "acknowledgments": {
-        "title": "תודות",
-        "ggml": {
-          "title": "ggml",
-          "description": "הסקה מהירה לביצועים גבוהים עבור מודל זיהוי הדיבור Whisper של OpenAI",
-          "details": "Glider משתמש ב-ggml לתמלול מהיר ומקומי. תודה לעבודה המדהימה של Georgi Gerganov וכל התורמים."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "ההכתבה של Glider בנויה על Handy מאת CJ Pais, ברישיון MIT."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "הקולות של Read Aloud רצים על sherpa-onnx."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite רץ על candle, ספריית ה-ML ב-Rust של Hugging Face."
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "כהה"
     }
   },
+  "appIcon": {
+    "title": "סמל האפליקציה",
+    "description": "Dock ומחליף האפליקציות",
+    "descriptionTaskbar": "שורת המשימות ומחליף האפליקציות",
+    "automatic": "אוטומטי"
+  },
   "overlay": {
     "transcribing": "מתמלל...",
     "loadingModel": "טוען מודל...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "דיבור",
+    "listening": "האזנה",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

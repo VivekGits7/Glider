@@ -29,13 +29,13 @@ use crate::common::settings::get_settings;
 // We use u8 to store the log::LevelFilter as a number
 pub static FILE_LOG_LEVEL: AtomicU8 = AtomicU8::new(log::LevelFilter::Debug as u8);
 
-/// When `true`, log records are also forwarded to the webview via the
-/// `log://log` event for the debug panel's live log viewer. Gated on debug
-/// mode — the live log viewer is its only consumer and only exists in debug
-/// mode — so normal runs never broadcast log records (which can include file
-/// paths or transcribed text) onto the frontend event bus. Synced at startup
-/// and whenever debug mode is toggled (see `common::shortcut::change_debug_mode_setting`).
-pub static WEBVIEW_LOG_STREAMING: AtomicBool = AtomicBool::new(false);
+/// Whether Glider is logging right now. Off on every launch (the `--debug`
+/// flag starts it on), so nothing is written to the log file or sent to the
+/// window by default; the Debug page's Live logs Resume and Pause turn it on
+/// and off (see `common::commands::set_logging`). While on, records at the
+/// chosen level go to the log file and, via the `log://log` event, to the
+/// live log viewer. The console target is not affected.
+pub static LOGGING_ON: AtomicBool = AtomicBool::new(false);
 
 fn level_filter_from_u8(value: u8) -> log::LevelFilter {
     match value {
@@ -87,6 +87,8 @@ fn show_main_window(app: &AppHandle) {
             if let Err(e) = app.set_activation_policy(tauri::ActivationPolicy::Regular) {
                 log::error!("Failed to set activation policy to Regular: {}", e);
             }
+            // The Dock icon is back; make sure it is the one the setting picks.
+            common::app_icon::apply(app);
         }
         return;
     }
@@ -698,6 +700,7 @@ pub fn run(cli_args: CliArgs) {
             common::shortcut::change_audio_feedback_volume_setting,
             common::shortcut::change_sound_theme_setting,
             common::shortcut::change_theme_setting,
+            common::shortcut::change_app_icon_setting,
             common::shortcut::change_start_hidden_setting,
             common::shortcut::change_autostart_setting,
             common::shortcut::change_translate_to_english_setting,
@@ -766,6 +769,8 @@ pub fn run(cli_args: CliArgs) {
             common::commands::get_default_settings,
             common::commands::get_log_dir_path,
             common::commands::set_log_level,
+            common::commands::set_logging,
+            common::commands::is_logging,
             common::commands::open_recordings_folder,
             common::commands::open_log_dir,
             common::commands::open_app_data_dir,
@@ -916,7 +921,7 @@ pub fn run(cli_args: CliArgs) {
                         let console_filter = console_filter.clone();
                         move |metadata| console_filter.enabled(metadata)
                     }),
-                    // File logs respect the user's settings (stored in FILE_LOG_LEVEL atomic)
+                    // File logs: only while logging is on, at the user's level.
                     Target::new(
                         if let Some(data_dir) = common::system::portable::data_dir() {
                             TargetKind::Folder {
@@ -930,15 +935,14 @@ pub fn run(cli_args: CliArgs) {
                         },
                     )
                     .filter(|metadata| {
-                        let file_level = FILE_LOG_LEVEL.load(Ordering::Relaxed);
-                        metadata.level() <= level_filter_from_u8(file_level)
+                        LOGGING_ON.load(Ordering::Relaxed)
+                            && metadata.level()
+                                <= level_filter_from_u8(FILE_LOG_LEVEL.load(Ordering::Relaxed))
                     }),
-                    // Stream logs to the webview (via the `log://log` event) so the
-                    // debug panel's live log viewer can show them in real time. Only
-                    // active while debug mode is on (its sole consumer), and shares the
-                    // file log level so the "Log Level" setting controls verbosity.
+                    // The same records, streamed to the window (the `log://log`
+                    // event) for the Debug page's live log viewer.
                     Target::new(TargetKind::Webview).filter(|metadata| {
-                        WEBVIEW_LOG_STREAMING.load(Ordering::Relaxed)
+                        LOGGING_ON.load(Ordering::Relaxed)
                             && metadata.level()
                                 <= level_filter_from_u8(FILE_LOG_LEVEL.load(Ordering::Relaxed))
                     }),
@@ -1062,15 +1066,24 @@ pub fn run(cli_args: CliArgs) {
                     .maximizable(true)
                     .visible(false);
 
-            // macOS: the window buttons sit in the app's 44px top bar, over the
-            // content; the top bar drags the window. wry puts the buttons'
-            // centre at y - 2, so y = 24 centres them in the bar.
+            // macOS: no title bar. The window buttons sit in the sidebar's top
+            // row (14px down, 30px tall; wry puts the buttons' centre at
+            // y - 2, so y = 31 centres them on it). The window is see-through
+            // with the system's sidebar material behind it, which the sidebar's
+            // 92% tint lets show; every screen paints its own background.
             #[cfg(target_os = "macos")]
             {
                 win_builder = win_builder
                     .title_bar_style(tauri::TitleBarStyle::Overlay)
                     .hidden_title(true)
-                    .traffic_light_position(tauri::LogicalPosition::new(16.0, 24.0));
+                    .traffic_light_position(tauri::LogicalPosition::new(18.0, 31.0))
+                    .transparent(true)
+                    .effects(
+                        tauri::window::EffectsBuilder::new()
+                            .effect(tauri::window::Effect::Sidebar)
+                            .state(tauri::window::EffectState::FollowsWindowActiveState)
+                            .build(),
+                    );
             }
 
             if let Some(data_dir) = common::system::portable::data_dir() {
@@ -1122,6 +1135,7 @@ pub fn run(cli_args: CliArgs) {
             // platform.
             #[cfg(any(target_os = "windows", target_os = "macos"))]
             common::shortcut::apply_window_theme(app.handle(), settings.theme);
+            common::app_icon::apply(app.handle());
 
             // CLI --debug flag overrides debug_mode and log level (runtime-only, not persisted)
             if cli_args.debug {
@@ -1133,10 +1147,8 @@ pub fn run(cli_args: CliArgs) {
             let file_log_level: log::Level = tauri_log_level.into();
             // Store the file log level in the atomic for the filter to use
             FILE_LOG_LEVEL.store(file_log_level.to_level_filter() as u8, Ordering::Relaxed);
-            // Only forward logs to the webview while debug mode is on (the live log
-            // viewer is the sole consumer and only exists in debug mode). This also
-            // honors the runtime `--debug` override applied to `settings` above.
-            WEBVIEW_LOG_STREAMING.store(settings.debug_mode, Ordering::Relaxed);
+            // Logging stays off until it is resumed, except under `--debug`.
+            LOGGING_ON.store(cli_args.debug, Ordering::Relaxed);
             let app_handle = app.handle().clone();
             app.manage(TranscriptionCoordinator::new(app_handle.clone()));
 
@@ -1218,6 +1230,7 @@ pub fn run(cli_args: CliArgs) {
                 log::info!("Theme changed to: {:?}", theme);
                 // Re-apply the current tray state with the new theme's icon set
                 common::utils::refresh_tray_icon(window.app_handle());
+                common::app_icon::apply(window.app_handle());
             }
             _ => {}
         })

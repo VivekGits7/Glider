@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "खोजें",
+    "show": "साइडबार दिखाएँ",
+    "hide": "साइडबार छिपाएँ"
   },
   "onboarding": {
     "customModelDescription": "आधिकारिक रूप से समर्थित नहीं",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "लाइव लॉग",
-        "description": "पैनल खुला रहने तक आपके लॉग लेवल की नई लाइनें दिखाता है।",
+        "description": "डिफ़ॉल्ट रूप से रुका रहता है, इसलिए कुछ सेव नहीं होता। फिर से शुरू करें, ताकि आपके लॉग लेवल की नई लाइनें यहां दिखें और लॉग फ़ोल्डर में सेव हों।",
         "live": "लाइव",
         "paused": "रोका गया",
         "pause": "रोकें",
         "resume": "फिर से शुरू करें",
         "copied": "कॉपी हो गया",
         "lineCount": "{{count}} लाइनें",
-        "empty": "लॉग का इंतज़ार है… ऐप से लॉग आते ही एंट्री यहां दिखेंगी."
+        "empty": "लॉग का इंतज़ार है… ऐप से लॉग आते ही एंट्री यहां दिखेंगी.",
+        "emptyPaused": "लॉगिंग रुकी हुई है। कुछ भी दिखाया या सेव नहीं किया जाता।"
       },
       "updateChecks": {
         "label": "अपडेट जांचें",
@@ -967,28 +972,6 @@
         "title": "सोर्स कोड",
         "description": "सोर्स कोड देखें और योगदान दें",
         "button": "GitHub पर देखें"
-      },
-      "acknowledgments": {
-        "title": "आभार",
-        "ggml": {
-          "title": "ggml",
-          "description": "डिवाइस पर ही मशीन लर्निंग इन्फ़रेंस के लिए हाई-परफ़ॉर्मेंस टेंसर लाइब्रेरी",
-          "details": "Glider का लोकल स्पीच-टू-टेक्स्ट transcribe.cpp और ggml पर आधारित है. Georgi Gerganov और योगदान देने वालों के शानदार काम के लिए धन्यवाद."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "Glider का डिक्टेशन CJ Pais के Handy पर बना है, MIT लाइसेंस।"
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Read Aloud की आवाज़ें sherpa-onnx पर चलती हैं।"
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite, Hugging Face की Rust ML लाइब्रेरी candle पर चलता है।"
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "डार्क"
     }
   },
+  "appIcon": {
+    "title": "ऐप आइकन",
+    "description": "Dock और ऐप स्विचर",
+    "descriptionTaskbar": "टास्कबार और ऐप स्विचर",
+    "automatic": "स्वचालित"
+  },
   "overlay": {
     "transcribing": "ट्रांसक्राइब हो रहा है...",
     "loadingModel": "मॉडल लोड हो रहा है...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "बोलना",
+    "listening": "सुनना",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "검색",
+    "show": "사이드바 보기",
+    "hide": "사이드바 숨기기"
   },
   "onboarding": {
     "customModelDescription": "공식 지원되지 않음",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "실시간 로그",
-        "description": "이 패널이 열려 있는 동안 설정한 로그 레벨의 새 로그를 보여 줍니다.",
+        "description": "기본적으로 일시정지되어 있어 아무것도 저장되지 않습니다. 재개하면 설정한 로그 레벨의 새 로그가 여기에 표시되고 로그 폴더에 저장됩니다.",
         "live": "실시간",
         "paused": "일시정지됨",
         "pause": "일시정지",
         "resume": "재개",
         "copied": "복사됨",
         "lineCount": "{{count}}줄",
-        "empty": "로그 대기 중… 앱이 로그를 출력하면 여기에 표시됩니다."
+        "empty": "로그 대기 중… 앱이 로그를 출력하면 여기에 표시됩니다.",
+        "emptyPaused": "로그 기록이 일시정지되었습니다. 아무것도 표시되거나 저장되지 않습니다."
       },
       "updateChecks": {
         "label": "업데이트 확인",
@@ -967,28 +972,6 @@
         "title": "소스 코드",
         "description": "소스 코드 보기 및 기여",
         "button": "GitHub에서 보기"
-      },
-      "acknowledgments": {
-        "title": "감사의 말",
-        "ggml": {
-          "title": "ggml",
-          "description": "OpenAI의 Whisper 자동 음성 인식 모델의 고성능 추론",
-          "details": "Glider는 빠르고 로컬 음성-텍스트 처리를 위해 ggml를 사용합니다. Georgi Gerganov와 기여자들의 놀라운 작업에 감사드립니다."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "Glider의 받아쓰기는 CJ Pais의 Handy를 바탕으로 합니다. MIT 라이선스."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Read Aloud 음성은 sherpa-onnx에서 실행됩니다."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite는 Hugging Face의 Rust ML 라이브러리 candle에서 실행됩니다."
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "어둡게"
     }
   },
+  "appIcon": {
+    "title": "앱 아이콘",
+    "description": "Dock 및 앱 전환기",
+    "descriptionTaskbar": "작업 표시줄 및 앱 전환기",
+    "automatic": "자동"
+  },
   "overlay": {
     "transcribing": "텍스트로 변환 중...",
     "loadingModel": "모델 로딩 중...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "말하기",
+    "listening": "듣기",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

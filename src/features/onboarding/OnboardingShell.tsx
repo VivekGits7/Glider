@@ -36,7 +36,7 @@ export const OnboardingShell: React.FC<OnboardingShellProps> = ({
     <div
       data-onboarding=""
       data-tauri-drag-region
-      className="flex h-screen w-full cursor-default overflow-hidden bg-ground select-none"
+      className="flex h-screen w-full cursor-default overflow-hidden bg-background select-none"
     >
       <div className="g-ob shrink-0 text-[15px] leading-[1.6] text-text antialiased">
         <div className="g-obtop" data-tauri-drag-region>

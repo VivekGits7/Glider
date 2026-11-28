@@ -10,7 +10,6 @@ import { Keycaps } from "@/common/shared/Keycaps";
 import { useOsType } from "@/common/hooks/useOsType";
 import { keycapLabel } from "@/common/lib/keyboard";
 import { useVoiceModels } from "@/features/tts/hooks/useVoiceModels";
-import { useModelStore } from "./store/modelStore";
 import { DictationDemo } from "./DictationDemo";
 import { ModelSettingsCard } from "./settings/ModelSettingsCard";
 import { MicrophoneSelector } from "./settings/MicrophoneSelector";
@@ -37,16 +36,11 @@ import { LivePreview } from "./settings/LivePreview";
 export const DictationPage: React.FC<{
   /** Opens the onboarding's try-it step. */
   onTry: () => void;
-  /** Opens Models on its Speech to text tab. */
-  onManageModels: () => void;
-}> = ({ onTry, onManageModels }) => {
+}> = ({ onTry }) => {
   const { t } = useTranslation();
   const osType = useOsType();
   const { audioFeedbackEnabled, getSetting } = useSettings();
   const binding = getSetting("bindings")?.transcribe?.current_binding;
-  const modelName = useModelStore(
-    (s) => s.models.find((m) => m.id === s.currentModel)?.name ?? "",
-  );
   // The example speaks in the Read Aloud voice, and starts muted every visit.
   const voice = useVoiceModels().selected;
   const [sound, setSound] = useState(false);
@@ -63,9 +57,7 @@ export const DictationPage: React.FC<{
             i18nKey="home.dictateLine"
             components={{
               keys: binding ? (
-                <span className="g-keys mx-1">
-                  <Keycaps binding={binding} osType={osType} />
-                </span>
+                <Keycaps binding={binding} osType={osType} size="hero" />
               ) : (
                 <span />
               ),
@@ -74,21 +66,9 @@ export const DictationPage: React.FC<{
         }
         hint={t("settings.dictation.intro.hint")}
         actions={
-          <>
-            <button type="button" className="g-try" onClick={onTry}>
-              {t("settings.dictation.intro.try")}
-            </button>
-            {modelName && (
-              <button
-                type="button"
-                className="g-btn ghost cursor-pointer"
-                onClick={onManageModels}
-              >
-                <i className="g-ic g-i-cpu" aria-hidden="true" />
-                {modelName}
-              </button>
-            )}
-          </>
+          <button type="button" className="g-try" onClick={onTry}>
+            {t("settings.dictation.intro.try")}
+          </button>
         }
         demoLabel={t("settings.dictation.intro.label")}
         sound={

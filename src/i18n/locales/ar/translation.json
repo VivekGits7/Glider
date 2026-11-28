@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "بحث",
+    "show": "إظهار الشريط الجانبي",
+    "hide": "إخفاء الشريط الجانبي"
   },
   "onboarding": {
     "customModelDescription": "غير مدعوم رسميًا",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "السجلات المباشرة",
-        "description": "يعرض أسطر السجل الجديدة حسب مستوى السجل ما دامت اللوحة مفتوحة.",
+        "description": "متوقف مؤقتًا افتراضيًا، فلا يُحفظ شيء. استأنف لعرض أسطر السجل الجديدة هنا وحفظها في مجلد السجلات حسب مستوى السجل.",
         "live": "مباشر",
         "paused": "متوقف مؤقتًا",
         "pause": "إيقاف مؤقت",
         "resume": "استئناف",
         "copied": "تم النسخ",
         "lineCount": "{{count}} سطر",
-        "empty": "بانتظار السجلات… ستظهر الإدخالات هنا فور إصدار التطبيق لها."
+        "empty": "بانتظار السجلات… ستظهر الإدخالات هنا فور إصدار التطبيق لها.",
+        "emptyPaused": "التسجيل متوقف مؤقتًا. لا يُعرض شيء ولا يُحفظ."
       },
       "updateChecks": {
         "label": "التحقق من وجود تحديثات",
@@ -967,28 +972,6 @@
         "title": "كود المصدر",
         "description": "عرض كود المصدر والمساهمة",
         "button": "عرض على GitHub"
-      },
-      "acknowledgments": {
-        "title": "شكر وتقدير",
-        "ggml": {
-          "title": "ggml",
-          "description": "استنتاج عالي الأداء لنموذج التعرف التلقائي على الكلام Whisper من OpenAI",
-          "details": ".يستخدم Glider برنامج ggml لمعالجة سريعة ومحلية لتحويل الكلام إلى نص. شكراً للعمل الرائع الذي قام به Georgi Gerganov والمساهمون"
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "إملاء Glider مبني على Handy من CJ Pais، بترخيص MIT."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "أصوات Read Aloud تعمل على sherpa-onnx."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "يعمل Rewrite على candle، مكتبة تعلم الآلة بلغة Rust من Hugging Face."
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "داكن"
     }
   },
+  "appIcon": {
+    "title": "أيقونة التطبيق",
+    "description": "شريط Dock ومبدّل التطبيقات",
+    "descriptionTaskbar": "شريط المهام ومبدّل التطبيقات",
+    "automatic": "تلقائي"
+  },
   "overlay": {
     "transcribing": "جاري التفريغ...",
     "loadingModel": "جارٍ تحميل النموذج...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "التحدث",
+    "listening": "الاستماع",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

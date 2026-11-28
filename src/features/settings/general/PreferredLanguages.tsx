@@ -195,19 +195,6 @@ export const PreferredLanguages: React.FC<PreferredLanguagesProps> = ({
         <p className="g-rd m-0 mt-0.5">
           {t("settings.general.preferredLanguages.description")}
         </p>
-        <div className="mt-2 flex flex-wrap gap-2">
-          {languages.length ? (
-            languages.map((code) => (
-              <span key={code} className="g-chip">
-                {picker.nameOf(code)}
-              </span>
-            ))
-          ) : (
-            <span className="text-[13px] text-ink-3">
-              {t("settings.general.preferredLanguages.none")}
-            </span>
-          )}
-        </div>
         {weak.length > 0 && (
           <p className="g-rd m-0 mt-2">
             {t("settings.general.preferredLanguages.weak", {
@@ -231,10 +218,23 @@ export const PreferredLanguages: React.FC<PreferredLanguagesProps> = ({
           changeRef.current?.focus();
         }}
       >
+        <div className="flex max-w-[360px] flex-wrap justify-end gap-1.5">
+          {languages.length ? (
+            languages.map((code) => (
+              <span key={code} className="g-chip">
+                {picker.nameOf(code)}
+              </span>
+            ))
+          ) : (
+            <span className="text-[12px] text-ink-3">
+              {t("settings.general.preferredLanguages.none")}
+            </span>
+          )}
+        </div>
         <button
           ref={changeRef}
           type="button"
-          className="g-btn sec cursor-pointer"
+          className="g-btn sec shrink-0 cursor-pointer"
           aria-expanded={open}
           onMouseDown={(e) => e.preventDefault()}
           onClick={() => (open ? closeMenu() : openMenu())}

@@ -50,6 +50,32 @@ export const ModelsPage: React.FC<{
       <PageHeader
         title={t("sidebar.models")}
         lede={t("settings.models.lede")}
+        right={
+          <>
+            <button
+              type="button"
+              className="g-btn sec w-(--g-btn-h) px-0 cursor-pointer"
+              disabled={rescanning}
+              title={t("settings.models.rescan.tooltip")}
+              aria-label={t("settings.models.rescan.tooltip")}
+              onClick={reload}
+            >
+              <i
+                className={`g-ic g-i-refresh ${rescanning ? "animate-spin" : ""}`}
+                aria-hidden="true"
+              />
+            </button>
+            <button
+              type="button"
+              className="g-btn sec w-(--g-btn-h) px-0 cursor-pointer"
+              title={t("settings.models.openFolder")}
+              aria-label={t("settings.models.openFolder")}
+              onClick={openFolder}
+            >
+              <i className="g-ic g-i-folder" aria-hidden="true" />
+            </button>
+          </>
+        }
       />
       <div className="flex flex-wrap items-center justify-between gap-4">
         <Tabs
@@ -57,63 +83,21 @@ export const ModelsPage: React.FC<{
           value={tab}
           onChange={onTabChange}
           options={[
-            {
-              value: "speech",
-              label: t("settings.models.tabs.speech"),
-              icon: "mic",
-            },
-            {
-              value: "voices",
-              label: t("settings.models.tabs.voices"),
-              icon: "audio",
-            },
-            {
-              value: "llm",
-              label: t("settings.models.tabs.llm"),
-              icon: "sparkles",
-            },
+            { value: "speech", label: t("settings.models.tabs.speech") },
+            { value: "voices", label: t("settings.models.tabs.voices") },
+            { value: "llm", label: t("settings.models.tabs.llm") },
           ]}
         />
-        <div className="flex min-w-0 flex-1 items-center justify-end gap-2">
-          <label className="relative max-w-[262px] min-w-[150px] flex-1">
-            <span className="sr-only">{t("settings.models.search")}</span>
-            <i
-              className="g-ic g-i-search pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-ink-3"
-              aria-hidden="true"
-            />
-            <input
-              type="search"
-              className="g-field w-full bg-transparent ps-9"
-              placeholder={t("settings.models.search")}
-              value={query}
-              onChange={(e) =>
-                setQueries({ ...queries, [tab]: e.target.value })
-              }
-            />
-          </label>
-          <button
-            type="button"
-            className="g-ib cursor-pointer"
-            disabled={rescanning}
-            title={t("settings.models.rescan.tooltip")}
-            aria-label={t("settings.models.rescan.tooltip")}
-            onClick={reload}
-          >
-            <i
-              className={`g-ic g-i-refresh ${rescanning ? "animate-spin" : ""}`}
-              aria-hidden="true"
-            />
-          </button>
-          <button
-            type="button"
-            className="g-ib cursor-pointer"
-            title={t("settings.models.openFolder")}
-            aria-label={t("settings.models.openFolder")}
-            onClick={openFolder}
-          >
-            <i className="g-ic g-i-folder" aria-hidden="true" />
-          </button>
-        </div>
+        <label className="g-search mb-0 w-[240px] max-w-full">
+          <i className="g-ic g-i-search" aria-hidden="true" />
+          <input
+            type="search"
+            aria-label={t("settings.models.search")}
+            placeholder={t("settings.models.search")}
+            value={query}
+            onChange={(e) => setQueries({ ...queries, [tab]: e.target.value })}
+          />
+        </label>
       </div>
       {tab === "speech" ? (
         <SpeechModels query={query} live={memory?.stt} />

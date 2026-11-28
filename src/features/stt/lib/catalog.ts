@@ -93,12 +93,18 @@ const PACKAGE_ROLES = [
   ["accurate", "accurate"],
 ] as const;
 
-/** The package's picks for these languages, one per model, limited to `offered`. */
+/** The dictation model Glider recommends (catalog id): accurate in many
+ * languages. It leads the picks for everyone whose languages it speaks. */
+export const RECOMMENDED_ASR = "Qwen3-ASR-1.7B";
+
+/** The picks for these languages, one per model, limited to `offered`:
+ * Glider's recommended model first when it speaks every one of them, then the
+ * package's Faster and More accurate (its own pick otherwise). */
 export const picksFor = (
   languages: string[],
   offered: (model: CatalogModel) => boolean,
-): ModelPick[] =>
-  catalog
+): ModelPick[] => {
+  const packagePicks = catalog
     .recommend(languages)
     .filter((r) => offered(r.model))
     .map((r) => {
@@ -107,6 +113,19 @@ export const picksFor = (
     })
     .filter((p): p is ModelPick => p !== null)
     .sort((a, b) => ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role));
+  const ours = CURATED_ASR.find((m) => m.id === RECOMMENDED_ASR);
+  if (
+    !ours ||
+    !offered(ours) ||
+    !languages.every((l) => modelMatchesLanguage(ours, l))
+  ) {
+    return packagePicks;
+  }
+  return [
+    { model: ours, role: "pick" },
+    ...packagePicks.filter((p) => p.model.id !== ours.id && p.role !== "pick"),
+  ];
+};
 
 /** Usable models for these languages, ordered by the package's overall cost on this tier. */
 const rankFor = (

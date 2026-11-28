@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "Søg",
+    "show": "Vis sidepanel",
+    "hide": "Skjul sidepanel"
   },
   "onboarding": {
     "customModelDescription": "Ikke officielt understøttet",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "Live logs",
-        "description": "Viser nye loglinjer på dit logniveau, mens panelet er åbent.",
+        "description": "Sat på pause som standard, så intet gemmes. Genoptag for at se nye loglinjer her og gemme dem i logmappen på dit logniveau.",
         "live": "Live",
         "paused": "På pause",
         "pause": "Pause",
         "resume": "Genoptag",
         "copied": "Kopieret",
         "lineCount": "{{count}} linjer",
-        "empty": "Venter på logs… Poster vises her, når appen udsender dem."
+        "empty": "Venter på logs… Poster vises her, når appen udsender dem.",
+        "emptyPaused": "Logning er sat på pause. Intet vises eller gemmes."
       },
       "updateChecks": {
         "label": "Tjek for opdateringer",
@@ -967,28 +972,6 @@
         "title": "Kildekode",
         "description": "Se kildekode og bidrag",
         "button": "Vis på GitHub"
-      },
-      "acknowledgments": {
-        "title": "Anerkendelser",
-        "ggml": {
-          "title": "ggml",
-          "description": "Højtydende tensor-bibliotek til maskinlæringsinferens på enheden",
-          "details": "Gliders lokale tale-til-tekst funktionalitet er bygget på transcribe.cpp og ggml. Tak for det fantastiske arbejde af Georgi Gerganov og bidragyderne."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "Gliders diktering bygger på Handy af CJ Pais, MIT-licens."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Read Alouds stemmer kører på sherpa-onnx."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite kører på candle, Hugging Faces Rust-ML-bibliotek."
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "Mørk"
     }
   },
+  "appIcon": {
+    "title": "Appikon",
+    "description": "Dock og appskifter",
+    "descriptionTaskbar": "Proceslinje og appskifter",
+    "automatic": "Automatisk"
+  },
   "overlay": {
     "transcribing": "Transskriberer...",
     "loadingModel": "Indlæser model...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "Tale",
+    "listening": "Lytning",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

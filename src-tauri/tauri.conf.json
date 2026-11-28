@@ -30,11 +30,11 @@
     "resources": ["resources/**/*"],
     "license": "MIT",
     "icon": [
-      "icons/32x32.png",
-      "icons/128x128.png",
-      "icons/128x128@2x.png",
-      "icons/icon.icns",
-      "icons/icon.ico"
+      "icons/dark/32x32.png",
+      "icons/dark/128x128.png",
+      "icons/dark/128x128@2x.png",
+      "icons/dark/icon.icns",
+      "icons/dark/icon.ico"
     ],
     "macOS": {
       "files": {},
@@ -76,7 +76,7 @@
     "windows": {
       "nsis": {
         "template": "nsis/installer.nsi",
-        "installerIcon": "icons/icon.ico"
+        "installerIcon": "icons/dark/icon.ico"
       }
     }
   },

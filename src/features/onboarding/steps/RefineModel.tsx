@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import type { LlmModelInfo } from "@/bindings";
 import { NextButton, ObHeader, OnboardingShell } from "../OnboardingShell";
 
-/** The LLMs offered here: the recommended one and the light one. */
+/** The LLMs offered here, best first. None is recommended or picked for
+ * them: Rewrite starts on Not now, and they choose a model if they want one. */
 const OFFERED = ["qwen3-4b-instruct-2507", "qwen3-1.7b"];
-export const DEFAULT_LLM = OFFERED[0];
 
 const QUALITY: Record<string, string> = { A: "best", B: "good", C: "fair" };
 const SPEED: Record<LlmModelInfo["speed"], string> = {
@@ -30,7 +30,8 @@ interface RefineModelProps {
   onContinue: () => void;
 }
 
-/** Step 5: the LLM behind Rewrite, or Not now. Picking starts its download. */
+/** Step 5: the LLM behind Rewrite, or Not now (the default). Picking starts
+ * its download. */
 export const RefineModel: React.FC<RefineModelProps> = ({
   progress,
   llms,
@@ -78,14 +79,7 @@ export const RefineModel: React.FC<RefineModelProps> = ({
                 aria-hidden="true"
               />
               <div className="min-w-0">
-                <div className="g-mname flex-wrap">
-                  {model.short_name}
-                  {model.recommended && (
-                    <span className="g-badge">
-                      {t("onboarding.model.recommended")}
-                    </span>
-                  )}
-                </div>
+                <div className="g-mname flex-wrap">{model.short_name}</div>
                 <div className="g-mdesc">
                   {t(
                     `onboarding.refine.descriptions.${model.id.replace(/\./g, "_")}`,

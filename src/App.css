@@ -42,22 +42,6 @@
   font-display: block;
 }
 
-/* Brygada 1918 (OFL, variable): page titles and stat numerals. */
-@font-face {
-  font-family: "Brygada 1918";
-  src: url("./assets/fonts/brygada-1918.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: block;
-}
-@font-face {
-  font-family: "Brygada 1918";
-  src: url("./assets/fonts/brygada-1918-italic.woff2") format("woff2");
-  font-style: italic;
-  font-weight: 400 700;
-  font-display: block;
-}
-
 /* Onboarding's scale in px (rem steps land on fractions at a 15px root).
    Names avoid Tailwind's defaults, which Settings still uses. */
 @theme {
@@ -67,7 +51,6 @@
   --font-ui:
     system-ui, -apple-system, "Segoe UI Variable Text", "Segoe UI", Roboto,
     "Noto Sans", sans-serif;
-  --font-serif: "Brygada 1918", ui-serif, Georgia, serif;
   --font-cjk-subset:
     "Glider CJK Subset", -apple-system, "Segoe UI Variable Text", "Segoe UI",
     system-ui, sans-serif;
@@ -210,6 +193,13 @@
 /* macOS's own CJK fonts already share their weights. */
 :root[data-platform="macos"] {
   --font-cjk-subset: var(--font-ui);
+}
+
+/* macOS: the window is see-through so the sidebar shows the desktop's
+   vibrancy; every screen paints its own opaque background. */
+:root[data-platform="macos"],
+:root[data-platform="macos"] body {
+  background-color: transparent;
 }
 
 /* macOS - tint native overlay scrollbar thumb */

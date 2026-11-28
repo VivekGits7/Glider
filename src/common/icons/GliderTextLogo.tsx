@@ -3,7 +3,7 @@ import GliderMark from "./GliderMark";
 // Brand name, not translated.
 const WORDMARK = "Glider";
 
-/** The wing mark beside the "Glider" wordmark. `height` is the wordmark's font size in px. */
+/** The mic mark beside the "Glider" wordmark. `height` is the wordmark's font size in px. */
 const GliderTextLogo = ({
   height = 32,
   className = "",

@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "Rechercher",
+    "show": "Afficher la barre latérale",
+    "hide": "Masquer la barre latérale"
   },
   "onboarding": {
     "customModelDescription": "Non officiellement pris en charge",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "Journaux en direct",
-        "description": "Affiche les nouveaux logs du niveau choisi, panneau ouvert.",
+        "description": "En pause par défaut : rien n'est enregistré. Reprenez pour afficher ici les nouveaux journaux et les enregistrer dans le dossier des journaux, au niveau choisi.",
         "live": "En direct",
         "paused": "En pause",
         "pause": "Pause",
         "resume": "Reprendre",
         "copied": "Copié",
         "lineCount": "{{count}} lignes",
-        "empty": "En attente de journaux… Les entrées apparaîtront ici au fur et à mesure que l'application les émet."
+        "empty": "En attente de journaux… Les entrées apparaîtront ici au fur et à mesure que l'application les émet.",
+        "emptyPaused": "La journalisation est en pause. Rien n'est affiché ni enregistré."
       },
       "updateChecks": {
         "label": "Vérifier les mises à jour",
@@ -967,28 +972,6 @@
         "title": "Code source",
         "description": "Voir le code source et contribuer",
         "button": "Voir sur GitHub"
-      },
-      "acknowledgments": {
-        "title": "Remerciements",
-        "ggml": {
-          "title": "ggml",
-          "description": "Inférence haute performance du modèle de reconnaissance vocale automatique Whisper d'OpenAI",
-          "details": "Glider utilise ggml pour un traitement rapide et local de la parole en texte. Merci au travail incroyable de Georgi Gerganov et des contributeurs."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "La dictée de Glider repose sur Handy de CJ Pais, licence MIT."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Les voix de Read Aloud tournent sur sherpa-onnx."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite tourne sur candle, la bibliothèque ML Rust de Hugging Face."
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "Sombre"
     }
   },
+  "appIcon": {
+    "title": "Icône de l'app",
+    "description": "Dock et sélecteur d'apps",
+    "descriptionTaskbar": "Barre des tâches et sélecteur d'apps",
+    "automatic": "Automatique"
+  },
   "overlay": {
     "transcribing": "Transcription...",
     "loadingModel": "Chargement du modèle...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "Parole",
+    "listening": "Écoute",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

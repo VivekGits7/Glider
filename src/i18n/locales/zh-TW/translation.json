@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "搜尋",
+    "show": "顯示側邊欄",
+    "hide": "隱藏側邊欄"
   },
   "onboarding": {
     "customModelDescription": "官方不支援",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "即時日誌",
-        "description": "面板開啟期間，依日誌等級顯示新日誌。",
+        "description": "預設為暫停，不會儲存任何內容。繼續後，會依日誌等級在此顯示新日誌，並儲存到日誌資料夾。",
         "live": "即時",
         "paused": "已暫停",
         "pause": "暫停",
         "resume": "繼續",
         "copied": "已複製",
         "lineCount": "{{count}} 行",
-        "empty": "正在等待日誌…… 應用程式產生日誌時會顯示於此。"
+        "empty": "正在等待日誌…… 應用程式產生日誌時會顯示於此。",
+        "emptyPaused": "日誌記錄已暫停，不會顯示或儲存任何內容。"
       },
       "updateChecks": {
         "label": "檢查更新",
@@ -967,28 +972,6 @@
         "title": "原始碼",
         "description": "檢視原始碼並參與貢獻",
         "button": "在 GitHub 上檢視"
-      },
-      "acknowledgments": {
-        "title": "致謝",
-        "ggml": {
-          "title": "ggml",
-          "description": "針對 OpenAI Whisper 自動語音辨識模型的高效能推理引擎",
-          "details": "Glider 使用 ggml 進行快速的本機語音轉文字處理。感謝 Georgi Gerganov 和貢獻者們的傑出工作"
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "Glider 的聽寫基於 CJ Pais 的 Handy，MIT 授權。"
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Read Aloud 的語音在 sherpa-onnx 上執行。"
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite 在 candle 上執行，即 Hugging Face 的 Rust ML 函式庫。"
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "深色"
     }
   },
+  "appIcon": {
+    "title": "App 圖示",
+    "description": "Dock 與 App 切換器",
+    "descriptionTaskbar": "工作列與 App 切換器",
+    "automatic": "自動"
+  },
   "overlay": {
     "transcribing": "正在轉錄...",
     "loadingModel": "正在載入模型...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "說話",
+    "listening": "聆聽",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

@@ -15,7 +15,7 @@ import { Permissions } from "./screens/Permissions";
 import { Languages } from "./steps/Languages";
 import { DictationModel } from "./steps/DictationModel";
 import { Voices, defaultVoices } from "./steps/Voices";
-import { RefineModel, DEFAULT_LLM } from "./steps/RefineModel";
+import { RefineModel } from "./steps/RefineModel";
 import { Practice } from "./steps/Practice";
 import { AllSet } from "./steps/AllSet";
 import { ObDownloads, queueVoices, useLocalModels } from "./ObDownloads";
@@ -138,12 +138,6 @@ export const OnboardingFlow: React.FC<OnboardingFlowProps> = ({
     store.set({ voiceIds: picks });
     if (!preview) queueVoices(picks);
   }, [store.step, store.voiceIds, local.voices.length]);
-  useEffect(() => {
-    if (store.step !== "refine" || store.llmId !== null || !local.llms.length)
-      return;
-    store.set({ llmId: DEFAULT_LLM });
-    if (!preview) void commands.downloadLlmModel(DEFAULT_LLM);
-  }, [store.step, store.llmId, local.llms.length]);
 
   if (!permissions.checked) return null;
 
@@ -271,7 +265,7 @@ export const OnboardingFlow: React.FC<OnboardingFlowProps> = ({
         <RefineModel
           progress={progress}
           llms={local.llms}
-          picked={store.llmId ?? DEFAULT_LLM}
+          picked={store.llmId ?? ""}
           onPick={(id) => {
             const previous = store.llmId;
             if (!preview && previous && previous !== id) {

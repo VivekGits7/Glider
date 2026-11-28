@@ -1,34 +1,47 @@
 /* Glider colors: every color the app uses comes from here. Pick by job:
- * surfaces from back to front: ground (window and sidebar), background (the
- * inset panel), card (rows), raised (buttons, keycaps, the active nav item);
+ * surfaces from back to front: ground (the sidebar, a shade lighter than the
+ * window in dark), background (the window and every page), card (rows and
+ * cards), raised (controls, the selected nav item);
  * greys (ink-2, ink-3, line-strong, line, wash) for text, edges and fills;
- * logo-primary / accent-grad for brand and primary actions; plum for keys
- * and picks (onboarding); moss / warning / error (+ -wash) for status.
+ * logo-primary / accent-ink for the violet accent; moss / warning / error
+ * (+ -wash) for status. Neutral greys like System Settings; the only hue is
+ * Glider violet from the app icon.
  */
 
 :root {
   /* Palette source of truth. Each themed color is defined once as a
      light/dark pair; the active tokens below and the `data-theme` overrides
      in App.css reference these, so a hex value lives in exactly one place. */
-  --light-color-text: #1a1617;
-  --light-color-background: #f8f6f5;
-  --light-color-ground: #ebe7e6;
-  --light-color-card: #fdfbfa;
-  --light-color-raised: #e1dbd9;
+  --light-color-text: #1d1d1f;
+  --light-color-background: #f7f7f8;
+  --light-color-ground: #e9e9eb;
+  --light-color-card: #ffffff;
+  --light-color-raised: #e4e4e7;
   /* Lilac that carries selection and icons on light grounds (>=4.5:1). */
-  --light-color-accent-ink: #8442c4;
-  --light-color-ink-3: #6b6567;
-  --light-color-logo-primary: #d8b4f8;
-  --light-color-logo-stroke: #382731;
+  --light-color-accent-ink: #6d3fd8;
+  --light-color-ink-3: #6e6e73;
+  --light-color-logo-primary: #7c4dea;
+  --light-color-logo-stroke: #1d1d1f;
+  /* The mic mark's gradient: the app icon's ink on its white tile. */
+  --light-color-mark-from: #a87cf9;
+  --light-color-mark-to: #6d35e4;
 
-  --dark-color-text: #f3eeef;
-  --dark-color-background: #1b1718;
-  --dark-color-ground: #141112;
-  --dark-color-card: #221d1f;
-  --dark-color-raised: #2e282a;
-  --dark-color-accent-ink: #d4a3f7;
-  --dark-color-ink-3: #9a9395;
-  --dark-color-logo-primary: #c58af2;
+  --dark-color-text: #ececec;
+  --dark-color-background: #1f1f1f;
+  --dark-color-ground: #2c2c2e;
+  --dark-color-card: #272727;
+  --dark-color-raised: #353535;
+  --dark-color-accent-ink: #b99cff;
+  --dark-color-ink-3: #8e8e93;
+  --dark-color-logo-primary: #8b5cf6;
+  --dark-color-mark-from: #cbabff;
+  --dark-color-mark-to: #8b5cf6;
+  /* The footer and the Windows title bar: a step off the window. */
+  --light-color-bar: #efeff1;
+  --dark-color-bar: #1b1b1b;
+  /* The overlay pill, and its miniatures in the intro examples. */
+  --light-color-pill: #ffffff;
+  --dark-color-pill: #0f0f0f;
 
   /* Status colors. Each has a -wash tint below. */
   --light-color-warning: #b45309;
@@ -38,29 +51,29 @@
 
   /* Success. Lilac already means "now", so it gets its own hue. */
   --light-color-moss: #2f7d5b;
-  --dark-color-moss: #86c9a4;
+  --dark-color-moss: #8fd19e;
 
   /* Plum: the ink for keycaps and picked items. */
   --light-color-plum: var(--light-color-logo-stroke);
   --dark-color-plum: var(--dark-color-text);
 
-  /* The app icon's lilac-to-violet wing gradient, on filled controls:
-     primary buttons, switches that are on, progress. */
-  --light-color-accent-grad: linear-gradient(135deg, #e2b8f2, #bb8cf5);
-  --dark-color-accent-grad: linear-gradient(135deg, #e4a6e9, #b56ff0);
-  /* Insights charts: speaking in the wing's violet, listening in its pink,
-     and the same lilac-to-violet run left to right for capsule bars. */
-  --light-color-voice-speak: #9d62e2;
-  --dark-color-voice-speak: #b56ff0;
-  --light-color-voice-listen: #e3a8ec;
-  --dark-color-voice-listen: #e4a6e9;
-  --light-color-bar-grad: linear-gradient(90deg, #e2b8f2, #bb8cf5);
-  --dark-color-bar-grad: linear-gradient(90deg, #e4a6e9, #b56ff0);
-  /* The logo's pink to purple, deep enough to read as text (Try it links). */
-  --light-color-ink-grad: linear-gradient(90deg, #c04fc4, #8442c4);
-  --dark-color-ink-grad: linear-gradient(90deg, #eeb0f0, #c39af7);
+  /* Solid accent fills (primary buttons, switches that are on, progress).
+     Kept as an image so `background-image` users stay flat violet. */
+  --light-color-accent-grad: linear-gradient(#7c4dea, #7c4dea);
+  --dark-color-accent-grad: linear-gradient(#8b5cf6, #8b5cf6);
+  /* Insights charts: speaking in violet, listening in blue; capsule bars in
+     the flat accent. */
+  --light-color-voice-speak: #7c4dea;
+  --dark-color-voice-speak: #8b5cf6;
+  --light-color-voice-listen: #2f8ae0;
+  --dark-color-voice-listen: #5eb0ff;
+  --light-color-bar-grad: linear-gradient(#7c4dea, #7c4dea);
+  --dark-color-bar-grad: linear-gradient(#8b5cf6, #8b5cf6);
+  /* Accent text that is a link (Try it). */
+  --light-color-ink-grad: linear-gradient(#6d3fd8, #6d3fd8);
+  --dark-color-ink-grad: linear-gradient(#b99cff, #b99cff);
   /* Things that float over other apps: the overlay pill and its cards. */
-  --light-shadow-float: 0 16px 40px -16px rgba(56, 39, 49, 0.4);
+  --light-shadow-float: 0 16px 40px -16px rgba(0, 0, 0, 0.3);
   --dark-shadow-float: 0 16px 40px -14px rgba(0, 0, 0, 0.7);
 
   /* Status tints for the box behind a status color. */
@@ -96,9 +109,9 @@
   );
 
   /* Tokens that do not change between light and dark */
-  --color-background-ui: #b56ff0;
-  /* Ink on a lilac fill (primary buttons, the selected nav dot). */
-  --color-on-accent: #1e0b2b;
+  --color-background-ui: #8b5cf6;
+  /* Ink on a violet fill (primary buttons, the selected menu row). */
+  --color-on-accent: #ffffff;
 
   /* Active palette — defaults to light, follows the OS via the media query
      below, or is forced by `data-theme` (see the overrides below). */
@@ -110,6 +123,8 @@
   --color-accent-ink: var(--light-color-accent-ink);
   --color-ink-3: var(--light-color-ink-3);
   --color-logo-primary: var(--light-color-logo-primary);
+  --color-mark-from: var(--light-color-mark-from);
+  --color-mark-to: var(--light-color-mark-to);
   --color-warning: var(--light-color-warning);
   --color-error: var(--light-color-error);
   --color-moss: var(--light-color-moss);
@@ -123,13 +138,15 @@
   --color-bar-grad: var(--light-color-bar-grad);
   --color-ink-grad: var(--light-color-ink-grad);
   --shadow-float: var(--light-shadow-float);
+  --color-bar: var(--light-color-bar);
+  --color-pill: var(--light-color-pill);
 
   /* Grey steps: secondary text, hints/icons, control edges, dividers, hover fill. */
   /* ink-3 is themed above: the old shared mid-grey missed 4.5:1 on both themes. */
-  --color-ink-2: color-mix(in srgb, var(--color-text) 64%, transparent);
-  --color-line-strong: color-mix(in srgb, var(--color-text) 22%, transparent);
-  --color-line: color-mix(in srgb, var(--color-text) 9%, transparent);
-  --color-wash: color-mix(in srgb, var(--color-text) 5%, transparent);
+  --color-ink-2: color-mix(in srgb, var(--color-text) 62%, transparent);
+  --color-line-strong: color-mix(in srgb, var(--color-text) 16%, transparent);
+  --color-line: color-mix(in srgb, var(--color-text) 8%, transparent);
+  --color-wash: color-mix(in srgb, var(--color-text) 6%, transparent);
   /* Edge of a picked card or option. */
   --color-plum-pick: color-mix(in srgb, var(--color-plum) 60%, transparent);
   /* The far end of a capture slot's breathing edge (KeySlot). */
@@ -146,6 +163,8 @@
     --color-accent-ink: var(--dark-color-accent-ink);
     --color-ink-3: var(--dark-color-ink-3);
     --color-logo-primary: var(--dark-color-logo-primary);
+    --color-mark-from: var(--dark-color-mark-from);
+    --color-mark-to: var(--dark-color-mark-to);
     --color-warning: var(--dark-color-warning);
     --color-error: var(--dark-color-error);
     --color-moss: var(--dark-color-moss);
@@ -159,6 +178,8 @@
     --color-bar-grad: var(--dark-color-bar-grad);
     --color-ink-grad: var(--dark-color-ink-grad);
     --shadow-float: var(--dark-shadow-float);
+    --color-bar: var(--dark-color-bar);
+    --color-pill: var(--dark-color-pill);
   }
 }
 
@@ -179,6 +200,8 @@
   --color-bar-grad: var(--light-color-bar-grad);
   --color-ink-grad: var(--light-color-ink-grad);
   --shadow-float: var(--light-shadow-float);
+  --color-bar: var(--light-color-bar);
+  --color-pill: var(--light-color-pill);
   --color-text: var(--light-color-text);
   --color-background: var(--light-color-background);
   --color-ground: var(--light-color-ground);
@@ -187,6 +210,8 @@
   --color-accent-ink: var(--light-color-accent-ink);
   --color-ink-3: var(--light-color-ink-3);
   --color-logo-primary: var(--light-color-logo-primary);
+  --color-mark-from: var(--light-color-mark-from);
+  --color-mark-to: var(--light-color-mark-to);
   --color-warning: var(--light-color-warning);
   --color-error: var(--light-color-error);
   --color-moss: var(--light-color-moss);
@@ -203,6 +228,8 @@
   --color-bar-grad: var(--dark-color-bar-grad);
   --color-ink-grad: var(--dark-color-ink-grad);
   --shadow-float: var(--dark-shadow-float);
+  --color-bar: var(--dark-color-bar);
+  --color-pill: var(--dark-color-pill);
   --color-text: var(--dark-color-text);
   --color-background: var(--dark-color-background);
   --color-ground: var(--dark-color-ground);
@@ -211,6 +238,8 @@
   --color-accent-ink: var(--dark-color-accent-ink);
   --color-ink-3: var(--dark-color-ink-3);
   --color-logo-primary: var(--dark-color-logo-primary);
+  --color-mark-from: var(--dark-color-mark-from);
+  --color-mark-to: var(--dark-color-mark-to);
   --color-warning: var(--dark-color-warning);
   --color-error: var(--dark-color-error);
   --color-moss: var(--dark-color-moss);

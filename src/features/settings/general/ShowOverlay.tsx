@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Dropdown } from "@/common/ui/Dropdown";
+import { Segmented } from "@/common/ui/Segmented";
 import { SettingContainer } from "@/common/ui/SettingContainer";
 import { useSettings } from "@/common/settings/useSettings";
 import type { OverlayPosition, OverlayStyle } from "@/bindings";
@@ -14,7 +14,7 @@ export const ShowOverlay: React.FC<ShowOverlayProps> = React.memo(
     const { t } = useTranslation();
     const { getSetting, updateSetting, isUpdating } = useSettings();
 
-    const styleOptions = [
+    const styleOptions: { value: OverlayStyle; label: string }[] = [
       {
         value: "none",
         label: t("settings.advanced.overlay.style.options.none"),
@@ -29,7 +29,7 @@ export const ShowOverlay: React.FC<ShowOverlayProps> = React.memo(
       },
     ];
 
-    const positionOptions = [
+    const positionOptions: { value: OverlayPosition; label: string }[] = [
       {
         value: "bottom",
         label: t("settings.advanced.overlay.position.options.bottom"),
@@ -41,7 +41,7 @@ export const ShowOverlay: React.FC<ShowOverlayProps> = React.memo(
     ];
 
     const selectedStyle = (getSetting("overlay_style") ||
-      "live") as OverlayStyle;
+      "minimal") as OverlayStyle;
     // Only "top" and "bottom" are selectable; anything else (empty, or a legacy
     // "none" from before the position was retired) falls back to "bottom".
     const selectedPosition: OverlayPosition =
@@ -54,12 +54,11 @@ export const ShowOverlay: React.FC<ShowOverlayProps> = React.memo(
           description={t("settings.advanced.overlay.style.description")}
           grouped={grouped}
         >
-          <Dropdown
+          <Segmented
             options={styleOptions}
-            selectedValue={selectedStyle}
-            onSelect={(value) =>
-              updateSetting("overlay_style", value as OverlayStyle)
-            }
+            value={selectedStyle}
+            onChange={(value) => updateSetting("overlay_style", value)}
+            label={t("settings.advanced.overlay.style.title")}
             disabled={isUpdating("overlay_style")}
           />
         </SettingContainer>
@@ -70,12 +69,11 @@ export const ShowOverlay: React.FC<ShowOverlayProps> = React.memo(
             description={t("settings.advanced.overlay.position.description")}
             grouped={grouped}
           >
-            <Dropdown
+            <Segmented
               options={positionOptions}
-              selectedValue={selectedPosition}
-              onSelect={(value) =>
-                updateSetting("overlay_position", value as OverlayPosition)
-              }
+              value={selectedPosition}
+              onChange={(value) => updateSetting("overlay_position", value)}
+              label={t("settings.advanced.overlay.position.title")}
               disabled={isUpdating("overlay_position")}
             />
           </SettingContainer>

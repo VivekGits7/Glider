@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "Search",
+    "show": "Show sidebar",
+    "hide": "Hide sidebar"
   },
   "onboarding": {
     "customModelDescription": "Not officially supported",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "Live logs",
-        "description": "Shows new log lines while this panel is open, at your log level.",
+        "description": "Paused by default, so nothing is saved. Resume to show new log lines here and save them to the log folder, at your log level.",
         "live": "Live",
         "paused": "Paused",
         "pause": "Pause",
         "resume": "Resume",
         "copied": "Copied",
         "lineCount": "{{count}} lines",
-        "empty": "Waiting for logs… Entries appear here as the app emits them."
+        "empty": "Waiting for logs… Entries appear here as the app emits them.",
+        "emptyPaused": "Logging is paused. Nothing is shown or saved."
       },
       "updateChecks": {
         "label": "Check for Updates",
@@ -967,28 +972,6 @@
         "title": "Source code",
         "description": "See how Glider works, report a bug, or contribute.",
         "button": "View on GitHub"
-      },
-      "acknowledgments": {
-        "title": "Built with",
-        "ggml": {
-          "title": "ggml",
-          "description": "Tensor library for running models on your own computer.",
-          "details": "Glider's local speech-to-text is built on transcribe.cpp and ggml. Thanks to the amazing work by Georgi Gerganov and contributors."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "Glider's dictation is built on Handy by CJ Pais, MIT license."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Read Aloud's voices run on sherpa-onnx."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite's models run on candle, Hugging Face's Rust ML library."
-        }
       },
       "appTitle": "Glider",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "Dark"
     }
   },
+  "appIcon": {
+    "title": "App icon",
+    "description": "Dock and app switcher",
+    "descriptionTaskbar": "Taskbar and app switcher",
+    "automatic": "Automatic"
+  },
   "overlay": {
     "transcribing": "Transcribing",
     "loadingModel": "Loading model",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "Speaking",
+    "listening": "Listening",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

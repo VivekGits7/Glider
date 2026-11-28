@@ -11,14 +11,9 @@ import { PathRow } from "@/common/shared/PathRow";
 import { AppLanguageSelector } from "./AppLanguageSelector";
 import { ShowWhatsNewOnUpdate } from "./ShowWhatsNewOnUpdate";
 import { ThemeSelector } from "./ThemeSelector";
+import { AppIconSelector } from "./AppIconSelector";
 
 const GLIDER_REPO_URL = "https://github.com/VivekGits7/Glider";
-// Glider's dictation is Handy's (MIT); its voices run on sherpa-onnx.
-const HANDY_REPO_URL = "https://github.com/cjpais/Handy";
-const SHERPA_REPO_URL = "https://github.com/k2-fsa/sherpa-onnx";
-// Speech models run on ggml; Rewrite's LLMs on candle.
-const GGML_REPO_URL = "https://github.com/ggml-org/ggml";
-const CANDLE_REPO_URL = "https://github.com/huggingface/candle";
 
 const open = (url: string) => () =>
   openUrl(url).catch((error) => console.error(`Failed to open ${url}:`, error));
@@ -42,25 +37,13 @@ export const AboutSettings: React.FC = () => {
   }, []);
 
   const ext = <i className="g-ic g-i-ext size-3.5" aria-hidden="true" />;
-  const credit = (key: string, url: string) => (
-    <SettingContainer
-      title={t(`settings.about.acknowledgments.${key}.title`)}
-      description={t(`settings.about.acknowledgments.${key}.description`)}
-      grouped={true}
-    >
-      <Button variant="secondary" size="md" onClick={open(url)}>
-        {t("settings.about.acknowledgments.view")}
-        {ext}
-      </Button>
-    </SettingContainer>
-  );
-
   return (
     <>
       <PageHeader title={t("sidebar.about")} />
       <SettingsGroup title={t("settings.about.appTitle")}>
         <AppLanguageSelector grouped={true} />
         <ThemeSelector grouped={true} />
+        <AppIconSelector grouped={true} />
         <SettingContainer
           title={t("settings.about.version.title")}
           description={t("settings.about.version.description")}
@@ -98,16 +81,6 @@ export const AboutSettings: React.FC = () => {
           loadPath={loadAppDir}
           onOpen={() => commands.openAppDataDir()}
         />
-      </SettingsGroup>
-
-      <SettingsGroup
-        title={t("settings.about.acknowledgments.title")}
-        description={t("settings.about.acknowledgments.description")}
-      >
-        {credit("handy", HANDY_REPO_URL)}
-        {credit("sherpa", SHERPA_REPO_URL)}
-        {credit("ggml", GGML_REPO_URL)}
-        {credit("candle", CANDLE_REPO_URL)}
       </SettingsGroup>
     </>
   );

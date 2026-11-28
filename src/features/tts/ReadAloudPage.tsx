@@ -57,7 +57,7 @@ export const ReadAloudPage: React.FC<{ onManageVoices: () => void }> = ({
     return () => clearInterval(id);
   }, [speaking, refreshSpeaking]);
 
-  const speed = getSetting("tts_speed") ?? 1;
+  const speed = getSetting("tts_speed") ?? 1.3;
   const voice = selected ? voiceOf(selected) : 0;
   const language = selected ? modelLanguage(selected, i18n.language) : "";
   const voiceName =
@@ -83,9 +83,7 @@ export const ReadAloudPage: React.FC<{ onManageVoices: () => void }> = ({
             i18nKey="home.listenLine"
             components={{
               keys: binding ? (
-                <span className="g-keys mx-1">
-                  <Keycaps binding={binding} osType={osType} />
-                </span>
+                <Keycaps binding={binding} osType={osType} />
               ) : (
                 <span />
               ),
@@ -98,28 +96,16 @@ export const ReadAloudPage: React.FC<{ onManageVoices: () => void }> = ({
             : t("settings.readAloud.intro.hint")
         }
         actions={
-          <>
-            <button
-              type="button"
-              className="g-try"
-              disabled={!speaking && !selected}
-              onClick={() => toggleRead(introSample)}
-            >
-              {speaking
-                ? t("settings.readAloud.intro.stop")
-                : t("settings.readAloud.intro.try")}
-            </button>
-            {selected && (
-              <button
-                type="button"
-                className="g-btn ghost cursor-pointer"
-                onClick={onManageVoices}
-              >
-                <i className="g-ic g-i-audio" aria-hidden="true" />
-                {voiceName}
-              </button>
-            )}
-          </>
+          <button
+            type="button"
+            className="g-try"
+            disabled={!speaking && !selected}
+            onClick={() => toggleRead(introSample)}
+          >
+            {speaking
+              ? t("settings.readAloud.intro.stop")
+              : t("settings.readAloud.intro.try")}
+          </button>
         }
         demoLabel={t("settings.readAloud.intro.label")}
         sound={
@@ -207,7 +193,7 @@ export const ReadAloudPage: React.FC<{ onManageVoices: () => void }> = ({
           grouped
         >
           <Switch
-            checked={getSetting("tts_live_preview") ?? true}
+            checked={getSetting("tts_live_preview") ?? false}
             onChange={(on) => updateSetting("tts_live_preview", on)}
             ariaLabel={t("settings.readAloud.livePreview.title")}
           />

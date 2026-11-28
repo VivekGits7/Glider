@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "Cari",
+    "show": "Tampilkan bilah sisi",
+    "hide": "Sembunyikan bilah sisi"
   },
   "onboarding": {
     "customModelDescription": "Tidak didukung secara resmi",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "Log Waktu Nyata",
-        "description": "Menampilkan log baru sesuai tingkat log selama panel ini terbuka.",
+        "description": "Dijeda secara bawaan, jadi tidak ada yang disimpan. Lanjutkan untuk menampilkan log baru di sini dan menyimpannya ke folder log, sesuai tingkat log.",
         "live": "Waktu Nyata",
         "paused": "Dijeda",
         "pause": "Jeda",
         "resume": "Lanjutkan",
         "copied": "Disalin",
         "lineCount": "{{count}} baris",
-        "empty": "Menunggu log… Entri akan muncul di sini saat aplikasi menghasilkannya."
+        "empty": "Menunggu log… Entri akan muncul di sini saat aplikasi menghasilkannya.",
+        "emptyPaused": "Pencatatan log dijeda. Tidak ada yang ditampilkan atau disimpan."
       },
       "updateChecks": {
         "label": "Periksa Pembaruan",
@@ -967,28 +972,6 @@
         "title": "Kode Sumber",
         "description": "Lihat kode sumber dan berkontribusi",
         "button": "Lihat di GitHub"
-      },
-      "acknowledgments": {
-        "title": "Ucapan Terima Kasih",
-        "ggml": {
-          "title": "ggml",
-          "description": "Pustaka tensor berkinerja tinggi untuk inferensi pembelajaran mesin di perangkat",
-          "details": "Fitur ucapan-ke-teks lokal Glider dibangun menggunakan transcribe.cpp dan ggml. Terima kasih kepada Georgi Gerganov dan para kontributor atas karya luar biasa mereka."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "Dikte Glider dibangun di atas Handy karya CJ Pais, lisensi MIT."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Suara Read Aloud berjalan di sherpa-onnx."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite berjalan di candle, pustaka ML Rust dari Hugging Face."
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "Gelap"
     }
   },
+  "appIcon": {
+    "title": "Ikon aplikasi",
+    "description": "Dock dan pengalih aplikasi",
+    "descriptionTaskbar": "Taskbar dan pengalih aplikasi",
+    "automatic": "Otomatis"
+  },
   "overlay": {
     "transcribing": "Mentranskripsikan...",
     "loadingModel": "Memuat model...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "Berbicara",
+    "listening": "Mendengarkan",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

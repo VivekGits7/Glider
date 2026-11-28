@@ -11,14 +11,14 @@ export const Input: React.FC<InputProps> = ({
   ...props
 }) => {
   const baseClasses =
-    "px-2 py-1 text-sm bg-ground border border-line-strong rounded-[10px] text-start transition-[border-color,background-color] duration-150";
+    "g-input px-2 py-1 text-[13px] text-start transition-[border-color,background-color,box-shadow] duration-150";
 
   const interactiveClasses = disabled
-    ? "opacity-60 cursor-not-allowed bg-wash border-line"
-    : "hover:border-ink-3 focus:outline-none focus:border-logo-primary";
+    ? "opacity-60 cursor-not-allowed"
+    : "focus:outline-none";
 
   const variantClasses = {
-    default: "h-9 px-3",
+    default: "h-(--g-field-h) px-2.5",
     compact: "px-2 py-1",
   } as const;
 

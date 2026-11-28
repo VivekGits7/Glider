@@ -4,6 +4,7 @@ import { Tooltip } from "@/common/ui/Tooltip";
 import { useShallow } from "zustand/react/shallow";
 import { useModelStore } from "@/features/stt/store/modelStore";
 import { downloadStateOf } from "@/features/stt/lib/downloadState";
+import { RECOMMENDED_ASR } from "@/features/stt/lib/catalog";
 import { speedLevel } from "@/common/shared/SpeedBars";
 import { languageName } from "@/common/lib/languages";
 import { formatModelSize, estimateMemory } from "@/common/lib/format";
@@ -97,6 +98,11 @@ const ModelLine: React.FC<{
           {place === "loading" && (
             <span className="g-badge plain">
               {t("settings.models.loading")}
+            </span>
+          )}
+          {entry.model?.id === RECOMMENDED_ASR && (
+            <span className="g-badge plain">
+              {t("modelTable.roles.recommended")}
             </span>
           )}
           {entry.streaming && place !== "active" && (

@@ -19,7 +19,7 @@ const Footer: React.FC<FooterProps> = ({ onShowHistory }) => (
       <RewriteSelector />
       <TranscriptionStatus onShowHistory={onShowHistory} />
     </div>
-    <div className="g-fl gap-4">
+    <div className="g-fl ms-auto gap-4">
       <NoticeChip />
     </div>
   </footer>

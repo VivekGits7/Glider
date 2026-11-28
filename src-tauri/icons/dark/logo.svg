@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 1024 1024">
+  <!-- Glider app icon, dark: flat violet mic on a black tile (macOS 824px grid). -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c2c2e"/><stop offset="1" stop-color="#0e0e0f"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.30"/><stop offset="0.5" stop-color="#fff" stop-opacity="0.06"/><stop offset="1" stop-color="#fff" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="ink" gradientUnits="userSpaceOnUse" x1="400" y1="259" x2="624" y2="725">
+      <stop offset="0" stop-color="#cbabff"/><stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="tile-shadow" color-interpolation-filters="sRGB" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="glow" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#8b5cf6" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- tile -->
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#tile)" filter="url(#tile-shadow)"/>
+  <rect x="102" y="102" width="820" height="820" rx="183" fill="none" stroke="url(#rim)" stroke-width="4"/>
+
+  <!-- mic -->
+  <g transform="translate(512 514) scale(1.15) translate(-512 -496)" fill="none" stroke="url(#ink)" stroke-width="22" stroke-linecap="round" filter="url(#glow)">
+    <rect x="423" y="279" width="178" height="306" rx="89"/>
+    <path d="M350 491a162 162 0 0 0 324 0M512 653v60"/>
+  </g>
+</svg>

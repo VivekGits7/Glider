@@ -1,47 +1,42 @@
 import { useId } from "react";
 
-/** The two wing blades, shared by the logo, the tray icon and src-tauri/icons/logo.svg. */
-export const WING_TOP =
-  "M160 493 C168 410 215 320 290 262 C355 212 440 186 515 175 C506 222 480 262 440 290 C400 316 340 322 300 334 C255 348 220 380 198 425 C185 450 172 472 160 493 Z";
-export const WING_LOW =
-  "M195 476 C205 440 225 405 258 382 C300 354 360 342 465 328 C462 375 440 418 395 440 C330 470 260 472 195 476 Z";
+/** The mic's centerlines on the 1024 app-icon grid, as in src-tauri/icons/{dark,light}/logo.svg. */
+export const MIC_CAPSULE = "M423 368a89 89 0 0 1 178 0v128a89 89 0 0 1-178 0z";
+export const MIC_CRADLE = "M350 491a162 162 0 0 0 324 0";
+export const MIC_STEM = "M512 653v60";
 
-/** The Glider wing mark in its pink-to-violet colours. Sized by `className`. */
+/** The Glider mic in the app icon's violet, deeper on light grounds. Sized by `className`. */
 const GliderMark = ({ className = "" }: { className?: string }) => {
   // Gradient ids must be unique per page; useId's colons break url(#...) in WebKit.
   const id = useId().replace(/[^a-zA-Z0-9]/g, "");
   return (
-    <svg viewBox="155 170 365 328" className={className} aria-hidden="true">
+    // A bolder line than the 1024px icon so it holds up at sidebar size.
+    <svg
+      viewBox="330 259 364 474"
+      className={className}
+      aria-hidden="true"
+      fill="none"
+      stroke={`url(#${id})`}
+      strokeWidth={40}
+      strokeLinecap="round"
+    >
       <defs>
         <linearGradient
-          id={`${id}t`}
+          id={id}
           gradientUnits="userSpaceOnUse"
-          x1="500"
-          y1="180"
-          x2="170"
-          y2="480"
+          x1="400"
+          y1="259"
+          x2="624"
+          y2="725"
         >
-          <stop offset="0" stopColor="#f1c3f0" />
-          <stop offset="0.4" stopColor="#e4a6e9" />
-          <stop offset="0.8" stopColor="#cd78de" />
-          <stop offset="1" stopColor="#bd5fd6" />
-        </linearGradient>
-        <linearGradient
-          id={`${id}l`}
-          gradientUnits="userSpaceOnUse"
-          x1="460"
-          y1="340"
-          x2="200"
-          y2="470"
-        >
-          <stop offset="0" stopColor="#b384f6" />
-          <stop offset="0.45" stopColor="#b56ff0" />
-          <stop offset="1" stopColor="#cf72e2" />
+          <stop offset="0" style={{ stopColor: "var(--color-mark-from)" }} />
+          <stop offset="1" style={{ stopColor: "var(--color-mark-to)" }} />
         </linearGradient>
       </defs>
-      {/* pathLength 1 lets the loading screen draw the outline with a 0–1 dash. */}
-      <path fill={`url(#${id}l)`} d={WING_LOW} pathLength={1} />
-      <path fill={`url(#${id}t)`} d={WING_TOP} pathLength={1} />
+      {/* pathLength 1 lets the loading screen draw each stroke with a 0–1 dash. */}
+      <path d={MIC_CAPSULE} pathLength={1} />
+      <path d={MIC_CRADLE} pathLength={1} />
+      <path d={MIC_STEM} pathLength={1} />
     </svg>
   );
 };

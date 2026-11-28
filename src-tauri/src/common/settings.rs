@@ -410,6 +410,17 @@ pub enum Theme {
     Dark,
 }
 
+/// Which app icon the Dock (taskbar elsewhere) and app switcher show.
+/// `Automatic` picks light or dark the same way the tray icon does.
+#[derive(Serialize, Deserialize, Debug, Clone, Copy, PartialEq, Eq, Type, Default)]
+#[serde(rename_all = "snake_case")]
+pub enum AppIcon {
+    #[default]
+    Automatic,
+    Light,
+    Dark,
+}
+
 #[derive(Serialize, Deserialize, Debug, Clone, Copy, PartialEq, Eq, Type, Default)]
 #[serde(rename_all = "snake_case")]
 pub enum TypingTool {
@@ -606,6 +617,8 @@ pub struct AppSettings {
     #[serde(default = "default_theme")]
     pub theme: Theme,
     #[serde(default)]
+    pub app_icon: AppIcon,
+    #[serde(default)]
     pub experimental_enabled: bool,
     #[serde(default)]
     pub lazy_stream_close: bool,
@@ -691,7 +704,7 @@ pub struct AppSettings {
 }
 
 fn default_tts_live_preview() -> bool {
-    true
+    false
 }
 
 fn default_tts_model() -> String {
@@ -699,7 +712,7 @@ fn default_tts_model() -> String {
 }
 
 fn default_tts_speed() -> f32 {
-    1.0
+    1.3
 }
 
 fn default_model() -> String {
@@ -729,7 +742,7 @@ fn default_start_hidden() -> bool {
 }
 
 fn default_autostart_enabled() -> bool {
-    false
+    true
 }
 
 fn default_update_checks_enabled() -> bool {
@@ -755,12 +768,13 @@ fn default_overlay_position() -> OverlayPosition {
 }
 
 fn default_overlay_style() -> OverlayStyle {
-    // Linux hides the overlay by default; other platforms show the live overlay.
-    // Position is independent and only selects top vs. bottom placement.
+    // Linux hides the overlay by default; other platforms show the minimal
+    // overlay (Live is a choice). Position is independent and only selects top
+    // vs. bottom placement.
     #[cfg(target_os = "linux")]
     return OverlayStyle::None;
     #[cfg(not(target_os = "linux"))]
-    return OverlayStyle::Live;
+    return OverlayStyle::Minimal;
 }
 
 fn default_vad_enabled() -> bool {
@@ -862,15 +876,6 @@ fn default_post_process_providers() -> Vec<PostProcessProvider> {
             api_format: PostProcessApiFormat::OpenAi,
         },
         PostProcessProvider {
-            id: "zai".to_string(),
-            label: "Z.AI".to_string(),
-            base_url: "https://api.z.ai/api/paas/v4".to_string(),
-            allow_base_url_edit: false,
-            models_endpoint: Some("/models".to_string()),
-            supports_structured_output: true,
-            api_format: PostProcessApiFormat::OpenAi,
-        },
-        PostProcessProvider {
             id: "openrouter".to_string(),
             label: "OpenRouter".to_string(),
             base_url: "https://openrouter.ai/api/v1".to_string(),
@@ -897,15 +902,6 @@ fn default_post_process_providers() -> Vec<PostProcessProvider> {
             supports_structured_output: false,
             api_format: PostProcessApiFormat::OpenAi,
         },
-        PostProcessProvider {
-            id: "cerebras".to_string(),
-            label: "Cerebras".to_string(),
-            base_url: "https://api.cerebras.ai/v1".to_string(),
-            allow_base_url_edit: false,
-            models_endpoint: Some("/models".to_string()),
-            supports_structured_output: true,
-            api_format: PostProcessApiFormat::OpenAi,
-        },
     ];
 
     // Note: We always include Apple Intelligence on macOS ARM64 without checking availability
@@ -924,17 +920,6 @@ fn default_post_process_providers() -> Vec<PostProcessProvider> {
             api_format: PostProcessApiFormat::OpenAi,
         });
     }
-
-    // AWS Bedrock via Mantle (OpenAI-compatible endpoint)
-    providers.push(PostProcessProvider {
-        id: "bedrock_mantle".to_string(),
-        label: "AWS Bedrock (Mantle)".to_string(),
-        base_url: "https://bedrock-mantle.us-east-1.api.aws/v1".to_string(),
-        allow_base_url_edit: false,
-        models_endpoint: Some("/models".to_string()),
-        supports_structured_output: true,
-        api_format: PostProcessApiFormat::OpenAi,
-    });
 
     // Custom provider always comes last
     providers.push(PostProcessProvider {
@@ -1089,8 +1074,25 @@ fn default_typing_tool() -> TypingTool {
     TypingTool::Auto
 }
 
+/// Providers Glider no longer offers. Stores saved before they were dropped
+/// still list them, with any key and model, so they are removed on load.
+const RETIRED_PROVIDER_IDS: [&str; 3] = ["zai", "cerebras", "bedrock_mantle"];
+
 fn ensure_post_process_defaults(settings: &mut AppSettings) -> bool {
     let mut changed = false;
+    let listed = settings.post_process_providers.len();
+    settings
+        .post_process_providers
+        .retain(|p| !RETIRED_PROVIDER_IDS.contains(&p.id.as_str()));
+    changed |= settings.post_process_providers.len() != listed;
+    for id in RETIRED_PROVIDER_IDS {
+        changed |= settings.post_process_api_keys.remove(id).is_some();
+        changed |= settings.post_process_models.remove(id).is_some();
+    }
+    if RETIRED_PROVIDER_IDS.contains(&settings.post_process_provider_id.as_str()) {
+        settings.post_process_provider_id = default_post_process_provider_id();
+        changed = true;
+    }
     for provider in default_post_process_providers() {
         // Use match to do a single lookup - either sync existing or add new
         match settings
@@ -1352,9 +1354,10 @@ pub fn get_default_settings() -> AppSettings {
         llm_model: String::new(),
         llm_use_provider: false,
         mute_while_recording: false,
-        append_trailing_space: false,
+        append_trailing_space: true,
         app_language: default_app_language(),
         theme: default_theme(),
+        app_icon: AppIcon::default(),
         experimental_enabled: false,
         lazy_stream_close: false,
         airpods_mode: false,
@@ -2032,9 +2035,9 @@ mod tests {
 
     #[cfg(not(target_os = "linux"))]
     #[test]
-    fn default_overlay_style_is_live_when_overlay_defaults_on() {
+    fn default_overlay_style_is_minimal_when_overlay_defaults_on() {
         let settings = get_default_settings();
-        assert_eq!(settings.overlay_style, OverlayStyle::Live);
+        assert_eq!(settings.overlay_style, OverlayStyle::Minimal);
     }
 
     #[test]
@@ -2271,6 +2274,36 @@ mod tests {
         let format_of = |id: &str| settings.post_process_provider(id).unwrap().api_format;
         assert_eq!(format_of("anthropic"), PostProcessApiFormat::Anthropic);
         assert_eq!(format_of("custom"), PostProcessApiFormat::Anthropic);
+    }
+
+    #[test]
+    fn post_process_defaults_drop_retired_providers() {
+        let mut settings = get_default_settings();
+        settings.post_process_providers.push(PostProcessProvider {
+            id: "cerebras".to_string(),
+            label: "Cerebras".to_string(),
+            base_url: "https://api.cerebras.ai/v1".to_string(),
+            allow_base_url_edit: false,
+            models_endpoint: Some("/models".to_string()),
+            supports_structured_output: true,
+            api_format: PostProcessApiFormat::OpenAi,
+        });
+        settings
+            .post_process_api_keys
+            .insert("cerebras".to_string(), "csk-old".to_string());
+        settings
+            .post_process_models
+            .insert("zai".to_string(), "glm-4".to_string());
+        settings.post_process_provider_id = "bedrock_mantle".to_string();
+
+        assert!(ensure_post_process_defaults(&mut settings));
+
+        for id in RETIRED_PROVIDER_IDS {
+            assert!(settings.post_process_provider(id).is_none());
+            assert!(!settings.post_process_api_keys.contains_key(id));
+            assert!(!settings.post_process_models.contains_key(id));
+        }
+        assert_eq!(settings.post_process_provider_id, "openai");
     }
 
     #[test]

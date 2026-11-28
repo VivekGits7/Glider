@@ -33,14 +33,14 @@ Both directions of voice in one app, plus rewriting, and every model runs locall
 - Models page manages speech-to-text models, Read Aloud voices and rewrite LLMs.
 - History keeps dictations and Read Aloud reads, in two tabs.
 - All UI text goes through i18next (25 locales); errors go through the notices system.
-- Glider is built on Handy (MIT) by CJ Pais; credit stays in About and the license.
+- Glider is built on Handy (MIT) by CJ Pais; the credit lives in the LICENSE file (About no longer lists the open-source projects).
 - Source code: https://github.com/VivekGits7/Glider
 
 ## Brand Commitments
 
-- Name: Glider. The logo is the wing mark (two lilac-to-violet blades) beside "Glider" set in the system font; the app icon puts the mark on a dark glass tile.
-- Accent colour: lilac taken from the app icon, #c58af2 (dark) / #d8b4f8 (light), with the icon's lilac-to-violet gradient on filled controls.
-- The user pinned a visual reference for the main window: a dark, calm app with a left sidebar of icon + label items, an inset rounded content panel, serif page titles, a Home with a welcome line, a large shortcut card, a stats card and a "today" list, and settings pages laid out as cards of rows (title and description on the left, a Change button or dropdown on the right). Glider must look like its own product, not a copy of that reference.
+- Name: Glider. The logo is the mic mark (a thin-line violet mic) beside "Glider" set in the system font; the app icon puts the mic on a black tile, or a white one for the light icon.
+- Accent colour: Glider violet taken from the app icon's mic, #8b5cf6 (dark) / #7c4dea (light), flat on filled controls. Everything else is neutral grey.
+- The main window follows two design canvases, one set of screens: "Glider macOS Glass" (System Settings look: a glass sidebar a shade lighter than a neutral dark page, SF Pro at 13px, pill controls, pop-up buttons, glassy sidebar controls ported from Glassy UI) and "Glider Windows & Linux" (the same screens with the native title bar, Segoe UI Variable, outlined toggles, boxy dropdowns and an accent pill on the selected row). DESIGN.md is the source of truth.
 
 ## Evidence on Hand
 

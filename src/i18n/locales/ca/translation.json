@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "Cerca",
+    "show": "Mostra la barra lateral",
+    "hide": "Amaga la barra lateral"
   },
   "onboarding": {
     "customModelDescription": "Sense suport oficial",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "Registres en directe",
-        "description": "Mostra registres nous del nivell triat mentre el tauler és obert.",
+        "description": "En pausa per defecte, així que no es desa res. Reprèn per veure aquí els registres nous i desar-los a la carpeta de registres, al nivell triat.",
         "live": "En directe",
         "paused": "En pausa",
         "pause": "Pauseu",
         "resume": "Repreneu",
         "copied": "Copiat",
         "lineCount": "{{count}} línies",
-        "empty": "S'estan esperant registres… Les entrades apareixeran aquí a mesura que l'aplicació les emeti."
+        "empty": "S'estan esperant registres… Les entrades apareixeran aquí a mesura que l'aplicació les emeti.",
+        "emptyPaused": "El registre està en pausa. No es mostra ni es desa res."
       },
       "updateChecks": {
         "label": "Comproveu si hi ha actualitzacions",
@@ -967,28 +972,6 @@
         "title": "Codi font",
         "description": "Consulta el codi font i col·laboreu-hi",
         "button": "Mostra al GitHub"
-      },
-      "acknowledgments": {
-        "title": "Agraïments",
-        "ggml": {
-          "title": "ggml",
-          "description": "Biblioteca de tensors d'alt rendiment per a la inferència d'aprenentatge automàtic al dispositiu",
-          "details": "La transcripció local de veu a text del Glider es basa en el transcribe.cpp i el ggml. Gràcies a la gran feina de Georgi Gerganov i dels col·laboradors."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "El dictat de Glider es basa en Handy de CJ Pais, llicència MIT."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Les veus de Read Aloud funcionen amb sherpa-onnx."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite funciona amb candle, la biblioteca d'ML en Rust de Hugging Face."
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "Fosc"
     }
   },
+  "appIcon": {
+    "title": "Icona de l'app",
+    "description": "Dock i selector d'apps",
+    "descriptionTaskbar": "Barra de tasques i selector d'apps",
+    "automatic": "Automàtica"
+  },
   "overlay": {
     "transcribing": "S'està transcrivint...",
     "loadingModel": "S'està carregant el model...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "Parlar",
+    "listening": "Escoltar",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "Hledat",
+    "show": "Zobrazit postranní panel",
+    "hide": "Skrýt postranní panel"
   },
   "onboarding": {
     "customModelDescription": "Oficiálně nepodporováno",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "Živé logy",
-        "description": "Zobrazuje nové řádky logu podle úrovně, dokud je panel otevřený.",
+        "description": "Ve výchozím stavu pozastaveno, nic se neukládá. Po obnovení se zde zobrazují nové řádky logu a ukládají se do složky logů podle úrovně.",
         "live": "Živě",
         "paused": "Pozastaveno",
         "pause": "Pozastavit",
         "resume": "Pokračovat",
         "copied": "Zkopírováno",
         "lineCount": "Řádků: {{count}}",
-        "empty": "Čekání na logy… Záznamy se zde zobrazí, jakmile je aplikace vygeneruje."
+        "empty": "Čekání na logy… Záznamy se zde zobrazí, jakmile je aplikace vygeneruje.",
+        "emptyPaused": "Logování je pozastaveno. Nic se nezobrazuje ani neukládá."
       },
       "updateChecks": {
         "label": "Kontrolovat aktualizace",
@@ -967,28 +972,6 @@
         "title": "Zdrojový kód",
         "description": "Zobrazit zdrojový kód a přispět",
         "button": "Zobrazit na GitHubu"
-      },
-      "acknowledgments": {
-        "title": "Poděkování",
-        "ggml": {
-          "title": "ggml",
-          "description": "Vysoce výkonné inferenční zpracování modelu automatického rozpoznávání řeči Whisper od OpenAI",
-          "details": "Glider používá ggml pro rychlé lokální zpracování řeči na text. Díky skvělé práci Georgiho Gerganova a přispěvatelů."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "Diktování v Glideru stojí na Handy od CJ Paise, licence MIT."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Hlasy Read Aloud běží na sherpa-onnx."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite běží na candle, knihovně Hugging Face pro ML v Rustu."
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "Tmavý"
     }
   },
+  "appIcon": {
+    "title": "Ikona aplikace",
+    "description": "Dock a přepínač aplikací",
+    "descriptionTaskbar": "Hlavní panel a přepínač aplikací",
+    "automatic": "Automaticky"
+  },
   "overlay": {
     "transcribing": "Přepisuji...",
     "loadingModel": "Načítání modelu...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "Mluvení",
+    "listening": "Poslech",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

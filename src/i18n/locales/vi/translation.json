@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "Tìm kiếm",
+    "show": "Hiện thanh bên",
+    "hide": "Ẩn thanh bên"
   },
   "onboarding": {
     "customModelDescription": "Không được hỗ trợ chính thức",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "Nhật ký trực tiếp",
-        "description": "Hiện dòng nhật ký mới theo mức nhật ký khi bảng này đang mở.",
+        "description": "Mặc định tạm dừng nên không lưu gì. Tiếp tục để xem dòng nhật ký mới ở đây và lưu vào thư mục nhật ký theo mức nhật ký.",
         "live": "Trực tiếp",
         "paused": "Đã tạm dừng",
         "pause": "Tạm dừng",
         "resume": "Tiếp tục",
         "copied": "Đã sao chép",
         "lineCount": "{{count}} dòng",
-        "empty": "Đang chờ nhật ký… Các mục sẽ xuất hiện ở đây khi ứng dụng phát ra."
+        "empty": "Đang chờ nhật ký… Các mục sẽ xuất hiện ở đây khi ứng dụng phát ra.",
+        "emptyPaused": "Ghi nhật ký đang tạm dừng. Không hiển thị hay lưu gì."
       },
       "updateChecks": {
         "label": "Kiểm tra cập nhật",
@@ -967,28 +972,6 @@
         "title": "Mã nguồn",
         "description": "Xem mã nguồn và đóng góp",
         "button": "Xem trên GitHub"
-      },
-      "acknowledgments": {
-        "title": "Lời cảm ơn",
-        "ggml": {
-          "title": "ggml",
-          "description": "Suy luận hiệu suất cao của mô hình nhận dạng giọng nói tự động Whisper của OpenAI",
-          "details": "Glider sử dụng ggml để xử lý chuyển đổi giọng nói thành văn bản nhanh, cục bộ. Cảm ơn công việc tuyệt vời của Georgi Gerganov và các cộng tác viên."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "Đọc chính tả của Glider dựa trên Handy của CJ Pais, giấy phép MIT."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Giọng đọc của Read Aloud chạy trên sherpa-onnx."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite chạy trên candle, thư viện ML bằng Rust của Hugging Face."
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "Tối"
     }
   },
+  "appIcon": {
+    "title": "Biểu tượng ứng dụng",
+    "description": "Dock và trình chuyển ứng dụng",
+    "descriptionTaskbar": "Thanh tác vụ và trình chuyển ứng dụng",
+    "automatic": "Tự động"
+  },
   "overlay": {
     "transcribing": "Đang chuyển đổi...",
     "loadingModel": "Đang tải mô hình...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "Nói",
+    "listening": "Nghe",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

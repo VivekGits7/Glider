@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "検索",
+    "show": "サイドバーを表示",
+    "hide": "サイドバーを隠す"
   },
   "onboarding": {
     "customModelDescription": "公式サポート対象外",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "ライブログ",
-        "description": "このパネルを開いている間、設定したログレベルの新しいログを表示します。",
+        "description": "既定では一時停止中で、何も保存されません。再開すると、設定したログレベルの新しいログがここに表示され、ログフォルダに保存されます。",
         "live": "ライブ",
         "paused": "一時停止中",
         "pause": "一時停止",
         "resume": "再開",
         "copied": "コピーしました",
         "lineCount": "{{count}}行",
-        "empty": "ログを待機中… アプリが出力すると、ここにエントリが表示されます。"
+        "empty": "ログを待機中… アプリが出力すると、ここにエントリが表示されます。",
+        "emptyPaused": "ログ記録は一時停止中です。何も表示・保存されません。"
       },
       "updateChecks": {
         "label": "アップデートを確認",
@@ -967,28 +972,6 @@
         "title": "ソースコード",
         "description": "ソースコードを見て貢献する",
         "button": "GitHub で見る"
-      },
-      "acknowledgments": {
-        "title": "謝辞",
-        "ggml": {
-          "title": "ggml",
-          "description": "オンデバイス機械学習推論のための高性能テンソルライブラリ",
-          "details": "Glider のローカルの音声からテキストへの文字起こしは transcribe.cpp と ggml を基盤としています。Georgi Gerganov 氏と貢献者の皆様の素晴らしい仕事に感謝します。"
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "Glider の音声入力は CJ Pais の Handy が土台です。MIT ライセンス。"
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Read Aloud の音声は sherpa-onnx で動きます。"
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite は Hugging Face の Rust 製 ML ライブラリ candle で動きます。"
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "ダーク"
     }
   },
+  "appIcon": {
+    "title": "アプリアイコン",
+    "description": "Dock とアプリスイッチャー",
+    "descriptionTaskbar": "タスクバーとアプリスイッチャー",
+    "automatic": "自動"
+  },
   "overlay": {
     "transcribing": "文字起こし中…",
     "loadingModel": "モデルを読み込み中…",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "話す",
+    "listening": "聞く",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

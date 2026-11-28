@@ -22,10 +22,14 @@
     "readAloud": "Read Aloud",
     "home": "Home",
     "label": "Sections",
-    "version": "Glider v{{version}}",
+    "version": "v{{version}}",
     "insights": "Insights",
     "rewrite": "Rewrite",
-    "dictation": "Dictation"
+    "dictation": "Dictation",
+    "appName": "Glider",
+    "search": "Пошук",
+    "show": "Показати бічну панель",
+    "hide": "Сховати бічну панель"
   },
   "onboarding": {
     "customModelDescription": "Офіційно не підтримується",
@@ -805,14 +809,15 @@
       },
       "liveLogs": {
         "title": "Логи в реальному часі",
-        "description": "Показує нові рядки журналу вибраного рівня, поки панель відкрита.",
+        "description": "Типово призупинено, тож нічого не зберігається. Відновіть, щоб бачити нові рядки журналу тут і зберігати їх у папці журналів на вибраному рівні.",
         "live": "У реальному часі",
         "paused": "Призупинено",
         "pause": "Призупинити",
         "resume": "Відновити",
         "copied": "Скопійовано",
         "lineCount": "Рядків: {{count}}",
-        "empty": "Очікування логів… Записи з'являтимуться тут, щойно застосунок їх створюватиме."
+        "empty": "Очікування логів… Записи з'являтимуться тут, щойно застосунок їх створюватиме.",
+        "emptyPaused": "Ведення журналу призупинено. Нічого не показується і не зберігається."
       },
       "updateChecks": {
         "label": "Перевірка оновлень",
@@ -967,28 +972,6 @@
         "title": "Вихідний код",
         "description": "Переглянути вихідний код та зробити внесок",
         "button": "Переглянути на GitHub"
-      },
-      "acknowledgments": {
-        "title": "Подяки",
-        "ggml": {
-          "title": "ggml",
-          "description": "Високопродуктивний інференс моделі автоматичного розпізнавання мовлення Whisper від OpenAI",
-          "details": "Glider використовує ggml для швидкої локальної обробки мовлення в текст. Дякуємо за чудову роботу Георгію Герганову та контриб'юторам."
-        },
-        "view": "View",
-        "handy": {
-          "title": "Handy",
-          "description": "Диктування Glider засноване на Handy від CJ Pais, ліцензія MIT."
-        },
-        "sherpa": {
-          "title": "sherpa-onnx",
-          "description": "Голоси Read Aloud працюють на sherpa-onnx."
-        },
-        "description": "Glider stands on these open-source projects.",
-        "candle": {
-          "title": "candle",
-          "description": "Rewrite працює на candle, Rust-бібліотеці ML від Hugging Face."
-        }
       },
       "appTitle": "App",
       "star": {
@@ -1145,6 +1128,12 @@
       "dark": "Темна"
     }
   },
+  "appIcon": {
+    "title": "Значок застосунку",
+    "description": "Dock і перемикач застосунків",
+    "descriptionTaskbar": "Панель завдань і перемикач застосунків",
+    "automatic": "Автоматично"
+  },
   "overlay": {
     "transcribing": "Обробка...",
     "loadingModel": "Завантаження моделі...",
@@ -1282,8 +1271,8 @@
     "lastDays": "Last {{total}} days.",
     "activityLabel": "Speaking above the line and listening below it, day by day, over the last {{days}} days",
     "dayActivity": "{{day}}: {{speaking}} speaking, {{listening}} listening",
-    "speakingAbove": "Speaking, above",
-    "listeningBelow": "Listening, below",
+    "speaking": "Мовлення",
+    "listening": "Прослуховування",
     "activeDays": "Active <b>{{active}} of {{total}}</b> days.",
     "busiest": "Busiest {{day}}.",
     "activityEmpty": "Dictate or listen with Read Aloud and your days show up here.",
@@ -1316,7 +1305,6 @@
     }
   },
   "rewrite": {
-    "new": "New",
     "on": "On",
     "off": "Off",
     "lede": "Select text in any app and press a shortcut. A language model on this computer rewrites it where it is.",
@@ -1447,10 +1435,5 @@
   },
   "loading": {
     "label": "Glider is starting"
-  },
-  "topBar": {
-    "theme": "Theme",
-    "showSidebar": "Show sidebar",
-    "hideSidebar": "Hide sidebar"
   }
 }

@@ -478,6 +478,16 @@ const RecordingOverlay: React.FC = () => {
         <div className="mo-pill tight" role="status">
           <Spinner />
           <span className="mo-shimmer">{t("overlay.preparingVoice")}</span>
+          {/* Like dictation's pill: stop it here, as well as with Esc. */}
+          <button
+            type="button"
+            className="mo-hbtn cancel"
+            aria-label={t("overlay.cancel")}
+            title={t("overlay.cancel")}
+            onClick={() => commands.stopSpeaking()}
+          >
+            <XIcon />
+          </button>
         </div>
       );
     } else {

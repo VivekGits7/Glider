@@ -11,10 +11,10 @@ export const Textarea: React.FC<TextareaProps> = ({
   ...props
 }) => {
   const baseClasses =
-    "px-2 py-1 text-sm leading-relaxed bg-ground border border-line-strong rounded-[10px] text-start transition-[border-color] duration-150 hover:border-ink-3 focus:outline-none focus:border-logo-primary resize-y";
+    "g-input px-2 py-1 text-[13px] leading-relaxed text-start transition-[border-color,box-shadow] duration-150 focus:outline-none resize-y";
 
   const variantClasses = {
-    default: "px-3 py-2 min-h-[100px]",
+    default: "px-2.5 py-2 min-h-[96px]",
     compact: "px-2 py-1 min-h-[80px]",
   };
 
