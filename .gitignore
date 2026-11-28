@@ -9,9 +9,10 @@ dist-ssr/
 # Rust / Tauri build output (also covered by src-tauri/.gitignore)
 src-tauri/target/
 
-# Downloaded models (see AGENTS.md "Model Setup")
+# Downloaded models. The voice detection model ships in the repo, so builds need no download.
 src-tauri/resources/models/*.gguf
 src-tauri/resources/models/*.onnx
+!src-tauri/resources/models/silero-vad-v6.2-F32.gguf
 
 # Playwright
 test-results/
