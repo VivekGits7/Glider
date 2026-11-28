@@ -195,7 +195,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
           />
         </label>
       )}
-      <div className="flex min-h-0 flex-col gap-0.5 overflow-y-auto">
+      {/* The collapsed rail never scrolls: its labels pop out past its edge,
+          which a scroll box would clip and turn into scrollbars. */}
+      <div
+        className={`flex min-h-0 flex-col gap-0.5 ${collapsed ? "" : "overflow-y-auto"}`}
+      >
         {main.map(renderItem)}
         {main.length > 0 && more.length > 0 && <div className="g-rule" />}
         {more.map(renderItem)}
