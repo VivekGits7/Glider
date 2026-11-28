@@ -7,6 +7,7 @@
 <p align="center">Free, open-source voice tools for macOS, Windows and Linux.<br />Private, fast, and they work in every app, even offline.</p>
 
 <p align="center">
+  <a href="#download">Download</a> ·
   <a href="#how-to-use-glider">How to use</a> ·
   <a href="#build-it-yourself">Build it yourself</a> ·
   <a href="TROUBLESHOOT.md">Troubleshooting</a>
@@ -50,6 +51,23 @@ Most voice apps send what you say to a server. Glider doesn't. Every model runs 
     <td width="50%"><img src="docs/screenshots/insights.webp" alt="Insights page" /><p align="center"><b>Insights</b></p></td>
   </tr>
 </table>
+
+## Download
+
+Get Glider from the **[latest release](https://github.com/VivekGits7/Glider/releases/latest)**:
+
+- **Windows:** `Glider_<version>_x64-setup.exe`
+- **Mac with Apple silicon (M1 or newer):** `Glider_<version>_aarch64.dmg`
+- **Intel Mac:** `Glider_<version>_x64.dmg`
+
+After that, Glider offers new versions itself.
+
+Glider isn't signed by Microsoft or Apple yet, so the first time you open it:
+
+- **Windows:** if you see "Windows protected your PC", click **More info**, then **Run anyway**.
+- **macOS:** if macOS can't verify Glider, open **System Settings → Privacy & Security**, scroll down and click **Open Anyway**.
+
+On Linux, [build it yourself](BUILD.md).
 
 ## How to use Glider
 

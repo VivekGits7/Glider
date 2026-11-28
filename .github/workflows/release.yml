@@ -1,0 +1,370 @@
+name: Release
+
+# Run workflow (Actions tab): builds the chosen branch or tag into test
+# downloads on the run page. Pushing a stable tag (v1.2.3): builds that commit
+# and publishes it as the latest GitHub Release. Ordinary pushes run nothing.
+# Steps and secrets: BUILD.md, "Releases".
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+# A second run for the same ref waits for the first instead of racing it.
+concurrency:
+  group: release-${{ github.ref }}
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    name: Check versions
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.check.outputs.version }}
+      release: ${{ steps.check.outputs.release }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Match the version files (and the tag)
+        id: check
+        env:
+          RELEASE: ${{ github.event_name == 'push' }}
+          HAS_SIGNING_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY != '' }}
+        run: |
+          set -euo pipefail
+          conf=$(jq -r .version src-tauri/tauri.conf.json)
+          pkg=$(jq -r .version package.json)
+          crate=$(grep -m1 '^version = ' src-tauri/Cargo.toml | cut -d'"' -f2)
+          lock=$(grep -A1 '^name = "glider"$' src-tauri/Cargo.lock | sed -n 's/^version = "\(.*\)"$/\1/p')
+          echo "tauri.conf.json=$conf package.json=$pkg Cargo.toml=$crate Cargo.lock=$lock"
+          if [ "$pkg" != "$conf" ] || [ "$crate" != "$conf" ] || [ "$lock" != "$conf" ]; then
+            echo "::error::The version files disagree. Set one version in all four (BUILD.md, Releases)."
+            exit 1
+          fi
+          if [ "$RELEASE" = true ]; then
+            if [ "$GITHUB_REF_NAME" != "v$conf" ]; then
+              echo "::error::Tag $GITHUB_REF_NAME doesn't match the app version $conf. Tag v$conf instead."
+              exit 1
+            fi
+            if [ "$HAS_SIGNING_KEY" != true ]; then
+              echo "::error::The TAURI_SIGNING_PRIVATE_KEY secret is missing, so updates can't be signed. Nothing was published."
+              exit 1
+            fi
+          fi
+          echo "version=$conf" >> "$GITHUB_OUTPUT"
+          echo "release=$RELEASE" >> "$GITHUB_OUTPUT"
+
+      # Builds must use the committed Cargo.lock, not one cargo quietly rewrites.
+      - name: Check Cargo.lock is up to date
+        working-directory: src-tauri
+        run: cargo metadata --locked --format-version 1 > /dev/null
+
+  build:
+    name: Build ${{ matrix.name }}
+    needs: prepare
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Windows x64
+            runner: windows-latest
+            target: x86_64-pc-windows-msvc
+            bundles: nsis
+            arch: x64
+            artifact: glider-windows-x64
+          # macOS 26's Xcode has the FoundationModels SDK the Apple Intelligence
+          # Swift bridge needs; with an older SDK build.rs falls back to a stub.
+          - name: macOS Apple Silicon
+            runner: macos-26
+            target: aarch64-apple-darwin
+            bundles: app,dmg
+            arch: aarch64
+            artifact: glider-macos-aarch64
+          # Cross-built on Apple Silicon, as Handy does. Pinned to macOS 15,
+          # whose SDK has no FoundationModels, so the Intel binary links none.
+          - name: macOS Intel
+            runner: macos-15
+            target: x86_64-apple-darwin
+            bundles: app,dmg
+            arch: x64
+            artifact: glider-macos-x64
+    env:
+      VERSION: ${{ needs.prepare.outputs.version }}
+      BUNDLE: src-tauri/target/${{ matrix.target }}/release/bundle
+      SIGNED: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY != '' }}
+    steps:
+      - name: Enable long paths (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
+            -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+          git config --system core.longpaths true
+
+      - uses: actions/checkout@v7
+
+      - uses: oven-sh/setup-bun@v2
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      # Test builds reuse compiled dependencies; releases always build clean.
+      - uses: swatinem/rust-cache@v2
+        if: needs.prepare.outputs.release != 'true'
+        with:
+          workspaces: "./src-tauri -> target"
+          key: ${{ matrix.target }}
+          cache-bin: false
+
+      - name: Install the Vulkan SDK (Windows)
+        if: runner.os == 'Windows'
+        uses: humbletim/install-vulkan-sdk@v1.2
+        with:
+          version: 1.4.309.0
+          cache: true
+
+      # ggml-vulkan's CMake needs SPIRV-HeadersConfig.cmake, which the SDK above
+      # doesn't expose. Header-only, so plain CMAKE_PREFIX_PATH finds it.
+      - name: Install SPIRV-Headers (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          vcpkg install spirv-headers:x64-windows
+          if ($LASTEXITCODE -ne 0) { throw "vcpkg install spirv-headers failed" }
+          $prefix = "$env:VCPKG_INSTALLATION_ROOT/installed/x64-windows" -replace '\\','/'
+          Add-Content $env:GITHUB_ENV "CMAKE_PREFIX_PATH=$prefix"
+
+      # build.rs copies the VC++ runtime and OpenMP DLLs from these folders next
+      # to glider.exe, from the same Visual Studio that compiles the native code.
+      - name: Locate the VC++ runtime (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $vsRoot = & $vswhere -latest -products * -property installationPath
+          if (-not $vsRoot) { throw "vswhere found no Visual Studio installation" }
+          $redist = (Get-Content (Join-Path $vsRoot "VC\Auxiliary\Build\Microsoft.VCRedistVersion.default.txt")).Trim()
+          $archDir = Join-Path $vsRoot "VC\Redist\MSVC\$redist\x64"
+          $crt = Get-ChildItem $archDir -Directory -Filter "Microsoft.VC*.CRT" | Sort-Object Name | Select-Object -Last 1
+          $omp = Get-ChildItem $archDir -Directory -Filter "Microsoft.VC*.OpenMP" | Sort-Object Name | Select-Object -Last 1
+          if (-not $crt -or -not $omp) { throw "VC++ CRT or OpenMP redist folder not found under $archDir" }
+          $dirs = "$($crt.FullName);$($omp.FullName)"
+          Write-Host "GLIDER_VC_REDIST_DIRS=$dirs"
+          Add-Content $env:GITHUB_ENV "GLIDER_VC_REDIST_DIRS=$dirs"
+
+      - name: Install frontend dependencies
+        run: bun install --frozen-lockfile
+
+      # Tauri runs the frontend build itself (beforeBuildCommand).
+      - name: Build
+        shell: bash
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          # On CI Tauri skips the Finder step that lays out the DMG window
+          # (background, icon positions). Keep it; it only affects DMGs.
+          TAURI_BUNDLER_DMG_IGNORE_CI: "true"
+        run: |
+          set -euo pipefail
+          args=(--target "${{ matrix.target }}" --bundles "${{ matrix.bundles }}")
+          # Signed update files need the key; without it, test builds still make installers.
+          if [ "$SIGNED" = true ]; then
+            echo '{"bundle":{"createUpdaterArtifacts":true}}' > "$RUNNER_TEMP/updater.json"
+            args+=(--config "$RUNNER_TEMP/updater.json")
+          fi
+          bun run tauri build "${args[@]}"
+
+      - name: Collect the downloads
+        shell: bash
+        run: |
+          set -euo pipefail
+          name="Glider_${VERSION}_${{ matrix.arch }}"
+          mkdir out
+          if [ "$RUNNER_OS" = Windows ]; then
+            cp "$BUNDLE/nsis/$name-setup.exe" out/
+            if [ "$SIGNED" = true ]; then cp "$BUNDLE/nsis/$name-setup.exe.sig" out/; fi
+          else
+            cp "$BUNDLE/dmg/$name.dmg" out/
+            # Both Macs' update files come out as Glider.app.tar.gz; label them by arch.
+            if [ "$SIGNED" = true ]; then
+              cp "$BUNDLE/macos/Glider.app.tar.gz" "out/$name.app.tar.gz"
+              cp "$BUNDLE/macos/Glider.app.tar.gz.sig" "out/$name.app.tar.gz.sig"
+            fi
+          fi
+          ls -la out
+
+      # Installs the way a user would (silently, portable so nothing is
+      # registered), then checks every runtime DLL landed and the app starts.
+      - name: Check the installer (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $staged = Get-ChildItem src-tauri/transcribe-libs -Filter *.dll
+          foreach ($name in 'msvcp140.dll', 'vcruntime140.dll', 'vcomp140.dll') {
+            if (-not ($staged | Where-Object Name -ieq $name)) { throw "$name wasn't staged for the installer" }
+          }
+          if (-not ($staged | Where-Object Name -like '*transcribe*')) { throw "transcribe DLLs weren't staged" }
+          if (-not ($staged | Where-Object Name -like '*ggml*')) { throw "ggml DLLs weren't staged" }
+
+          $setup = (Resolve-Path "out/Glider_$($env:VERSION)_x64-setup.exe").Path
+          $dir = Join-Path $env:RUNNER_TEMP "glider-install"
+          $proc = Start-Process $setup -ArgumentList '/S', '/PORTABLE', "/D=$dir" -Wait -PassThru
+          if ($proc.ExitCode -ne 0) { throw "Silent install failed with exit code $($proc.ExitCode)" }
+          $exe = Join-Path $dir "glider.exe"
+          if (-not (Test-Path $exe)) { throw "glider.exe is missing after install" }
+          foreach ($dll in $staged) {
+            if (-not (Test-Path (Join-Path $dir $dll.Name))) { throw "$($dll.Name) is missing beside glider.exe" }
+          }
+          if (-not (Test-Path (Join-Path $dir "resources/models/silero-vad-v6.2-F32.gguf"))) {
+            throw "The voice detection model is missing from the install"
+          }
+          & $exe --list-devices | Out-String | Write-Host
+          if ($LASTEXITCODE -ne 0) { throw "glider.exe --list-devices failed" }
+
+      - name: Check the DMG (macOS)
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mnt="$RUNNER_TEMP/glider-dmg"
+          hdiutil attach -nobrowse -readonly -mountpoint "$mnt" "out/Glider_${VERSION}_${{ matrix.arch }}.dmg" > /dev/null
+          trap 'hdiutil detach "$mnt" -quiet || true' EXIT
+          app="$mnt/Glider.app"
+          bin="$app/Contents/MacOS/$(/usr/libexec/PlistBuddy -c 'Print :CFBundleExecutable' "$app/Contents/Info.plist")"
+          fail() { echo "::error::$1"; exit 1; }
+
+          want=$([ "${{ matrix.arch }}" = aarch64 ] && echo arm64 || echo x86_64)
+          got=$(lipo -archs "$bin")
+          echo "Binary architecture: $got"
+          [ "$got" = "$want" ] || fail "Expected a $want binary, got $got"
+
+          # Captured first: under pipefail, `| grep -q` can fail on SIGPIPE.
+          signature=$(codesign -dv "$app" 2>&1)
+          libs=$(otool -L "$bin")
+          codesign --verify --strict "$app" || fail "The app's signature is broken"
+          [[ $signature == *Signature=adhoc* ]] || fail "The app isn't ad-hoc signed"
+          [ -f "$app/Contents/Resources/resources/models/silero-vad-v6.2-F32.gguf" ] || fail "The voice detection model is missing"
+          [ -f "$mnt/.DS_Store" ] && [ -d "$mnt/.background" ] || fail "The DMG window has no background or layout"
+
+          if [ "$want" = arm64 ]; then
+            [[ $libs == *Metal.framework* ]] || fail "Metal isn't linked"
+            [[ $libs == *FoundationModels.framework* ]] || fail "The Apple Intelligence bridge was built as a stub"
+          fi
+
+          # Start it: list compute devices, then exit. The Intel build needs
+          # Rosetta on this Apple Silicon runner.
+          if [ "$want" = arm64 ] || arch -x86_64 /usr/bin/true 2> /dev/null; then
+            perl -e 'alarm shift; exec @ARGV' 300 "$bin" --list-devices || fail "glider --list-devices failed"
+          else
+            echo "Rosetta isn't installed on this runner; skipped starting the Intel build."
+          fi
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.artifact }}
+          path: out/*
+          if-no-files-found: error
+          compression-level: 0
+          # Test downloads stay two weeks; a release's copies only feed the publish job.
+          retention-days: ${{ needs.prepare.outputs.release == 'true' && 3 || 14 }}
+
+  # Runs only for a tag, and only once every build above passed, so a failed or
+  # retried run never publishes a partial release.
+  publish:
+    name: Publish the release
+    needs: [prepare, build]
+    if: needs.prepare.outputs.release == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      VERSION: ${{ needs.prepare.outputs.version }}
+      TAG: v${{ needs.prepare.outputs.version }}
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v8
+        with:
+          path: release
+          merge-multiple: true
+
+      # The feed Glider's updater reads from releases/latest/download/latest.json.
+      # URLs name this version's tag, so an older feed never points at newer files.
+      - name: Write the update feed
+        run: |
+          set -euo pipefail
+          base="https://github.com/$GH_REPO/releases/download/$TAG"
+          win="Glider_${VERSION}_x64-setup.exe"
+          arm="Glider_${VERSION}_aarch64.app.tar.gz"
+          intel="Glider_${VERSION}_x64.app.tar.gz"
+          for f in "$win" "$win.sig" "$arm" "$arm.sig" "$intel" "$intel.sig" \
+            "Glider_${VERSION}_aarch64.dmg" "Glider_${VERSION}_x64.dmg"; do
+            [ -s "release/$f" ] || { echo "::error::$f is missing"; exit 1; }
+          done
+          entry() {
+            jq -n --arg url "$base/$1" --rawfile sig "release/$1.sig" \
+              '{url: $url, signature: ($sig | rtrimstr("\n"))}'
+          }
+          jq -n --arg version "$VERSION" --arg notes "https://github.com/$GH_REPO/releases/tag/$TAG" \
+            --arg date "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --argjson win "$(entry "$win")" --argjson arm "$(entry "$arm")" --argjson intel "$(entry "$intel")" \
+            '{version: $version, notes: $notes, pub_date: $date, platforms: {
+              "windows-x86_64": $win, "windows-x86_64-nsis": $win,
+              "darwin-aarch64": $arm, "darwin-x86_64": $intel}}' > release/latest.json
+          cat release/latest.json
+
+      # Checks each feed entry the way the updater will: the URL is in this
+      # release, and the file verifies against the key built into Glider.
+      - name: Verify the feed and its signatures
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq minisign > /dev/null
+          jq -r .plugins.updater.pubkey src-tauri/tauri.conf.json | base64 -d > "$RUNNER_TEMP/glider.pub"
+          jq -r '.platforms | to_entries[] | "\(.key) \(.value.url) \(.value.signature)"' release/latest.json |
+            while read -r platform url sig; do
+              [[ "$url" == "https://github.com/$GH_REPO/releases/download/$TAG/"* ]] ||
+                { echo "::error::$platform points outside this release: $url"; exit 1; }
+              file="release/${url##*/}"
+              echo "$sig" | base64 -d > "$RUNNER_TEMP/check.minisig"
+              minisign -V -q -p "$RUNNER_TEMP/glider.pub" -m "$file" -x "$RUNNER_TEMP/check.minisig" ||
+                { echo "::error::$platform: ${url##*/} isn't signed by the key in tauri.conf.json. Does TAURI_SIGNING_PRIVATE_KEY match plugins.updater.pubkey?"; exit 1; }
+              echo "$platform: ${url##*/} signature OK"
+            done
+
+      - name: Publish
+        run: |
+          set -euo pipefail
+          # A published release is never replaced; a draft left by a failed attempt is.
+          if draft=$(gh release view "$TAG" --json isDraft --jq .isDraft 2> /dev/null); then
+            [ "$draft" = true ] || { echo "::error::$TAG is already published. Ship a new version instead."; exit 1; }
+            gh release delete "$TAG" --yes
+          fi
+          notes="**Windows:** \`Glider_${VERSION}_x64-setup.exe\` · **Apple Silicon Mac:** \`Glider_${VERSION}_aarch64.dmg\` · **Intel Mac:** \`Glider_${VERSION}_x64.dmg\`
+
+          Glider isn't signed by Microsoft or Apple, so the first open shows a warning. See [Download](https://github.com/$GH_REPO#download)."
+          # Upload everything to a draft first, then make it public in one step.
+          gh release create "$TAG" release/* --draft --verify-tag --title "Glider $VERSION" \
+            --notes "$notes" --generate-notes
+          gh release edit "$TAG" --draft=false --latest
+
+      - name: Check the live update feed
+        run: |
+          set -euo pipefail
+          feed="https://github.com/$GH_REPO/releases/latest/download/latest.json"
+          for attempt in 1 2 3 4 5 6; do
+            if curl -fsSL "$feed" | jq -e --arg v "$VERSION" '.version == $v' > /dev/null; then break; fi
+            [ "$attempt" -lt 6 ] || { echo "::error::$feed doesn't serve $VERSION"; exit 1; }
+            sleep 10
+          done
+          for url in $(jq -r '.platforms[].url' release/latest.json | sort -u); do
+            curl -fsIL --retry 5 --retry-all-errors -o /dev/null "$url"
+            echo "OK $url"
+          done
